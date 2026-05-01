@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com; img-src 'self' data: blob:; connect-src *; font-src fonts.gstatic.com; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="description" content="Matheus Sacoman — Arquiteto de Processos em Saúde. Eficiência Industrial aplicada à Alta Gestão Hospitalar. Diagnóstico operacional remoto para centros cirúrgicos, gestão de leitos e indicadores hospitalares.">
+<meta name="keywords" content="arquiteto de processos em saúde, gestão hospitalar, lean six sigma, centro cirúrgico, gestão de leitos, indicadores hospitalares">
+<meta name="author" content="Matheus Sacoman — Arquiteto de Processos em Saúde™">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Matheus Sacoman | Arquiteto de Processos em Saúde™">
+<meta property="og:description" content="Eficiência Industrial aplicada à Alta Gestão Hospitalar. Diagnóstico operacional remoto com garantia total.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arquitetodeprocessos.com.br">
+<link rel="canonical" href="https://arquitetodeprocessos.com.br">
+<title>Matheus Sacoman | Arquiteto de Processos em Saúde™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Matheus Sacoman","jobTitle":"Arquiteto de Processos em Saúde","url":"https://arquitetodeprocessos.com.br","knowsAbout":["Lean Six Sigma","Gestão Hospitalar","Centro Cirúrgico","Gestão de Leitos","Indicadores Hospitalares"]}
+</script>
+<style>
+:root{--navy:#1A2B4A;--navy-dark:#111D33;--navy-light:#243758;--gold:#B8860B;--gold-light:#F5EDD5;--white:#FFFFFF;--gray-50:#F7F8FA;--gray-100:#ECEEF2;--gray-200:#D1D5DF;--gray-400:#8892A4;--gray-700:#4A5568;--text:#1A1A2E;--radius:12px;--radius-sm:8px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.2;}
+h1{font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;}
+h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:600;}
+h3{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;}
+p{font-size:1rem;color:var(--gray-700);line-height:1.8;}
+.container{max-width:1200px;margin:0 auto;padding:0 40px;}
+.section{padding:100px 0;}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;cursor:pointer;border:none;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-primary{background:var(--gold);color:var(--white);}
+.btn-primary:hover{background:#9a710a;transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4);}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:var(--gold);}
+/* COOKIE */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--navy-dark);color:var(--white);padding:20px 40px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:3px solid var(--gold);transition:transform .4s;}
+#cookie-banner.hidden{transform:translateY(120%);}
+#cookie-banner p{color:rgba(255,255,255,.8);font-size:.85rem;flex:1;min-width:240px;line-height:1.6;}
+#cookie-banner a{color:var(--gold);text-decoration:underline;}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0;}
+.cookie-btns button{padding:10px 20px;border-radius:var(--radius-sm);font-size:.85rem;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.btn-accept{background:var(--gold);color:var(--white);}
+.btn-reject{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2)!important;}
+/* MODAL */
+#privacy-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;align-items:center;justify-content:center;padding:20px;}
+#privacy-modal.open{display:flex;}
+.modal-box{background:var(--white);border-radius:var(--radius);max-width:720px;width:100%;max-height:80vh;overflow-y:auto;padding:40px;position:relative;}
+.modal-box h2{color:var(--navy);margin-bottom:16px;}
+.modal-box h3{color:var(--navy);margin:20px 0 8px;font-size:1.05rem;}
+.modal-box p,.modal-box li{font-size:.88rem;color:var(--gray-700);margin-bottom:8px;}
+.modal-box ul{padding-left:20px;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray-400);line-height:1;}
+/* WHATSAPP */
+#wa-float{position:fixed;bottom:30px;right:30px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s;}
+#wa-float:hover{transform:scale(1.1);}
+#wa-float svg{width:28px;height:28px;fill:white;}
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .3s;}
+#navbar.scrolled{background:rgba(17,29,51,.97);backdrop-filter:blur(12px);padding:14px 0;box-shadow:0 2px 20px rgba(0,0,0,.3);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.brand-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.04em;color:white;}
+.brand-text em{color:var(--gold);font-style:normal;}
+.brand-sub{font-size:.6rem;font-weight:400;letter-spacing:.12em;color:rgba(255,255,255,.45);display:block;margin-top:1px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.88rem;font-weight:400;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s;}
+#mobile-menu{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+#mobile-menu.open{display:flex;}
+#mobile-menu a{color:white;font-size:1.4rem;font-family:'Cormorant Garamond',serif;}
+/* HERO */
+#inicio{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+#inicio::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(184,134,11,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-content{max-width:760px;position:relative;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+.hero-eyebrow span{font-size:.72rem;font-weight:500;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;}
+.hero-line{width:40px;height:1px;background:var(--gold);}
+.hero-content h1{color:var(--white);margin-bottom:24px;}
+.hero-content h1 em{font-style:italic;color:var(--gold);}
+.hero-tagline{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:40px;max-width:620px;line-height:1.9;font-weight:300;}
+.hero-tagline strong{color:rgba(255,255,255,.9);font-weight:400;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+/* PROBLEMA */
+#problema{background:var(--gray-50);}
+.problema-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.problema-card{background:var(--white);border-radius:var(--radius);padding:32px;border:1px solid var(--gray-100);position:relative;overflow:hidden;}
+.problema-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold);}
+.prob-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--gold-light);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.problema-card h3{color:var(--navy);margin-bottom:12px;}
+/* DIAGNÓSTICO */
+#diagnostico{background:var(--white);}
+.diag-header{text-align:center;max-width:640px;margin:0 auto 56px;}
+.diag-header h2{color:var(--navy);margin-bottom:16px;}
+.diag-wrapper{max-width:680px;margin:0 auto;background:var(--gray-50);border-radius:var(--radius);border:1px solid var(--gray-100);padding:40px;}
+.d-step{display:none;}.d-step.on{display:block;}
+.d-prog{display:flex;gap:4px;margin-bottom:28px;}
+.d-pd{height:3px;flex:1;border-radius:2px;background:var(--gray-200);transition:background .3s;}
+.d-pd.on{background:var(--gold);}
+.d-tag{font-size:.68rem;font-weight:500;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.d-q{font-size:1.05rem;font-weight:500;color:var(--navy);margin-bottom:6px;font-family:'Cormorant Garamond',serif;}
+.d-sub{font-size:.85rem;color:var(--gray-400);margin-bottom:20px;line-height:1.6;}
+.d-area-card{cursor:pointer;border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:16px;background:var(--white);transition:border .12s;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;}
+.d-area-card:hover{border-color:var(--gray-400);}
+.d-area-card.sel{border:2px solid var(--gold);}
+.d-aico{width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.d-opt{cursor:pointer;border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px 16px;background:var(--white);transition:all .12s;display:block;width:100%;text-align:left;margin-bottom:8px;font-size:.9rem;color:var(--text);font-family:'DM Sans',sans-serif;}
+.d-opt:hover{background:var(--gray-50);border-color:var(--gray-400);}
+.d-opt.sel{border:2px solid var(--gold);background:var(--gold-light);}
+.d-input{border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px 16px;font-size:.9rem;color:var(--text);background:var(--white);width:100%;font-family:'DM Sans',sans-serif;transition:border-color .2s;}
+.d-input:focus{outline:none;border-color:var(--gold);}
+.d-nav{display:flex;gap:10px;margin-top:20px;}
+.d-btn-p{flex:2;background:var(--navy);color:var(--white);border:none;border-radius:var(--radius-sm);padding:13px;font-size:.9rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s;}
+.d-btn-p:disabled{opacity:.4;cursor:not-allowed;}
+.d-btn-s{flex:1;background:transparent;border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:13px;font-size:.85rem;cursor:pointer;color:var(--gray-400);font-family:'DM Sans',sans-serif;}
+.d-card{background:var(--white);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--gray-100);margin-bottom:16px;}
+.lb-bg{height:5px;border-radius:3px;background:var(--gray-200);overflow:hidden;margin:6px 0;}
+.lb{height:5px;border-radius:3px;background:var(--gold);width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+.d-total{font-size:2.2rem;font-weight:600;color:var(--navy);font-family:'Cormorant Garamond',serif;}
+.lgpd-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;}
+.lgpd-check input{margin-top:4px;flex-shrink:0;accent-color:var(--gold);}
+.lgpd-check label{font-size:.78rem;color:var(--gray-400);line-height:1.5;}
+.lgpd-check a{color:var(--gold);text-decoration:underline;}
+/* detalhe cálculo */
+#dr-detalhe{display:none;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-sm);padding:20px;margin-top:12px;}
+#dr-detalhe h4{color:var(--navy);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+.formula-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--gray-100);}
+.formula-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.formula-title{font-weight:500;color:var(--navy);font-size:.88rem;margin-bottom:4px;}
+.formula-eq{font-family:monospace;font-size:.78rem;background:var(--gray-50);padding:6px 10px;border-radius:4px;margin:4px 0;color:var(--gray-700);}
+.formula-note{font-size:.75rem;color:var(--gray-400);line-height:1.5;margin-top:4px;}
+.formula-result{font-weight:500;color:var(--gold);font-size:.88rem;margin-top:4px;}
+/* COMO ATUO */
+#como-atuo{background:var(--navy);}
+#como-atuo .section-tag{color:var(--gold);}
+#como-atuo h2{color:var(--white);margin-bottom:16px;}
+.pillars-intro{color:rgba(255,255,255,.6);max-width:580px;margin-bottom:56px;font-size:1rem;line-height:1.8;}
+.pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.pillar-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:32px;transition:border-color .2s;}
+.pillar-card:hover{border-color:rgba(184,134,11,.4);}
+.pillar-num{font-size:3rem;font-weight:700;font-family:'Cormorant Garamond',serif;color:rgba(184,134,11,.2);line-height:1;margin-bottom:16px;}
+.pillar-card h3{color:var(--white);margin-bottom:10px;}
+.pillar-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.7;}
+/* BIBLIOTECA */
+#biblioteca{background:var(--gray-50);}
+.biblioteca-intro{max-width:640px;margin-bottom:56px;}
+.biblioteca-intro h2{color:var(--navy);margin-bottom:16px;}
+.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.kit-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-100);overflow:hidden;}
+.kit-header{padding:24px 24px 16px;}
+.kit-badge{display:inline-block;padding:4px 12px;border-radius:4px;font-size:.7rem;font-weight:500;letter-spacing:.08em;margin-bottom:12px;}
+.kit-cc .kit-badge{background:#EBF3FC;color:#185FA5;}
+.kit-fluxo .kit-badge{background:#EAF3DE;color:#3B6D11;}
+.kit-dados .kit-badge{background:#FAEEDA;color:#854F0B;}
+.kit-header h3{color:var(--navy);margin-bottom:6px;font-size:1.1rem;}
+.kit-header p{font-size:.82rem;margin-bottom:0;}
+.kit-materials{padding:0 24px 24px;}
+.kit-materials ul{list-style:none;}
+.kit-materials li{font-size:.8rem;color:var(--gray-700);padding:7px 0;border-bottom:1px solid var(--gray-100);display:flex;align-items:flex-start;gap:8px;line-height:1.4;}
+.kit-materials li:last-child{border-bottom:none;}
+.kit-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+.kit-format{font-size:.7rem;color:var(--gray-400);flex-shrink:0;margin-top:2px;}
+/* METODOLOGIA */
+#metodologia{background:var(--white);}
+.meto-intro h2{color:var(--navy);margin-bottom:16px;}
+.meto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.meto-card{background:var(--gray-50);border-radius:var(--radius);padding:28px;border:1px solid var(--gray-100);}
+.meto-badge{display:inline-block;padding:5px 12px;background:var(--gold-light);color:var(--gold);font-size:.75rem;font-weight:500;border-radius:4px;margin-bottom:16px;letter-spacing:.04em;}
+.meto-card h3{color:var(--navy);margin-bottom:10px;font-size:1.05rem;}
+.meto-card p{font-size:.85rem;line-height:1.7;}
+/* SOBRE */
+#sobre{background:var(--navy);}
+.sobre-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:80px;align-items:start;}
+.sobre-brand-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:24px;}
+.sobre-brand-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:white;letter-spacing:.04em;}
+.sobre-brand-name em{color:var(--gold);font-style:normal;}
+.sobre-brand-sub{font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:6px;}
+.sobre-stat{background:rgba(255,255,255,.04);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:10px;border-left:3px solid var(--gold);}
+.sobre-stat strong{display:block;font-size:.68rem;font-weight:500;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:3px;}
+.sobre-stat p{font-size:.82rem;color:rgba(255,255,255,.6);margin:0;}
+.sobre-text .section-tag{margin-bottom:8px;}
+.sobre-text h2{color:var(--white);margin-bottom:8px;}
+.sobre-subtitle{font-size:1rem;color:var(--gold);font-style:italic;margin-bottom:28px;font-family:'Cormorant Garamond',serif;}
+.sobre-bio p{margin-bottom:16px;font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.7);}
+.sobre-deliverables{margin:28px 0;}
+.sobre-deliverables h4{font-size:.72rem;font-weight:500;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.deliverable{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.del-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px;}
+.deliverable p{font-size:.88rem;margin:0;line-height:1.6;color:rgba(255,255,255,.65);}
+.deliverable strong{color:var(--white);}
+.sobre-linkedin{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border-radius:var(--radius-sm);font-size:.88rem;font-weight:500;margin-top:20px;transition:background .2s;border:1px solid rgba(255,255,255,.12);}
+.sobre-linkedin:hover{background:rgba(255,255,255,.14);}
+/* CONTATO */
+#contato{background:var(--white);}
+.contato-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+.contato-info .section-tag{margin-bottom:8px;}
+.contato-info h2{color:var(--navy);margin-bottom:16px;}
+.contato-info p{margin-bottom:36px;}
+.contato-wa{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:white;padding:14px 24px;border-radius:var(--radius-sm);font-weight:500;font-size:.9rem;transition:background .2s;margin-bottom:12px;}
+.contato-wa:hover{background:#1da557;}
+.contato-li{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:rgba(255,255,255,.85);padding:14px 24px;border-radius:var(--radius-sm);font-size:.9rem;transition:background .2s;}
+.contato-li:hover{background:var(--navy-dark);}
+.contato-form{background:var(--gray-50);border-radius:var(--radius);padding:36px;border:1px solid var(--gray-100);}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:.78rem;font-weight:500;color:var(--gray-700);margin-bottom:6px;letter-spacing:.04em;}
+.form-group input,.form-group textarea{width:100%;border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px 14px;font-size:.9rem;color:var(--text);font-family:'DM Sans',sans-serif;transition:border-color .2s;background:var(--white);}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-submit{width:100%;background:var(--navy);color:white;border:none;border-radius:var(--radius-sm);padding:14px;font-size:.9rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
+.form-submit:hover{background:var(--navy-dark);}
+#form-success{display:none;text-align:center;padding:20px;}
+/* FOOTER */
+footer{background:var(--navy-dark);padding:48px 0 32px;}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px;}
+.footer-brand-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;letter-spacing:.04em;margin-bottom:8px;}
+.footer-brand-text em{color:var(--gold);font-style:normal;}
+.footer-brand p{font-size:.78rem;color:rgba(255,255,255,.4);max-width:260px;line-height:1.6;margin-top:6px;}
+.footer-links h4{font-size:.68rem;font-weight:500;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.footer-links a{display:block;font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:8px;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.8);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,.3);}
+.footer-bottom a{color:rgba(255,255,255,.35);text-decoration:underline;font-size:.72rem;}
+.lgpd-badge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:4px;}
+/* RESPONSIVE */
+@media(max-width:1024px){.container{padding:0 24px;}.sobre-grid{grid-template-columns:1fr;gap:40px;}.contato-grid{grid-template-columns:1fr;gap:48px;}.pillars-grid{grid-template-columns:1fr 1fr;}.kits-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.nav-links,.nav-cta-wrap{display:none;}.hamburger{display:flex;}h1{font-size:2rem;}h2{font-size:1.7rem;}.section{padding:64px 0;}.problema-grid{grid-template-columns:1fr;}.pillars-grid{grid-template-columns:1fr;}.meto-grid{grid-template-columns:1fr;}.diag-wrapper{padding:24px;}#inicio{padding:100px 0 60px;}#cookie-banner{padding:20px;}.kits-grid{grid-template-columns:1fr;}}
+@media(max-width:480px){.hero-btns{flex-direction:column;}.hero-btns .btn{justify-content:center;}}
+</style>
+</head>
+<body>
+
+<!-- COOKIE BANNER (LGPD) -->
+<div id="cookie-banner">
+  <p>Este site coleta dados pessoais apenas via formulários, em conformidade com a <strong>LGPD (Lei nº 13.709/2018)</strong>. Sem rastreamento, sem publicidade. <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a></p>
+  <div class="cookie-btns"><button class="btn-reject" onclick="rejectCookies()">Recusar opcionais</button><button class="btn-accept" onclick="acceptCookies()">Aceitar</button></div>
+</div>
+
+<!-- MODAL PRIVACIDADE -->
+<div id="privacy-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closePrivacy()">&times;</button>
+    <h2>Política de Privacidade</h2>
+    <p>Última atualização: abril de 2025. Conforme a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</p>
+    <h3>1. Dados coletados</h3>
+    <p>Coletamos apenas dados fornecidos voluntariamente: nome completo, cargo, hospital/instituição, e-mail e WhatsApp. Não coletamos dados sensíveis.</p>
+    <h3>2. Finalidade</h3>
+    <p>Os dados servem exclusivamente para (a) gerar e enviar o relatório do Diagnóstico Operacional, (b) responder a contatos e (c) comunicação comercial relacionada aos serviços do Arquiteto de Processos em Saúde™.</p>
+    <h3>3. Base legal</h3>
+    <p>Tratamento baseado no consentimento explícito (art. 7º, I, LGPD), confirmado ao marcar o campo de aceite nos formulários.</p>
+    <h3>4. Compartilhamento</h3>
+    <p>Dados não são vendidos nem cedidos. Compartilhados apenas com EmailJS (plataforma de entrega de mensagens), sujeita às suas próprias políticas de proteção de dados.</p>
+    <h3>5. Retenção</h3>
+    <p>Dados retidos pelo tempo necessário à prestação do serviço e por até 2 anos após o último contato, salvo obrigação legal.</p>
+    <h3>6. Seus direitos (LGPD, art. 18)</h3>
+    <ul><li>Confirmação e acesso aos dados</li><li>Correção de dados incompletos ou incorretos</li><li>Anonimização, bloqueio ou eliminação</li><li>Portabilidade e revogação do consentimento</li></ul>
+    <p>Para exercer seus direitos, entre em contato pelo WhatsApp ou e-mail indicado neste site.</p>
+    <h3>7. Cookies</h3>
+    <p>Usamos apenas cookie essencial de preferência de consentimento (localStorage). Sem cookies de rastreamento ou publicidade.</p>
+    <h3>8. Responsável pelo tratamento</h3>
+    <p>Matheus Sacoman — Arquiteto de Processos em Saúde™<br>Site: arquitetodeprocessos.com.br</p>
+    <br>
+    <button class="btn-accept" style="border-radius:8px;padding:12px 24px;cursor:pointer;" onclick="closePrivacy()">Fechar</button>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<!-- EDITAR: Substitua 55SEUNUMERO pelo seu WhatsApp com DDI+DDD -->
+<a id="wa-float" href="https://wa.me/55SEUNUMERO?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<header>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio">
+        <div class="brand-text">Syn<em>Ex</em>Health</div>
+        <span class="brand-sub">Arquiteto de Processos em Saúde™</span>
+      </a>
+      <div class="nav-links">
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#como-atuo">Metodologia</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="nav-cta-wrap" style="display:flex;align-items:center;">
+        <!-- EDITAR: Substitua SEUNUMERO -->
+        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;">Agendar conversa</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div id="mobile-menu">
+  <a href="#diagnostico" onclick="closeMenu()">Diagnóstico</a>
+  <a href="#biblioteca" onclick="closeMenu()">Biblioteca</a>
+  <a href="#como-atuo" onclick="closeMenu()">Metodologia</a>
+  <a href="#sobre" onclick="closeMenu()">Sobre</a>
+  <a href="#contato" onclick="closeMenu()">Contato</a>
+  <!-- EDITAR -->
+  <a href="https://wa.me/55SEUNUMERO" target="_blank" style="color:#25D366;">WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-line"></div>
+        <!-- EDITAR: Tagline do hero -->
+        <span>Arquiteto de Processos em Saúde™</span>
+      </div>
+      <!-- EDITAR: Headline -->
+      <h1>Hospitais não precisam de mais esforço.<br><em>Precisam de melhor arquitetura.</em></h1>
+      <p class="hero-tagline">
+        <strong>Eficiência Industrial aplicada à Alta Gestão Hospitalar</strong> — projetando sistemas onde o cuidado flui com segurança e previsibilidade. Se a sua operação depende de heróis para funcionar, você não tem um sistema: você tem um risco.
+      </p>
+      <div class="hero-btns">
+        <a href="#diagnostico" class="btn btn-primary">Fazer diagnóstico gratuito</a>
+        <a href="#sobre" class="btn btn-outline">Conhecer a metodologia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema" class="section">
+  <div class="container">
+    <span class="section-tag">O diagnóstico do problema</span>
+    <h2 style="color:var(--navy);max-width:560px;margin-bottom:16px;">Três padrões que custam dinheiro todo mês</h2>
+    <p style="max-width:580px;margin-bottom:0;">Variabilidade operacional não é inevitável. É o resultado de sistemas mal arquitetados.</p>
+    <div class="problema-grid">
+      <div class="problema-card">
+        <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3 style="color:var(--navy);margin-bottom:12px;">Dependência de heróis individuais</h3>
+        <p style="font-size:.9rem;">Quando a operação funciona porque alguém está presente, qualquer ausência é um risco sistêmico. Excelência que depende de pessoas não é excelência — é sorte.</p>
+      </div>
+      <div class="problema-card">
+        <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 style="color:var(--navy);margin-bottom:12px;">Consultoria que entra e sai</h3>
+        <p style="font-size:.9rem;">O consultor implementa, vai embora e ninguém dá continuidade. Falta treinamento, protocolo e indicador para medir. O problema retorna em 90 dias.</p>
+      </div>
+      <div class="problema-card">
+        <div class="prob-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3 style="color:var(--navy);margin-bottom:12px;">Dados existem, decisões não</h3>
+        <p style="font-size:.9rem;">O sistema tem o dado, mas ninguém sabe interpretá-lo. Sem painel estruturado, cada decisão é tomada por percepção — e percepção não é auditável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section id="diagnostico" class="section">
+  <div class="container">
+    <div class="diag-header">
+      <span class="section-tag">Ponto de partida de todo projeto</span>
+      <h2>Diagnóstico Operacional Rápido</h2>
+      <p>6 perguntas. 3 minutos. Uma estimativa financeira do custo real da variabilidade operacional na sua unidade — sem compromisso, conduzido pelo Arquiteto.</p>
+    </div>
+    <div class="diag-wrapper">
+
+      <!-- Step 0 -->
+      <div class="d-step on" id="ds0">
+        <div style="border-left:3px solid #B8860B;padding:0 0 0 16px;margin-bottom:24px;">
+          <div class="d-tag">SynExHealth · Arquiteto de Processos em Saúde™</div>
+          <div class="d-q" style="font-size:1.3rem;">Quanto o seu hospital perde por mês sem saber?</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:24px;">
+          <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#1A2B4A">3 min</div><div style="font-size:.78rem;color:#8892A4">para completar</div></div>
+          <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#1A2B4A">6</div><div style="font-size:.78rem;color:#8892A4">perguntas</div></div>
+          <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#B8860B">Gratuito</div><div style="font-size:.78rem;color:#8892A4">sem compromisso</div></div>
+        </div>
+        <button class="d-btn-p" onclick="dGoTo(1)" style="width:100%">Iniciar diagnóstico gratuito →</button>
+      </div>
+
+      <!-- Step 1: Area -->
+      <div class="d-step" id="ds1">
+        <div class="d-prog" id="dpg1"></div>
+        <div class="d-tag">Passo 1 de 8</div>
+        <div class="d-q">Qual é a maior dor operacional da sua unidade hoje?</div>
+        <div class="d-sub">Escolha a área onde você sente mais variabilidade e desperdício.</div>
+        <div class="d-area-card" id="dac-cc" onclick="dSelectArea('cc')">
+          <div class="d-aico" style="background:#EBF3FC"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div><div style="font-size:.9rem;font-weight:500;color:#1A2B4A;margin-bottom:2px">Centro Cirúrgico</div><div style="font-size:.8rem;color:#8892A4">Cancelamentos, giro de sala, pauta incompleta, início tardio</div></div>
+        </div>
+        <div class="d-area-card" id="dac-leitos" onclick="dSelectArea('leitos')">
+          <div class="d-aico" style="background:#EAF3DE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+          <div><div style="font-size:.9rem;font-weight:500;color:#1A2B4A;margin-bottom:2px">Gestão de Leitos e Fluxo</div><div style="font-size:.8rem;color:#8892A4">Alta tardia, giro lento, superlotação, NIR desorganizado</div></div>
+        </div>
+        <div class="d-area-card" id="dac-dados" onclick="dSelectArea('dados')">
+          <div class="d-aico" style="background:#FAEEDA"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><div style="font-size:.9rem;font-weight:500;color:#1A2B4A;margin-bottom:2px">Indicadores e BI</div><div style="font-size:.8rem;color:#8892A4">Decisões por intuição, sem painel, dados não confiáveis</div></div>
+        </div>
+        <button class="d-btn-p" id="dbtn-area" onclick="dConfirmArea()" disabled style="margin-top:8px">Continuar</button>
+      </div>
+
+      <!-- Step Q -->
+      <div class="d-step" id="ds-q">
+        <div class="d-prog" id="dpg-q"></div>
+        <div class="d-tag" id="dq-label"></div>
+        <div class="d-q" id="dq-txt"></div>
+        <div class="d-sub" id="dq-sub"></div>
+        <div id="dq-opts"></div>
+        <div class="d-nav">
+          <button class="d-btn-s" onclick="dPrevQ()">Voltar</button>
+          <button class="d-btn-p" id="dbtn-next" onclick="dNextQ()" disabled>Continuar</button>
+        </div>
+      </div>
+
+      <!-- Step 8: Contact -->
+      <div class="d-step" id="ds8">
+        <div class="d-prog" id="dpg8"></div>
+        <div class="d-tag">Passo 8 de 8</div>
+        <div class="d-q">Para onde o Arquiteto envia o diagnóstico?</div>
+        <div class="d-sub">Você receberá o relatório completo no seu e-mail. Dados protegidos pela LGPD. Não são compartilhados com terceiros.</div>
+        <!-- Honeypot anti-spam — não exibir ao usuário -->
+        <div style="display:none" aria-hidden="true"><input type="text" id="dc-hp" tabindex="-1" autocomplete="off" name="website"></div>
+        <div style="margin-bottom:12px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">Nome completo</label><input class="d-input" type="text" id="dc-nome" placeholder="Seu nome" maxlength="120"></div>
+        <div style="margin-bottom:12px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">Hospital ou instituição</label><input class="d-input" type="text" id="dc-hosp" placeholder="Nome do hospital" maxlength="120"></div>
+        <div style="margin-bottom:12px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">Cargo</label><input class="d-input" type="text" id="dc-cargo" placeholder="Ex: Coordenador de CC, Diretor de Operações" maxlength="120"></div>
+        <div style="margin-bottom:12px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">E-mail</label><input class="d-input" type="email" id="dc-email" placeholder="seu@email.com" maxlength="200"></div>
+        <div style="margin-bottom:16px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">WhatsApp (com DDD)</label><input class="d-input" type="tel" id="dc-wa" placeholder="(47) 99999-9999" maxlength="20"></div>
+        <div class="lgpd-check">
+          <input type="checkbox" id="dc-lgpd">
+          <label for="dc-lgpd">Li e aceito a <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a> e autorizo o uso dos meus dados para fins de diagnóstico e contato relacionado aos serviços do Arquiteto de Processos em Saúde™.</label>
+        </div>
+        <div class="d-nav">
+          <button class="d-btn-s" onclick="dGoTo('qb')">Voltar</button>
+          <button class="d-btn-p" onclick="dSubmitContact()">Ver meu diagnóstico</button>
+        </div>
+        <div id="dc-err" style="font-size:.8rem;color:#E24B4A;margin-top:8px;display:none">Preencha todos os campos e aceite a Política de Privacidade.</div>
+      </div>
+
+      <!-- Step 9: Results -->
+      <div class="d-step" id="ds9">
+        <div style="border-left:3px solid #B8860B;padding:0 0 0 16px;margin-bottom:20px;">
+          <div class="d-tag">Diagnóstico do Arquiteto — concluído</div>
+          <div style="font-size:1rem;font-weight:500;color:#1A2B4A" id="dr-titulo">Resultado</div>
+        </div>
+        <div class="d-card">
+          <div style="font-size:.78rem;color:#8892A4;margin-bottom:4px">Estimativa de perda mensal identificada</div>
+          <div class="d-total" id="dr-total">R$ 0</div>
+          <div style="font-size:.8rem;color:#8892A4;margin-top:4px" id="dr-anual"></div>
+        </div>
+        <div id="dr-bars" style="margin-bottom:16px"></div>
+        <div class="d-card" style="background:#F5EDD5;border-color:#B8860B;">
+          <div style="font-size:.68rem;font-weight:500;color:#B8860B;letter-spacing:.1em;margin-bottom:6px">OBSERVAÇÃO DO ARQUITETO</div>
+          <div style="font-size:.85rem;color:#4A5568;line-height:1.7" id="dr-obs"></div>
+        </div>
+        <p style="font-size:.75rem;color:#8892A4;margin-bottom:16px;line-height:1.6">Estimativa conservadora baseada em benchmarks da literatura de gestão hospitalar. O diagnóstico completo, específico para a sua realidade, é conduzido em três sessões remotas de 90 minutos — com <strong style="color:#1A2B4A">garantia total de devolução</strong> se não houver valor percebido.</p>
+        <!-- EDITAR: SEUNUMERO -->
+        <a id="dr-wa" href="#" target="_blank" rel="noopener noreferrer" style="display:block;background:#25D366;color:white;border-radius:8px;padding:14px;font-size:.9rem;font-weight:500;text-align:center;margin-bottom:10px;text-decoration:none">Solicitar diagnóstico completo via WhatsApp →</a>
+        <!-- Botão detalhar cálculo -->
+        <button onclick="toggleDetalhe(this)" style="width:100%;background:transparent;border:1px solid #D1D5DF;border-radius:8px;padding:11px;font-size:.8rem;cursor:pointer;color:#8892A4;font-family:'DM Sans',sans-serif;margin-bottom:10px;">▼ Detalhar cálculo do diagnóstico</button>
+        <div id="dr-detalhe">
+          <h4>Metodologia de cálculo</h4>
+          <div id="dr-formulas"></div>
+          <p style="font-size:.72rem;color:#8892A4;margin-top:12px;line-height:1.6;border-top:1px solid #ECEEF2;padding-top:10px;">Todos os fatores multiplicadores são estimativas conservadoras derivadas de benchmarks publicados na literatura de gestão cirúrgica e de leitos. Os cálculos tendem a subestimar o impacto real — dados incompletos foram modelados com a premissa de menor perda possível.</p>
+        </div>
+        <button class="d-btn-s" onclick="dGoTo(0)" style="width:100%">Refazer diagnóstico</button>
+        <div id="dr-email-status" style="font-size:.72rem;color:#8892A4;text-align:center;margin-top:8px"></div>
+      </div>
+    </div><!-- /diag-wrapper -->
+  </div>
+</section>
+
+<!-- COMO ATUO -->
+<section id="como-atuo" class="section">
+  <div class="container">
+    <span class="section-tag">O que o Arquiteto entrega</span>
+    <h2>Governança pela ausência.<br>Sistemas que funcionam sem o líder presente.</h2>
+    <p class="pillars-intro">Cada projeto entrega um sistema operacional, não uma recomendação. A diferença é que sistemas continuam funcionando quando o Arquiteto não está.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card"><div class="pillar-num">01</div><h3>Sistemas antes de Pessoas</h3><p>Redução da dependência de indivíduos-chave. O processo funciona com excelência independentemente de quem está de plantão.</p></div>
+      <div class="pillar-card"><div class="pillar-num">02</div><h3>Fluxo como Estratégia</h3><p>Previsibilidade em leitos e centros cirúrgicos. O fluxo do paciente é projetado como um sistema de engenharia — com tolerâncias, SLAs e indicadores auditáveis.</p></div>
+      <div class="pillar-card"><div class="pillar-num">03</div><h3>Tecnologia com Propósito</h3><p>Inovação que acelera processos, nunca os corrige. Ferramentas que traduzem variabilidade operacional em valor financeiro compreensível pela diretoria.</p></div>
+      <div class="pillar-card"><div class="pillar-num">04</div><h3>Governança pela Ausência</h3><p>Operações que funcionam com excelência sem o líder presente. Quando o sistema precisa de um herói para funcionar, o sistema é o problema.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTECA DO ARQUITETO -->
+<section id="biblioteca" class="section">
+  <div class="container">
+    <div class="biblioteca-intro">
+      <span class="section-tag">Biblioteca do Arquiteto de Processos</span>
+      <h2 style="color:var(--navy);margin-bottom:16px;">Protocolos e ferramentas para implementação autônoma</h2>
+      <p>Três kits temáticos com protocolos, templates, planilhas e dashboards desenvolvidos pelo Arquiteto — para que equipes hospitalares implementem melhoria contínua sem depender de consultoria permanente.</p>
+    </div>
+    <div class="kits-grid">
+      <!-- KIT CC -->
+      <div class="kit-card kit-cc">
+        <div class="kit-header">
+          <div class="kit-badge">KIT CC</div>
+          <h3>Governança de Centro Cirúrgico</h3>
+          <p style="font-size:.82rem;">Para coordenadores e diretores que convivem com pauta incompleta, cancelamentos e ociosidade.</p>
+        </div>
+        <div class="kit-materials">
+          <ul>
+            <li><span class="kit-dot"></span><span>Protocolo de Pauta Cirúrgica — papéis, SLA, contingência</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>T.A.R.O.™ — formalização de desvios cirúrgicos</span><span class="kit-format">PDF edit.</span></li>
+            <li><span class="kit-dot"></span><span>Checklist de Abertura de Sala — 12 pontos de verificação</span><span class="kit-format">PDF+Excel</span></li>
+            <li><span class="kit-dot"></span><span>Protocolo de Giro de Sala — SLA entre CC e higienização</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>Planilha de Monitoramento — ocupação, cancelamentos, ociosidade</span><span class="kit-format">Excel</span></li>
+            <li><span class="kit-dot"></span><span>Dashboard de KPIs — 6 indicadores com metas e alertas</span><span class="kit-format">Excel</span></li>
+            <li><span class="kit-dot"></span><span>Guia de Implantação — cronograma de 30 dias</span><span class="kit-format">PDF</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- KIT FLUXO -->
+      <div class="kit-card kit-fluxo">
+        <div class="kit-header">
+          <div class="kit-badge">KIT FLUXO</div>
+          <h3>Gestão de Leitos e Alta</h3>
+          <p style="font-size:.82rem;">Para gestores de NIR, leitos e internação que lutam contra giro lento e alta tardia.</p>
+        </div>
+        <div class="kit-materials">
+          <ul>
+            <li><span class="kit-dot"></span><span>Protocolo de Alta Programática — critérios clínicos e gatilhos</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>SLA Interno entre Departamentos — enfermagem, higienização, logística</span><span class="kit-format">PDF edit.</span></li>
+            <li><span class="kit-dot"></span><span>Painel de Giro de Leito — TMP, ocupação e alta tardia por setor</span><span class="kit-format">Excel</span></li>
+            <li><span class="kit-dot"></span><span>Protocolo de NIR Ativo — regulação em tempo real</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>Mapa de Gargalos do Fluxo — VSM simplificado da jornada</span><span class="kit-format">Excel</span></li>
+            <li><span class="kit-dot"></span><span>Guia de Implantação — 30 dias sem parar a operação</span><span class="kit-format">PDF</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- KIT DADOS -->
+      <div class="kit-card kit-dados">
+        <div class="kit-header">
+          <div class="kit-badge">KIT DADOS</div>
+          <h3>Indicadores e BI Hospitalar</h3>
+          <p style="font-size:.82rem;">Para gestores que tomam decisões por intuição porque não têm painel estruturado.</p>
+        </div>
+        <div class="kit-materials">
+          <ul>
+            <li><span class="kit-dot"></span><span>Glossário de KPIs Hospitalares — 50 indicadores com fórmula e benchmark</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>Dashboard Executivo — 12 indicadores para apresentação à diretoria</span><span class="kit-format">Excel+BI</span></li>
+            <li><span class="kit-dot"></span><span>Painel Operacional Diário — ocupação, altas previstas, pendências</span><span class="kit-format">Excel+BI</span></li>
+            <li><span class="kit-dot"></span><span>Guia de Coleta de Dados — sem depender de TI</span><span class="kit-format">PDF</span></li>
+            <li><span class="kit-dot"></span><span>Template de Apresentação para Diretoria — 10 slides estruturados</span><span class="kit-format">PPT</span></li>
+            <li><span class="kit-dot"></span><span>Guia de Implantação — cultura data-driven em 60 dias</span><span class="kit-format">PDF</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <!-- EDITAR: SEUNUMERO -->
+      <a href="https://wa.me/55SEUNUMERO?text=Olá%2C%20tenho%20interesse%20na%20Biblioteca%20do%20Arquiteto.%20Pode%20me%20dar%20mais%20informações?" target="_blank" class="btn btn-primary">Acessar a Biblioteca do Arquiteto →</a>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section id="metodologia" class="section">
+  <div class="container">
+    <div class="meto-intro">
+      <span class="section-tag">Frameworks proprietários</span>
+      <h2 style="color:var(--navy);">Metodologia Arquiteto de Processos em Saúde™</h2>
+      <p>Lean Six Sigma aplicado à complexidade hospitalar brasileira. Não são recomendações genéricas — são instrumentos técnicos com campo de aplicação, indicador de resultado e sequência de implementação definidos.</p>
+    </div>
+    <div class="meto-grid">
+      <div class="meto-card"><div class="meto-badge">PCFC™</div><h3>Protocolo de Confiabilidade e Fluxo Cirúrgico</h3><p>Framework de governança do CC em quatro camadas: auditoria de pauta, transferência de risco de suprimentos, dashboard financeiro e constituição de eficiência.</p></div>
+      <div class="meto-card"><div class="meto-badge">T.A.R.O.™</div><h3>Termo de Assunção de Risco Operacional</h3><p>Instrumento de formalização de desvios cirúrgicos. Transforma a tomada de decisão informal em registro auditável, eliminando responsabilidade difusa.</p></div>
+      <div class="meto-card"><div class="meto-badge">DIAG™</div><h3>Diagnóstico Operacional Remoto</h3><p>Metodologia de três sessões para mapeamento de perdas financeiras e causa-raiz. Garantia total — se não houver valor percebido, não há cobrança.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+  <div class="container sobre-grid">
+    <div>
+      <div class="sobre-brand-box">
+        <div class="sobre-brand-name">Syn<em>Ex</em>Health</div>
+        <div class="sobre-brand-sub">Arquiteto de Processos em Saúde™</div>
+      </div>
+      <div class="sobre-stat"><strong>Metodologia</strong><p>Lean Six Sigma aplicado à gestão hospitalar de alta complexidade</p></div>
+      <div class="sobre-stat"><strong>Modelo de atuação</strong><p>100% remoto · Diagnóstico com garantia · Implementação acompanhada</p></div>
+      <div class="sobre-stat"><strong>Frameworks</strong><p>PCFC™ · T.A.R.O.™ · Diagnóstico Remoto — propriedade intelectual SynExHealth</p></div>
+    </div>
+    <div class="sobre-text">
+      <span class="section-tag">Sobre o Arquiteto</span>
+      <h2>Matheus Sacoman</h2>
+      <p class="sobre-subtitle">Arquiteto de Processos em Saúde™</p>
+      <!-- EDITAR: Bio -->
+      <div class="sobre-bio">
+        <p>Integro a precisão da eficiência industrial à complexidade da saúde para transformar operações reativas em sistemas previsíveis, seguros e escaláveis.</p>
+        <p>Minha trajetória começa na engenharia de processos em ambiente corporativo de alta exigência — onde aprendi que excelência operacional não é evento, é arquitetura. Aplico essa mesma lógica ao ambiente hospitalar: cada gargalo tem causa-raiz, cada variabilidade tem custo, e cada custo tem solução sistêmica.</p>
+        <p>Hospitais não precisam de mais esforço. Precisam de melhor arquitetura. Se a sua operação depende de heróis para funcionar, você não tem um sistema — você tem um risco.</p>
+      </div>
+      <div class="sobre-deliverables">
+        <h4>O que o Arquiteto projeta</h4>
+        <div class="deliverable"><div class="del-dot"></div><p><strong>Sistemas antes de Pessoas</strong> — redução da dependência de indivíduos-chave</p></div>
+        <div class="deliverable"><div class="del-dot"></div><p><strong>Fluxo como Estratégia</strong> — previsibilidade em leitos e centros cirúrgicos</p></div>
+        <div class="deliverable"><div class="del-dot"></div><p><strong>Tecnologia com Propósito</strong> — inovação que acelera processos, nunca os corrige</p></div>
+        <div class="deliverable"><div class="del-dot"></div><p><strong>Governança pela Ausência</strong> — operações que funcionam sem o líder presente</p></div>
+      </div>
+      <!-- EDITAR: Substitua o link do LinkedIn -->
+      <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:8px">📊 Insights diários às 06:00 para gestores que querem parar de apagar incêndios e começar a liderar sistemas.</p>
+      <a href="https://www.linkedin.com/in/matheus-sacoman" target="_blank" rel="noopener noreferrer" class="sobre-linkedin">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Seguir no LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="section">
+  <div class="container contato-grid">
+    <div class="contato-info">
+      <span class="section-tag">Próximo passo</span>
+      <h2>Vamos conversar sobre sua operação</h2>
+      <p>O diagnóstico remoto começa com uma conversa. Sem compromisso, sem presença física, sem consultoria genérica.</p>
+      <!-- EDITAR: SEUNUMERO -->
+      <a href="https://wa.me/55SEUNUMERO?text=Olá%2C%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20minha%20operação." target="_blank" rel="noopener noreferrer" class="contato-wa" style="display:inline-flex">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Conversar no WhatsApp
+      </a><br>
+      <!-- EDITAR: LinkedIn -->
+      <a href="https://www.linkedin.com/in/matheus-sacoman" target="_blank" rel="noopener noreferrer" class="contato-li" style="display:inline-flex;margin-top:12px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <p style="font-size:.78rem;color:var(--gray-400);margin-top:16px">Atendimento 100% remoto · <a href="#" onclick="openPrivacy(event)" style="color:var(--gold);">Política de Privacidade</a></p>
+    </div>
+    <div>
+      <div class="contato-form">
+        <div id="form-success" style="display:none;text-align:center;padding:20px;">
+          <p style="color:var(--gold);font-weight:500">✓ Mensagem enviada com sucesso!</p>
+          <p style="font-size:.85rem;color:var(--gray-400);margin-top:8px">O Arquiteto retorna em até 24 horas úteis.</p>
+        </div>
+        <div id="form-fields">
+          <!-- Honeypot -->
+          <div style="display:none" aria-hidden="true"><input type="text" id="f-hp" tabindex="-1" autocomplete="off" name="website"></div>
+          <div class="form-group"><label>Nome completo</label><input type="text" id="f-nome" placeholder="Seu nome" maxlength="120"></div>
+          <div class="form-group"><label>Hospital ou instituição</label><input type="text" id="f-hosp" placeholder="Nome do hospital" maxlength="120"></div>
+          <div class="form-group"><label>Cargo</label><input type="text" id="f-cargo" placeholder="Ex: Diretor de Operações" maxlength="120"></div>
+          <div class="form-group"><label>E-mail</label><input type="email" id="f-email" placeholder="seu@email.com" maxlength="200"></div>
+          <div class="form-group"><label>Mensagem</label><textarea id="f-msg" placeholder="Descreva brevemente a situação que quer resolver..." maxlength="1000"></textarea></div>
+          <div class="lgpd-check" style="margin-bottom:16px">
+            <input type="checkbox" id="f-lgpd">
+            <label for="f-lgpd" style="color:var(--gray-400)">Li e aceito a <a href="#" onclick="openPrivacy(event)" style="color:var(--gold);">Política de Privacidade</a> e autorizo o contato comercial.</label>
+          </div>
+          <div id="f-err" style="font-size:.8rem;color:#E24B4A;margin-bottom:12px;display:none">Preencha todos os campos e aceite a Política de Privacidade.</div>
+          <button class="form-submit" onclick="submitContactForm()">Enviar mensagem</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-text">Syn<em>Ex</em>Health</div>
+        <p>Arquiteto de Processos em Saúde™<br>Eficiência Industrial aplicada à Alta Gestão Hospitalar.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <a href="#diagnostico">Diagnóstico Gratuito</a>
+        <a href="#biblioteca">Biblioteca do Arquiteto</a>
+        <a href="#como-atuo">Metodologia</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a>
+        <a href="#" onclick="openPrivacy(event)">LGPD</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Matheus Sacoman — Arquiteto de Processos em Saúde™. PCFC™ e T.A.R.O.™ são propriedade intelectual da SynExHealth.</p>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span class="lgpd-badge">🔒 LGPD Conforme</span>
+        <!-- EDITAR: LinkedIn -->
+        <a href="https://www.linkedin.com/in/matheus-sacoman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ═══════════════════════════════════════════
+   CONFIGURAÇÃO — EDITAR AQUI
+═══════════════════════════════════════════ */
+const EJS_PUBLIC_KEY = 'SUA_PUBLIC_KEY_AQUI';   // emailjs.com > Account > API Keys
+const EJS_SERVICE_ID = 'SEU_SERVICE_ID_AQUI';   // emailjs.com > Email Services
+const EJS_TPL_ADMIN  = 'template_admin';          // Template de notificação para você
+const EJS_TPL_USER   = 'template_user';           // Template de confirmação para o gestor
+const SEU_EMAIL      = 'SEU@EMAIL.COM';           // Seu e-mail para receber diagnósticos
+const WA_NUM         = '55SEUNUMERO';             // Só números: DDI+DDD+número
+
+(function(){try{emailjs.init(EJS_PUBLIC_KEY);}catch(e){}})();
+
+/* RATE LIMITING (anti-spam) */
+function canSubmit(key) {
+  const data = JSON.parse(localStorage.getItem(key)||'{}');
+  const now = Date.now(); const hour = 3600000;
+  const recent = (data.times||[]).filter(t=>now-t<hour);
+  if(recent.length>=5) return false;
+  recent.push(now);
+  localStorage.setItem(key, JSON.stringify({times:recent}));
+  return true;
+}
+
+/* SANITIZAÇÃO */
+function sanitize(str) {
+  return String(str).replace(/[<>"'&]/g, c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[c])).trim().substring(0,500);
+}
+
+/* EMAIL VALIDATION */
+function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+/* COOKIE/LGPD */
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').classList.add('hidden');}
+function rejectCookies(){localStorage.setItem('cookie_consent','rejected');document.getElementById('cookie-banner').classList.add('hidden');}
+function openPrivacy(e){if(e){e.preventDefault();}document.getElementById('privacy-modal').classList.add('open');}
+function closePrivacy(){document.getElementById('privacy-modal').classList.remove('open');}
+window.addEventListener('click',e=>{if(e.target===document.getElementById('privacy-modal'))closePrivacy();});
+if(localStorage.getItem('cookie_consent'))document.getElementById('cookie-banner').classList.add('hidden');
+
+/* NAVBAR */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* MOBILE MENU */
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open');}
+
+/* CONTATO FORM */
+function submitContactForm(){
+  if(document.getElementById('f-hp').value)return; // honeypot
+  const n=document.getElementById('f-nome').value.trim();
+  const h=document.getElementById('f-hosp').value.trim();
+  const c=document.getElementById('f-cargo').value.trim();
+  const e=document.getElementById('f-email').value.trim();
+  const m=document.getElementById('f-msg').value.trim();
+  const l=document.getElementById('f-lgpd').checked;
+  if(!n||!h||!c||!e||!m||!l||!isValidEmail(e)){document.getElementById('f-err').style.display='block';return;}
+  if(!canSubmit('contact_rl')){alert('Muitas tentativas. Tente novamente em 1 hora.');return;}
+  document.getElementById('f-err').style.display='none';
+  try{emailjs.send(EJS_SERVICE_ID,'template_contact',{from_name:sanitize(n),hospital:sanitize(h),cargo:sanitize(c),from_email:sanitize(e),message:sanitize(m),to_email:SEU_EMAIL});}catch(err){}
+  document.getElementById('form-fields').style.display='none';
+  document.getElementById('form-success').style.display='block';
+}
+
+/* DIAGNÓSTICO */
+const DS={area:null,qIdx:0,ans:{},contact:{}};
+
+const LABELS = {
+  cc:{
+    valor:{2200:'Menos de R$ 3.000',5000:'R$ 3.000 a R$ 7.000',11000:'R$ 7.000 a R$ 15.000',22000:'Mais de R$ 15.000'},
+    cancel:{0.03:'Menos de 5%',0.075:'5% a 10%',0.15:'10% a 20%',0.25:'Mais de 20%'},
+    atraso:{5:'Raramente — menos de 10% dos casos',18:'Às vezes — 10% a 30% dos casos',30:'Frequentemente — 30% a 60% dos casos',45:'Na maioria dos casos — acima de 60%'},
+    protocolo:{0:'Sim, documentado e seguido',1:'Existe mas inconsistente',2:'Não existe — é informal'}
+  },
+  leitos:{
+    diaria:{600:'Menos de R$ 800',1150:'R$ 800 a R$ 1.500',2250:'R$ 1.500 a R$ 3.000',4500:'Mais de R$ 3.000'},
+    ocup:{0.62:'Menos de 70%',0.75:'70% a 80%',0.85:'80% a 90%',0.93:'Acima de 90%'},
+    alta:{0.04:'Sim — maioria até 10h',0.10:'Parcialmente — 50% das altas',0.18:'Raramente — maioria após meio-dia',0.28:'Sem controle de horário'},
+    tmp:{2.5:'Menos de 3 dias',4.0:'3 a 5 dias',6.0:'5 a 7 dias',9.0:'Mais de 7 dias'},
+    nir:{0:'Sim, rota diária estruturada',1:'Reativo — quando acionado',2:'Existe mas não funciona',3:'Não existe NIR'}
+  },
+  dados:{
+    receita:{700000:'Menos de R$ 1 milhão',3000000:'R$ 1 a R$ 5 milhões',12500000:'R$ 5 a R$ 20 milhões',30000000:'Mais de R$ 20 milhões'},
+    dashboard:{0:'Sim, dashboard completo e revisado',1:'Existe mas básico e raro',2:'Dados sem painel organizado',3:'Não existe — por percepção'},
+    decisao:{1:'Raramente',2:'1 a 2 vezes/semana',4:'3 a 5 vezes/semana',7:'A maioria das decisões'},
+    financeiro:{0:'Sim, modelo de custo estruturado',1:'Parcialmente',2:'Não temos esse cálculo'},
+    cultura:{0:'Orientada por dados',1:'Em transição',2:'Intuitiva — por experiência'}
+  }
+};
+
+const QS={
+  cc:[
+    {id:'salas',type:'n',q:'Quantas salas cirúrgicas sua unidade opera?',sub:'Apenas salas em operação regular.',min:1,max:30,ph:'Ex: 6'},
+    {id:'cirurgias',type:'n',q:'Quantas cirurgias são realizadas por mês no total?',sub:'Estimativa global, todas as salas.',min:10,max:2000,ph:'Ex: 180'},
+    {id:'valor',type:'o',q:'Qual é o valor médio de uma cirurgia na sua instituição?',sub:'Honorários + taxa de sala + materiais básicos.',opts:[
+      {l:'Menos de R$ 3.000',v:2200},{l:'R$ 3.000 a R$ 7.000',v:5000},{l:'R$ 7.000 a R$ 15.000',v:11000},{l:'Mais de R$ 15.000',v:22000}]},
+    {id:'cancel',type:'o',q:'Qual é a taxa de cancelamento de cirurgias?',sub:'Cirurgias agendadas e não realizadas no dia programado.',opts:[
+      {l:'Menos de 5%',v:0.03},{l:'Entre 5% e 10%',v:0.075},{l:'Entre 10% e 20%',v:0.15},{l:'Mais de 20%',v:0.25}]},
+    {id:'atraso',type:'o',q:'Com que frequência as cirurgias iniciam com atraso?',sub:'Primeiro tempo do dia e tempos sequenciais.',opts:[
+      {l:'Raramente — menos de 10% dos casos',v:5},{l:'Às vezes — 10% a 30%',v:18},{l:'Frequentemente — 30% a 60%',v:30},{l:'Na maioria dos casos — acima de 60%',v:45}]},
+    {id:'protocolo',type:'o',q:'Existe protocolo formal de fechamento de pauta com 48h de antecedência?',sub:'Processo documentado, com responsável definido.',opts:[
+      {l:'Sim — documentado e seguido consistentemente',v:0},{l:'Existe, mas não é seguido com regularidade',v:1},{l:'Não existe — é informal e variável',v:2}]}
+  ],
+  leitos:[
+    {id:'leitos',type:'n',q:'Quantos leitos de internação sua unidade opera?',sub:'Total de leitos ativos.',min:10,max:2000,ph:'Ex: 120'},
+    {id:'diaria',type:'o',q:'Qual é o valor médio da diária de internação?',sub:'Cobrado ao convênio ou particular, sem honorários.',opts:[
+      {l:'Menos de R$ 800',v:600},{l:'R$ 800 a R$ 1.500',v:1150},{l:'R$ 1.500 a R$ 3.000',v:2250},{l:'Mais de R$ 3.000',v:4500}]},
+    {id:'ocup',type:'o',q:'Qual é a taxa média de ocupação dos leitos?',sub:'Percentual de leitos ocupados sobre total disponível.',opts:[
+      {l:'Menos de 70%',v:0.62},{l:'70% a 80%',v:0.75},{l:'80% a 90%',v:0.85},{l:'Acima de 90%',v:0.93}]},
+    {id:'alta',type:'o',q:'As altas são formalizadas até as 10h com regularidade?',sub:'Alta antes das 10h libera o leito para o turno da manhã.',opts:[
+      {l:'Sim — a maioria das altas ocorre até 10h',v:0.04},{l:'Parcialmente — cerca de 50% das altas',v:0.10},{l:'Raramente — a maioria é após o meio-dia',v:0.18},{l:'Não há controle de horário de alta',v:0.28}]},
+    {id:'tmp',type:'o',q:'Qual é o tempo médio de permanência dos pacientes?',sub:'Média geral de todos os setores.',opts:[
+      {l:'Menos de 3 dias',v:2.5},{l:'3 a 5 dias',v:4.0},{l:'5 a 7 dias',v:6.0},{l:'Mais de 7 dias',v:9.0}]},
+    {id:'nir',type:'o',q:'O NIR atua proativamente na gestão de leitos?',sub:'Proativo: visita diária, contato com médicos, gestão em tempo real.',opts:[
+      {l:'Sim — rota diária com rotina definida',v:0},{l:'Atua de forma reativa quando acionado',v:1},{l:'Existe formalmente, mas não funciona',v:2},{l:'Não existe NIR estruturado',v:3}]}
+  ],
+  dados:[
+    {id:'gestores',type:'n',q:'Quantos gestores tomam decisões operacionais por dia?',sub:'Coordenadores, gerentes, supervisores com autonomia.',min:1,max:60,ph:'Ex: 8'},
+    {id:'receita',type:'o',q:'Qual é o faturamento mensal aproximado da unidade?',sub:'Estimativa do total faturado.',opts:[
+      {l:'Menos de R$ 1 milhão',v:700000},{l:'R$ 1 a R$ 5 milhões',v:3000000},{l:'R$ 5 a R$ 20 milhões',v:12500000},{l:'Mais de R$ 20 milhões',v:30000000}]},
+    {id:'dashboard',type:'o',q:'Existe painel de indicadores formalmente acompanhado?',sub:'Formal = atualizado com frequência definida, revisado em reunião.',opts:[
+      {l:'Sim — dashboard completo com revisão semanal',v:0},{l:'Existe mas é básico e atualizado raramente',v:1},{l:'Dados nos sistemas mas sem painel organizado',v:2},{l:'Não existe — decisões por percepção',v:3}]},
+    {id:'decisao',type:'o',q:'Com que frequência decisões são tomadas sem dados suficientes?',sub:'Sobre recursos, metas, escalas, processos.',opts:[
+      {l:'Raramente — temos dados para a maioria',v:1},{l:'1 a 2 vezes por semana',v:2},{l:'3 a 5 vezes por semana',v:4},{l:'A maioria das decisões opera sem dados',v:7}]},
+    {id:'financeiro',type:'o',q:'Você sabe quanto custa uma ineficiência operacional específica?',sub:'Ex: custo de um cancelamento, de uma diária extra.',opts:[
+      {l:'Sim — temos modelo de custo estruturado',v:0},{l:'Parcialmente — sabemos alguns custos',v:1},{l:'Não temos esse cálculo estruturado',v:2}]},
+    {id:'cultura',type:'o',q:'Como é a cultura de uso de dados na gestão?',sub:'',opts:[
+      {l:'Orientada por dados — maioria usa indicadores',v:0},{l:'Em transição — alguns usam, outros não',v:1},{l:'Intuitiva — decisões por experiência e percepção',v:2}]}
+  ]
+};
+
+function fmt(n){
+  if(n>=1000000)return'R$ '+(n/1000000).toFixed(1).replace('.',',')+' M';
+  if(n>=1000)return'R$ '+Math.round(n/1000).toLocaleString('pt-BR')+'k';
+  return'R$ '+Math.round(n).toLocaleString('pt-BR');
+}
+function fmtN(n){return Math.round(n).toLocaleString('pt-BR');}
+
+function calcCC(a){
+  const ci=+(a.salas||4),c=+(a.cirurgias||100),v=+(a.valor||5000);
+  const cx=+(a.cancel||0.075),at=+(a.atraso||18),pt=+(a.protocolo||1);
+  const cm=v/240;
+  return{
+    losses:[
+      {l:'Cancelamentos cirúrgicos',v:Math.round(cx*c*v*.35)},
+      {l:'Início tardio das cirurgias',v:Math.round(at*c*cm*.45)},
+      {l:'Tempo ocioso de giro de sala',v:Math.round(ci*20*18*cm*.55)},
+      {l:'Ausência de protocolo de pauta',v:pt>=1?Math.round(c*.028*v*pt*.28):0}
+    ],
+    formulas:[
+      {title:'Cancelamentos cirúrgicos',
+       eq:`${(cx*100).toFixed(1)}% × ${fmtN(c)} cirurgias × R$ ${fmtN(v)} × 0,35`,
+       note:'0,35 = fração do custo fixo (sala, equipe, esterilização) não recuperada no cancelamento.',
+       result:Math.round(cx*c*v*.35)},
+      {title:'Início tardio das cirurgias',
+       eq:`${at} min × ${fmtN(c)} cirurgias × R$ ${(cm).toFixed(2)}/min × 0,45`,
+       note:`Custo-minuto = R$ ${fmtN(v)} ÷ 240 min. 0,45 = fator de aproveitamento — 45% do tempo de atraso é custo direto mensurável.`,
+       result:Math.round(at*c*cm*.45)},
+      {title:'Tempo ocioso de giro de sala',
+       eq:`${ci} salas × 20 dias × 18 min extras × R$ ${(cm).toFixed(2)}/min × 0,55`,
+       note:'18 min = excedente estimado de giro por transição. 0,55 = fator de impacto sobre disponibilidade de sala.',
+       result:Math.round(ci*20*18*cm*.55)},
+      pt>=1?{title:'Ausência de protocolo de pauta',
+       eq:`${fmtN(c)} cirurgias × 2,8% afetadas × R$ ${fmtN(v)} × ${pt} (gravidade) × 0,28`,
+       note:'2,8% = cirurgias mensais diretamente impactadas por ausência de protocolo formal. Gravidade 1 = inconsistente, 2 = ausente.',
+       result:Math.round(c*.028*v*pt*.28)}:null
+    ].filter(Boolean)
+  };
+}
+
+function calcLeitos(a){
+  const le=+(a.leitos||80),di=+(a.diaria||1500),oc=+(a.ocup||0.80);
+  const al=+(a.alta||0.12),tm=+(a.tmp||5),ni=+(a.nir||1);
+  const lo=Math.round(le*oc);
+  const tmpExRate=Math.max(0,(tm-3.5)/tm)*.18;
+  const pAlta=Math.round(lo*al*di*.18*22);
+  const pTMP=Math.round(lo*tmpExRate*di*20);
+  const pNIR=ni>=1?Math.round(le*.03*di*22*Math.min(ni,3)*.18):0;
+  const pOcup=oc<0.80?Math.round(le*(0.85-oc)*di*22*.28):0;
+  return{
+    losses:[
+      {l:'Alta tardia — leitos bloqueados desnecessariamente',v:pAlta},
+      {l:'Excesso de tempo médio de permanência',v:pTMP},
+      {l:'NIR sem atuação proativa',v:pNIR},
+      {l:'Capacidade instalada subutilizada',v:pOcup}
+    ],
+    formulas:[
+      {title:'Alta tardia — leitos bloqueados',
+       eq:`${lo} leitos ocupados × ${(al*100).toFixed(0)}% c/ alta tardia × R$ ${fmtN(di)} × 0,18 × 22 dias`,
+       note:'0,18 = fração de diária perdida por alta tardia (≈ 4h bloqueadas ÷ diária de 24h). 22 = dias úteis estimados.',
+       result:pAlta},
+      {title:'Excesso de tempo médio de permanência',
+       eq:`${lo} leitos × ${(tmpExRate*100).toFixed(1)}% de excesso × R$ ${fmtN(di)} × 20 dias`,
+       note:`Benchmark TMP = 3,5 dias. TMP atual = ${tm} dias. Taxa de excesso = max(0, (${tm}-3,5)÷${tm}) × 0,18.`,
+       result:pTMP},
+      ni>=1?{title:'NIR sem atuação proativa',
+       eq:`${le} leitos × 3% afetados × R$ ${fmtN(di)} × 22 dias × ${Math.min(ni,3)} (gravidade) × 0,18`,
+       note:'3% = leitos que teriam saída antecipada com NIR ativo. Gravidade 1 = reativo, 2 = disfuncional, 3 = ausente.',
+       result:pNIR}:null,
+      pOcup>0?{title:'Capacidade instalada subutilizada',
+       eq:`${le} leitos × ${((0.85-oc)*100).toFixed(0)}% abaixo do benchmark × R$ ${fmtN(di)} × 22 dias × 0,28`,
+       note:'Benchmark de ocupação saudável = 85%. 0,28 = fração da receita potencial não realizada.',
+       result:pOcup}:null
+    ].filter(Boolean)
+  };
+}
+
+function calcDados(a){
+  const ge=+(a.gestores||5),re=+(a.receita||3000000);
+  const db=+(a.dashboard||2),de=+(a.decisao||3),fi=+(a.financeiro||1),cu=+(a.cultura||1);
+  const percDe=[.02,.05,.10,.18][Math.min(de,3)];
+  const percDb=[0,.005,.012,.02][Math.min(db,3)];
+  const percCu=[0,.007,.016][Math.min(cu,2)];
+  const pDec=Math.round(ge*176*200*percDe*1.8);
+  const pDb=Math.round(re*percDb);
+  const pCu=Math.round(re*percCu);
+  const pFi=fi>=1?Math.round(re*.003*fi):0;
+  return{
+    losses:[
+      {l:'Decisões sem dado adequado',v:pDec},
+      {l:'Oportunidades perdidas por ausência de painel',v:pDb},
+      {l:'Cultura não orientada por dados',v:pCu},
+      {l:'Custos ocultos não monitorados',v:pFi}
+    ],
+    formulas:[
+      {title:'Decisões sem dado adequado',
+       eq:`${ge} gestores × 176h/mês × R$ 200/h × ${(percDe*100).toFixed(0)}% decisões sem dado × 1,8`,
+       note:'R$ 200/h = custo médio/hora de gestor sênior. 1,8 = multiplicador de impacto indireto (decisões ruins criam retrabalho adicional).',
+       result:pDec},
+      percDb>0?{title:'Oportunidades não capturadas (ausência de painel)',
+       eq:`R$ ${fmtN(re)} faturamento × ${(percDb*100).toFixed(1)}% de oportunidade não monitorada`,
+       note:'Percentual estimado de receita não realizada por falta de visibilidade operacional em tempo adequado.',
+       result:pDb}:null,
+      percCu>0?{title:'Cultura não orientada por dados',
+       eq:`R$ ${fmtN(re)} faturamento × ${(percCu*100).toFixed(1)}% de perda cultural`,
+       note:'Decisões intuitivas em ambiente de alta variabilidade tendem a perpetuar ineficiências que dados estruturados eliminariam.',
+       result:pCu}:null,
+      fi>=1?{title:'Custos ocultos não monitorados',
+       eq:`R$ ${fmtN(re)} faturamento × 0,3% × ${fi} (exposição)`,
+       note:'Estimativa de despesas operacionais sem controle formal identificadas em auditorias de gestão hospitalar.',
+       result:pFi}:null
+    ].filter(Boolean)
+  };
+}
+
+function getObs(area,a){
+  if(area==='cc'){
+    if((a.cancel||0)>=.15||(a.protocolo||0)>=2)
+      return'A combinação de alta taxa de cancelamento com ausência de protocolo formal de pauta indica que a variabilidade do CC é estrutural, não situacional. Isso significa que os números tendem a se degradar progressivamente sem uma intervenção de arquitetura de processo. A prioridade imediata é o fechamento de pauta com 48 horas de antecedência e a formalização do T.A.R.O.™ para cirurgias com material incompleto.';
+    if((a.atraso||0)>=25)
+      return'O padrão de início tardio é o custo mais invisível da operação — consome horas de sala, tempo de equipe e capacidade instalada sem aparecer como cancelamento no relatório. A intervenção prioritária é o Checklist de Abertura de Sala com auditoria do primeiro tempo cirúrgico do dia como indicador-sentinela.';
+    return'Os dados indicam variabilidade moderada com alto potencial de melhoria nas métricas de giro. A estruturação de SLA entre CC, higienização e equipe cirúrgica tem potencial de recuperar 40% a 60% das perdas identificadas em 60 dias.';
+  }
+  if(area==='leitos'){
+    if((a.alta||0)>=.18)return'A ausência de Alta Programática é a causa-raiz primária das perdas identificadas. Cada leito ocupado após as 10h por uma alta que poderia ter sido antecipada representa uma diária perdida. O retorno do protocolo de Alta Programática com critérios clínicos e revisão noturna é mensurável em 30 dias.';
+    if((a.nir||0)>=2)return'O NIR com atuação apenas reativa é o gargalo central do fluxo. Sem rota diária estruturada, o leito permanece ocupado além do necessário por ausência de quem coordene ativamente a saída. A estruturação do NIR Ativo tem maior impacto sobre o giro do que a abertura de novos leitos.';
+    return'O perfil identificado aponta para um gargalo de regulação de saída, não de entrada. A prioridade é o protocolo de Alta Programática combinado com revisão do TMP por especialidade para identificar clusters com maior desvio do benchmark de 3,5 dias.';
+  }
+  if((a.dashboard||0)>=2)return'A ausência de painel de indicadores não é um problema de tecnologia — é um problema de arquitetura de decisão. Sem dados organizados, cada decisão carrega um custo de incerteza que se acumula silenciosamente. A estruturação de 10 a 15 indicadores-chave com revisão semanal é o ponto de partida para reverter esse padrão.';
+  return'O principal gap identificado é a desconexão entre os dados existentes nos sistemas e a capacidade de traduzi-los em decisões financeiramente embasadas. A construção de um modelo de custo operacional é o instrumento que transforma dado em argumento de gestão.';
+}
+
+function buildAnswersSummary(area, ans){
+  const aNames={cc:'Centro Cirúrgico',leitos:'Gestão de Leitos',dados:'Indicadores e BI'};
+  let txt = `ÁREA: ${aNames[area]}\n`;
+  const numFields = {cc:{salas:'Salas cirúrgicas',cirurgias:'Cirurgias/mês'},leitos:{leitos:'Leitos'},dados:{gestores:'Gestores'}};
+  if(numFields[area]){Object.entries(numFields[area]).forEach(([k,l])=>{if(ans[k])txt+=`${l}: ${ans[k]}\n`;});}
+  const optFields = LABELS[area]||{};
+  Object.entries(optFields).forEach(([k,map])=>{
+    const v=ans[k];if(v!==undefined&&map[v])txt+=`${k}: ${map[v]}\n`;
+  });
+  return txt;
+}
+
+/* NAVEGAÇÃO DO DIAGNÓSTICO */
+function dProg(id,step){
+  const el=document.getElementById(id);if(!el)return;
+  el.innerHTML='';
+  for(let i=1;i<=8;i++){const d=document.createElement('div');d.className='d-pd'+(i<=step?' on':'');el.appendChild(d);}
+}
+function dGoTo(s){
+  document.querySelectorAll('.d-step').forEach(e=>e.classList.remove('on'));
+  if(s===0)document.getElementById('ds0').classList.add('on');
+  else if(s===1){document.getElementById('ds1').classList.add('on');dProg('dpg1',1);}
+  else if(s==='q'){document.getElementById('ds-q').classList.add('on');dRenderQ();}
+  else if(s==='qb'){DS.qIdx=QS[DS.area].length-1;dGoTo('q');}
+  else if(s===8){document.getElementById('ds8').classList.add('on');dProg('dpg8',8);}
+  else if(s===9){document.getElementById('ds9').classList.add('on');dShowResults();}
+}
+function dSelectArea(a){
+  DS.area=a;
+  ['cc','leitos','dados'].forEach(x=>document.getElementById('dac-'+x).classList.remove('sel'));
+  document.getElementById('dac-'+a).classList.add('sel');
+  document.getElementById('dbtn-area').disabled=false;
+}
+function dConfirmArea(){if(!DS.area)return;DS.qIdx=0;DS.ans={};dGoTo('q');}
+function dRenderQ(){
+  const qs=QS[DS.area],q=qs[DS.qIdx],sn=DS.qIdx+2;
+  document.getElementById('dq-label').textContent='PASSO '+sn+' DE 8';
+  document.getElementById('dq-txt').textContent=q.q;
+  document.getElementById('dq-sub').textContent=q.sub||'';
+  dProg('dpg-q',sn);
+  const con=document.getElementById('dq-opts');con.innerHTML='';
+  const bn=document.getElementById('dbtn-next');bn.disabled=true;
+  if(q.type==='n'){
+    const inp=document.createElement('input');
+    inp.type='number';inp.className='d-input';inp.placeholder=q.ph||'';inp.min=q.min;inp.max=q.max;inp.step=1;
+    if(DS.ans[q.id]!==undefined){inp.value=DS.ans[q.id];bn.disabled=false;}
+    inp.oninput=()=>{const v=parseInt(inp.value);if(v>=q.min&&v<=q.max){DS.ans[q.id]=v;bn.disabled=false;}else{bn.disabled=true;}};
+    con.appendChild(inp);
+  }else{
+    q.opts.forEach(opt=>{
+      const b=document.createElement('button');b.className='d-opt'+(DS.ans[q.id]===opt.v?' sel':'');b.textContent=opt.l;
+      b.onclick=()=>{con.querySelectorAll('.d-opt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');DS.ans[q.id]=opt.v;bn.disabled=false;};
+      con.appendChild(b);
+    });
+    if(DS.ans[q.id]!==undefined)bn.disabled=false;
+  }
+}
+function dNextQ(){const t=QS[DS.area].length;if(DS.qIdx<t-1){DS.qIdx++;dRenderQ();}else{dGoTo(8);}}
+function dPrevQ(){if(DS.qIdx>0){DS.qIdx--;dRenderQ();}else{dGoTo(1);}}
+
+function dSubmitContact(){
+  if(document.getElementById('dc-hp').value)return; // honeypot
+  const n=document.getElementById('dc-nome').value.trim();
+  const h=document.getElementById('dc-hosp').value.trim();
+  const c=document.getElementById('dc-cargo').value.trim();
+  const e=document.getElementById('dc-email').value.trim();
+  const w=document.getElementById('dc-wa').value.trim();
+  const l=document.getElementById('dc-lgpd').checked;
+  if(!n||!h||!c||!isValidEmail(e)||!w||!l){document.getElementById('dc-err').style.display='block';return;}
+  if(!canSubmit('diag_rl')){alert('Muitas tentativas. Tente novamente em 1 hora.');return;}
+  document.getElementById('dc-err').style.display='none';
+  DS.contact={nome:n,hosp:h,cargo:c,email:e,wa:w};
+  dGoTo(9);
+}
+
+/* RESULTADOS */
+function dShowResults(){
+  const anames={cc:'Centro Cirúrgico',leitos:'Gestão de Leitos',dados:'Indicadores e BI'};
+  document.getElementById('dr-titulo').textContent='Diagnóstico — '+anames[DS.area]+' · '+DS.contact.hosp;
+  let calc;
+  if(DS.area==='cc')calc=calcCC(DS.ans);
+  else if(DS.area==='leitos')calc=calcLeitos(DS.ans);
+  else calc=calcDados(DS.ans);
+  const losses=calc.losses;
+  const total=losses.reduce((s,l)=>s+l.v,0);
+  const maxV=Math.max(...losses.map(l=>l.v),1);
+  let counted=0;const step=total/(1400/16);
+  const timer=setInterval(()=>{counted=Math.min(counted+step,total);document.getElementById('dr-total').textContent=fmt(Math.round(counted));if(counted>=total)clearInterval(timer);},16);
+  document.getElementById('dr-anual').textContent='Equivalente a '+fmt(total*12)+' por ano';
+  const barsEl=document.getElementById('dr-bars');barsEl.innerHTML='';
+  losses.filter(l=>l.v>0).forEach(l=>{
+    const pct=Math.round(l.v/maxV*100);
+    const d=document.createElement('div');d.style.marginBottom='12px';
+    d.innerHTML='<div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:3px"><span style="color:#8892A4">'+l.l+'</span><span style="font-weight:500;color:#1A2B4A">'+fmt(l.v)+'/mês</span></div><div class="lb-bg"><div class="lb" data-p="'+pct+'"></div></div>';
+    barsEl.appendChild(d);
+  });
+  setTimeout(()=>{document.querySelectorAll('.lb').forEach(el=>{el.style.width=el.dataset.p+'%';});},80);
+  document.getElementById('dr-obs').textContent=getObs(DS.area,DS.ans);
+  const msg=encodeURIComponent('Olá, Matheus. Fiz o diagnóstico no seu site. A estimativa de perda mensal identificada foi de '+fmt(total)+' no '+DS.contact.hosp+'. Gostaria de conversar sobre o diagnóstico completo.');
+  document.getElementById('dr-wa').href='https://wa.me/'+WA_NUM+'?text='+msg;
+  // Fórmulas
+  buildFormulasHTML(calc.formulas);
+  // Emails
+  sendDiagnosticEmails(losses, total, fmt(total), fmt(total*12), calc.formulas);
+}
+
+function buildFormulasHTML(formulas){
+  const el=document.getElementById('dr-formulas');
+  el.innerHTML=formulas.map(f=>`
+    <div class="formula-item">
+      <div class="formula-title">${f.title}</div>
+      <div class="formula-eq">${f.eq}</div>
+      <div class="formula-note">${f.note}</div>
+      <div class="formula-result">Resultado: ${fmt(f.result)}/mês</div>
+    </div>`).join('');
+}
+
+function toggleDetalhe(btn){
+  const el=document.getElementById('dr-detalhe');
+  const open=el.style.display!=='block';
+  el.style.display=open?'block':'none';
+  btn.textContent=open?'▲ Ocultar detalhes do cálculo':'▼ Detalhar cálculo do diagnóstico';
+}
+
+function sendDiagnosticEmails(losses,total,totalFmt,anualFmt,formulas){
+  const areaNames={cc:'Centro Cirúrgico',leitos:'Gestão de Leitos',dados:'Indicadores e BI'};
+  const lossesText=losses.filter(l=>l.v>0).map(l=>l.l+': '+fmt(l.v)+'/mês').join(' | ');
+  const formulasText=formulas.map(f=>f.title+': '+f.eq+' = '+fmt(f.result)+'/mês').join(' | ');
+  const answersText=buildAnswersSummary(DS.area,DS.ans);
+  const params={
+    nome:sanitize(DS.contact.nome),hospital:sanitize(DS.contact.hosp),
+    cargo:sanitize(DS.contact.cargo),email:DS.contact.email,whatsapp:DS.contact.wa,
+    area:areaNames[DS.area]||DS.area,
+    total_mensal:totalFmt,total_anual:anualFmt,
+    detalhes:lossesText,formulas:formulasText,respostas:answersText,
+    to_email:SEU_EMAIL
+  };
+  const statusEl=document.getElementById('dr-email-status');
+  try{
+    emailjs.send(EJS_SERVICE_ID,EJS_TPL_ADMIN,params)
+      .then(()=>{
+        emailjs.send(EJS_SERVICE_ID,EJS_TPL_USER,{...params,to_email:DS.contact.email})
+          .then(()=>{statusEl.textContent='✓ Diagnóstico enviado para '+DS.contact.email;})
+          .catch(()=>{statusEl.textContent='';});
+      }).catch(()=>{statusEl.textContent='';});
+  }catch(e){statusEl.textContent='';}
+}
+
+dGoTo(0);
+</script>
+</body>
+</html>
