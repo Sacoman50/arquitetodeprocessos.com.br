@@ -1124,7 +1124,7 @@ function dShowResults(){
   // Fórmulas
   buildFormulasHTML(calc.formulas);
   // Emails
-  sendDiagnosticEmails(losses, total, fmt(total), fmt(total*12), calc.formulas);
+  sendDiagnosticEmails(losses, total, fmt(total), fmt(total*12), calc.formulas, getObs(DS.area,DS.ans));
 }
 
 function buildFormulasHTML(formulas){
@@ -1145,7 +1145,7 @@ function toggleDetalhe(btn){
   btn.textContent=open?'▲ Ocultar detalhes do cálculo':'▼ Detalhar cálculo do diagnóstico';
 }
 
-function sendDiagnosticEmails(losses,total,totalFmt,anualFmt,formulas){
+function sendDiagnosticEmails(losses,total,totalFmt,anualFmt,formulas,observacao){
   const areaNames={cc:'Centro Cirúrgico',leitos:'Gestão de Leitos',dados:'Indicadores e BI'};
   const lossesText=losses.filter(l=>l.v>0).map(l=>l.l+': '+fmt(l.v)+'/mês').join(' | ');
   const formulasText=formulas.map(f=>f.title+': '+f.eq+' = '+fmt(f.result)+'/mês').join(' | ');
@@ -1156,6 +1156,7 @@ function sendDiagnosticEmails(losses,total,totalFmt,anualFmt,formulas){
     area:areaNames[DS.area]||DS.area,
     total_mensal:totalFmt,total_anual:anualFmt,
     detalhes:lossesText,formulas:formulasText,respostas:answersText,
+    observacao:sanitize(observacao||''),
     to_email:SEU_EMAIL
   };
   try{emailjs.send(EJS_SERVICE_ID,EJS_TPL_ADMIN,params).catch(()=>{});}catch(e){}
