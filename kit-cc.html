@@ -266,7 +266,7 @@
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0;
     }
     .stat-item {
@@ -481,83 +481,6 @@
     .material-card.highlight .material-bullets li { color: rgba(255,255,255,0.75); }
     .material-card.highlight .material-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
 
-    /* ── PROFILE ── */
-    .profile-section { background: var(--white); }
-    .profile-inner {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: center;
-    }
-    .profile-credentials {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 32px;
-    }
-    .credential {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--gray-700);
-    }
-    .credential::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .profile-card {
-      background: var(--navy-dark);
-      border: 1px solid rgba(184,134,11,0.2);
-      border-radius: 4px;
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .profile-avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: rgba(184,134,11,0.15);
-      border: 2px solid rgba(184,134,11,0.3);
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 600;
-      color: var(--gold-muted);
-    }
-    .profile-name {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .profile-title {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--gold-muted);
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-    .profile-divider {
-      border: none;
-      border-top: 1px solid rgba(184,134,11,0.15);
-      margin: 24px 0;
-    }
-    .profile-badges { display: flex; flex-direction: column; gap: 10px; }
-    .profile-badge {
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.4;
-    }
-
     /* ── FAQ ── */
     .faq-section { background: var(--gray-100); }
     .faq-grid {
@@ -728,8 +651,6 @@
       .stat-item:nth-child(2n) { border-right: none; }
       .problem-grid { grid-template-columns: 1fr; }
       .materials-grid { grid-template-columns: 1fr; }
-      .profile-inner { grid-template-columns: 1fr; }
-      .profile-card { max-width: 340px; }
       .faq-grid { grid-template-columns: 1fr; }
       .sticky-bar { display: flex; }
       .cta-section { padding-bottom: 120px; }
@@ -819,8 +740,8 @@
           </ul>
           <hr class="hero-card-divider" />
           <div class="hero-card-stat">
-            <strong>R$ 180k<span style="font-size:18px">+</span></strong>
-            perda anual estimada por CC sem processo formal
+            <strong>R$ 15k<span style="font-size:18px">+</span></strong>
+            perda mensal estimada por CC sem processo formal
           </div>
         </div>
       </div>
@@ -840,12 +761,8 @@
           <span class="stat-label">taxa de cancelamento<br/>comum sem processo</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">R$180<em>k</em></span>
-          <span class="stat-label">perda anual estimada<br/>por CC</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">0</span>
-          <span class="stat-label">hospitais com processo<br/>formal desde o início</span>
+          <span class="stat-num">R$15<em>k</em></span>
+          <span class="stat-label">perda mensal estimada<br/>por CC</span>
         </div>
       </div>
     </div>
@@ -1006,40 +923,6 @@
       </a>
     </div>
   </div>
-
-  <!-- PROFILE -->
-  <section class="section profile-section">
-    <div class="container">
-      <div class="profile-inner">
-        <div>
-          <span class="section-label">Quem desenvolveu</span>
-          <h2 class="section-title">Rigor metodológico da indústria, <em>traduzido para o hospital.</em></h2>
-          <p class="section-lead">Os protocolos deste kit foram desenvolvidos com o mesmo rigor metodológico aplicado na indústria — traduzido para a realidade hospitalar brasileira. Não é teoria de livro. É processo testado no chão de operação.</p>
-          <div class="profile-credentials">
-            <div class="credential">Lean Six Sigma Black Belt · FM2S</div>
-            <div class="credential">Coordenador de Projetos de Melhoria · WEG S.A.</div>
-            <div class="credential">Big Data &amp; Analytics em Saúde · Hospital Albert Einstein</div>
-            <div class="credential">Compliance em Saúde · Instituto Sírio-Libanês</div>
-            <div class="credential">Graduação em Gestão Hospitalar + Enfermagem</div>
-          </div>
-        </div>
-        <div>
-          <div class="profile-card">
-            <div class="profile-avatar">MS</div>
-            <div class="profile-name">Matheus Sacoman</div>
-            <div class="profile-title">Arquiteto de Processos em Saúde™</div>
-            <hr class="profile-divider" />
-            <div class="profile-badges">
-              <div class="profile-badge">Lean Six Sigma Black Belt</div>
-              <div class="profile-badge">Big Data &amp; Analytics · Albert Einstein</div>
-              <div class="profile-badge">Compliance em Saúde · Sírio-Libanês</div>
-              <div class="profile-badge">Gestão Hospitalar + Enfermagem</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- GUARANTEE BAR -->
   <div class="guarantee-bar">
