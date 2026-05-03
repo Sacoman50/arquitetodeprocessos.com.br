@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com; img-src 'self' data: blob:; connect-src *; font-src fonts.gstatic.com; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="description" content="Certificação Arquiteto do Plantão™ — Lean Six Sigma aplicado ao plantão de enfermagem. Aprenda a mapear desperdícios, registrar desvios e transformar dados em argumento com metodologia DMAIC.">
+<meta name="keywords" content="certificação arquiteto do plantão, enfermagem, lean six sigma, melhoria de processos, gestão hospitalar, desperdícios no plantão">
+<meta name="author" content="Matheus Sacoman — Arquiteto de Processos em Saúde™">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Certificação Arquiteto do Plantão™ | Matheus Sacoman">
+<meta property="og:description" content="Lean Six Sigma aplicado ao plantão de enfermagem. Metodologia DMAIC para profissionais que querem parar de apagar incêndios e começar a liderar sistemas.">
+<meta property="og:type" content="website">
+<title>Certificação Arquiteto do Plantão™ | Matheus Sacoman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2B4A;--navy-dark:#111D33;--navy-light:#243758;
+  --gold:#B8860B;--gold-light:#F5EDD5;--gold-muted:#D4A843;
+  --white:#FFFFFF;--gray-50:#F7F8FA;--gray-100:#ECEEF2;
+  --gray-200:#D1D5DF;--gray-400:#8892A4;--gray-700:#4A5568;
+  --text:#1A1A2E;--radius:12px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.2;}
+h1{font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;}
+h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:600;}
+h3{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;}
+p{font-size:1rem;color:var(--gray-700);line-height:1.8;}
+.container{max-width:1120px;margin:0 auto;padding:0 40px;}
+.section{padding:96px 0;}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:var(--radius-sm);font-size:.95rem;font-weight:500;cursor:pointer;border:none;transition:all .2s;font-family:'DM Sans',sans-serif;text-decoration:none;}
+.btn-primary{background:var(--gold);color:var(--white);}
+.btn-primary:hover{background:#9a710a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,134,11,.3);}
+.btn-primary-lg{padding:18px 40px;font-size:1.05rem;}
+.btn-outline-white{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4);}
+.btn-outline-white:hover{background:rgba(255,255,255,.08);border-color:var(--gold);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-1px);}
+
+/* STICKY NAV */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s;background:transparent;}
+#navbar.scrolled{background:rgba(17,29,51,.97);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 2px 20px rgba(0,0,0,.3);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.brand-wrap{display:flex;flex-direction:column;}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:white;letter-spacing:.04em;}
+.brand-sub{font-size:.58rem;font-weight:400;letter-spacing:.12em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:1px;}
+.nav-cta{display:flex;gap:12px;align-items:center;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s;}
+#mobile-menu{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+#mobile-menu.open{display:flex;}
+#mobile-menu a{color:white;font-size:1.4rem;font-family:'Cormorant Garamond',serif;}
+#mobile-menu .btn{width:80%;text-align:center;}
+
+/* HERO */
+#hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 40%,rgba(184,134,11,.09) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(184,134,11,.05) 0%,transparent 45%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.hero-eyebrow span{font-size:.72rem;font-weight:500;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;}
+.hero-line{width:40px;height:1px;background:var(--gold);}
+.hero-content h1{color:var(--white);margin-bottom:20px;}
+.hero-content h1 em{font-style:italic;color:var(--gold);}
+.hero-tagline{font-size:.97rem;color:rgba(255,255,255,.65);margin-bottom:12px;line-height:1.9;font-weight:300;}
+.hero-tagline strong{color:rgba(255,255,255,.9);font-weight:400;}
+.hero-subline{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:36px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.hstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);padding:16px;text-align:center;}
+.hstat-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--gold);line-height:1;}
+.hstat-label{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:4px;line-height:1.4;}
+
+/* HERO CARD */
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),rgba(184,134,11,.3));}
+.card-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(184,134,11,.15);border:1px solid rgba(184,134,11,.3);border-radius:4px;padding:5px 12px;font-size:.7rem;font-weight:500;color:var(--gold);letter-spacing:.06em;margin-bottom:20px;}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:white;margin-bottom:8px;line-height:1.3;}
+.card-sub{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:24px;line-height:1.6;}
+.card-items{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.card-item{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.5;}
+.card-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+.card-price-area{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;}
+.card-price-label{font-size:.68rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.card-price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--white);line-height:1;}
+.card-price span{font-size:1rem;font-weight:400;color:rgba(255,255,255,.4);}
+
+/* PROBLEM */
+#problema{background:var(--gray-50);}
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.prob-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--gray-100);position:relative;overflow:hidden;}
+.prob-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold);}
+.prob-icon{width:38px;height:38px;border-radius:var(--radius-sm);background:var(--gold-light);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.prob-card h3{color:var(--navy);margin-bottom:10px;font-size:1.1rem;}
+
+/* PRODUCT */
+#produto{background:var(--white);}
+.produto-intro{max-width:600px;margin:0 auto 60px;text-align:center;}
+.produto-intro h2{color:var(--navy);margin-bottom:16px;}
+.materiais-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.material-card{background:var(--gray-50);border-radius:var(--radius);border:1px solid var(--gray-100);overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.material-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+.mat-header{padding:24px 24px 16px;border-bottom:1px solid var(--gray-100);}
+.mat-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:white;font-size:.78rem;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-family:'DM Sans',sans-serif;}
+.mat-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:.68rem;font-weight:500;letter-spacing:.06em;margin-bottom:10px;}
+.mat-tag-a{background:#EBF3FC;color:#185FA5;}
+.mat-tag-b{background:#EAF3DE;color:#3B6D11;}
+.mat-tag-c{background:#FAEEDA;color:#854F0B;}
+.mat-header h3{color:var(--navy);font-size:1.05rem;margin-bottom:6px;}
+.mat-header p{font-size:.8rem;}
+.mat-body{padding:20px 24px 24px;}
+.mat-items{list-style:none;}
+.mat-item{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--gray-700);padding:6px 0;border-bottom:1px solid var(--gray-100);line-height:1.4;}
+.mat-item:last-child{border-bottom:none;}
+.mat-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
+
+/* METHODOLOGY */
+#metodologia{background:var(--navy);}
+.meto-header{max-width:640px;margin-bottom:56px;}
+.meto-header h2{color:var(--white);margin-bottom:16px;}
+.meto-header p{color:rgba(255,255,255,.6);line-height:1.8;}
+.dmaic-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.dmaic-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px 20px;transition:border-color .2s;}
+.dmaic-card:hover{border-color:rgba(184,134,11,.4);}
+.dmaic-letter{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(184,134,11,.25);line-height:1;margin-bottom:12px;}
+.dmaic-card h3{color:var(--white);font-size:.95rem;margin-bottom:8px;}
+.dmaic-card p{color:rgba(255,255,255,.5);font-size:.78rem;line-height:1.6;}
+
+/* WASTES */
+#desperdícios{background:var(--gray-50);}
+.waste-header{text-align:center;max-width:580px;margin:0 auto 56px;}
+.waste-header h2{color:var(--navy);margin-bottom:16px;}
+.waste-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.waste-card{background:var(--white);border-radius:var(--radius);padding:22px;border:1px solid var(--gray-100);}
+.waste-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold-light);line-height:1;margin-bottom:10px;}
+.waste-card h4{color:var(--navy);font-size:.92rem;margin-bottom:6px;font-family:'Cormorant Garamond',serif;font-weight:600;}
+.waste-card p{font-size:.78rem;color:var(--gray-400);line-height:1.6;}
+
+/* COMPARISON */
+#comparação{background:var(--white);}
+.comp-header{text-align:center;max-width:580px;margin:0 auto 48px;}
+.comp-header h2{color:var(--navy);margin-bottom:14px;}
+.comp-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-100);}
+.comp-col{padding:32px;}
+.comp-col-bad{background:var(--gray-50);}
+.comp-col-good{background:var(--navy);}
+.comp-col-title{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;}
+.comp-col-bad .comp-col-title{color:var(--gray-400);border-bottom:1px solid var(--gray-200);}
+.comp-col-good .comp-col-title{color:var(--gold);border-bottom:1px solid rgba(255,255,255,.1);}
+.comp-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:.88rem;line-height:1.55;}
+.comp-item-bad{color:var(--gray-700);}
+.comp-item-good{color:rgba(255,255,255,.75);}
+.comp-x{color:#E24B4A;font-size:.9rem;flex-shrink:0;margin-top:1px;}
+.comp-check{color:var(--gold);font-size:.9rem;flex-shrink:0;margin-top:1px;}
+
+/* FOR WHOM */
+#para-quem{background:var(--gray-50);}
+.pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.pq-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--gray-100);}
+.pq-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--gold-light);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.pq-card h3{color:var(--navy);margin-bottom:10px;font-size:1.05rem;}
+
+/* CTA SECTION */
+#cta-main{background:var(--navy);position:relative;overflow:hidden;}
+#cta-main::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(184,134,11,.1) 0%,transparent 60%);pointer-events:none;}
+.cta-inner{text-align:center;position:relative;padding:100px 0;}
+.cta-inner h2{color:var(--white);margin-bottom:16px;}
+.cta-inner h2 em{color:var(--gold);font-style:italic;}
+.cta-lead{font-size:1rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 40px;line-height:1.85;}
+.cta-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);max-width:520px;margin:0 auto;padding:36px;}
+.cta-box-price-label{font-size:.68rem;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:8px;}
+.cta-box-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--white);line-height:1;margin-bottom:4px;}
+.cta-box-sub{font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:28px;}
+.cta-guarantee{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.45);margin-top:16px;}
+
+/* ABOUT */
+#sobre{background:var(--white);}
+.sobre-grid{display:grid;grid-template-columns:1fr 2fr;gap:72px;align-items:start;}
+.sobre-left{background:var(--gray-50);border-radius:var(--radius);padding:32px;border:1px solid var(--gray-100);}
+.sobre-name{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.sobre-role{font-size:.72rem;letter-spacing:.12em;color:var(--gray-400);text-transform:uppercase;margin-bottom:20px;}
+.sobre-tag-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:.82rem;color:var(--gray-700);}
+.sobre-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+.sobre-right h2{color:var(--navy);margin-bottom:8px;}
+.sobre-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-style:italic;margin-bottom:24px;}
+.sobre-bio p{font-size:.92rem;color:var(--gray-700);line-height:1.85;margin-bottom:16px;}
+
+/* FAQ */
+#faq{background:var(--gray-50);}
+.faq-header{text-align:center;max-width:540px;margin:0 auto 48px;}
+.faq-header h2{color:var(--navy);margin-bottom:12px;}
+.faq-list{max-width:720px;margin:0 auto;}
+.faq-item{background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--gray-100);margin-bottom:12px;overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;gap:16px;}
+.faq-q-text{font-size:.95rem;font-weight:500;color:var(--navy);font-family:'Cormorant Garamond',serif;}
+.faq-icon{font-size:1.1rem;color:var(--gold);flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 24px 20px;font-size:.88rem;color:var(--gray-700);line-height:1.75;}
+.faq-item.open .faq-a{display:block;}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:48px 0 32px;}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:36px;}
+.footer-brand p{font-size:.78rem;color:rgba(255,255,255,.4);max-width:260px;line-height:1.6;margin-top:6px;}
+.footer-links h4{font-size:.68rem;font-weight:500;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.footer-links a{display:block;font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:8px;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.8);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,.3);}
+.lgpd-badge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:4px;}
+
+/* WHATSAPP */
+#wa-float{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s;}
+#wa-float:hover{transform:scale(1.1);}
+#wa-float svg{width:26px;height:26px;fill:white;}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.45);font-size:.78rem;transition:color .2s;}
+.back-link:hover{color:rgba(255,255,255,.8);}
+
+/* DIVIDER STRIP */
+.strip{background:var(--gold);padding:14px 0;text-align:center;}
+.strip p{color:var(--white);font-size:.82rem;font-weight:500;letter-spacing:.04em;margin:0;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .container{padding:0 24px;}
+  .hero-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-card{max-width:460px;}
+  .dmaic-grid{grid-template-columns:repeat(3,1fr);}
+  .waste-grid{grid-template-columns:repeat(2,1fr);}
+  .sobre-grid{grid-template-columns:1fr;gap:40px;}
+}
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-cta{display:none;}
+  .section{padding:64px 0;}
+  h1{font-size:2rem;}h2{font-size:1.7rem;}
+  .prob-grid,.materiais-grid,.pq-grid{grid-template-columns:1fr;}
+  .dmaic-grid{grid-template-columns:1fr 1fr;}
+  .waste-grid{grid-template-columns:1fr 1fr;}
+  .comp-wrap{grid-template-columns:1fr;}
+  .comp-col-bad{border-radius:var(--radius) var(--radius) 0 0;}
+  .comp-col-good{border-radius:0 0 var(--radius) var(--radius);}
+  .hero-stats{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;}
+  .btn-primary-lg{width:100%;text-align:center;}
+  .dmaic-grid{grid-template-columns:1fr;}
+  .waste-grid{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP -->
+<a id="wa-float" href="https://wa.me/5547992080823?text=Olá%2C%20tenho%20interesse%20na%20Certificação%20Arquiteto%20do%20Plantão™.%20Pode%20me%20dar%20mais%20informações%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="#produto" onclick="closeMenu()">O que está incluído</a>
+  <a href="#metodologia" onclick="closeMenu()">Metodologia DMAIC</a>
+  <a href="#desperdícios" onclick="closeMenu()">Os 8 Desperdícios</a>
+  <a href="#sobre" onclick="closeMenu()">Sobre o Arquiteto</a>
+  <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:8px">Garantir minha vaga →</a>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="https://arquitetodeprocessos.com.br" style="display:flex;flex-direction:column;">
+        <span class="brand-name">Matheus Sacoman</span>
+        <span class="brand-sub">Arquiteto de Processos em Saúde™</span>
+      </a>
+      <div class="nav-cta">
+        <a href="https://arquitetodeprocessos.com.br" class="back-link">← Site principal</a>
+        <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;">Garantir minha vaga →</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-line"></div>
+          <span>Lean Six Sigma aplicado ao plantão</span>
+        </div>
+        <h1>Pare de apagar incêndios.<br><em>Comece a arquitetar seu plantão.</em></h1>
+        <p class="hero-tagline">
+          <strong>Certificação Arquiteto do Plantão™</strong> — a metodologia DMAIC do Arquiteto de Processos em Saúde aplicada ao dia a dia operacional de profissionais de enfermagem.
+        </p>
+        <p class="hero-subline">Se o seu plantão depende de heroísmo individual para funcionar, você não tem um sistema — você tem um risco. Este programa te dá as ferramentas para mudar isso.</p>
+        <div class="hero-btns">
+          <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-lg">Garantir minha Certificação →</a>
+          <a href="#produto" class="btn btn-outline-white">Ver o que está incluído</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-num">3</div><div class="hstat-label">materiais técnicos prontos para uso</div></div>
+          <div class="hstat"><div class="hstat-num">8</div><div class="hstat-label">desperdícios mapeados com ferramentas</div></div>
+          <div class="hstat"><div class="hstat-num">DMAIC</div><div class="hstat-label">metodologia Lean Six Sigma</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="card-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22l-9-5V7l9-5 9 5v10z"/></svg>
+            Certificação Arquiteto do Plantão™
+          </div>
+          <div class="card-title">O kit completo para transformar percepção em dado e dado em argumento</div>
+          <div class="card-sub">Black Belt em Lean Six Sigma aplicado à realidade operacional da enfermagem brasileira.</div>
+          <div class="card-items">
+            <div class="card-item"><div class="card-dot"></div><span><strong style="color:rgba(255,255,255,.9)">E-book:</strong> Os 8 Desperdícios do Plantão + 3 ferramentas aplicadas</span></div>
+            <div class="card-item"><div class="card-dot"></div><span><strong style="color:rgba(255,255,255,.9)">Toolkit de Bolso:</strong> 3 modelos de referência para uso imediato no turno</span></div>
+            <div class="card-item"><div class="card-dot"></div><span><strong style="color:rgba(255,255,255,.9)">Mini-DMAIC Operacional:</strong> Como transformar problema de plantão em projeto defensável</span></div>
+            <div class="card-item"><div class="card-dot"></div><span><strong style="color:rgba(255,255,255,.9)">Acesso vitalício</strong> e atualizações inclusas</span></div>
+          </div>
+          <div class="card-price-area">
+            <div class="card-price-label">Investimento</div>
+            <div class="card-price">R$ 97<span>,00</span></div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.35);margin-bottom:20px;">Acesso imediato · Pagamento seguro pela Hotmart</div>
+            <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Acessar agora →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <p>🔒 Pagamento seguro · Acesso imediato após confirmação · Suporte pelo WhatsApp</p>
+</div>
+
+<!-- PROBLEMA -->
+<section id="problema" class="section">
+  <div class="container">
+    <span class="section-tag">O problema que drena o seu plantão</span>
+    <h2 style="color:var(--navy);max-width:560px;margin-bottom:16px;">Três padrões que consomem o seu turno todo mês</h2>
+    <p style="max-width:580px;margin-bottom:0;">A correria do plantão não é inevitável. É o resultado de um processo mal arquitetado — e todo processo mal arquitetado tem solução sistêmica.</p>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Modo apaga-incêndio permanente</h3>
+        <p style="font-size:.88rem;">O plantão começa e você reage. Nunca arquiteta. A falta de um diagnóstico inicial do fluxo faz com que o gargalo só apareça quando já comprometeu o turno inteiro.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h3>Queixas sem dado, sem resposta</h3>
+        <p style="font-size:.88rem;">Você percebe os problemas, mas chega para a chefia com impressão — não com argumento. Sem dado estruturado, a gestão não tem base para agir. E o problema volta semana que vem.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Conhecimento que não vira sistema</h3>
+        <p style="font-size:.88rem;">Você sabe o que causa o problema — falta de insumo, comunicação falha, giro lento. Mas não tem método para transformar essa percepção em proposta estruturada de melhoria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="produto" class="section">
+  <div class="container">
+    <div class="produto-intro">
+      <span class="section-tag">O que está incluído na Certificação</span>
+      <h2>Três materiais técnicos. Um sistema completo.</h2>
+      <p>Cada material foi desenvolvido para uso autônomo — sem necessidade de aprovação institucional, sem depender de chefia, no próprio plantão.</p>
+    </div>
+    <div class="materiais-grid">
+
+      <!-- Material 1 -->
+      <div class="material-card">
+        <div class="mat-header">
+          <div class="mat-num">1</div>
+          <div class="mat-tag mat-tag-a">E-BOOK</div>
+          <h3>Os 8 Desperdícios do Plantão</h3>
+          <p>Um guia visual para identificar, nomear e eliminar o que drena o seu turno — com 3 ferramentas práticas aplicáveis imediatamente.</p>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-items">
+            <li class="mat-item"><span class="mat-dot"></span><span>8 cards de consulta rápida — um por categoria de desperdício</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Poka-Yoke Pessoal — protocolo anti-erro antes de cada procedimento</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Mapeamento da Jornada do Plantão — 5 categorias de tempo, registro semanal</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Da Queixa ao Dado — estrutura para transformar percepção em argumento</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Plano de 4 semanas com ferramentas por etapa</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Glossário técnico: DMAIC, Poka-Yoke, Muda, VSM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Material 2 -->
+      <div class="material-card">
+        <div class="mat-header">
+          <div class="mat-num">2</div>
+          <div class="mat-tag mat-tag-b">TOOLKIT DE BOLSO</div>
+          <h3>3 Modelos para uso imediato no turno</h3>
+          <p>Instrumentos práticos desenvolvidos pelo Arquiteto para profissionais de enfermagem sem necessidade de aprovação institucional prévia.</p>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-items">
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Modelo 1 — Folha de Rosto do Turno:</strong> diagnóstico de gargalo, alocação de prioridades e registro de desvio em um único instrumento</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Modelo 2 — Script de Passagem de Plantão:</strong> handoff estruturado que elimina perda de informação na transferência de turno</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Modelo 3 — Ficha de Registro de Desvio:</strong> coleta de dados primários sobre variabilidade operacional por 4 semanas</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Campos (I) inegociáveis e (A) adaptáveis à sua unidade</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span>Guia de consolidação após 4 semanas de uso</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Material 3 -->
+      <div class="material-card">
+        <div class="mat-header">
+          <div class="mat-num">3</div>
+          <div class="mat-tag mat-tag-c">MINI-DMAIC</div>
+          <h3>Do Problema ao Projeto de Melhoria</h3>
+          <p>Como transformar os dados coletados em 4 semanas em um argumento estruturado, comunicável e metodologicamente defensável.</p>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-items">
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Definir:</strong> Problem Statement preciso com frequência e impacto quantificado</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Medir:</strong> 3 métricas fundamentais e conversão de tempo em horas-profissional</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Analisar:</strong> Diagrama de causa em 4 categorias + técnica dos 3 Por Quês</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Melhorar:</strong> Classificação por âmbito de decisão + argumento estruturado para a chefia</span></li>
+            <li class="mat-item"><span class="mat-dot"></span><span><strong>Controlar:</strong> Indicador de controle + limite de alerta + ciclo de revisão</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA inline -->
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-lg">Acessar a Certificação agora →</a>
+      <p style="font-size:.75rem;color:var(--gray-400);margin-top:12px;">Acesso imediato · Pagamento seguro pela Hotmart</p>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="metodologia" class="section">
+  <div class="container">
+    <div class="meto-header">
+      <span class="section-tag">Base metodológica</span>
+      <h2>O DMAIC aplicado ao plantão de enfermagem</h2>
+      <p>O DMAIC é o método de melhoria contínua do Lean Six Sigma. Na Certificação Arquiteto do Plantão™, ele é traduzido para o âmbito operacional individual — sem equipe multidisciplinar, sem análise estatística avançada, sem software. Apenas dado coletado no turno e argumento estruturado.</p>
+    </div>
+    <div class="dmaic-grid">
+      <div class="dmaic-card">
+        <div class="dmaic-letter">D</div>
+        <h3>Definir</h3>
+        <p>Transformar percepção em enunciado verificável. Frequência + impacto + local. Sem generalização, sem culpa.</p>
+      </div>
+      <div class="dmaic-card">
+        <div class="dmaic-letter">M</div>
+        <h3>Medir</h3>
+        <p>Quantificar o estado atual com dados coletados na Ficha de Desvio. Frequência, impacto médio, variação e turno de maior incidência.</p>
+      </div>
+      <div class="dmaic-card">
+        <div class="dmaic-letter">A</div>
+        <h3>Analisar</h3>
+        <p>Identificar a causa raiz — não o sintoma. Diagrama de 4 categorias + técnica dos 3 Por Quês. Diferença entre ponto de manifestação e origem.</p>
+      </div>
+      <div class="dmaic-card">
+        <div class="dmaic-letter">I</div>
+        <h3>Melhorar</h3>
+        <p>Classificar intervenções por âmbito de decisão. O que você pode fazer agora e o que precisa de aprovação gerencial — com argumento estruturado.</p>
+      </div>
+      <div class="dmaic-card">
+        <div class="dmaic-letter">C</div>
+        <h3>Controlar</h3>
+        <p>Garantir que o ganho persista. Indicador de controle, limite de alerta e ciclo de revisão. Ganhos sem controle se revertem em semanas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 WASTES -->
+<section id="desperdícios" class="section">
+  <div class="container">
+    <div class="waste-header">
+      <span class="section-tag">Guia de diagnóstico</span>
+      <h2>Os 8 Desperdícios que drenam o seu turno</h2>
+      <p>Cada desperdício tem sinal de alerta específico no plantão. Aprender a nomeá-los é o primeiro passo para eliminá-los.</p>
+    </div>
+    <div class="waste-grid">
+      <div class="waste-card">
+        <div class="waste-num">01</div>
+        <h4>Superprodução de Registros</h4>
+        <p>Documentar mais do que o processo seguinte vai usar. Sinal: <em>"Preciso preencher tudo isso?"</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">02</div>
+        <h4>Espera</h4>
+        <p>Tempo parado aguardando algo que deveria estar disponível. Sinal: <em>"Estou aguardando..."</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">03</div>
+        <h4>Transporte Desnecessário</h4>
+        <p>Deslocamento de pessoal ou material sem entrega de cuidado. Sinal: <em>"Preciso buscar lá..."</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">04</div>
+        <h4>Superprocessamento</h4>
+        <p>Mais etapas ou verificações do que o processo requer. Sinal: <em>"Já checamos isso antes..."</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">05</div>
+        <h4>Excesso de Estoque</h4>
+        <p>Material em quantidade maior ou no lugar errado. Sinal: <em>"Cadê o material?"</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">06</div>
+        <h4>Movimento Ineficiente</h4>
+        <p>Profissional se desloca mais do que o necessário no espaço de trabalho. Sinal: <em>"Fui buscar e esqueci o outro..."</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">07</div>
+        <h4>Defeito de Comunicação</h4>
+        <p>Informação que não chegou, chegou incompleta ou para a pessoa errada. Sinal: <em>"Não me avisaram que..."</em></p>
+      </div>
+      <div class="waste-card">
+        <div class="waste-num">08</div>
+        <h4>Subutilização do Conhecimento</h4>
+        <p>Profissional vê o problema mas não tem método para transformá-lo em proposta. Sinal: <em>"Sempre foi assim..."</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="comparação" class="section">
+  <div class="container">
+    <div class="comp-header">
+      <span class="section-tag">A diferença que muda tudo</span>
+      <h2>Sem Arquitetura vs. Com Arquitetura</h2>
+      <p>A Certificação Arquiteto do Plantão™ não muda o volume de trabalho. Muda o sistema em que você trabalha.</p>
+    </div>
+    <div class="comp-wrap">
+      <div class="comp-col comp-col-bad">
+        <div class="comp-col-title">❌ Sem Arquitetura</div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Trabalha no modo apaga-incêndio</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Não sabe onde foi o tempo do plantão</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Leva queixas para a chefia sem base</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Resolve o mesmo problema toda semana</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Depende do "jeitinho" para funcionar</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Percepção sem dado — argumento fraco</span></div>
+        <div class="comp-item comp-item-bad"><span class="comp-x">✗</span><span>Conhecimento que não vira melhoria</span></div>
+      </div>
+      <div class="comp-col comp-col-good">
+        <div class="comp-col-title">✓ Com Arquitetura do Plantão™</div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Arquiteta o fluxo antes da correria começar</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Identifica onde o tempo foi desperdiçado</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Leva dados e proposta estruturada para a chefia</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Elimina a causa raiz — o problema não volta</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Cria padrões que funcionam sem depender de heróis</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>Dado + frequência + impacto = argumento irrecusável</span></div>
+        <div class="comp-item comp-item-good"><span class="comp-check">✓</span><span>DMAIC aplicado: da observação à intervenção defensável</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section id="para-quem" class="section">
+  <div class="container">
+    <span class="section-tag">Para quem é esta Certificação</span>
+    <h2 style="color:var(--navy);max-width:540px;margin-bottom:16px;">Feita para quem opera o sistema — não só para quem o gerencia</h2>
+    <p style="max-width:580px;margin-bottom:0;">Qualquer profissional de enfermagem que executa turnos em ambiente hospitalar pode aplicar a metodologia imediatamente.</p>
+    <div class="pq-grid">
+      <div class="pq-card">
+        <div class="pq-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Técnicos e Auxiliares de Enfermagem</h3>
+        <p style="font-size:.88rem;">Que percebem desperdícios no plantão mas não têm método para registrá-los e transformá-los em argumento. A Certificação fornece exatamente esse método.</p>
+      </div>
+      <div class="pq-card">
+        <div class="pq-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3>Enfermeiros Assistenciais</h3>
+        <p style="font-size:.88rem;">Que querem estruturar a passagem de plantão, reduzir retrabalho por comunicação falha e ter uma ferramenta de registro de desvio que sustente propostas de melhoria.</p>
+      </div>
+      <div class="pq-card">
+        <div class="pq-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Coordenadores e Líderes de Equipe</h3>
+        <p style="font-size:.88rem;">Que precisam de dados operacionais para apresentar propostas de melhoria à gestão e implementar padrões que funcionem sem depender da sua presença contínua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MAIN -->
+<section id="cta-main">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="section-tag" style="color:var(--gold)">Próximo passo</span>
+      <h2>O plantão que você merece<br><em>começa com arquitetura.</em></h2>
+      <p class="cta-lead">Não é sobre trabalhar mais. É sobre trabalhar dentro de um sistema que funciona. E sistemas que funcionam são construídos por profissionais que aprendem a vê-los, nomeá-los e medi-los.</p>
+      <div class="cta-box">
+        <div class="cta-box-price-label">Investimento na Certificação</div>
+        <div class="cta-box-price">R$ 97</div>
+        <div class="cta-box-sub">Acesso imediato a todos os 3 materiais · Sem mensalidade</div>
+        <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px;font-size:1rem;">Garantir minha Certificação →</a>
+        <div class="cta-guarantee">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Pagamento seguro via Hotmart · Acesso imediato após confirmação
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div style="max-width:760px;">
+      <div class="sobre-right">
+        <span class="section-tag">Sobre o criador da Certificação</span>
+        <h2>Matheus Sacoman</h2>
+        <p class="sobre-sub">Arquiteto de Processos em Saúde™ · Black Belt em Lean Six Sigma</p>
+        <div class="sobre-bio">
+          <p>Integro a precisão da eficiência industrial à complexidade da saúde para transformar operações reativas em sistemas previsíveis, seguros e escaláveis.</p>
+          <p>Minha trajetória começa na engenharia de processos em ambiente corporativo de alta exigência — onde aprendi que excelência operacional não é evento, é arquitetura. Aplico essa mesma lógica ao ambiente hospitalar: cada gargalo tem causa-raiz, cada variabilidade tem custo, e cada custo tem solução sistêmica.</p>
+          <p>A Certificação Arquiteto do Plantão™ nasce da percepção de que os profissionais de linha — técnicos, auxiliares e enfermeiros assistenciais — são os que mais percebem as ineficiências do sistema e os que menos têm ferramentas para formalizá-las. Este kit fecha essa lacuna.</p>
+          <p>Hospitais que aprendem a ouvir diagnósticos operacionais de seus próprios profissionais têm, consistentemente, melhores resultados clínicos e maior sustentabilidade financeira. A melhoria começa no turno.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-header">
+      <span class="section-tag">Dúvidas frequentes</span>
+      <h2>Perguntas sobre a Certificação</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">O que recebo ao adquirir a Certificação?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Você recebe acesso imediato a três materiais técnicos em PDF: o E-book "Os 8 Desperdícios do Plantão", o Toolkit de Bolso com 3 modelos práticos, e o Mini-DMAIC Operacional. Todos desenvolvidos pelo Arquiteto de Processos em Saúde™ para uso autônomo no plantão, sem dependência de aprovação institucional.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Preciso ter formação específica para aplicar a metodologia?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Não. A Certificação foi desenvolvida para profissionais de enfermagem em todos os níveis — técnicos, auxiliares e enfermeiros. O Mini-DMAIC Operacional é uma versão de escopo reduzido do DMAIC completo, desenhada para uso individual sem análise estatística sofisticada. Você precisa de disciplina para coletar dados por 4 semanas — não de formação em gestão.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Como funciona o acesso após a compra?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Após a confirmação do pagamento pela Hotmart, você recebe acesso imediato aos materiais na plataforma. O acesso é vitalício — você pode baixar os arquivos e consultá-los a qualquer momento, inclusive de plantão, sem necessidade de conexão permanente.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Em quanto tempo consigo aplicar as ferramentas?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">O E-book recomenda um ciclo de 4 semanas: Semana 1 — identificar e nomear 1 desperdício. Semana 2 — usar o Poka-Yoke de Pré-Entrada. Semana 3 — registrar desvios com a Ficha. Semana 4 — calcular impacto e montar argumento. Mas o Toolkit de Bolso (Folha de Rosto do Turno e Script de Passagem) pode ser usado já no primeiro plantão após a compra.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Esta Certificação é direcionada a qual área hospitalar?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">A metodologia é transversal — funciona em qualquer unidade onde há trabalho por turno: UTI, enfermaria, PS, CME, Centro Cirúrgico. Os instrumentos do Toolkit têm campos adaptáveis à realidade de cada setor. O vocabulário dos 8 Desperdícios e o DMAIC são universais ao Lean Six Sigma.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Precisa de autorização do hospital para aplicar?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Não. Os três modelos do Toolkit foram desenvolvidos especificamente para uso autônomo por profissionais de enfermagem sem necessidade de aprovação institucional prévia. Você pode começar a usar a Folha de Rosto do Turno e a Ficha de Desvio no próximo plantão. Quando tiver dados suficientes, o Mini-DMAIC te ensina a formatar o argumento para apresentar à chefia — mas a coleta é individual e não requer autorização.</div>
+      </div>
+    </div>
+    <!-- CTA final FAQ -->
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://pay.hotmart.com/K105658799F" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-lg">Garantir minha Certificação Arquiteto do Plantão™ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:white;letter-spacing:.04em;margin-bottom:4px;">Matheus Sacoman</div>
+        <p>Arquiteto de Processos em Saúde™<br>Eficiência Industrial aplicada à Alta Gestão Hospitalar.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Esta página</h4>
+        <a href="#produto">O que está incluído</a>
+        <a href="#metodologia">Metodologia DMAIC</a>
+        <a href="#desperdícios">Os 8 Desperdícios</a>
+        <a href="#para-quem">Para quem é</a>
+        <a href="#sobre">Sobre o Arquiteto</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div class="footer-links">
+        <h4>Outros recursos</h4>
+        <a href="https://arquitetodeprocessos.com.br" target="_blank" rel="noopener noreferrer">Site principal</a>
+        <a href="https://arquitetodeprocessos.com.br/kit-cc" target="_blank" rel="noopener noreferrer">Kit CC — Centro Cirúrgico</a>
+        <a href="https://www.linkedin.com/in/matheus-r-s-sacoman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://wa.me/5547992080823" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Matheus Sacoman — Arquiteto de Processos em Saúde™. Certificação Arquiteto do Plantão™ é propriedade intelectual de Matheus Sacoman.</p>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span class="lgpd-badge">🔒 LGPD Conforme</span>
+        <a href="https://arquitetodeprocessos.com.br" style="color:rgba(255,255,255,.35);font-size:.72rem;">arquitetodeprocessos.com.br</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* NAV */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* MOBILE MENU */
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open');}
+
+/* FAQ */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
