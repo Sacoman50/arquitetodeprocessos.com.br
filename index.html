@@ -799,7 +799,15 @@ function submitContactForm(){
   if(!n||!h||!c||!e||!m||!l||!isValidEmail(e)){document.getElementById('f-err').style.display='block';return;}
   if(!canSubmit('contact_rl')){alert('Muitas tentativas. Tente novamente em 1 hora.');return;}
   document.getElementById('f-err').style.display='none';
-  try{emailjs.send(EJS_SERVICE_ID,'template_contact',{from_name:sanitize(n),hospital:sanitize(h),cargo:sanitize(c),from_email:sanitize(e),message:sanitize(m),to_email:SEU_EMAIL});}catch(err){}
+  try{
+    emailjs.send(EJS_SERVICE_ID,EJS_TPL_ADMIN,{
+      nome:sanitize(n),hospital:sanitize(h),cargo:sanitize(c),
+      email:sanitize(e),whatsapp:'—',area:'Formulário de Contato',
+      total_mensal:'—',total_anual:'—',
+      detalhes:sanitize(m),formulas:'—',respostas:'—',
+      to_email:SEU_EMAIL
+    }).catch(()=>{});
+  }catch(err){}
   document.getElementById('form-fields').style.display='none';
   document.getElementById('form-success').style.display='block';
 }
