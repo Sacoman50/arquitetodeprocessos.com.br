@@ -1,0 +1,1740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'Lucida Grande'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="pt-BR"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Protocolo de Governança Cirúrgica™ | Arquiteto de Processos em Saúde™&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Descubra quanto o seu Centro Cirúrgico está perdendo por mês. Calcule agora e veja o ROI do Protocolo de Governança Cirúrgica™ — desenvolvido com rigor Lean Six Sigma Black Belt para gestores hospitalares." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="robots" content="index, follow" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--navy: #1A2B4A;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--navy-dark: #111D33;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--navy-deeper: #0C1525;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold: #B8860B;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold-light: #F5EDD5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold-muted: #D4A843;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold-pale: #FAF5E8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--white: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-100: #F7F7F7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-200: #EEEEEE;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-300: #DDDDDD;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-500: #888888;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-700: #444444;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-main: #1A2B4A;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--green: #1A7A4A;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--green-pale: #EAF5EE;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--red-pale: #FEF0EE;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--red: #C0392B;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--font-display: 'Cormorant Garamond', Georgia, serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--font-body: 'DM Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--max-w: 1080px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--section-gap: 96px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html { scroll-behavior: smooth; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-body);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tag {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-body);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.14em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-body);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.06em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.2s, transform 0.15s, box-shadow 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #9A7009;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 8px 24px rgba(184,134,11,0.28);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-ghost {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-body);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.04em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1.5px solid var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.2s, color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-ghost:hover { background: var(--gold); color: var(--white); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── HEADER ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header .container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.header-logo {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 17px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.header-logo span { color: var(--gold-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.header-cta { font-size: 13px; padding: 12px 28px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── HERO ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,0.07) 0%, transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 100px 0 96px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero::before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0; left: 0; right: 0; bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-inner {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 400px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 64px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-badge { margin-bottom: 24px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(40px, 5vw, 62px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1 em { font-style: italic; color: var(--gold-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-sub {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 17px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.65);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 520px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-meta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-meta-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.55);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-meta-item svg { opacity: 0.7; flex-shrink: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-guarantee { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.04);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 36px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-items li {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-items li::before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '–';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-divider {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 24px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-cta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-price {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-price-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-price-value {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card-price-installment {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── CALCULATOR ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 80px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--gray-200);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-anchor-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.14em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(30px, 4vw, 44px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.15;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-title em { font-style: italic; color: var(--gold); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-lead {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 540px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-inputs {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gray-100);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--gray-200);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 36px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-inputs-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-group {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-group:last-child { margin-bottom: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: baseline;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-label span {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-value {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field-hint {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="range"] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-appearance: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gray-300);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="range"]::-webkit-slider-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-appearance: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 8px rgba(184,134,11,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="range"]::-moz-range-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.range-minmax {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.04em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-result {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 96px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 36px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-main-num {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #FF6B6B;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-main-sub {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-breakdown {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-row {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-row-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-row-value {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-row-value.loss { color: #FF6B6B; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-row-value.gain { color: #5CBA8A; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold-pale);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-card-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.12em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-item {}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-item-num {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-item-num.highlight { color: var(--green); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-item-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-cta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.roi-sub {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.calc-disclaimer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gray-100);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── STATS STRIP ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stats-strip {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold-pale);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 48px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stats-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(4, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-right: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat-item:last-child { border-right: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat-num {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat-num em { color: var(--gold); font-style: normal; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat-label { font-size: 13px; color: var(--gray-500); line-height: 1.4; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── SECTIONS ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section { padding: var(--section-gap) 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.14em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(32px, 4vw, 48px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.15;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title em { font-style: italic; color: var(--gold); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-lead {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 17px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-700);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.75;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 640px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── PROBLEM ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-narrative {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-left: 3px solid var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-narrative p {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-narrative p:last-of-type { margin-bottom: 24px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-quote {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-quote cite {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-style: normal;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-body);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.04em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-checks { display: flex; flex-direction: column; gap: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.problem-checks-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--gray-200);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-item:first-of-type { border-top: 1px solid var(--gray-200); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-arrow { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; color: var(--gold); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-text { font-size: 15px; color: var(--gray-700); line-height: 1.55; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-bottom {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold-pale);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.55;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.check-bottom strong { color: var(--gold); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── TRANSFORMATION ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transformation-section { background: var(--navy-deeper); padding: var(--section-gap) 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transformation-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(3, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.04);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: border-color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-card:hover { border-color: rgba(184,134,11,0.35); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-from {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.transform-to {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── MATERIALS ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.materials-section { background: var(--gray-100); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.materials-intro {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-left: 3px solid var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.materials-intro p {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.8);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.75;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 680px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.materials-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(2, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--gray-200);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: border-color 0.2s, box-shadow 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: rgba(184,134,11,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 20px rgba(0,0,0,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-num {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.2;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-desc {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.65;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-bullets li {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-700);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.45;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-bullets li::before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '<span class="s1">→</span>';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-format {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gray-100);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 3px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: rgba(184,134,11,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight .material-num { color: var(--gold-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight .material-title { color: var(--white); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight .material-desc { color: rgba(255,255,255,0.55); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight .material-bullets li { color: rgba(255,255,255,0.75); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-card.highlight .material-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── PROFILE ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-section { background: var(--white); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-inner {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 380px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-credentials { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.credential {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gray-700);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.credential::before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-avatar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 88px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 88px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid rgba(184,134,11,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-name {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-divider {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 24px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-badges { display: flex; flex-direction: column; gap: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-badge { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.4; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── GUARANTEE ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guarantee-bar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--gold-pale);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(184,134,11,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guarantee-inner {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 640px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guarantee-icon {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 52px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guarantee-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guarantee-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── FAQ ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.faq-section { background: var(--gray-100); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.faq-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(2, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.faq-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--gray-200);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.faq-q {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 19px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.faq-a { font-size: 14px; color: var(--gray-500); line-height: 1.7; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── CTA FINAL ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(184,134,11,0.08) 0%, transparent 70%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 100px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-section .section-title { color: var(--white); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-section .section-lead { color: rgba(255,255,255,0.55); margin: 0 auto 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-meta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 36px 0 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-meta-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-meta-item svg { color: var(--gold-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-price-block {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-price-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-price-value {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--gold-muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-price-installment {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-sub { font-size: 13px; color: rgba(255,255,255,0.3); letter-spacing: 0.03em; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-contact {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-contact p { font-size: 14px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-contact a { font-size: 14px; color: var(--gold-muted); text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-contact a:hover { text-decoration: underline; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── FOOTER ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-deeper);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 36px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer p { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.7; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer a { color: rgba(255,255,255,0.35); text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer a:hover { color: rgba(255,255,255,0.6); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── STICKY BAR ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticky-bar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 0; left: 0; right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(184,134,11,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 200;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticky-bar-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.3; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticky-bar-text strong { display: block; color: var(--white); font-size: 14px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sticky-bar .btn-primary { padding: 13px 28px; font-size: 13px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── CTA MEIO ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mid-cta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--navy);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 64px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mid-cta-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-display);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(24px, 3vw, 36px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mid-cta-title em { color: var(--gold-muted); font-style: italic; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── ANIMATIONS ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes fadeUp {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>from { opacity: 0; transform: translateY(24px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.anim-d1 { animation-delay: 0.1s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.anim-d2 { animation-delay: 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.anim-d3 { animation-delay: 0.35s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.anim-d4 { animation-delay: 0.5s; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ── RESPONSIVE ── */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 860px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>:root { --section-gap: 64px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-inner { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-card { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero h1 { font-size: 38px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.stat-item { border-right: none; border-bottom: 1px solid rgba(184,134,11,0.15); padding-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.problem-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.transformation-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.materials-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.profile-inner { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.profile-card { max-width: 340px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.faq-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.sticky-bar { display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.cta-section { padding-bottom: 120px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>footer { padding-bottom: 80px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.calc-wrapper { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.calc-result { position: static; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 560px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero { padding: 64px 0 72px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero h1 { font-size: 32px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-actions { flex-direction: column; align-items: flex-start; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-actions .btn-primary { width: 100%; text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.btn-primary { padding: 16px 32px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.stats-grid { grid-template-columns: 1fr 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.roi-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes pulse-red {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0%, 100% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>50% { opacity: 0.7; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result-main-num.updated {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: pulse-red 0.4s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HEADER --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://arquitetodeprocessos.com.br" class="header-logo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Arquiteto de Processos &lt;span&gt;em Saúde™&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary header-cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Adquirir Protocolo</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HERO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-badge anim anim-d1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="tag"&gt;Biblioteca do Arquiteto · Governança Cirúrgica&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1 class="anim anim-d2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>O seu Centro Cirúrgico está perdendo dinheiro &lt;em&gt;todo dia.&lt;/em&gt; Calcule agora.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="hero-sub anim anim-d3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>O &lt;strong style="color: rgba(255,255,255,0.9)"&gt;Protocolo de Governança Cirúrgica™&lt;/strong&gt; é a metodologia completa para gestores que precisam transformar dados em decisão — e caos em processo. Desenvolvido com rigor Lean Six Sigma Black Belt para a realidade hospitalar brasileira.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-meta anim anim-d3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg width="15" height="15" viewBox="0 0 15 15" fill="none"&gt;&lt;rect x="1" y="1" width="13" height="13" rx="1" stroke="currentColor" stroke-width="1.5"/&gt;&lt;path d="M4 7.5h7M7.5 4v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>6 instrumentos metodológicos</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg width="15" height="15" viewBox="0 0 15 15" fill="none"&gt;&lt;circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/&gt;&lt;path d="M7.5 4.5v3l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Acesso imediato</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg width="15" height="15" viewBox="0 0 15 15" fill="none"&gt;&lt;path d="M7.5 1L9.18 5.26L13.73 5.64L10.46 8.47L11.51 12.91L7.5 10.4L3.49 12.91L4.54 8.47L1.27 5.64L5.82 5.26L7.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Lean Six Sigma Black Belt</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-actions anim anim-d4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#calculadora" class="btn-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Calcular minha perda</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-ghost"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Adquirir por R$&amp;nbsp;3.997</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="hero-guarantee" style="margin-top: 16px;"&gt;Garantia incondicional de 7 dias · Sem perguntas · Sem burocracia&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-card anim anim-d3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="hero-card-label"&gt;O que está incluso&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="hero-card-items"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Protocolo de Governança da Pauta Cirúrgica&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;T.A.R.O.™ — Termo de Assunção de Risco Operacional&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Checklist de Abertura de Sala&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Protocolo de Giro de Sala&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Planilha de Monitoramento do CC&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Manual de KPIs do CC&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr class="hero-card-divider" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-card-price"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="hero-card-price-label"&gt;Investimento único&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-card-price-value"&gt;R$ 3.997&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-card-price-installment"&gt;ou 12× de R$ 333 · Sem mensalidade&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary hero-card-cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Adquirir agora</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CALCULADORA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="calc-section" id="calculadora"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="calc-anchor-label"&gt;Diagnóstico financeiro do seu CC&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="calc-title"&gt;Quanto o seu Centro Cirúrgico&lt;br/&gt;&lt;em&gt;está perdendo por ano?&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="calc-lead"&gt;Insira os dados reais do seu CC. A calculadora estima a perda anual causada por giro lento e cancelamentos — e mostra o retorno do Protocolo em dias.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="calc-wrapper"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- INPUTS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="calc-inputs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="calc-inputs-label"&gt;Dados do seu Centro Cirúrgico&lt;/span&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="field-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Número de salas cirúrgicas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="field-value" id="val-salas"&gt;4&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="range" id="sl-salas" min="1" max="20" value="4" step="1" oninput="calcular()"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="range-minmax"&gt;&lt;span&gt;1 sala&lt;/span&gt;&lt;span&gt;20 salas&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="field-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Taxa de cancelamento atual&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="field-value" id="val-cancelamento"&gt;18%&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="range" id="sl-cancelamento" min="1" max="40" value="18" step="1" oninput="calcular()"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="range-minmax"&gt;&lt;span&gt;1%&lt;/span&gt;&lt;span&gt;40%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="field-hint"&gt;Média nacional sem processo: 18%. Meta com o Protocolo: abaixo de 8%.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="field-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Tempo médio de giro atual&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="field-value" id="val-giro"&gt;42 min&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="range" id="sl-giro" min="10" max="90" value="42" step="1" oninput="calcular()"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="range-minmax"&gt;&lt;span&gt;10 min&lt;/span&gt;&lt;span&gt;90 min&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="field-hint"&gt;Média observada sem protocolo: 42 min. Meta com o Protocolo: 20 min.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="field-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Receita média por procedimento&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="field-value" id="val-ticket"&gt;R$ 3.000&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="range" id="sl-ticket" min="500" max="30000" value="3000" step="500" oninput="calcular()"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="range-minmax"&gt;&lt;span&gt;R$ 500&lt;/span&gt;&lt;span&gt;R$ 30.000&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="field-hint"&gt;Receita líquida estimada por procedimento realizado (OPME excluído).&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- RESULTADO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="calc-result"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="result-label"&gt;Perda anual estimada&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-main-num" id="res-anual"&gt;R$ 0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-main-sub"&gt;dinheiro que sai do seu CC todo ano sem processo formal&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-breakdown"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="result-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-label"&gt;Perda mensal por cancelamentos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-value loss" id="res-cancel-mensal"&gt;R$ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="result-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-label"&gt;Perda mensal por giro lento&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-value loss" id="res-giro-mensal"&gt;R$ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="result-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-label"&gt;Procedimentos perdidos por mês&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-value" id="res-procs-perdidos" style="color: rgba(255,255,255,0.7);"&gt;0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="result-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-label"&gt;Perda mensal total&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="result-row-value loss" id="res-mensal"&gt;R$ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="roi-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="roi-card-label"&gt;Retorno do Protocolo de Governança Cirúrgica™&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="roi-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="roi-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-num highlight" id="res-payback"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-label"&gt;dias para recuperar&lt;br/&gt;o investimento&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="roi-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-num highlight" id="res-roi"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-label"&gt;ROI no primeiro&lt;br/&gt;ano&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="roi-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-num" style="color: var(--navy);" id="res-ganho-anual"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-label"&gt;recuperado no&lt;br/&gt;primeiro ano&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="roi-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-num" style="color: var(--navy);"&gt;R$ 3.997&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="roi-item-label"&gt;investimento&lt;br/&gt;único&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary roi-cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Quero o Protocolo — Acesso Imediato</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="roi-sub"&gt;Pagamento seguro via Hotmart · Parcelamento disponível&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="calc-disclaimer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Metodologia:&lt;/strong&gt; Cálculo baseado em 8h de sala/dia, 20 dias úteis/mês e tempo médio de procedimento de 90 min. Perda por giro calculada pela diferença entre procedimentos possíveis com o giro atual e com a meta de 20 min. Perda por cancelamento calculada sobre o volume agendado com a taxa atual vs. a meta de 8%. Os valores são estimativas para fins de diagnóstico.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- STATS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="stats-strip"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stats-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-num"&gt;42&lt;em&gt;min&lt;/em&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-label"&gt;giro médio de sala&lt;br/&gt;sem protocolo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-num"&gt;18&lt;em&gt;%&lt;/em&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-label"&gt;taxa de cancelamento&lt;br/&gt;comum sem processo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-num"&gt;R$180&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-label"&gt;perda anual estimada&lt;br/&gt;em CC de médio porte&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stat-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-num"&gt;7&lt;em&gt;dias&lt;/em&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="stat-label"&gt;de garantia incondicional&lt;br/&gt;para testar o protocolo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- PROBLEM --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="section-label"&gt;O problema que nenhum hospital quer admitir&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="section-title"&gt;O caos não foi acidente.&lt;br/&gt;&lt;em&gt;Foi processo mal desenhado.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-lead"&gt;A sala estava pronta. O cirurgião não chegou. Ninguém avisou. Esse cenário se repete em centros cirúrgicos de todo o Brasil — não por descuido, mas por ausência de protocolo.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="problem-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="problem-narrative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Já estive do outro lado do bisturi. Paciente. Aguardando cirurgia. A sala estava pronta às 07h00. O cirurgião chegou às 08h40. Ninguém avisou. Ninguém explicou. Ninguém sabia ao certo o motivo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Pauta fechada na manhã do procedimento. Cirurgião sem confirmação formal. Equipe esperando informação que nunca foi disparada.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;blockquote class="problem-quote"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Não era descuido. Era ausência de protocolo."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;cite&gt;— Matheus Sacoman, Arquiteto de Processos em Saúde™&lt;/cite&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/blockquote&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="problem-checks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="problem-checks-label"&gt;Este protocolo foi desenvolvido para você se...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;Seu CC convive com cancelamentos que ninguém consegue eliminar&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;A pauta cirúrgica ainda é fechada na manhã do procedimento&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;O giro de sala é lento e a causa "já é conhecida" mas nunca é resolvida&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;Você não tem dados confiáveis para apresentar à diretoria&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;A enfermagem absorve riscos que deveriam ser formalizados por quem decide&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="check-arrow" viewBox="0 0 22 22" fill="none"&gt;&lt;path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="check-text"&gt;Você sabe que a operação poderia render mais — mas não sabe por onde começar&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="check-bottom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Se você se identificou com pelo menos dois desses pontos, &lt;strong&gt;o Protocolo de Governança Cirúrgica™ foi desenvolvido para a sua realidade.&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- TRANSFORMAÇÃO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="transformation-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="section-label" style="color: var(--gold-muted);"&gt;O que muda com o protocolo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="section-title" style="color: var(--white);"&gt;De imprevisto a &lt;em&gt;processo.&lt;/em&gt;&lt;br/&gt;De custo a &lt;em&gt;resultado.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-lead" style="color: rgba(255,255,255,0.55);"&gt;Cada instrumento do protocolo existe para transformar uma realidade específica do seu CC.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="transformation-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Pauta fechada na manhã do procedimento. Cancelamentos de última hora sem causa registrada.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;Pauta validada 48h antes. Cancelamento preventivo com dados. Taxa abaixo de 8%.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Giro de 42 min. Equipes esperando sem saber o que a outra está fazendo.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;SLA definido por equipe. Giro em 20 min. Uma cirurgia a mais por sala por semana.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Risco assumido pela enfermagem verbalmente. Desvio sem registro e sem responsável.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;T.A.R.O.™ formaliza cada desvio. Risco tem nome, cargo e assinatura de quem decide.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Reunião de resultados com dados imprecisos. Diretoria questiona. Coordenador improvisa.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;6 KPIs com fórmula, meta e alerta. Apresentação em dados — não em narrativa.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Abertura de sala feita de memória. Itens críticos esquecidos. Atraso no primeiro procedimento.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;Checklist de 12 pontos obrigatórios. Sala liberada com status formal antes da primeira incisão.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="transform-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-before"&gt;Antes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-from"&gt;Ociosidade invisível. Ninguém sabe quanto cada sala parada custa por hora.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-after"&gt;Com o Protocolo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="transform-to"&gt;Custo de ociosidade calculado. Dado que o CFO entende — e que justifica o investimento.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- MID CTA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="mid-cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="mid-cta-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Pronto para estruturar&lt;br/&gt;&lt;em&gt;o seu Centro Cirúrgico?&lt;/em&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Adquirir o Protocolo — R$ 3.997</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- MATERIALS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="section materials-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="section-label"&gt;O que está incluso&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="section-title"&gt;6 instrumentos metodológicos.&lt;br/&gt;&lt;em&gt;Prontos para implantar.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-lead"&gt;O resultado vem da metodologia. Os instrumentos abaixo são a evidência do que foi construído — não são documentos para ler, são ferramentas para operar.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="materials-intro"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Cada instrumento foi desenhado para ser implantado imediatamente — campos ajustáveis à sua realidade, guias rápidos para afixar no CC, fórmulas automáticas e protocolos com papéis e SLAs definidos. Não é teoria. É operação.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="materials-grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;PDF · 9 páginas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;01&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;Protocolo de Governança da Pauta Cirúrgica&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;Como estruturar, validar e fechar a pauta com antecedência mínima de 48 horas. Inclui fluxo completo, papéis e responsabilidades e critérios de cancelamento preventivo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Fluxo de 6 passos: de T−72h até o briefing de véspera&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Tabela de papéis: quem confirma o quê e até quando&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Critérios exatos de cancelamento preventivo&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;4 indicadores de controle com fórmula e meta&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Guia rápido visual para afixar na coordenação&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card highlight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;PDF preenchível · 1 página&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;02&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;T.A.R.O.™&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;Termo de Assunção de Risco Operacional. Quando o desvio precisa ser assinado, o comportamento muda antes do papel ser preenchido.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;5 blocos: Identificação, Desvio, Risco, Decisão e Assinaturas&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;6 categorias pré-definidas de classificação do desvio&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;3 níveis de risco com caixas visuais: Baixo, Médio e Alto&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Decisão formal: Autorizado ou Suspenso — com justificativa&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;3 campos de assinatura: Solicitante, Coordenador e Cirurgião&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;PDF · Formato para impressão diária&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;03&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;Checklist de Abertura de Sala&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;12 pontos de verificação obrigatória antes do primeiro procedimento do dia. Para preencher presencialmente — não de memória.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;4 blocos: Infraestrutura, Equipamentos, Materiais e Paciente&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Cada item com campo de pendência e status: Conforme ou Pendência&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;3 estados de resultado: Liberada, Com Pendência ou Bloqueada&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Campos de assinatura com horário de início e liberação&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;PDF · 9 páginas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;04&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;Protocolo de Giro de Sala&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;SLA definido entre CC, Higienização e próximo Cirurgião. Tempos-padrão por tipo de procedimento, mensagens de acionamento e tabela de causas com contramedidas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Tempo-padrão por tipo de procedimento — meta e máximo aceitável&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;SLA das 3 equipes em blocos visuais&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;8 causas de giro lento com contramedida definitiva para cada&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;5 indicadores com fórmula, meta, alerta e impacto&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;Excel · Google Sheets&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;05&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;Planilha de Monitoramento do CC&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;4 abas integradas com fórmulas automáticas para giro, atraso e taxa de cancelamento. Compatível com Google Sheets.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Aba 1 — Registro Diário: 19 colunas, 60 linhas, fórmulas prontas&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Aba 2 — Painel Mensal: 6 KPIs + desempenho por sala&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Aba 3 — Cancelamentos: Pareto com 8 causas e ação recomendada&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Aba 4 — Guia de Uso: instruções campo a campo&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="material-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-format"&gt;PDF · 30 páginas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="material-num"&gt;06&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="material-title"&gt;Manual de KPIs do CC&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="material-desc"&gt;6 indicadores essenciais: como calcular, interpretar e agir. Para cada KPI: fórmula, meta, alerta e as armadilhas mais comuns.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="material-bullets"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Taxa de Ocupação · Taxa de Cancelamento · Giro de Sala&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Índice de Pontualidade · Custo de Ociosidade&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Taxa de Conformidade da Pauta 48h — o único KPI que prevê os outros 5&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Tabela de diagnóstico cruzado: 6 cenários com diagnóstico provável&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- PROFILE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="section profile-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="profile-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="section-label"&gt;Quem desenvolveu&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 class="section-title"&gt;Rigor metodológico da indústria, &lt;em&gt;traduzido para o hospital.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="section-lead"&gt;Os instrumentos deste protocolo foram desenvolvidos com o mesmo rigor aplicado na indústria — e testados na realidade hospitalar brasileira. Não é teoria de livro. É processo construído no chão de operação.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="profile-credentials"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="credential"&gt;Lean Six Sigma Black Belt · FM2S&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="credential"&gt;Coordenador de Projetos de Melhoria · WEG S.A.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="credential"&gt;Big Data &amp;amp; Analytics em Saúde · Hospital Albert Einstein&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="credential"&gt;Compliance em Saúde · Instituto Sírio-Libanês&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="credential"&gt;Graduação em Gestão Hospitalar + Enfermagem&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="profile-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="profile-avatar"&gt;MS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="profile-name"&gt;Matheus Sacoman&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="profile-title"&gt;Arquiteto de Processos em Saúde™&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;hr class="profile-divider" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="profile-badges"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="profile-badge"&gt;Lean Six Sigma Black Belt&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="profile-badge"&gt;Big Data &amp;amp; Analytics · Albert Einstein&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="profile-badge"&gt;Compliance em Saúde · Sírio-Libanês&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="profile-badge"&gt;Gestão Hospitalar + Enfermagem&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- GUARANTEE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="guarantee-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="guarantee-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="guarantee-icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none"&gt;&lt;path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/&gt;&lt;path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="guarantee-title"&gt;Garantia incondicional de 7 dias&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="guarantee-text"&gt;Baixe, implante e avalie. Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias após a compra, devolvemos 100% do valor. Sem perguntas. Sem burocracia. Sem formulário.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FAQ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="section faq-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="section-label"&gt;Perguntas frequentes&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="section-title"&gt;Dúvidas &lt;em&gt;comuns&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="faq-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Para quem é o Protocolo de Governança Cirúrgica™?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;Para coordenadores, gerentes e diretores de centros cirúrgicos, blocos cirúrgicos e clínicas cirúrgicas de qualquer porte. Os instrumentos foram desenvolvidos para serem acessíveis a qualquer gestor — sem necessidade de formação em Lean ou Six Sigma.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Preciso de software especial?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;Não. Os PDFs abrem em qualquer leitor. A planilha é compatível com Google Sheets (gratuito) e Microsoft Excel. Nenhum sistema adicional é necessário.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Os instrumentos precisam de adaptação?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;Sim — e estão desenhados para isso. Campos como tempos-padrão, nomes de equipes e canais de comunicação devem ser ajustados à realidade da sua instituição. A estrutura metodológica é imediatamente aplicável.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Como recebo os materiais?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;O acesso é imediato após a confirmação do pagamento. Você recebe um e-mail com o link para download de todos os 6 instrumentos.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Recebo atualizações futuras?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;Sim. Quem adquire o Protocolo recebe todas as atualizações dos instrumentos sem custo adicional. Investimento único — acesso permanente.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="faq-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="faq-q"&gt;Posso usar em mais de um hospital?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="faq-a"&gt;O protocolo é licenciado para uso individual do comprador. Para uso institucional em redes ou grupos hospitalares, entre em contato diretamente para condições específicas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CTA FINAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="cta-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="section-label" style="display:block; text-align:center; margin-bottom:20px;"&gt;Protocolo de Governança Cirúrgica™&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="section-title"&gt;Quanto mais tempo sem protocolo,&lt;br/&gt;&lt;em&gt;maior é o custo do improviso.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-lead"&gt;Cada dia sem processo formalizado é um dia de perda mensurável. A calculadora acima mostrou o número. A decisão é sua.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none"&gt;&lt;path d="M8 1.5L9.545 5.455L13.727 5.818L10.636 8.636L11.545 12.727L8 10.455L4.455 12.727L5.364 8.636L2.273 5.818L6.455 5.455L8 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>6 instrumentos metodológicos</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none"&gt;&lt;circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/&gt;&lt;path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Acesso imediato</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none"&gt;&lt;path d="M8 1.5L3 4.5v4c0 3.5 2.5 6.77 5 7.5 2.5-.73 5-4 5-7.5v-4L8 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/&gt;&lt;path d="M6 8l1.5 1.5 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Garantia de 7 dias</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-meta-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none"&gt;&lt;path d="M2 10l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Lean Six Sigma Black Belt</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-price-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-price-label"&gt;Investimento único&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-price-value"&gt;R$ 3.997&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-price-installment"&gt;ou 12× de R$ 333 · Sem mensalidade&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Quero o Protocolo — Acesso Imediato</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="cta-sub"&gt;Pagamento seguro via Hotmart · Parcelamento disponível&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-contact"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Dúvida antes de comprar?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="mailto:matheussacoman@arquitetodeprocessos.com.br"&gt;matheussacoman@arquitetodeprocessos.com.br&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FOOTER --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>© 2026 Matheus Sacoman · Arquiteto de Processos em Saúde™ · SynExHealth&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://arquitetodeprocessos.com.br" target="_blank" rel="noopener noreferrer"&gt;arquitetodeprocessos.com.br&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&amp;nbsp;·&amp;nbsp;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener noreferrer"&gt;Política de Privacidade&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- STICKY BAR --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sticky-bar" id="stickyBar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="sticky-bar-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;strong&gt;Protocolo de Governança Cirúrgica™&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>6 instrumentos · R$ 3.997 · Acesso imediato</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Comprar</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var INVEST = 3997;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var DIAS_MES = 20;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var HORAS_DIA = 8;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var MIN_DIA = HORAS_DIA * 60; // 480</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var DUR_PROC = 90;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var META_GIRO = 20;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var META_CANCEL = 0.08;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function calcular() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var salas = parseInt(document.getElementById('sl-salas').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var cancelamento = parseInt(document.getElementById('sl-cancelamento').value) / 100;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var giro = parseInt(document.getElementById('sl-giro').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var ticket = parseInt(document.getElementById('sl-ticket').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('val-salas').textContent = salas;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('val-cancelamento').textContent = parseInt(document.getElementById('sl-cancelamento').value) + '%';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('val-giro').textContent = giro + ' min';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('val-ticket').textContent = 'R$ ' + formatNum(ticket);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var procsAtualPorSala = Math.floor(MIN_DIA / (DUR_PROC + giro));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var procsMetaPorSala = Math.floor(MIN_DIA / (DUR_PROC + META_GIRO));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var agendadoAtual = salas * procsAtualPorSala * DIAS_MES;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var agendadoMeta = salas * procsMetaPorSala * DIAS_MES;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var cancelMeta = agendadoMeta * META_CANCEL;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var cancelAtual = agendadoMeta * cancelamento;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var perdaCancelMensal = (cancelAtual - cancelMeta) * ticket;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (perdaCancelMensal &lt; 0) perdaCancelMensal = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var receitaMetaGiro = agendadoMeta * (1 - cancelamento) * ticket;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var receitaAtualGiro = agendadoAtual * (1 - cancelamento) * ticket;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var perdaGiroMensal = receitaMetaGiro - receitaAtualGiro;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (perdaGiroMensal &lt; 0) perdaGiroMensal = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var perdaMensal = perdaCancelMensal + perdaGiroMensal;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var perdaAnual = perdaMensal * 12;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var procsPerdidosMes = Math.round(agendadoMeta - agendadoAtual + (agendadoAtual * (cancelamento - META_CANCEL)));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (procsPerdidosMes &lt; 0) procsPerdidosMes = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var paybackDias = perdaMensal &gt; 0 ? Math.ceil((INVEST / perdaMensal) * 30) : null;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var ganhoAnual = perdaAnual - INVEST;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var roi = INVEST &gt; 0 ? ((ganhoAnual / INVEST) * 100) : 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>setEl('res-anual', 'R$ ' + formatNumK(perdaAnual));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setEl('res-cancel-mensal', 'R$ ' + formatNumK(perdaCancelMensal));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setEl('res-giro-mensal', 'R$ ' + formatNumK(perdaGiroMensal));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setEl('res-procs-perdidos', procsPerdidosMes + ' proc./mês');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setEl('res-mensal', 'R$ ' + formatNumK(perdaMensal));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (paybackDias !== null &amp;&amp; paybackDias &lt; 9999) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-payback', paybackDias + ' dias');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-roi', roi &gt; 0 ? Math.round(roi) + '%' : '&lt; 0%');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-ganho-anual', 'R$ ' + formatNumK(Math.max(ganhoAnual, 0)));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-payback', '—');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-roi', '—');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setEl('res-ganho-anual', '—');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var el = document.getElementById('res-anual');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>el.classList.remove('updated');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>void el.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>el.classList.add('updated');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function setEl(id, val) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (el) el.textContent = val;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function formatNum(n) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return n.toLocaleString('pt-BR');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function formatNumK(n) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (n &gt;= 1000000) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return (n / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (n &gt;= 1000) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return (n / 1000).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + 'k';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return Math.round(n).toLocaleString('pt-BR');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>calcular();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>(function() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var ctaSection = document.querySelector('.cta-section');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var stickyBar = document.getElementById('stickyBar');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!ctaSection || !stickyBar) return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var obs = new IntersectionObserver(function(entries) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>entries.forEach(function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>stickyBar.style.display = e.isIntersecting ? 'none' : '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, { threshold: 0.1 });</p>
+<p class="p1"><span class="Apple-converted-space">      </span>obs.observe(ctaSection);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
