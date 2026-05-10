@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" />
   <title>Protocolo de Governança Cirúrgica™ | Arquiteto de Processos em Saúde™</title>
-  <meta name="description" content="Descubra quanto o seu Centro Cirúrgico está perdendo por mês. Calcule agora e veja o ROI do Protocolo de Governança Cirúrgica™ — desenvolvido com rigor Lean Six Sigma Black Belt para gestores hospitalares." />
+  <meta name="description" content="O método que estrutura o Centro Cirúrgico para funcionar sem depender de heróis. 6 instrumentos desenvolvidos com rigor Lean Six Sigma Black Belt para gestores hospitalares." />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,980 +27,213 @@
       --gray-700: #444444;
       --text-main: #1A2B4A;
       --green: #1A7A4A;
-      --green-pale: #EAF5EE;
-      --red-pale: #FEF0EE;
-      --red: #C0392B;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', sans-serif;
       --max-w: 1080px;
       --section-gap: 96px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      color: var(--text-main);
-      background: var(--white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: var(--font-body); color: var(--text-main); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-
-    .tag {
-      display: inline-block;
-      font-family: var(--font-body);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 5px 14px;
-      border-radius: 2px;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 18px 48px;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary:hover {
-      background: #9A7009;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(184,134,11,0.28);
-    }
-    .btn-ghost {
-      display: inline-block;
-      background: transparent;
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      padding: 14px 36px;
-      border: 1.5px solid var(--gold);
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
-    }
+    .tag { display: inline-block; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; border-radius: 2px; }
+    .btn-primary { display: inline-block; background: var(--gold); color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 18px 48px; border-radius: 2px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn-primary:hover { background: #9A7009; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.28); }
+    .btn-ghost { display: inline-block; background: transparent; color: var(--gold); font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; padding: 14px 36px; border: 1.5px solid var(--gold); border-radius: 2px; transition: background 0.2s, color 0.2s; }
     .btn-ghost:hover { background: var(--gold); color: var(--white); }
 
-    /* ── HEADER ── */
-    header {
-      background: var(--navy-dark);
-      border-bottom: 1px solid rgba(184,134,11,0.2);
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .header-logo {
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
+    /* HEADER */
+    header { background: var(--navy-dark); border-bottom: 1px solid rgba(184,134,11,0.2); padding: 18px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header-logo { font-family: var(--font-display); font-size: 17px; font-weight: 500; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
     .header-logo span { color: var(--gold-muted); }
     .header-cta { font-size: 13px; padding: 12px 28px; }
 
-    /* ── HERO ── */
-    .hero {
-      background: var(--navy-dark);
-      background-image:
-        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,0.07) 0%, transparent 70%),
-        linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%);
-      padding: 100px 0 96px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px),
-        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px);
-      pointer-events: none;
-    }
-    .hero-inner {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 64px;
-      align-items: center;
-    }
+    /* HERO */
+    .hero { background: var(--navy-dark); background-image: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,0.07) 0%, transparent 70%), linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%); padding: 100px 0 96px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px); pointer-events: none; }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: center; }
     .hero-badge { margin-bottom: 24px; }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 5vw, 62px);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 62px); font-weight: 600; line-height: 1.1; color: var(--white); margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: var(--gold-muted); }
-    .hero-sub {
-      font-size: 17px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.7;
-      margin-bottom: 36px;
-      max-width: 520px;
-    }
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .hero-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-    }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
+    .hero-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
     .hero-meta-item svg { opacity: 0.7; flex-shrink: 0; }
     .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .hero-guarantee { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
-
-    .hero-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(184,134,11,0.25);
-      border-radius: 4px;
-      padding: 36px 32px;
-      backdrop-filter: blur(8px);
-    }
-    .hero-card-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-muted);
-      margin-bottom: 20px;
-      display: block;
-    }
+    .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.25); border-radius: 4px; padding: 36px 32px; backdrop-filter: blur(8px); }
+    .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 20px; display: block; }
     .hero-card-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .hero-card-items li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.4;
-    }
-    .hero-card-items li::before {
-      content: '–';
-      color: var(--gold-muted);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .hero-card-divider {
-      border: none;
-      border-top: 1px solid rgba(184,134,11,0.15);
-      margin: 24px 0;
-    }
-    .hero-card-cta {
-      width: 100%;
-      text-align: center;
-      padding: 16px 24px;
-      font-size: 14px;
-    }
-    .hero-card-price {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .hero-card-price-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .hero-card-price-value {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 600;
-      color: var(--gold-muted);
-      line-height: 1;
-    }
-    .hero-card-price-installment {
-      font-size: 12px;
-      color: rgba(255,255,255,0.3);
-      margin-top: 4px;
-    }
+    .hero-card-items li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+    .hero-card-items li::before { content: '–'; color: var(--gold-muted); flex-shrink: 0; margin-top: 1px; }
+    .hero-card-divider { border: none; border-top: 1px solid rgba(184,134,11,0.15); margin: 24px 0; }
+    .hero-card-cta { width: 100%; text-align: center; padding: 16px 24px; font-size: 14px; }
+    .hero-card-principle { text-align: center; margin-bottom: 20px; }
+    .hero-card-principle-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; margin-bottom: 8px; }
+    .hero-card-principle-value { font-family: var(--font-display); font-size: 18px; font-weight: 600; font-style: italic; color: var(--gold-muted); line-height: 1.35; }
 
-    /* ── CALCULATOR ── */
-    .calc-section {
-      background: var(--white);
-      padding: 80px 0;
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .calc-anchor-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
-      text-align: center;
-    }
-    .calc-title {
-      font-family: var(--font-display);
-      font-size: clamp(30px, 4vw, 44px);
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.15;
-      margin-bottom: 12px;
-      text-align: center;
-    }
+    /* CALCULATOR */
+    .calc-section { background: var(--white); padding: 80px 0; border-bottom: 1px solid var(--gray-200); }
+    .calc-anchor-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; text-align: center; }
+    .calc-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 44px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 12px; text-align: center; }
     .calc-title em { font-style: italic; color: var(--gold); }
-    .calc-lead {
-      font-size: 16px;
-      color: var(--gray-500);
-      text-align: center;
-      max-width: 540px;
-      margin: 0 auto 48px;
-      line-height: 1.7;
-    }
-    .calc-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-    .calc-inputs {
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-radius: 4px;
-      padding: 36px 32px;
-    }
-    .calc-inputs-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-      margin-bottom: 28px;
-      display: block;
-    }
-    .field-group {
-      margin-bottom: 28px;
-    }
+    .calc-lead { font-size: 16px; color: var(--gray-500); text-align: center; max-width: 540px; margin: 0 auto 48px; line-height: 1.7; }
+    .calc-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-inputs { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 4px; padding: 36px 32px; }
+    .calc-inputs-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 28px; display: block; }
+    .field-group { margin-bottom: 28px; }
     .field-group:last-child { margin-bottom: 0; }
-    .field-label {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 10px;
-    }
-    .field-label span {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--navy);
-    }
-    .field-value {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .field-hint {
-      font-size: 11px;
-      color: var(--gray-500);
-      margin-top: 2px;
-    }
-    input[type="range"] {
-      width: 100%;
-      -webkit-appearance: none;
-      height: 4px;
-      border-radius: 2px;
-      background: var(--gray-300);
-      outline: none;
-      cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--gold);
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(184,134,11,0.3);
-      transition: transform 0.15s;
-    }
+    .field-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .field-label span { font-size: 14px; font-weight: 500; color: var(--navy); }
+    .field-value { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--gold); line-height: 1; }
+    .field-hint { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+    input[type="range"] { width: 100%; -webkit-appearance: none; height: 4px; border-radius: 2px; background: var(--gray-300); outline: none; cursor: pointer; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); cursor: pointer; box-shadow: 0 2px 8px rgba(184,134,11,0.3); transition: transform 0.15s; }
     input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
-    input[type="range"]::-moz-range-thumb {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: none;
-      cursor: pointer;
-    }
-    .range-minmax {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      color: var(--gray-500);
-      margin-top: 6px;
-      letter-spacing: 0.04em;
-    }
-
-    .calc-result {
-      position: sticky;
-      top: 96px;
-    }
-    .result-card {
-      background: var(--navy-dark);
-      border: 1px solid rgba(184,134,11,0.2);
-      border-radius: 4px;
-      padding: 36px 32px;
-      margin-bottom: 16px;
-    }
-    .result-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-muted);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .result-main-num {
-      font-family: var(--font-display);
-      font-size: 52px;
-      font-weight: 600;
-      color: #FF6B6B;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .result-main-sub {
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 28px;
-    }
-    .result-breakdown {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(184,134,11,0.12);
-      margin-bottom: 24px;
-    }
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .result-row-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-    }
-    .result-row-value {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.85);
-    }
+    input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; }
+    .range-minmax { display: flex; justify-content: space-between; font-size: 10px; color: var(--gray-500); margin-top: 6px; letter-spacing: 0.04em; }
+    .calc-result { position: sticky; top: 96px; }
+    .result-card { background: var(--navy-dark); border: 1px solid rgba(184,134,11,0.2); border-radius: 4px; padding: 36px 32px; margin-bottom: 16px; }
+    .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 8px; display: block; }
+    .result-main-num { font-family: var(--font-display); font-size: 52px; font-weight: 600; color: #FF6B6B; line-height: 1; margin-bottom: 4px; }
+    .result-main-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+    .result-breakdown { display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(184,134,11,0.12); margin-bottom: 24px; }
+    .result-row { display: flex; justify-content: space-between; align-items: center; }
+    .result-row-label { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .result-row-value { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.85); }
     .result-row-value.loss { color: #FF6B6B; }
-    .result-row-value.gain { color: #5CBA8A; }
+    .recovered-card { background: var(--gold-pale); border: 1px solid rgba(184,134,11,0.25); border-radius: 4px; padding: 28px 32px; margin-bottom: 16px; }
+    .recovered-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
+    .recovered-card-sub { font-size: 13px; color: var(--gray-500); margin-bottom: 20px; line-height: 1.5; }
+    .recovered-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .recovered-item-num { font-family: var(--font-display); font-size: 32px; font-weight: 600; color: var(--green); line-height: 1; margin-bottom: 4px; }
+    .recovered-item-label { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
+    .ausencia-block { background: var(--navy-dark); border: 1px solid rgba(184,134,11,0.2); border-radius: 4px; padding: 28px 32px; margin-bottom: 16px; }
+    .ausencia-block-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; display: block; }
+    .ausencia-block-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 10px; }
+    .ausencia-block-title em { color: var(--gold-muted); font-style: italic; }
+    .ausencia-block-body { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 18px; }
+    .ausencia-cta { display: block; width: 100%; text-align: center; padding: 14px 24px; font-size: 13px; background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; font-family: var(--font-body); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .ausencia-cta:hover { background: rgba(184,134,11,0.15); border-color: var(--gold-muted); }
+    .calc-disclaimer { font-size: 11px; color: var(--gray-500); line-height: 1.6; margin-top: 16px; padding: 12px 16px; background: var(--gray-100); border-radius: 2px; }
 
-    .roi-card {
-      background: var(--gold-pale);
-      border: 1px solid rgba(184,134,11,0.25);
-      border-radius: 4px;
-      padding: 28px 32px;
-      margin-bottom: 16px;
-    }
-    .roi-card-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
-    }
-    .roi-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .roi-item {}
-    .roi-item-num {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .roi-item-num.highlight { color: var(--green); }
-    .roi-item-label {
-      font-size: 12px;
-      color: var(--gray-500);
-      line-height: 1.4;
-    }
-    .roi-cta {
-      width: 100%;
-      text-align: center;
-      padding: 16px 24px;
-      font-size: 14px;
-    }
-    .roi-sub {
-      text-align: center;
-      font-size: 12px;
-      color: var(--gray-500);
-      margin-top: 10px;
-    }
-
-    .calc-disclaimer {
-      font-size: 11px;
-      color: var(--gray-500);
-      line-height: 1.6;
-      margin-top: 16px;
-      padding: 12px 16px;
-      background: var(--gray-100);
-      border-radius: 2px;
-    }
-
-    /* ── STATS STRIP ── */
-    .stats-strip {
-      background: var(--gold-pale);
-      border-top: 1px solid rgba(184,134,11,0.15);
-      border-bottom: 1px solid rgba(184,134,11,0.15);
-      padding: 48px 0;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-    .stat-item {
-      text-align: center;
-      padding: 8px 24px;
-      border-right: 1px solid rgba(184,134,11,0.2);
-    }
+    /* STATS */
+    .stats-strip { background: var(--gold-pale); border-top: 1px solid rgba(184,134,11,0.15); border-bottom: 1px solid rgba(184,134,11,0.15); padding: 48px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .stat-item { text-align: center; padding: 8px 24px; border-right: 1px solid rgba(184,134,11,0.2); }
     .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 48px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1;
-      display: block;
-      margin-bottom: 8px;
-    }
+    .stat-num { font-family: var(--font-display); font-size: 48px; font-weight: 600; color: var(--navy); line-height: 1; display: block; margin-bottom: 8px; }
     .stat-num em { color: var(--gold); font-style: normal; }
     .stat-label { font-size: 13px; color: var(--gray-500); line-height: 1.4; }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     .section { padding: var(--section-gap) 0; }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
     .section-title em { font-style: italic; color: var(--gold); }
-    .section-lead {
-      font-size: 17px;
-      color: var(--gray-700);
-      line-height: 1.75;
-      max-width: 640px;
-    }
+    .section-lead { font-size: 17px; color: var(--gray-700); line-height: 1.75; max-width: 640px; }
 
-    /* ── PROBLEM ── */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-      margin-top: 56px;
-    }
-    .problem-narrative {
-      background: var(--navy-dark);
-      border-left: 3px solid var(--gold);
-      padding: 40px 36px;
-      border-radius: 2px;
-    }
-    .problem-narrative p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
+    /* PROBLEM */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 56px; }
+    .problem-narrative { background: var(--navy-dark); border-left: 3px solid var(--gold); padding: 40px 36px; border-radius: 2px; }
+    .problem-narrative p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 16px; }
     .problem-narrative p:last-of-type { margin-bottom: 24px; }
-    .problem-quote {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-style: italic;
-      color: var(--gold-muted);
-      line-height: 1.4;
-      border-top: 1px solid rgba(184,134,11,0.2);
-      padding-top: 20px;
-    }
-    .problem-quote cite {
-      display: block;
-      font-size: 13px;
-      font-style: normal;
-      font-family: var(--font-body);
-      color: rgba(255,255,255,0.35);
-      margin-top: 10px;
-      letter-spacing: 0.04em;
-    }
+    .problem-quote { font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--gold-muted); line-height: 1.4; border-top: 1px solid rgba(184,134,11,0.2); padding-top: 20px; }
+    .problem-quote cite { display: block; font-size: 13px; font-style: normal; font-family: var(--font-body); color: rgba(255,255,255,0.35); margin-top: 10px; letter-spacing: 0.04em; }
     .problem-checks { display: flex; flex-direction: column; gap: 0; }
-    .problem-checks-label {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-      margin-bottom: 20px;
-    }
-    .check-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--gray-200);
-    }
+    .problem-checks-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 20px; }
+    .check-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
     .check-item:first-of-type { border-top: 1px solid var(--gray-200); }
     .check-arrow { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; color: var(--gold); }
     .check-text { font-size: 15px; color: var(--gray-700); line-height: 1.55; }
-    .check-bottom {
-      margin-top: 28px;
-      background: var(--gold-pale);
-      border: 1px solid rgba(184,134,11,0.2);
-      padding: 18px 20px;
-      border-radius: 2px;
-      font-size: 14px;
-      color: var(--navy);
-      line-height: 1.55;
-    }
+    .check-bottom { margin-top: 28px; background: var(--gold-pale); border: 1px solid rgba(184,134,11,0.2); padding: 18px 20px; border-radius: 2px; font-size: 14px; color: var(--navy); line-height: 1.55; }
     .check-bottom strong { color: var(--gold); }
 
-    /* ── TRANSFORMATION ── */
+    /* TRANSFORMATION */
     .transformation-section { background: var(--navy-deeper); padding: var(--section-gap) 0; }
-    .transformation-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-    .transform-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(184,134,11,0.15);
-      border-radius: 4px;
-      padding: 32px 28px;
-      transition: border-color 0.2s;
-    }
+    .transformation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .transform-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; padding: 32px 28px; transition: border-color 0.2s; }
     .transform-card:hover { border-color: rgba(184,134,11,0.35); }
-    .transform-before {
-      font-size: 13px;
-      color: rgba(255,255,255,0.35);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .transform-from {
-      font-size: 15px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .transform-after {
-      font-size: 13px;
-      color: var(--gold-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .transform-to {
-      font-family: var(--font-display);
-      font-size: 18px;
-      color: var(--white);
-      font-weight: 600;
-      line-height: 1.3;
-    }
+    .transform-before { font-size: 13px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
+    .transform-from { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .transform-after { font-size: 13px; color: var(--gold-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
+    .transform-to { font-family: var(--font-display); font-size: 18px; color: var(--white); font-weight: 600; line-height: 1.3; }
 
-    /* ── MATERIALS ── */
+    /* MATERIALS */
     .materials-section { background: var(--gray-100); }
-    .materials-intro {
-      background: var(--navy-dark);
-      border-left: 3px solid var(--gold);
-      padding: 32px 36px;
-      border-radius: 2px;
-      margin-top: 56px;
-      margin-bottom: 32px;
-    }
-    .materials-intro p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.75;
-      max-width: 680px;
-    }
-    .materials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .material-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 2px;
-      padding: 32px 28px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      position: relative;
-    }
-    .material-card:hover {
-      border-color: rgba(184,134,11,0.35);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-    .material-num {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .material-title {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    .material-desc {
-      font-size: 14px;
-      color: var(--gray-500);
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
+    .materials-intro { background: var(--navy-dark); border-left: 3px solid var(--gold); padding: 32px 36px; border-radius: 2px; margin-top: 56px; margin-bottom: 32px; }
+    .materials-intro p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; max-width: 680px; }
+    .materials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .material-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 32px 28px; transition: border-color 0.2s, box-shadow 0.2s; position: relative; }
+    .material-card:hover { border-color: rgba(184,134,11,0.35); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .material-num { font-family: var(--font-display); font-size: 13px; font-weight: 500; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
+    .material-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 12px; }
+    .material-desc { font-size: 14px; color: var(--gray-500); line-height: 1.65; margin-bottom: 20px; }
     .material-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .material-bullets li {
-      font-size: 13px;
-      color: var(--gray-700);
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.45;
-    }
-    .material-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 11px;
-      top: 2px;
-    }
-    .material-format {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-      background: var(--gray-100);
-      padding: 3px 8px;
-      border-radius: 2px;
-    }
-    .material-card.highlight {
-      border-color: rgba(184,134,11,0.3);
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
-    }
+    .material-bullets li { font-size: 13px; color: var(--gray-700); padding-left: 14px; position: relative; line-height: 1.45; }
+    .material-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 2px; }
+    .material-format { position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); padding: 3px 8px; border-radius: 2px; }
+    .material-card.highlight { border-color: rgba(184,134,11,0.3); background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); }
     .material-card.highlight .material-num { color: var(--gold-muted); }
     .material-card.highlight .material-title { color: var(--white); }
     .material-card.highlight .material-desc { color: rgba(255,255,255,0.55); }
     .material-card.highlight .material-bullets li { color: rgba(255,255,255,0.75); }
     .material-card.highlight .material-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
 
-    /* ── PROFILE ── */
-    .profile-section { background: var(--white); }
-    .profile-inner {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: center;
-    }
-    .profile-credentials { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
-    .credential {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--gray-700);
-    }
-    .credential::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .profile-card {
-      background: var(--navy-dark);
-      border: 1px solid rgba(184,134,11,0.2);
-      border-radius: 4px;
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .profile-avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: rgba(184,134,11,0.15);
-      border: 2px solid rgba(184,134,11,0.3);
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 600;
-      color: var(--gold-muted);
-    }
-    .profile-name {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .profile-title {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--gold-muted);
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-    .profile-divider {
-      border: none;
-      border-top: 1px solid rgba(184,134,11,0.15);
-      margin: 24px 0;
-    }
-    .profile-badges { display: flex; flex-direction: column; gap: 10px; }
-    .profile-badge { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.4; }
-
-    /* ── GUARANTEE ── */
-    .guarantee-bar {
-      background: var(--gold-pale);
-      border-top: 1px solid rgba(184,134,11,0.2);
-      border-bottom: 1px solid rgba(184,134,11,0.2);
-      padding: 32px 0;
-    }
-    .guarantee-inner {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-      flex-direction: column;
-    }
-    .guarantee-icon {
-      width: 52px;
-      height: 52px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--gold);
-    }
-    .guarantee-title {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
+    /* GUARANTEE */
+    .guarantee-bar { background: var(--gold-pale); border-top: 1px solid rgba(184,134,11,0.2); border-bottom: 1px solid rgba(184,134,11,0.2); padding: 32px 0; }
+    .guarantee-inner { display: flex; align-items: center; gap: 20px; max-width: 640px; margin: 0 auto; text-align: center; flex-direction: column; }
+    .guarantee-icon { width: 52px; height: 52px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); }
+    .guarantee-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
     .guarantee-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
 
-    /* ── FAQ ── */
+    /* FAQ */
     .faq-section { background: var(--gray-100); }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-    }
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 2px;
-      padding: 28px 24px;
-    }
-    .faq-q {
-      font-family: var(--font-display);
-      font-size: 19px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 28px 24px; }
+    .faq-q { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
     .faq-a { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
 
-    /* ── CTA FINAL ── */
-    .cta-section {
-      background: var(--navy-dark);
-      background-image: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(184,134,11,0.08) 0%, transparent 70%);
-      padding: 100px 0;
-      text-align: center;
-    }
+    /* CTA FINAL */
+    .cta-section { background: var(--navy-dark); background-image: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(184,134,11,0.08) 0%, transparent 70%); padding: 100px 0; text-align: center; }
     .cta-section .section-title { color: var(--white); }
     .cta-section .section-lead { color: rgba(255,255,255,0.55); margin: 0 auto 12px; }
-    .cta-meta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      margin: 36px 0 48px;
-      flex-wrap: wrap;
-    }
-    .cta-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-    }
+    .cta-meta { display: flex; align-items: center; justify-content: center; gap: 32px; margin: 36px 0 48px; flex-wrap: wrap; }
+    .cta-meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.5); }
     .cta-meta-item svg { color: var(--gold-muted); }
-    .cta-price-block {
-      margin-bottom: 32px;
-    }
-    .cta-price-label {
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 8px;
-    }
-    .cta-price-value {
-      font-family: var(--font-display);
-      font-size: 56px;
-      font-weight: 600;
-      color: var(--gold-muted);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .cta-price-installment {
-      font-size: 14px;
-      color: rgba(255,255,255,0.35);
-    }
+    .cta-price-block { margin-bottom: 32px; }
+    .cta-price-label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 8px; }
+    .cta-price-value { font-family: var(--font-display); font-size: 56px; font-weight: 600; color: var(--gold-muted); line-height: 1; margin-bottom: 6px; }
+    .cta-price-installment { font-size: 14px; color: rgba(255,255,255,0.35); }
     .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }
     .cta-sub { font-size: 13px; color: rgba(255,255,255,0.3); letter-spacing: 0.03em; }
-    .cta-contact {
-      margin-top: 48px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    .cta-contact { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); }
     .cta-contact p { font-size: 14px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
     .cta-contact a { font-size: 14px; color: var(--gold-muted); text-decoration: none; }
     .cta-contact a:hover { text-decoration: underline; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-deeper);
-      padding: 36px 0;
-      text-align: center;
-    }
+    /* FOOTER */
+    footer { background: var(--navy-deeper); padding: 36px 0; text-align: center; }
     footer p { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.7; }
     footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
     footer a:hover { color: rgba(255,255,255,0.6); }
 
-    /* ── STICKY BAR ── */
-    .sticky-bar {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: var(--navy-dark);
-      border-top: 1px solid rgba(184,134,11,0.25);
-      padding: 14px 20px;
-      z-index: 200;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .sticky-bar-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.3; }
-    .sticky-bar-text strong { display: block; color: var(--white); font-size: 14px; }
-    .sticky-bar .btn-primary { padding: 13px 28px; font-size: 13px; }
-
-    /* ── CTA MEIO ── */
-    .mid-cta {
-      background: var(--navy);
-      padding: 64px 0;
-      text-align: center;
-    }
-    .mid-cta-title {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 3vw, 36px);
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 28px;
-      line-height: 1.3;
-    }
+    /* MID CTA */
+    .mid-cta { background: var(--navy); padding: 64px 0; text-align: center; }
+    .mid-cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--white); margin-bottom: 28px; line-height: 1.3; }
     .mid-cta-title em { color: var(--gold-muted); font-style: italic; }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
     .anim-d1 { animation-delay: 0.1s; }
     .anim-d2 { animation-delay: 0.2s; }
     .anim-d3 { animation-delay: 0.35s; }
     .anim-d4 { animation-delay: 0.5s; }
+    @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    .result-main-num.updated { animation: pulse-red 0.4s ease; }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 860px) {
       :root { --section-gap: 64px; }
       .hero-inner { grid-template-columns: 1fr; }
@@ -1011,16 +244,10 @@
       .problem-grid { grid-template-columns: 1fr; }
       .transformation-grid { grid-template-columns: 1fr; }
       .materials-grid { grid-template-columns: 1fr; }
-      .profile-inner { grid-template-columns: 1fr; }
-      .profile-card { max-width: 340px; }
       .faq-grid { grid-template-columns: 1fr; }
-      .sticky-bar { display: flex; }
-      .cta-section { padding-bottom: 120px; }
-      footer { padding-bottom: 80px; }
       .calc-wrapper { grid-template-columns: 1fr; }
       .calc-result { position: static; }
     }
-
     @media (max-width: 560px) {
       .hero { padding: 64px 0 72px; }
       .hero h1 { font-size: 32px; }
@@ -1028,15 +255,7 @@
       .hero-actions .btn-primary { width: 100%; text-align: center; }
       .btn-primary { padding: 16px 32px; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .roi-grid { grid-template-columns: 1fr; }
-    }
-
-    @keyframes pulse-red {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-    .result-main-num.updated {
-      animation: pulse-red 0.4s ease;
+      .recovered-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1045,7 +264,7 @@
   <!-- HEADER -->
   <header>
     <div class="container">
-      <a href="https://arquitetodeprocessos.com.br" class="header-logo">
+      <a href="https://arquitetodeprocessos.com.br" class="header-logo" target="_blank" rel="noopener noreferrer">
         Arquiteto de Processos <span>em Saúde™</span>
       </a>
       <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary header-cta">
@@ -1063,10 +282,10 @@
             <span class="tag">Biblioteca do Arquiteto · Governança Cirúrgica</span>
           </div>
           <h1 class="anim anim-d2">
-            O seu Centro Cirúrgico está perdendo dinheiro <em>todo dia.</em> Calcule agora.
+            O CC que funciona quando<br/><em>o líder não está presente.</em>
           </h1>
           <p class="hero-sub anim anim-d3">
-            O <strong style="color: rgba(255,255,255,0.9)">Protocolo de Governança Cirúrgica™</strong> é a metodologia completa para gestores que precisam transformar dados em decisão — e caos em processo. Desenvolvido com rigor Lean Six Sigma Black Belt para a realidade hospitalar brasileira.
+            O <strong style="color: rgba(255,255,255,0.9)">Protocolo de Governança Cirúrgica™</strong> estrutura o Centro Cirúrgico para operar com previsibilidade — independentemente de quem está de plantão. São os mesmos instrumentos aplicados pelo Arquiteto em projetos de Governança pela Ausência™.
           </p>
           <div class="hero-meta anim anim-d3">
             <div class="hero-meta-item">
@@ -1083,14 +302,9 @@
             </div>
           </div>
           <div class="hero-actions anim anim-d4">
-            <a href="#calculadora" class="btn-primary">
-              Calcular minha perda
-            </a>
-            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-              Adquirir por R$&nbsp;3.997
-            </a>
+            <a href="#calculadora" class="btn-primary">Calcular a perda do meu CC</a>
+            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-ghost">Adquirir o Protocolo</a>
           </div>
-          <p class="hero-guarantee" style="margin-top: 16px;">Garantia incondicional de 7 dias · Sem perguntas · Sem burocracia</p>
         </div>
 
         <div class="hero-card anim anim-d3">
@@ -1104,10 +318,9 @@
             <li>Manual de KPIs do CC</li>
           </ul>
           <hr class="hero-card-divider" />
-          <div class="hero-card-price">
-            <span class="hero-card-price-label">Investimento único</span>
-            <div class="hero-card-price-value">R$ 3.997</div>
-            <div class="hero-card-price-installment">ou 12× de R$ 333 · Sem mensalidade</div>
+          <div class="hero-card-principle">
+            <span class="hero-card-principle-label">Princípio metodológico</span>
+            <div class="hero-card-principle-value">"Governança pela Ausência™ — o sistema que funciona quando o líder não está."</div>
           </div>
           <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary hero-card-cta">
             Adquirir agora
@@ -1121,15 +334,12 @@
   <section class="calc-section" id="calculadora">
     <div class="container">
       <span class="calc-anchor-label">Diagnóstico financeiro do seu CC</span>
-      <h2 class="calc-title">Quanto o seu Centro Cirúrgico<br/><em>está perdendo por ano?</em></h2>
-      <p class="calc-lead">Insira os dados reais do seu CC. A calculadora estima a perda anual causada por giro lento e cancelamentos — e mostra o retorno do Protocolo em dias.</p>
+      <h2 class="calc-title">Quanto o seu Centro Cirúrgico<br/><em>está perdendo por mês?</em></h2>
+      <p class="calc-lead">Insira os dados do seu CC. A calculadora estima a perda gerada por giro lento e cancelamentos — e o que a estruturação do processo pode devolver à operação.</p>
 
       <div class="calc-wrapper">
-
-        <!-- INPUTS -->
         <div class="calc-inputs">
           <span class="calc-inputs-label">Dados do seu Centro Cirúrgico</span>
-
           <div class="field-group">
             <div class="field-label">
               <span>Número de salas cirúrgicas</span>
@@ -1138,7 +348,6 @@
             <input type="range" id="sl-salas" min="1" max="20" value="4" step="1" oninput="calcular()"/>
             <div class="range-minmax"><span>1 sala</span><span>20 salas</span></div>
           </div>
-
           <div class="field-group">
             <div class="field-label">
               <span>Taxa de cancelamento atual</span>
@@ -1148,7 +357,6 @@
             <div class="range-minmax"><span>1%</span><span>40%</span></div>
             <p class="field-hint">Média nacional sem processo: 18%. Meta com o Protocolo: abaixo de 8%.</p>
           </div>
-
           <div class="field-group">
             <div class="field-label">
               <span>Tempo médio de giro atual</span>
@@ -1158,7 +366,6 @@
             <div class="range-minmax"><span>10 min</span><span>90 min</span></div>
             <p class="field-hint">Média observada sem protocolo: 42 min. Meta com o Protocolo: 20 min.</p>
           </div>
-
           <div class="field-group">
             <div class="field-label">
               <span>Receita média por procedimento</span>
@@ -1170,13 +377,11 @@
           </div>
         </div>
 
-        <!-- RESULTADO -->
         <div class="calc-result">
           <div class="result-card">
             <span class="result-label">Perda anual estimada</span>
             <div class="result-main-num" id="res-anual">R$ 0</div>
-            <div class="result-main-sub">dinheiro que sai do seu CC todo ano sem processo formal</div>
-
+            <div class="result-main-sub">saindo do seu CC todo ano sem processo formal</div>
             <div class="result-breakdown">
               <div class="result-row">
                 <span class="result-row-label">Perda mensal por cancelamentos</span>
@@ -1197,37 +402,38 @@
             </div>
           </div>
 
-          <div class="roi-card">
-            <span class="roi-card-label">Retorno do Protocolo de Governança Cirúrgica™</span>
-            <div class="roi-grid">
-              <div class="roi-item">
-                <div class="roi-item-num highlight" id="res-payback">—</div>
-                <div class="roi-item-label">dias para recuperar<br/>o investimento</div>
+          <div class="recovered-card">
+            <span class="recovered-card-label">Com o Protocolo integralizado na operação</span>
+            <p class="recovered-card-sub">Estimativa conservadora de recuperação de 30% das perdas identificadas no primeiro ano.</p>
+            <div class="recovered-grid">
+              <div>
+                <div class="recovered-item-num" id="res-recuperado-mensal">—</div>
+                <div class="recovered-item-label">recuperado<br/>por mês</div>
               </div>
-              <div class="roi-item">
-                <div class="roi-item-num highlight" id="res-roi">—</div>
-                <div class="roi-item-label">ROI no primeiro<br/>ano</div>
-              </div>
-              <div class="roi-item">
-                <div class="roi-item-num" style="color: var(--navy);" id="res-ganho-anual">—</div>
-                <div class="roi-item-label">recuperado no<br/>primeiro ano</div>
-              </div>
-              <div class="roi-item">
-                <div class="roi-item-num" style="color: var(--navy);">R$ 3.997</div>
-                <div class="roi-item-label">investimento<br/>único</div>
+              <div>
+                <div class="recovered-item-num" id="res-recuperado-anual">—</div>
+                <div class="recovered-item-label">recuperado<br/>no primeiro ano</div>
               </div>
             </div>
-            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary roi-cta">
-              Quero o Protocolo — Acesso Imediato
+            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%;text-align:center;padding:16px 24px;font-size:14px;display:block;">
+              Adquirir o Protocolo — Acesso Imediato
             </a>
-            <p class="roi-sub">Pagamento seguro via Hotmart · Parcelamento disponível</p>
+            <p style="text-align:center;font-size:12px;color:var(--gray-500);margin-top:10px;">Pagamento seguro via Hotmart · Parcelamento disponível</p>
+          </div>
+
+          <div class="ausencia-block">
+            <span class="ausencia-block-eyebrow">Para quem quer ir além do protocolo</span>
+            <div class="ausencia-block-title">Governança pela Ausência™ —<br/><em>o sistema arquitetado com o Arquiteto.</em></div>
+            <p class="ausencia-block-body">Alguns gestores querem o método funcionando na operação — não apenas o instrumento na gaveta. Para esses, o Arquiteto conduz a implantação do sistema do início ao funcionamento autônomo.</p>
+            <a href="https://wa.me/5547992080823?text=Olá%2C%20Matheus.%20Fiz%20o%20cálculo%20no%20site%20e%20quero%20entender%20como%20funciona%20a%20Governança%20pela%20Ausência%20aplicada%20ao%20meu%20CC." target="_blank" rel="noopener noreferrer" class="ausencia-cta">
+              Entrar para a lista de espera →
+            </a>
           </div>
 
           <p class="calc-disclaimer">
-            <strong>Metodologia:</strong> Cálculo baseado em 8h de sala/dia, 20 dias úteis/mês e tempo médio de procedimento de 90 min. Perda por giro calculada pela diferença entre procedimentos possíveis com o giro atual e com a meta de 20 min. Perda por cancelamento calculada sobre o volume agendado com a taxa atual vs. a meta de 8%. Os valores são estimativas para fins de diagnóstico.
+            <strong>Metodologia:</strong> Cálculo baseado em 8h de sala/dia, 20 dias úteis/mês e tempo médio de procedimento de 90 min. Perda por giro calculada pela diferença entre procedimentos possíveis com o giro atual e com a meta de 20 min. Perda por cancelamento calculada sobre o volume agendado com a taxa atual vs. a meta de 8%. O valor recuperado considera uma redução conservadora de 30% das perdas identificadas no primeiro ano de implementação. Os valores são estimativas para fins de diagnóstico.
           </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -1238,19 +444,19 @@
       <div class="stats-grid">
         <div class="stat-item">
           <span class="stat-num">42<em>min</em></span>
-          <span class="stat-label">giro médio de sala<br/>sem protocolo</span>
+          <span class="stat-label">giro médio de sala<br/>sem processo formal</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">18<em>%</em></span>
-          <span class="stat-label">taxa de cancelamento<br/>comum sem processo</span>
+          <span class="stat-label">taxa de cancelamento<br/>comum sem protocolo</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">R$180<em>k</em></span>
           <span class="stat-label">perda anual estimada<br/>em CC de médio porte</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">7<em>dias</em></span>
-          <span class="stat-label">de garantia incondicional<br/>para testar o protocolo</span>
+          <span class="stat-num">6<em>inst.</em></span>
+          <span class="stat-label">instrumentos que compõem<br/>o sistema de governança</span>
         </div>
       </div>
     </div>
@@ -1260,15 +466,15 @@
   <section class="section">
     <div class="container">
       <span class="section-label">O problema que nenhum hospital quer admitir</span>
-      <h2 class="section-title">O caos não foi acidente.<br/><em>Foi processo mal desenhado.</em></h2>
-      <p class="section-lead">A sala estava pronta. O cirurgião não chegou. Ninguém avisou. Esse cenário se repete em centros cirúrgicos de todo o Brasil — não por descuido, mas por ausência de protocolo.</p>
+      <h2 class="section-title">Não é falta de esforço.<br/><em>É ausência de sistema.</em></h2>
+      <p class="section-lead">Quando a operação funciona porque alguém está presente, qualquer ausência é risco. Excelência que depende de heróis não é excelência — é sorte com prazo de validade.</p>
 
       <div class="problem-grid">
         <div class="problem-narrative">
           <p>Já estive do outro lado do bisturi. Paciente. Aguardando cirurgia. A sala estava pronta às 07h00. O cirurgião chegou às 08h40. Ninguém avisou. Ninguém explicou. Ninguém sabia ao certo o motivo.</p>
-          <p>Pauta fechada na manhã do procedimento. Cirurgião sem confirmação formal. Equipe esperando informação que nunca foi disparada.</p>
+          <p>Pauta fechada na manhã do procedimento. Cirurgião sem confirmação formal. Equipe aguardando informação que nunca foi disparada. Um sistema que funcionava quando o coordenador certo estava presente — e falhava quando não estava.</p>
           <blockquote class="problem-quote">
-            "Não era descuido. Era ausência de protocolo."
+            "Não era descuido. Era ausência de sistema."
             <cite>— Matheus Sacoman, Arquiteto de Processos em Saúde™</cite>
           </blockquote>
         </div>
@@ -1277,15 +483,19 @@
           <p class="problem-checks-label">Este protocolo foi desenvolvido para você se...</p>
           <div class="check-item">
             <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Seu CC convive com cancelamentos que ninguém consegue eliminar</span>
+            <span class="check-text">Seu CC opera bem quando você está — e vacila quando você não está</span>
           </div>
           <div class="check-item">
             <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">A pauta cirúrgica ainda é fechada na manhã do procedimento</span>
+            <span class="check-text">Cancelamentos acontecem e ninguém consegue apontar a causa-raiz</span>
           </div>
           <div class="check-item">
             <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">O giro de sala é lento e a causa "já é conhecida" mas nunca é resolvida</span>
+            <span class="check-text">O giro de sala é lento e a solução nunca passa do diagnóstico</span>
+          </div>
+          <div class="check-item">
+            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="check-text">A equipe absorve riscos que deveriam ser formalizados por quem decide</span>
           </div>
           <div class="check-item">
             <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1293,14 +503,10 @@
           </div>
           <div class="check-item">
             <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">A enfermagem absorve riscos que deveriam ser formalizados por quem decide</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Você sabe que a operação poderia render mais — mas não sabe por onde começar</span>
+            <span class="check-text">Você sabe que a operação poderia render mais — mas não tem o sistema para provar</span>
           </div>
           <div class="check-bottom">
-            Se você se identificou com pelo menos dois desses pontos, <strong>o Protocolo de Governança Cirúrgica™ foi desenvolvido para a sua realidade.</strong>
+            Se você se identificou com pelo menos dois desses pontos, <strong>o Protocolo de Governança Cirúrgica™ foi projetado para a sua realidade.</strong>
           </div>
         </div>
       </div>
@@ -1310,16 +516,16 @@
   <!-- TRANSFORMAÇÃO -->
   <section class="transformation-section">
     <div class="container">
-      <span class="section-label" style="color: var(--gold-muted);">O que muda com o protocolo</span>
-      <h2 class="section-title" style="color: var(--white);">De imprevisto a <em>processo.</em><br/>De custo a <em>resultado.</em></h2>
-      <p class="section-lead" style="color: rgba(255,255,255,0.55);">Cada instrumento do protocolo existe para transformar uma realidade específica do seu CC.</p>
+      <span class="section-label" style="color: var(--gold-muted);">O que o sistema muda</span>
+      <h2 class="section-title" style="color: var(--white);">De dependência de pessoa<br/>a <em>governança de processo.</em></h2>
+      <p class="section-lead" style="color: rgba(255,255,255,0.55);">Cada instrumento existe para que uma decisão específica deixe de depender de quem está presente — e passe a depender de como o processo foi arquitetado.</p>
 
       <div class="transformation-grid">
         <div class="transform-card">
           <div class="transform-before">Antes</div>
-          <div class="transform-from">Pauta fechada na manhã do procedimento. Cancelamentos de última hora sem causa registrada.</div>
+          <div class="transform-from">Pauta fechada na manhã do procedimento. Cancelamento de última hora sem causa registrada.</div>
           <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">Pauta validada 48h antes. Cancelamento preventivo com dados. Taxa abaixo de 8%.</div>
+          <div class="transform-to">Pauta validada 48h antes. Cancelamento preventivo com registro. Taxa abaixo de 8%.</div>
         </div>
         <div class="transform-card">
           <div class="transform-before">Antes</div>
@@ -1329,15 +535,15 @@
         </div>
         <div class="transform-card">
           <div class="transform-before">Antes</div>
-          <div class="transform-from">Risco assumido pela enfermagem verbalmente. Desvio sem registro e sem responsável.</div>
+          <div class="transform-from">Risco assumido verbalmente pela enfermagem. Desvio sem registro e sem responsável.</div>
           <div class="transform-after">Com o Protocolo</div>
           <div class="transform-to">T.A.R.O.™ formaliza cada desvio. Risco tem nome, cargo e assinatura de quem decide.</div>
         </div>
         <div class="transform-card">
           <div class="transform-before">Antes</div>
-          <div class="transform-from">Reunião de resultados com dados imprecisos. Diretoria questiona. Coordenador improvisa.</div>
+          <div class="transform-from">Reunião com dados imprecisos. Diretoria questiona. Coordenador improvisa resposta.</div>
           <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">6 KPIs com fórmula, meta e alerta. Apresentação em dados — não em narrativa.</div>
+          <div class="transform-to">6 KPIs com fórmula, meta e alerta. Resultado apresentado em dado — não em narrativa.</div>
         </div>
         <div class="transform-card">
           <div class="transform-before">Antes</div>
@@ -1349,7 +555,7 @@
           <div class="transform-before">Antes</div>
           <div class="transform-from">Ociosidade invisível. Ninguém sabe quanto cada sala parada custa por hora.</div>
           <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">Custo de ociosidade calculado. Dado que o CFO entende — e que justifica o investimento.</div>
+          <div class="transform-to">Custo de ociosidade calculado e auditável. Um argumento que a diretoria entende sem precisar de contexto.</div>
         </div>
       </div>
     </div>
@@ -1358,11 +564,9 @@
   <!-- MID CTA -->
   <div class="mid-cta">
     <div class="container">
-      <p class="mid-cta-title">
-        Pronto para estruturar<br/><em>o seu Centro Cirúrgico?</em>
-      </p>
+      <p class="mid-cta-title">O processo não precisa de heróis.<br/><em>Precisa de arquitetura.</em></p>
       <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Adquirir o Protocolo — R$ 3.997
+        Adquirir o Protocolo de Governança Cirúrgica™
       </a>
     </div>
   </div>
@@ -1371,20 +575,19 @@
   <section class="section materials-section">
     <div class="container">
       <span class="section-label">O que está incluso</span>
-      <h2 class="section-title">6 instrumentos metodológicos.<br/><em>Prontos para implantar.</em></h2>
-      <p class="section-lead">O resultado vem da metodologia. Os instrumentos abaixo são a evidência do que foi construído — não são documentos para ler, são ferramentas para operar.</p>
+      <h2 class="section-title">6 instrumentos metodológicos.<br/><em>O mesmo método. Aplicado por você.</em></h2>
+      <p class="section-lead">Estes são os instrumentos que o Arquiteto usa em projetos de Governança pela Ausência™. Estão disponíveis para que você os implemente com autonomia — ou avalie o método antes de uma arquitetura completa.</p>
 
       <div class="materials-intro">
-        <p>Cada instrumento foi desenhado para ser implantado imediatamente — campos ajustáveis à sua realidade, guias rápidos para afixar no CC, fórmulas automáticas e protocolos com papéis e SLAs definidos. Não é teoria. É operação.</p>
+        <p>Cada instrumento foi desenhado para ser implantado imediatamente — campos ajustáveis à sua realidade, guias para afixar no CC, fórmulas automáticas e protocolos com papéis e SLAs definidos. Não é teoria. É o mesmo processo que o Arquiteto entrega em campo.</p>
       </div>
 
       <div class="materials-grid">
-
         <div class="material-card">
           <span class="material-format">PDF · 9 páginas</span>
           <span class="material-num">01</span>
           <h3 class="material-title">Protocolo de Governança da Pauta Cirúrgica</h3>
-          <p class="material-desc">Como estruturar, validar e fechar a pauta com antecedência mínima de 48 horas. Inclui fluxo completo, papéis e responsabilidades e critérios de cancelamento preventivo.</p>
+          <p class="material-desc">Como estruturar, validar e fechar a pauta com antecedência mínima de 48 horas. Inclui fluxo completo, papéis, responsabilidades e critérios de cancelamento preventivo.</p>
           <ul class="material-bullets">
             <li>Fluxo de 6 passos: de T−72h até o briefing de véspera</li>
             <li>Tabela de papéis: quem confirma o quê e até quando</li>
@@ -1459,41 +662,6 @@
             <li>Tabela de diagnóstico cruzado: 6 cenários com diagnóstico provável</li>
           </ul>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFILE -->
-  <section class="section profile-section">
-    <div class="container">
-      <div class="profile-inner">
-        <div>
-          <span class="section-label">Quem desenvolveu</span>
-          <h2 class="section-title">Rigor metodológico da indústria, <em>traduzido para o hospital.</em></h2>
-          <p class="section-lead">Os instrumentos deste protocolo foram desenvolvidos com o mesmo rigor aplicado na indústria — e testados na realidade hospitalar brasileira. Não é teoria de livro. É processo construído no chão de operação.</p>
-          <div class="profile-credentials">
-            <div class="credential">Lean Six Sigma Black Belt · FM2S</div>
-            <div class="credential">Coordenador de Projetos de Melhoria · WEG S.A.</div>
-            <div class="credential">Big Data &amp; Analytics em Saúde · Hospital Albert Einstein</div>
-            <div class="credential">Compliance em Saúde · Instituto Sírio-Libanês</div>
-            <div class="credential">Graduação em Gestão Hospitalar + Enfermagem</div>
-          </div>
-        </div>
-        <div>
-          <div class="profile-card">
-            <div class="profile-avatar">MS</div>
-            <div class="profile-name">Matheus Sacoman</div>
-            <div class="profile-title">Arquiteto de Processos em Saúde™</div>
-            <hr class="profile-divider" />
-            <div class="profile-badges">
-              <div class="profile-badge">Lean Six Sigma Black Belt</div>
-              <div class="profile-badge">Big Data &amp; Analytics · Albert Einstein</div>
-              <div class="profile-badge">Compliance em Saúde · Sírio-Libanês</div>
-              <div class="profile-badge">Gestão Hospitalar + Enfermagem</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1518,11 +686,14 @@
     <div class="container">
       <span class="section-label">Perguntas frequentes</span>
       <h2 class="section-title">Dúvidas <em>comuns</em></h2>
-
       <div class="faq-grid">
         <div class="faq-item">
           <div class="faq-q">Para quem é o Protocolo de Governança Cirúrgica™?</div>
-          <p class="faq-a">Para coordenadores, gerentes e diretores de centros cirúrgicos, blocos cirúrgicos e clínicas cirúrgicas de qualquer porte. Os instrumentos foram desenvolvidos para serem acessíveis a qualquer gestor — sem necessidade de formação em Lean ou Six Sigma.</p>
+          <p class="faq-a">Para coordenadores, gerentes e diretores de centros cirúrgicos que querem estruturar a operação para funcionar com previsibilidade — independentemente de quem está presente. O protocolo é aplicável por qualquer gestor, sem necessidade de formação em Lean ou Six Sigma.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Qual a diferença entre o Protocolo e a Governança pela Ausência™?</div>
+          <p class="faq-a">O Protocolo entrega os instrumentos para você implementar com autonomia. A Governança pela Ausência™ é o processo conduzido pelo Arquiteto diretamente na sua operação — do diagnóstico ao sistema funcionando sem depender de ninguém. São o mesmo método, com níveis diferentes de acompanhamento.</p>
         </div>
         <div class="faq-item">
           <div class="faq-q">Preciso de software especial?</div>
@@ -1530,7 +701,7 @@
         </div>
         <div class="faq-item">
           <div class="faq-q">Os instrumentos precisam de adaptação?</div>
-          <p class="faq-a">Sim — e estão desenhados para isso. Campos como tempos-padrão, nomes de equipes e canais de comunicação devem ser ajustados à realidade da sua instituição. A estrutura metodológica é imediatamente aplicável.</p>
+          <p class="faq-a">Sim — e estão desenhados para isso. Tempos-padrão, nomes de equipes e canais de comunicação devem ser ajustados à sua realidade. A estrutura metodológica é imediatamente aplicável.</p>
         </div>
         <div class="faq-item">
           <div class="faq-q">Como recebo os materiais?</div>
@@ -1540,10 +711,6 @@
           <div class="faq-q">Recebo atualizações futuras?</div>
           <p class="faq-a">Sim. Quem adquire o Protocolo recebe todas as atualizações dos instrumentos sem custo adicional. Investimento único — acesso permanente.</p>
         </div>
-        <div class="faq-item">
-          <div class="faq-q">Posso usar em mais de um hospital?</div>
-          <p class="faq-a">O protocolo é licenciado para uso individual do comprador. Para uso institucional em redes ou grupos hospitalares, entre em contato diretamente para condições específicas.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -1551,9 +718,9 @@
   <!-- CTA FINAL -->
   <section class="cta-section">
     <div class="container">
-      <span class="section-label" style="display:block; text-align:center; margin-bottom:20px;">Protocolo de Governança Cirúrgica™</span>
-      <h2 class="section-title">Quanto mais tempo sem protocolo,<br/><em>maior é o custo do improviso.</em></h2>
-      <p class="section-lead">Cada dia sem processo formalizado é um dia de perda mensurável. A calculadora acima mostrou o número. A decisão é sua.</p>
+      <span class="section-label" style="display:block;text-align:center;margin-bottom:20px;">Protocolo de Governança Cirúrgica™</span>
+      <h2 class="section-title">O processo que funciona<br/><em>quando você não está.</em></h2>
+      <p class="section-lead">Cada dia sem sistema formalizado é um dia em que a operação depende da pessoa certa estar no lugar certo. A calculadora mostrou o custo disso. A decisão é sua.</p>
 
       <div class="cta-meta">
         <div class="cta-meta-item">
@@ -1582,14 +749,14 @@
 
       <div class="cta-actions">
         <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Quero o Protocolo — Acesso Imediato
+          Adquirir o Protocolo — Acesso Imediato
         </a>
         <span class="cta-sub">Pagamento seguro via Hotmart · Parcelamento disponível</span>
       </div>
 
       <div class="cta-contact">
-        <p>Dúvida antes de comprar?</p>
-        <a href="mailto:matheussacoman@arquitetodeprocessos.com.br">matheussacoman@arquitetodeprocessos.com.br</a>
+        <p>Quer entender como a Governança pela Ausência™ funciona na prática?</p>
+        <a href="https://wa.me/5547992080823?text=Olá%2C%20Matheus.%20Quero%20entender%20como%20funciona%20a%20Governança%20pela%20Ausência%20aplicada%20ao%20meu%20Centro%20Cirúrgico." target="_blank" rel="noopener noreferrer">Entrar para a lista de espera →</a>
       </div>
     </div>
   </section>
@@ -1606,22 +773,10 @@
     </div>
   </footer>
 
-  <!-- STICKY BAR -->
-  <div class="sticky-bar" id="stickyBar">
-    <div class="sticky-bar-text">
-      <strong>Protocolo de Governança Cirúrgica™</strong>
-      6 instrumentos · R$ 3.997 · Acesso imediato
-    </div>
-    <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary">
-      Comprar
-    </a>
-  </div>
-
   <script>
-    var INVEST = 3997;
     var DIAS_MES = 20;
     var HORAS_DIA = 8;
-    var MIN_DIA = HORAS_DIA * 60; // 480
+    var MIN_DIA = HORAS_DIA * 60;
     var DUR_PROC = 90;
     var META_GIRO = 20;
     var META_CANCEL = 0.08;
@@ -1639,12 +794,11 @@
 
       var procsAtualPorSala = Math.floor(MIN_DIA / (DUR_PROC + giro));
       var procsMetaPorSala = Math.floor(MIN_DIA / (DUR_PROC + META_GIRO));
-
       var agendadoAtual = salas * procsAtualPorSala * DIAS_MES;
       var agendadoMeta = salas * procsMetaPorSala * DIAS_MES;
 
-      var cancelMeta = agendadoMeta * META_CANCEL;
       var cancelAtual = agendadoMeta * cancelamento;
+      var cancelMeta = agendadoMeta * META_CANCEL;
       var perdaCancelMensal = (cancelAtual - cancelMeta) * ticket;
       if (perdaCancelMensal < 0) perdaCancelMensal = 0;
 
@@ -1655,29 +809,15 @@
 
       var perdaMensal = perdaCancelMensal + perdaGiroMensal;
       var perdaAnual = perdaMensal * 12;
-
-      var procsPerdidosMes = Math.round(agendadoMeta - agendadoAtual + (agendadoAtual * (cancelamento - META_CANCEL)));
-      if (procsPerdidosMes < 0) procsPerdidosMes = 0;
-
-      var paybackDias = perdaMensal > 0 ? Math.ceil((INVEST / perdaMensal) * 30) : null;
-      var ganhoAnual = perdaAnual - INVEST;
-      var roi = INVEST > 0 ? ((ganhoAnual / INVEST) * 100) : 0;
+      var procsPerdidosMes = Math.max(0, Math.round(agendadoMeta - agendadoAtual + (agendadoAtual * (cancelamento - META_CANCEL))));
 
       setEl('res-anual', 'R$ ' + formatNumK(perdaAnual));
       setEl('res-cancel-mensal', 'R$ ' + formatNumK(perdaCancelMensal));
       setEl('res-giro-mensal', 'R$ ' + formatNumK(perdaGiroMensal));
       setEl('res-procs-perdidos', procsPerdidosMes + ' proc./mês');
       setEl('res-mensal', 'R$ ' + formatNumK(perdaMensal));
-
-      if (paybackDias !== null && paybackDias < 9999) {
-        setEl('res-payback', paybackDias + ' dias');
-        setEl('res-roi', roi > 0 ? Math.round(roi) + '%' : '< 0%');
-        setEl('res-ganho-anual', 'R$ ' + formatNumK(Math.max(ganhoAnual, 0)));
-      } else {
-        setEl('res-payback', '—');
-        setEl('res-roi', '—');
-        setEl('res-ganho-anual', '—');
-      }
+      setEl('res-recuperado-mensal', 'R$ ' + formatNumK(perdaMensal * 0.30));
+      setEl('res-recuperado-anual', 'R$ ' + formatNumK(perdaAnual * 0.30));
 
       var el = document.getElementById('res-anual');
       el.classList.remove('updated');
@@ -1690,33 +830,15 @@
       if (el) el.textContent = val;
     }
 
-    function formatNum(n) {
-      return n.toLocaleString('pt-BR');
-    }
+    function formatNum(n) { return n.toLocaleString('pt-BR'); }
 
     function formatNumK(n) {
-      if (n >= 1000000) {
-        return (n / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
-      }
-      if (n >= 1000) {
-        return (n / 1000).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + 'k';
-      }
+      if (n >= 1000000) return (n / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
+      if (n >= 1000) return (n / 1000).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + 'k';
       return Math.round(n).toLocaleString('pt-BR');
     }
 
     calcular();
-
-    (function() {
-      var ctaSection = document.querySelector('.cta-section');
-      var stickyBar = document.getElementById('stickyBar');
-      if (!ctaSection || !stickyBar) return;
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          stickyBar.style.display = e.isIntersecting ? 'none' : '';
-        });
-      }, { threshold: 0.1 });
-      obs.observe(ctaSection);
-    })();
   </script>
 
 </body>
