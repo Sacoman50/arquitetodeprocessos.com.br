@@ -241,24 +241,40 @@ p{font-size:1rem;color:var(--gray-700);line-height:1.85;}
 .kri-item-t{font-size:.95rem;font-weight:500;color:var(--white);margin-bottom:3px;}
 .kri-item-d{font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.6;}
 /* painel visual KRI */
-.kri-panel{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-lg);position:relative;}
-.kri-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
-.kri-panel-title{font-size:.74rem;letter-spacing:.1em;color:rgba(255,255,255,.6);text-transform:uppercase;}
-.kri-live{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;color:#4ADE80;letter-spacing:.08em;text-transform:uppercase;}
+.kri-panel{background:linear-gradient(160deg,rgba(10,16,28,.95),rgba(17,29,51,.92));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(184,134,11,.12);position:relative;}
+.kri-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);}
+.kri-panel-top{padding:22px 26px 16px;border-bottom:1px solid rgba(255,255,255,.06);}
+.kri-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.kri-panel-title{font-size:.7rem;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+.kri-live{display:inline-flex;align-items:center;gap:7px;font-size:.64rem;color:#4ADE80;letter-spacing:.1em;text-transform:uppercase;}
 .kri-live-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 0 rgba(74,222,128,.5);animation:livedot 2s ease-out infinite;}
 @keyframes livedot{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5);}100%{box-shadow:0 0 0 8px rgba(74,222,128,0);}}
-.kri-metric{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.kri-panel-sub{font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.5;}
+.kri-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.06);}
+.kri-tab{flex:1;padding:10px 0;text-align:center;font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;cursor:default;transition:all .25s;}
+.kri-tab.act{color:var(--gold-bright);border-bottom-color:var(--gold-bright);}
+.kri-metrics-body{padding:8px 0;}
+.kri-metric{display:flex;align-items:center;justify-content:space-between;padding:12px 26px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s;}
 .kri-metric:last-child{border-bottom:none;}
-.kri-metric-l{font-size:.84rem;color:rgba(255,255,255,.7);}
-.kri-metric-r{display:flex;align-items:center;gap:12px;}
-.kri-metric-v{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--white);}
-.kri-badge{font-size:.62rem;font-weight:600;padding:4px 9px;border-radius:5px;letter-spacing:.05em;text-transform:uppercase;}
-.kri-badge.ok{background:rgba(74,222,128,.14);color:#4ADE80;}
-.kri-badge.warn{background:rgba(212,160,23,.16);color:var(--gold-bright);}
-.kri-badge.crit{background:rgba(224,75,74,.16);color:#F87171;}
-.kri-spark{display:flex;align-items:flex-end;gap:3px;height:22px;}
-.kri-spark span{width:4px;background:var(--gold-bright);border-radius:1px;opacity:.55;}
-.kri-cta-wrap{margin-top:30px;padding-top:26px;border-top:1px solid rgba(255,255,255,.08);}
+.kri-metric:hover{background:rgba(255,255,255,.025);}
+.kri-metric-l{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.65);}
+.kri-metric-icon{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.kri-metric-icon.ok{background:#4ADE80;box-shadow:0 0 4px rgba(74,222,128,.5);}
+.kri-metric-icon.warn{background:var(--gold-bright);box-shadow:0 0 4px rgba(212,160,23,.5);}
+.kri-metric-icon.crit{background:#F87171;box-shadow:0 0 4px rgba(248,113,113,.5);}
+.kri-metric-r{display:flex;align-items:center;gap:10px;}
+.kri-metric-v{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:600;color:var(--white);line-height:1;letter-spacing:-.01em;}
+.kri-badge{font-size:.58rem;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.07em;text-transform:uppercase;}
+.kri-badge.ok{background:rgba(74,222,128,.14);color:#4ADE80;border:1px solid rgba(74,222,128,.2);}
+.kri-badge.warn{background:rgba(212,160,23,.14);color:var(--gold-bright);border:1px solid rgba(212,160,23,.2);}
+.kri-badge.crit{background:rgba(248,113,113,.14);color:#F87171;border:1px solid rgba(248,113,113,.2);}
+.kri-spark{display:flex;align-items:flex-end;gap:2px;height:18px;}
+.kri-spark span{width:3px;background:var(--gold-bright);border-radius:1px;opacity:.45;}
+.kri-more{padding:12px 26px 16px;display:flex;align-items:center;justify-content:space-between;}
+.kri-more-txt{font-size:.72rem;color:rgba(255,255,255,.35);font-style:italic;}
+.kri-more-n{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold-bright);}
+.kri-cta-wrap{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.06);}
+.kri-disclaimer{font-size:.68rem;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;line-height:1.5;}
 /* ============ BIBLIOTECA / PROTOCOLOS ============ */
 #biblioteca{background:var(--gray-50);}
 .biblioteca-intro{max-width:680px;margin-bottom:56px;}
@@ -415,6 +431,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       </a>
       <div class="nav-links">
         <a href="#diagnostico">Mapeamento</a>
+        <a href="#laudo">Laudo</a>
         <a href="#como-atuo">Metodologia</a>
         <a href="#kri">KRI</a>
         <a href="#biblioteca">Protocolos</a>
@@ -434,6 +451,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
 
 <div id="mobile-menu">
   <a href="#diagnostico" onclick="closeMenu()">Mapeamento</a>
+  <a href="#laudo" onclick="closeMenu()">Laudo Estratégico</a>
   <a href="#como-atuo" onclick="closeMenu()">Metodologia</a>
   <a href="#kri" onclick="closeMenu()">KRI</a>
   <a href="#biblioteca" onclick="closeMenu()">Protocolos</a>
@@ -629,7 +647,9 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <div id="dr-formulas"></div>
           <p style="font-size:.72rem;color:#8892A4;margin-top:12px;line-height:1.6;border-top:1px solid #ECEEF2;padding-top:10px;">Todos os fatores multiplicadores são estimativas conservadoras derivadas de benchmarks publicados na literatura de gestão cirúrgica e de leitos. Os cálculos tendem a subestimar o impacto real — dados incompletos foram modelados com a premissa de menor perda possível.</p>
         </div>
-        <div id="dr-email-status" style="font-size:.72rem;color:#8892A4;text-align:center;margin-top:8px"></div>
+        <!-- Reiniciar diagnóstico -->
+        <button onclick="dReset()" style="width:100%;background:transparent;border:none;padding:10px;font-size:.78rem;cursor:pointer;color:#8892A4;font-family:'DM Sans',sans-serif;margin-top:4px;text-decoration:underline;text-underline-offset:3px;">↩ Mapear outra área</button>
+        <div id="dr-email-status" style="font-size:.72rem;color:#8892A4;text-align:center;margin-top:4px"></div>
       </div>
 
       <!-- Step Confirmação: exibida após envio com sucesso -->
@@ -646,9 +666,75 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5 2 2 0 0 1 3.6 2.83h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.83 17z"/></svg>
           Verifique também a caixa de spam
         </div>
-        <a href="#como-atuo" class="dc-link">Enquanto aguarda, conheça a metodologia aplicada em outros sistemas →</a>
+        <a href="#como-atuo" class="dc-link" style="margin-bottom:16px;display:inline-flex;">Enquanto aguarda, conheça a metodologia aplicada em outros sistemas →</a>
+        <br>
+        <button onclick="dReset()" style="background:transparent;border:none;padding:8px;font-size:.78rem;cursor:pointer;color:#8892A4;font-family:'DM Sans',sans-serif;text-decoration:underline;text-underline-offset:3px;margin-top:8px;">↩ Fazer novo diagnóstico de outra área</button>
       </div>
     </div><!-- /diag-wrapper -->
+  </div>
+</section>
+
+<!-- LAUDO ESTRATÉGICO HOSPITALAR -->
+<section id="laudo" class="section" style="background:var(--gray-50);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center;">
+      <div class="reveal">
+        <span class="section-tag">Serviço B2B · Diagnóstico aprofundado</span>
+        <h2 style="color:var(--navy);margin-bottom:20px;">Laudo Estratégico Hospitalar</h2>
+        <p style="margin-bottom:20px;font-size:1.05rem;line-height:1.85;">O Mapeamento da Fábrica Oculta dá a estimativa. O Laudo Estratégico dá o diagnóstico real — baseado nos dados que sua instituição já produz e que ainda não se transformaram em decisão.</p>
+        <p style="margin-bottom:28px;">O hospital abre acesso ao BI. O Arquiteto analisa os dados operacionais reais, identifica as perdas com precisão e entrega um laudo com protocolos de correção específicos para a sua realidade — não benchmarks genéricos.</p>
+        <div style="margin-bottom:32px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Acesso remoto ao BI do hospital</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">O Arquiteto acessa a plataforma de dados já existente — sem instalação, sem presença física, sem interrupção da operação.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Laudo com causa-raiz e financeiro</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">Relatório estratégico com perda identificada em reais, causa-raiz de cada desvio e protocolo de correção específico — entregue em até 7 dias.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Compatível com qualquer plataforma de BI</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">WeKnow, Power BI, Tableau, planilhas avançadas ou sistemas próprios — o método se adapta ao que o hospital já usa.</div></div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20solicitar%20o%20Laudo%20Estratégico%20Hospitalar.%20Temos%20plataforma%20de%20BI%20e%20gostaria%20de%20entender%20como%20funciona%20o%20acesso%20e%20a%20entrega." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar o Laudo Estratégico
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <!-- Card visual do Laudo -->
+      <div class="reveal" data-d="2">
+        <div style="background:linear-gradient(160deg,var(--navy),var(--navy-dark));border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);"></div>
+          <div style="font-size:.64rem;font-weight:600;letter-spacing:.18em;color:var(--gold-bright);text-transform:uppercase;margin-bottom:20px;">Laudo Estratégico Hospitalar</div>
+          <div style="font-size:1.05rem;font-weight:500;color:white;margin-bottom:8px;font-family:'Cormorant Garamond',serif;">Hospital — Centro Cirúrgico</div>
+          <div style="font-size:.76rem;color:rgba(255,255,255,.45);margin-bottom:24px;">Período analisado: Julho — Dezembro · WeKnow BI</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+            <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:14px 16px;border-left:3px solid #F87171;">
+              <div style="font-size:.68rem;letter-spacing:.08em;color:#F87171;text-transform:uppercase;margin-bottom:4px;">Perda identificada</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:white;">R$ 218.400/mês</div>
+              <div style="font-size:.76rem;color:rgba(255,255,255,.45);margin-top:3px;">Cancelamentos + giro + início tardio</div>
+            </div>
+            <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:14px 16px;border-left:3px solid var(--gold-bright);">
+              <div style="font-size:.68rem;letter-spacing:.08em;color:var(--gold-bright);text-transform:uppercase;margin-bottom:4px;">Causa-raiz primária</div>
+              <div style="font-size:.88rem;font-weight:500;color:white;line-height:1.4;">Ausência de protocolo de fechamento de pauta com 48h de antecedência</div>
+            </div>
+            <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:14px 16px;border-left:3px solid #4ADE80;">
+              <div style="font-size:.68rem;letter-spacing:.08em;color:#4ADE80;text-transform:uppercase;margin-bottom:4px;">Intervenção recomendada</div>
+              <div style="font-size:.88rem;font-weight:500;color:white;line-height:1.4;">Protocolo de Governança Cirúrgica™ + KRI de cancelamento</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:16px;font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.6;">Laudo entregue em 5 dias úteis. Dados reais — nenhuma estimativa genérica.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -695,32 +781,50 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="kri-panel reveal" data-d="2">
-        <div class="kri-panel-head">
-          <span class="kri-panel-title">Painel de Risco Operacional</span>
-          <span class="kri-live"><span class="kri-live-dot"></span>Ao vivo</span>
+        <div class="kri-panel-top">
+          <div class="kri-panel-head">
+            <span class="kri-panel-title">KRI · Painel de Risco Operacional</span>
+            <span class="kri-live"><span class="kri-live-dot"></span>Monitoramento ativo</span>
+          </div>
+          <div class="kri-panel-sub">Amostra de indicadores por setor — o painel real inclui dezenas de KRIs mapeados para a realidade da sua instituição.</div>
         </div>
-        <div class="kri-metric">
-          <span class="kri-metric-l">Taxa de cancelamento — CC</span>
-          <div class="kri-metric-r"><span class="kri-metric-v">7,2%</span><span class="kri-badge ok">no limite</span></div>
+        <div class="kri-tabs">
+          <div class="kri-tab act">Centro Cirúrgico</div>
+          <div class="kri-tab">Leitos</div>
+          <div class="kri-tab">Urgência</div>
+          <div class="kri-tab">Financeiro</div>
         </div>
-        <div class="kri-metric">
-          <span class="kri-metric-l">Giro de sala</span>
-          <div class="kri-metric-r"><span class="kri-spark"><span style="height:40%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:80%"></span><span style="height:70%"></span><span style="height:95%"></span></span><span class="kri-badge warn">atenção</span></div>
+        <div class="kri-metrics-body">
+          <div class="kri-metric">
+            <span class="kri-metric-l"><span class="kri-metric-icon warn"></span>Taxa de cancelamento</span>
+            <div class="kri-metric-r"><span class="kri-metric-v">7,2%</span><span class="kri-badge warn">atenção</span></div>
+          </div>
+          <div class="kri-metric">
+            <span class="kri-metric-l"><span class="kri-metric-icon crit"></span>Início tardio do 1º tempo</span>
+            <div class="kri-metric-r"><span class="kri-spark"><span style="height:30%"></span><span style="height:55%"></span><span style="height:40%"></span><span style="height:85%"></span><span style="height:70%"></span><span style="height:100%"></span></span><span class="kri-badge crit">crítico</span></div>
+          </div>
+          <div class="kri-metric">
+            <span class="kri-metric-l"><span class="kri-metric-icon ok"></span>Giro de sala</span>
+            <div class="kri-metric-r"><span class="kri-metric-v">19 min</span><span class="kri-badge ok">no limite</span></div>
+          </div>
+          <div class="kri-metric">
+            <span class="kri-metric-l"><span class="kri-metric-icon ok"></span>Utilização de salas</span>
+            <div class="kri-metric-r"><span class="kri-metric-v">81%</span><span class="kri-badge ok">saudável</span></div>
+          </div>
+          <div class="kri-metric">
+            <span class="kri-metric-l"><span class="kri-metric-icon warn"></span>Pauta com material completo</span>
+            <div class="kri-metric-r"><span class="kri-metric-v">74%</span><span class="kri-badge warn">atenção</span></div>
+          </div>
         </div>
-        <div class="kri-metric">
-          <span class="kri-metric-l">Alta até 10h</span>
-          <div class="kri-metric-r"><span class="kri-metric-v">41%</span><span class="kri-badge crit">crítico</span></div>
-        </div>
-        <div class="kri-metric">
-          <span class="kri-metric-l">Ocupação de leitos</span>
-          <div class="kri-metric-r"><span class="kri-metric-v">86%</span><span class="kri-badge ok">saudável</span></div>
-        </div>
-        <div class="kri-metric">
-          <span class="kri-metric-l">Tempo médio de permanência</span>
-          <div class="kri-metric-r"><span class="kri-metric-v">4,8d</span><span class="kri-badge warn">acima</span></div>
+        <div class="kri-more">
+          <span class="kri-more-txt">Mais indicadores monitorados neste setor:</span>
+          <span class="kri-more-n">+18 KRIs</span>
         </div>
         <div class="kri-cta-wrap">
-          <a href="https://wa.me/5547992080823?text=Olá%2C%20vi%20o%20Painel%20de%20Risco%20Operacional%20(KRI)%20no%20site%20e%20quero%20um%20igual%20para%20a%20minha%20operação.%20Como%20começamos%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;justify-content:center;">Quero este painel na minha operação</a>
+          <a href="https://wa.me/5547992080823?text=Olá%2C%20vi%20o%20Painel%20de%20KRI%20no%20site%20e%20quero%20implantar%20monitoramento%20de%20indicadores%20de%20risco%20na%20minha%20operação.%20Como%20começamos%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.88rem;">Quero este painel na minha operação
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <p class="kri-disclaimer">Cada hospital recebe um painel customizado para sua realidade — indicadores, setores e limiares de alerta definidos na fase de mapeamento.</p>
         </div>
       </div>
     </div>
@@ -745,13 +849,12 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         </div>
         <div class="kit-materials">
           <ul>
-            <li><span class="kit-dot"></span><span>Protocolo de Pauta Cirúrgica — papéis, SLA, contingência</span></li>
-            <li><span class="kit-dot"></span><span>T.A.R.O.™ — formalização de desvios cirúrgicos</span></li>
-            <li><span class="kit-dot"></span><span>Checklist de Abertura de Sala — 12 pontos de verificação</span></li>
-            <li><span class="kit-dot"></span><span>Protocolo de Giro de Sala — SLA entre CC e higienização</span></li>
-            <li><span class="kit-dot"></span><span>Planilha de Monitoramento — ocupação, cancelamentos, ociosidade</span></li>
-            <li><span class="kit-dot"></span><span>Painel de KRI — indicadores de risco com metas e alertas</span></li>
-            <li><span class="kit-dot"></span><span>Guia de Implantação — cronograma de 30 dias</span></li>
+            <li><span class="kit-dot"></span><span>Protocolo de Governança da Pauta Cirúrgica</span></li>
+            <li><span class="kit-dot"></span><span>T.A.R.O.™ — Termo de Assunção de Risco Operacional</span></li>
+            <li><span class="kit-dot"></span><span>Checklist de Abertura de Sala</span></li>
+            <li><span class="kit-dot"></span><span>Protocolo de Giro de Sala</span></li>
+            <li><span class="kit-dot"></span><span>Planilha de Monitoramento do CC</span></li>
+            <li><span class="kit-dot"></span><span>Manual de KPIs do CC</span></li>
           </ul>
         </div>
         <div class="kit-foot">
@@ -919,6 +1022,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <div class="footer-links">
         <h4>Navegação</h4>
         <a href="#diagnostico">Mapeamento da Fábrica Oculta</a>
+        <a href="#laudo">Laudo Estratégico Hospitalar</a>
         <a href="#como-atuo">Metodologia</a>
         <a href="#kri">KRI Hospitalar</a>
         <a href="#biblioteca">Protocolos de Governança</a>
@@ -1459,6 +1563,30 @@ function sendDiagnosticEmails(losses,total,totalFmt,anualFmt,formulas,observacao
     to_email:SEU_EMAIL
   };
   try{emailjs.send(EJS_SERVICE_ID,EJS_TPL_ADMIN,params).catch(()=>{});}catch(e){}
+}
+
+/* REINICIAR DIAGNÓSTICO */
+function dReset(){
+  // Limpa estado em memória
+  DS.area=null;DS.qIdx=0;DS.ans={};DS.contact=null;
+  // Limpa campos do formulário de contato do diagnóstico
+  ['dc-nome','dc-hosp','dc-cargo','dc-email','dc-wa'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  const lgpd=document.getElementById('dc-lgpd');if(lgpd)lgpd.checked=false;
+  const err=document.getElementById('dc-err');if(err)err.style.display='none';
+  // Limpa seleção de área
+  ['cc','leitos','dados','ps'].forEach(x=>{
+    const el=document.getElementById('dac-'+x);if(el)el.classList.remove('sel');
+  });
+  const btnArea=document.getElementById('dbtn-area');if(btnArea)btnArea.disabled=true;
+  // Volta ao início
+  dGoTo(0);
+  // Rola suavemente ao wrapper do diagnóstico
+  setTimeout(()=>{
+    const w=document.querySelector('.diag-wrapper');
+    if(w)w.scrollIntoView({behavior:'smooth',block:'center'});
+  },80);
 }
 
 /* SCROLL REVEAL — IntersectionObserver nativo, sem libs externas */
