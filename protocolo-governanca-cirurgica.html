@@ -782,13 +782,14 @@
     var META_CANCEL = 0.08;
 
     function calcular() {
-      var salas = parseInt(document.getElementById('sl-salas').value);
-      var cancelamento = parseInt(document.getElementById('sl-cancelamento').value) / 100;
-      var giro = parseInt(document.getElementById('sl-giro').value);
-      var ticket = parseInt(document.getElementById('sl-ticket').value);
+      var salas = parseInt(document.getElementById('sl-salas').value, 10);
+      var cancelamentoPercentual = parseInt(document.getElementById('sl-cancelamento').value, 10);
+      var cancelamento = cancelamentoPercentual / 100;
+      var giro = parseInt(document.getElementById('sl-giro').value, 10);
+      var ticket = parseInt(document.getElementById('sl-ticket').value, 10);
 
       document.getElementById('val-salas').textContent = salas;
-      document.getElementById('val-cancelamento').textContent = parseInt(document.getElementById('sl-cancelamento').value) + '%';
+      document.getElementById('val-cancelamento').textContent = cancelamentoPercentual + '%';
       document.getElementById('val-giro').textContent = giro + ' min';
       document.getElementById('val-ticket').textContent = 'R$ ' + formatNum(ticket);
 
@@ -809,7 +810,7 @@
 
       var perdaMensal = perdaCancelMensal + perdaGiroMensal;
       var perdaAnual = perdaMensal * 12;
-      var procsPerdidosMes = Math.max(0, Math.round(agendadoMeta - agendadoAtual + (agendadoAtual * (cancelamento - META_CANCEL))));
+      var procsPerdidosMes = Math.max(0, Math.round(perdaMensal / ticket));
 
       setEl('res-anual', 'R$ ' + formatNumK(perdaAnual));
       setEl('res-cancel-mensal', 'R$ ' + formatNumK(perdaCancelMensal));
@@ -833,9 +834,14 @@
     function formatNum(n) { return n.toLocaleString('pt-BR'); }
 
     function formatNumK(n) {
-      if (n >= 1000000) return (n / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
-      if (n >= 1000) return (n / 1000).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + 'k';
-      return Math.round(n).toLocaleString('pt-BR');
+      var valor = Math.round(n);
+      if (valor >= 1000000) return (valor / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
+      if (valor >= 1000) {
+        var valorEmMilhares = Math.round(valor / 1000);
+        if (valorEmMilhares >= 1000) return (valor / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
+        return valorEmMilhares.toLocaleString('pt-BR') + 'k';
+      }
+      return valor.toLocaleString('pt-BR');
     }
 
     calcular();
