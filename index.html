@@ -78,16 +78,6 @@ p{font-size:1rem;color:var(--gray-700);line-height:1.85;}
 .btn-accept{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--white);}
 .btn-reject{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2)!important;}
 .btn-reject:hover{color:rgba(255,255,255,.9);}
-/* MODAL */
-#privacy-modal{display:none;position:fixed;inset:0;background:rgba(11,20,36,.78);backdrop-filter:blur(6px);z-index:10000;align-items:center;justify-content:center;padding:20px;}
-#privacy-modal.open{display:flex;}
-.modal-box{background:var(--white);border-radius:var(--radius);max-width:720px;width:100%;max-height:82vh;overflow-y:auto;padding:48px;position:relative;box-shadow:var(--shadow-lg);}
-.modal-box h2{color:var(--navy);margin-bottom:16px;}
-.modal-box h3{color:var(--navy);margin:22px 0 8px;font-size:1.08rem;}
-.modal-box p,.modal-box li{font-size:.88rem;color:var(--gray-700);margin-bottom:8px;}
-.modal-box ul{padding-left:20px;}
-.modal-close{position:absolute;top:18px;right:18px;background:var(--gray-50);border:none;width:34px;height:34px;border-radius:50%;font-size:22px;cursor:pointer;color:var(--gray-400);line-height:1;transition:all .2s;}
-.modal-close:hover{background:var(--gray-100);color:var(--navy);}
 /* WHATSAPP */
 #wa-float{position:fixed;bottom:30px;right:30px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .25s var(--ease);}
 #wa-float::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(37,211,102,.4);animation:waPulse 2.6s ease-out infinite;}
@@ -384,7 +374,6 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
   #laudo [style*="grid-template-columns"]{grid-template-columns:1fr!important;gap:36px!important;}
   #laudo [style*="border-radius:var(--radius-lg)"]{padding:26px 22px!important;}
   /* Reduz respiros internos que sobram em telas estreitas */
-  .modal-box{padding:34px 24px;}
   .contato-form{padding:28px 22px;}
   .diag-wrapper{padding:24px 20px;}
   .problema-card{padding:30px 26px;}
@@ -422,7 +411,6 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
   .dr-anual-valor{font-size:1.6rem;}
   .d-card{padding:16px 14px;}
   #ds0 div[style*="grid-template-columns:1fr 1fr 1fr"]{gap:7px!important;}
-  .modal-box{padding:26px 18px;max-height:88vh;}
   .contato-form{padding:24px 18px;}
   .problema-card{padding:26px 22px;}
   .pillar-card{padding:28px 22px;}
@@ -481,36 +469,8 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
 
 <!-- COOKIE BANNER (LGPD) -->
 <div id="cookie-banner">
-  <p>Este site coleta dados pessoais apenas via formulários, em conformidade com a <strong>LGPD (Lei nº 13.709/2018)</strong>. Sem rastreamento, sem publicidade. <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a></p>
+  <p>Este site coleta dados pessoais apenas via formulários, em conformidade com a <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener"><strong>LGPD (Lei nº 13.709/2018)</strong></a>. Sem rastreamento, sem publicidade. <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener">Política de Privacidade</a></p>
   <div class="cookie-btns"><button class="btn-reject" onclick="rejectCookies()">Recusar opcionais</button><button class="btn-accept" onclick="acceptCookies()">Aceitar</button></div>
-</div>
-
-<!-- MODAL PRIVACIDADE -->
-<div id="privacy-modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closePrivacy()">&times;</button>
-    <h2>Política de Privacidade</h2>
-    <p>Última atualização: abril de 2025. Conforme a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</p>
-    <h3>1. Dados coletados</h3>
-    <p>Coletamos apenas dados fornecidos voluntariamente: nome completo, cargo, hospital/instituição, e-mail e WhatsApp. Não coletamos dados sensíveis.</p>
-    <h3>2. Finalidade</h3>
-    <p>Os dados servem exclusivamente para (a) gerar e enviar o relatório do Mapeamento da Fábrica Oculta, (b) responder a contatos e (c) comunicação comercial relacionada aos serviços do Arquiteto de Processos em Saúde™.</p>
-    <h3>3. Base legal</h3>
-    <p>Tratamento baseado no consentimento explícito (art. 7º, I, LGPD), confirmado ao marcar o campo de aceite nos formulários.</p>
-    <h3>4. Compartilhamento</h3>
-    <p>Dados não são vendidos nem cedidos. Compartilhados apenas com EmailJS (plataforma de entrega de mensagens), sujeita às suas próprias políticas de proteção de dados.</p>
-    <h3>5. Retenção</h3>
-    <p>Dados retidos pelo tempo necessário à prestação do serviço e por até 2 anos após o último contato, salvo obrigação legal.</p>
-    <h3>6. Seus direitos (LGPD, art. 18)</h3>
-    <ul><li>Confirmação e acesso aos dados</li><li>Correção de dados incompletos ou incorretos</li><li>Anonimização, bloqueio ou eliminação</li><li>Portabilidade e revogação do consentimento</li></ul>
-    <p>Para exercer seus direitos, entre em contato pelo WhatsApp ou e-mail indicado neste site.</p>
-    <h3>7. Cookies</h3>
-    <p>Usamos apenas cookie essencial de preferência de consentimento (localStorage). Sem cookies de rastreamento ou publicidade.</p>
-    <h3>8. Responsável pelo tratamento</h3>
-    <p>Matheus Sacoman — Arquiteto de Processos em Saúde™<br>Site: arquitetodeprocessos.com.br</p>
-    <br>
-    <button class="btn-accept" style="border-radius:8px;padding:12px 24px;cursor:pointer;" onclick="closePrivacy()">Fechar</button>
-  </div>
 </div>
 
 <!-- WHATSAPP FLOAT -->
@@ -688,7 +648,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="d-prog" id="dpg8"></div>
         <div class="d-tag">Última etapa · Para onde enviar o resultado</div>
         <div class="d-q">Para onde o Arquiteto envia o mapeamento?</div>
-        <div class="d-sub">Você receberá o relatório completo no seu e-mail. Dados protegidos pela LGPD. Não são compartilhados com terceiros.</div>
+        <div class="d-sub">Você receberá o relatório completo no seu e-mail. Dados protegidos pela LGPD. Não são compartilhados com terceiros. <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">Saiba mais</a></div>
         <!-- Honeypot anti-spam — não exibir ao usuário -->
         <div style="display:none" aria-hidden="true"><input type="text" id="dc-hp" tabindex="-1" autocomplete="off" name="website"></div>
         <div style="margin-bottom:12px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">Nome completo</label><input class="d-input" type="text" id="dc-nome" placeholder="Seu nome" maxlength="120"></div>
@@ -698,7 +658,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div style="margin-bottom:16px"><label style="font-size:.78rem;color:#8892A4;display:block;margin-bottom:4px">WhatsApp (com DDD)</label><input class="d-input" type="tel" id="dc-wa" placeholder="(47) 99999-9999" maxlength="20"></div>
         <div class="lgpd-check">
           <input type="checkbox" id="dc-lgpd">
-          <label for="dc-lgpd">Li e aceito a <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a> e autorizo o uso dos meus dados para fins de mapeamento e contato relacionado aos serviços do Arquiteto de Processos em Saúde™.</label>
+          <label for="dc-lgpd">Li e aceito a <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o uso dos meus dados para fins de mapeamento e contato relacionado aos serviços do Arquiteto de Processos em Saúde™.</label>
         </div>
         <div class="d-nav">
           <button class="d-btn-s" onclick="dGoTo('qb')">Voltar</button>
@@ -971,7 +931,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           </ul>
         </div>
         <div class="kit-foot">
-          <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20entender%20como%20seria%20construir%20o%20Protocolo%20de%20Governança%20de%20Leitos%20e%20Fluxo%20com%20a%20nossa%20equipe." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Construir com minha equipe →</a>
+          <a href="protocolo-gestao-leitos.html" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Ver como construímos →</a>
         </div>
       </div>
       <!-- PROTOCOLO DADOS -->
@@ -1081,7 +1041,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <p style="font-size:.78rem;color:var(--gray-400);margin-top:16px">Atendimento 100% remoto · <a href="#" onclick="openPrivacy(event)" style="color:var(--gold);">Política de Privacidade</a></p>
+      <p style="font-size:.78rem;color:var(--gray-400);margin-top:16px">Atendimento 100% remoto · <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener" style="color:var(--gold);">Política de Privacidade</a></p>
     </div>
     <div>
       <div class="contato-form">
@@ -1099,7 +1059,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <div class="form-group"><label>Mensagem</label><textarea id="f-msg" placeholder="Descreva brevemente a situação que quer resolver..." maxlength="1000"></textarea></div>
           <div class="lgpd-check" style="margin-bottom:16px">
             <input type="checkbox" id="f-lgpd">
-            <label for="f-lgpd" style="color:var(--gray-400)">Li e aceito a <a href="#" onclick="openPrivacy(event)" style="color:var(--gold);">Política de Privacidade</a> e autorizo o contato comercial.</label>
+            <label for="f-lgpd" style="color:var(--gray-400)">Li e aceito a <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener" style="color:var(--gold);">Política de Privacidade</a> e autorizo o contato comercial.</label>
           </div>
           <div id="f-err" style="font-size:.8rem;color:#E24B4A;margin-bottom:12px;display:none">Preencha todos os campos e aceite a Política de Privacidade.</div>
           <button class="form-submit" onclick="submitContactForm()">Enviar mensagem</button>
@@ -1129,14 +1089,14 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       </div>
       <div class="footer-links">
         <h4>Legal</h4>
-        <a href="#" onclick="openPrivacy(event)">Política de Privacidade</a>
-        <a href="#" onclick="openPrivacy(event)">LGPD</a>
+        <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+        <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener">LGPD</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Matheus Sacoman — Arquiteto de Processos em Saúde™. PCFC™ e T.A.R.O.™ são propriedade intelectual de Matheus Sacoman.</p>
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-        <span class="lgpd-badge">🔒 LGPD Conforme</span>
+        <a class="lgpd-badge" href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener" style="text-decoration:none;">🔒 LGPD Conforme</a>
         <!-- EDITAR: LinkedIn -->
         <a href="https://www.linkedin.com/in/matheus-r-s-sacoman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
@@ -1181,9 +1141,6 @@ function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 /* COOKIE/LGPD */
 function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').classList.add('hidden');}
 function rejectCookies(){localStorage.setItem('cookie_consent','rejected');document.getElementById('cookie-banner').classList.add('hidden');}
-function openPrivacy(e){if(e){e.preventDefault();}document.getElementById('privacy-modal').classList.add('open');}
-function closePrivacy(){document.getElementById('privacy-modal').classList.remove('open');}
-window.addEventListener('click',e=>{if(e.target===document.getElementById('privacy-modal'))closePrivacy();});
 if(localStorage.getItem('cookie_consent'))document.getElementById('cookie-banner').classList.add('hidden');
 
 /* NAVBAR */
