@@ -269,7 +269,7 @@ p{font-size:1rem;color:var(--gray-700);line-height:1.85;}
 #biblioteca{background:var(--gray-50);}
 .biblioteca-intro{max-width:680px;margin-bottom:56px;}
 .biblioteca-intro h2{color:var(--navy);margin-bottom:18px;}
-.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.kits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .kit-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-100);overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:var(--shadow-sm);}
 .kit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
 .kit-header{padding:30px 28px 18px;}
@@ -277,6 +277,10 @@ p{font-size:1rem;color:var(--gray-700);line-height:1.85;}
 .kit-cc .kit-badge{background:#EBF3FC;color:#185FA5;}
 .kit-fluxo .kit-badge{background:#EAF3DE;color:#3B6D11;}
 .kit-dados .kit-badge{background:#FAEEDA;color:#854F0B;}
+.kit-ps .kit-badge{background:#FDECEA;color:#C0392B;}
+.kit-label{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.kit-outcome{margin:16px 0 0;padding:14px 0 0 14px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-style:italic;line-height:1.4;color:var(--navy);}
+.kit-sublink{display:block;text-align:center;margin-top:12px;font-size:.78rem;color:var(--gray-700);text-decoration:underline;text-underline-offset:3px;}
 .kit-header h3{color:var(--navy);margin-bottom:8px;font-size:1.22rem;}
 .kit-header p{font-size:.84rem;margin-bottom:0;}
 .kit-materials{padding:0 28px 24px;flex:1;}
@@ -458,8 +462,11 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
 .problema-card p,.meto-card p,.kit-header p{color:rgba(255,255,255,.6);}
 .prob-icon{background:rgba(184,134,11,.12);}
 .meto-badge{background:rgba(184,134,11,.14);color:var(--gold-bright);}
-.kit-cc .kit-badge,.kit-fluxo .kit-badge,.kit-dados .kit-badge{background:rgba(184,134,11,.14);color:var(--gold-bright);}
+.kit-cc .kit-badge,.kit-fluxo .kit-badge,.kit-dados .kit-badge,.kit-ps .kit-badge{background:rgba(184,134,11,.14);color:var(--gold-bright);}
 .kit-materials li{color:rgba(255,255,255,.72);border-bottom-color:rgba(255,255,255,.08);}
+.kit-outcome{color:var(--white);}
+.kit-sublink{color:rgba(255,255,255,.55);}
+.kit-sublink:hover{color:var(--gold-bright);}
 .diag-wrapper,.contato-form{box-shadow:0 24px 60px rgba(0,0,0,.4);border-color:rgba(255,255,255,.1);}
 .contato-li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);}
 .contato-li:hover{background:rgba(255,255,255,.14);}
@@ -868,8 +875,8 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           </div>
         </div>
         <div class="kri-more">
-          <span class="kri-more-txt">Mais indicadores monitorados neste setor:</span>
-          <span class="kri-more-n">+18 KRIs</span>
+          <span class="kri-more-txt">Demais indicadores do setor:</span>
+          <span class="kri-more-n">definidos no mapeamento</span>
         </div>
         <div class="kri-cta-wrap">
           <a href="https://wa.me/5547992080823?text=Olá%2C%20vi%20o%20Painel%20de%20KRI%20no%20site%20e%20quero%20implantar%20monitoramento%20de%20indicadores%20de%20risco%20na%20minha%20operação.%20Como%20começamos%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.88rem;">Quero este painel na minha operação
@@ -889,7 +896,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <span class="section-tag">A base do método</span>
       <h2>Protocolos de Governança construídos com a sua equipe</h2>
       <p>Protocolo pronto não muda operação. Protocolo construído com quem executa, sim. Cada Protocolo de Governança é desenvolvido junto com a equipe do hospital, a partir dos dados e da rotina reais da sua operação. É a base do método: o processo passa a funcionar pela arquitetura, não pela presença de alguém.</p>
-      <p style="margin-top:14px;font-size:.92rem;">Abaixo, as três frentes e os instrumentos que construímos juntos em cada uma.</p>
+      <p style="margin-top:14px;font-size:.92rem;">Não existe protocolo de prateleira. O que construímos em cada frente depende do que o diagnóstico mostrar na sua operação. Abaixo, os problemas que atacamos em cada uma.</p>
     </div>
     <div class="kits-grid">
       <!-- PROTOCOLO CC -->
@@ -897,20 +904,22 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Centro Cirúrgico</div>
           <h3>Governança de Centro Cirúrgico</h3>
-          <p style="font-size:.84rem;">Construído com coordenação, anestesia, enfermagem e higienização para eliminar pauta incompleta, cancelamentos e ociosidade.</p>
+          <p style="font-size:.84rem;">Construído com coordenação, anestesia, enfermagem e higienização, a partir da pauta real do seu CC.</p>
         </div>
         <div class="kit-materials">
+          <div class="kit-label">O que atacamos juntos</div>
           <ul>
-            <li><span class="kit-dot"></span><span>Protocolo de Governança da Pauta Cirúrgica</span></li>
-            <li><span class="kit-dot"></span><span>T.A.R.O.™ — Termo de Assunção de Risco Operacional</span></li>
-            <li><span class="kit-dot"></span><span>Checklist de Abertura de Sala</span></li>
-            <li><span class="kit-dot"></span><span>Protocolo de Giro de Sala</span></li>
-            <li><span class="kit-dot"></span><span>Planilha de Monitoramento do CC</span></li>
-            <li><span class="kit-dot"></span><span>Manual de KPIs do CC</span></li>
+            <li><span class="kit-dot"></span><span>Pauta que só fecha na véspera, ou no próprio dia</span></li>
+            <li><span class="kit-dot"></span><span>Cancelamento descoberto com o paciente já em jejum</span></li>
+            <li><span class="kit-dot"></span><span>Primeiro tempo que nunca começa no horário</span></li>
+            <li><span class="kit-dot"></span><span>Giro de sala que depende de quem está de plantão</span></li>
+            <li><span class="kit-dot"></span><span>Desvio decidido no corredor, sem registro nem responsável</span></li>
           </ul>
+          <p class="kit-outcome">O CC passa a operar por regra pactuada, não por negociação diária.</p>
         </div>
         <div class="kit-foot">
-          <a href="protocolo-governanca-cirurgica.html" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Ver como construímos →</a>
+          <a href="#diagnostico" onclick="mapearFrente('cc');return false;" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Mapear esta frente →</a>
+          <a href="protocolo-governanca-cirurgica.html" class="kit-sublink">Ver como a frente funciona</a>
         </div>
       </div>
       <!-- PROTOCOLO FLUXO -->
@@ -918,41 +927,66 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Leitos e Fluxo</div>
           <h3>Gestão de Leitos e Alta</h3>
-          <p style="font-size:.84rem;">Construído com NIR, equipes assistenciais, higienização e corpo clínico para atacar giro lento e alta tardia.</p>
+          <p style="font-size:.84rem;">Construído com NIR, equipes assistenciais, higienização e corpo clínico.</p>
         </div>
         <div class="kit-materials">
+          <div class="kit-label">O que atacamos juntos</div>
           <ul>
-            <li><span class="kit-dot"></span><span>Protocolo de Alta Programática — critérios clínicos e gatilhos</span></li>
-            <li><span class="kit-dot"></span><span>SLA Interno entre Departamentos — enfermagem, higienização, logística</span></li>
-            <li><span class="kit-dot"></span><span>Painel de Giro de Leito — TMP, ocupação e alta tardia por setor</span></li>
-            <li><span class="kit-dot"></span><span>Protocolo de NIR Ativo — regulação em tempo real</span></li>
-            <li><span class="kit-dot"></span><span>Mapa de Gargalos do Fluxo — VSM simplificado da jornada</span></li>
-            <li><span class="kit-dot"></span><span>Plano de implantação com a equipe — sem parar a operação</span></li>
+            <li><span class="kit-dot"></span><span>Alta assinada de manhã, leito liberado à tarde</span></li>
+            <li><span class="kit-dot"></span><span>Paciente pronto para sair, esperando exame, transporte ou papel</span></li>
+            <li><span class="kit-dot"></span><span>NIR que só age quando é acionado</span></li>
+            <li><span class="kit-dot"></span><span>Setores que se cobram sem prazo combinado entre si</span></li>
+            <li><span class="kit-dot"></span><span>PS segurando paciente enquanto há leito “quase livre”</span></li>
           </ul>
+          <p class="kit-outcome">O leito gira por fluxo desenhado, não por pressão da fila.</p>
         </div>
         <div class="kit-foot">
-          <a href="protocolo-gestao-leitos.html" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Ver como construímos →</a>
+          <a href="#diagnostico" onclick="mapearFrente('leitos');return false;" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Mapear esta frente →</a>
+          <a href="protocolo-gestao-leitos.html" class="kit-sublink">Ver como a frente funciona</a>
+        </div>
+      </div>
+      <!-- PROTOCOLO PS -->
+      <div class="kit-card kit-ps reveal" data-d="3">
+        <div class="kit-header">
+          <div class="kit-badge">Protocolo · Urgência e Emergência</div>
+          <h3>Fluxo do Pronto-Socorro</h3>
+          <p style="font-size:.84rem;">Construído com coordenação do PS, classificação de risco, corpo clínico e NIR.</p>
+        </div>
+        <div class="kit-materials">
+          <div class="kit-label">O que atacamos juntos</div>
+          <ul>
+            <li><span class="kit-dot"></span><span>Classificação de risco que vira fila por ordem de chegada</span></li>
+            <li><span class="kit-dot"></span><span>Paciente internado ocupando maca no PS à espera de leito</span></li>
+            <li><span class="kit-dot"></span><span>Tempo porta-médico que cada um mede de um jeito</span></li>
+            <li><span class="kit-dot"></span><span>Superlotação resolvida no improviso de cada plantão</span></li>
+            <li><span class="kit-dot"></span><span>Evasão sem atendimento que não aparece em nenhum relatório</span></li>
+          </ul>
+          <p class="kit-outcome">O PS passa a operar por critério e fluxo, não por lotação.</p>
+        </div>
+        <div class="kit-foot">
+          <a href="#diagnostico" onclick="mapearFrente('ps');return false;" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Mapear esta frente →</a>
         </div>
       </div>
       <!-- PROTOCOLO DADOS -->
-      <div class="kit-card kit-dados reveal" data-d="3">
+      <div class="kit-card kit-dados reveal" data-d="4">
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Indicadores e BI</div>
-          <h3>Indicadores e BI Hospitalar</h3>
-          <p style="font-size:.84rem;">Construído com gestores e TI a partir dos dados que o hospital já produz, para que decisão deixe de ser intuição.</p>
+          <h3>Indicadores e Decisão</h3>
+          <p style="font-size:.84rem;">Construído com gestores e TI, sobre o que o hospital já registra.</p>
         </div>
         <div class="kit-materials">
+          <div class="kit-label">O que atacamos juntos</div>
           <ul>
-            <li><span class="kit-dot"></span><span>Dicionário de KPIs e KRIs da instituição — fórmula, meta e limite de alerta</span></li>
-            <li><span class="kit-dot"></span><span>Dashboard Executivo — 12 indicadores para apresentação à diretoria</span></li>
-            <li><span class="kit-dot"></span><span>Painel Operacional Diário — ocupação, altas previstas, pendências</span></li>
-            <li><span class="kit-dot"></span><span>Guia de Coleta de Dados — sem depender de TI</span></li>
-            <li><span class="kit-dot"></span><span>Template de Apresentação para Diretoria — 10 slides estruturados</span></li>
-            <li><span class="kit-dot"></span><span>Rito de gestão por indicadores — reunião, dono e cadência definidos</span></li>
+            <li><span class="kit-dot"></span><span>Cada área com a sua versão do mesmo número</span></li>
+            <li><span class="kit-dot"></span><span>Indicador que existe, mas não tem dono nem limite de alerta</span></li>
+            <li><span class="kit-dot"></span><span>Reunião para descobrir o que já aconteceu</span></li>
+            <li><span class="kit-dot"></span><span>Diretoria decidindo sem saber quanto o problema custa</span></li>
+            <li><span class="kit-dot"></span><span>Dado que depende de uma pessoa específica para ser extraído</span></li>
           </ul>
+          <p class="kit-outcome">Decisão passa a ter número, dono e cadência.</p>
         </div>
         <div class="kit-foot">
-          <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20entender%20como%20seria%20construir%20o%20Protocolo%20de%20Governança%20de%20Indicadores%20e%20BI%20com%20a%20nossa%20equipe." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Construir com minha equipe →</a>
+          <a href="#diagnostico" onclick="mapearFrente('dados');return false;" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Mapear esta frente →</a>
         </div>
       </div>
     </div>
@@ -1505,6 +1539,11 @@ function dSelectArea(a){
   ['cc','leitos','dados','ps'].forEach(x=>document.getElementById('dac-'+x).classList.remove('sel'));
   document.getElementById('dac-'+a).classList.add('sel');
   document.getElementById('dbtn-area').disabled=false;
+}
+function mapearFrente(a){
+  dGoTo(1);dSelectArea(a);
+  const el=document.getElementById('diagnostico');
+  if(el)el.scrollIntoView({behavior:'smooth'});
 }
 function dConfirmArea(){if(!DS.area)return;DS.qIdx=0;DS.ans={};dGoTo('q');}
 function dRenderQ(){
