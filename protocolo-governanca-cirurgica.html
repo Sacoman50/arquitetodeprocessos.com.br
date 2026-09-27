@@ -3,849 +3,884 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" />
-  <title>Protocolo de Governança Cirúrgica™ | Arquiteto de Processos em Saúde™</title>
-  <meta name="description" content="O método que estrutura o Centro Cirúrgico para funcionar sem depender de heróis. 6 instrumentos desenvolvidos com rigor Lean Six Sigma Black Belt para gestores hospitalares." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src https://api.emailjs.com;" />
+  <title>Arquitetura de Governança Cirúrgica™ | Arquiteto de Processos em Saúde™</title>
+  <meta name="description" content="Arquitetura de processos construída sob medida para o Centro Cirúrgico do seu hospital, com toda a equipe envolvida. Faça o diagnóstico rápido do seu CC e receba um relatório executivo em até 24 horas." />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     :root {
-      --navy: #1A2B4A;
-      --navy-dark: #111D33;
-      --navy-deeper: #0C1525;
-      --gold: #B8860B;
-      --gold-light: #F5EDD5;
-      --gold-muted: #D4A843;
-      --gold-pale: #FAF5E8;
-      --white: #FFFFFF;
-      --gray-100: #F7F7F7;
-      --gray-200: #EEEEEE;
-      --gray-300: #DDDDDD;
-      --gray-500: #888888;
-      --gray-700: #444444;
-      --text-main: #1A2B4A;
-      --green: #1A7A4A;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-      --max-w: 1080px;
-      --section-gap: 96px;
+      --navy: #1A2B4A; --navy-dark: #111D33; --navy-deeper: #0C1525;
+      --gold: #B8860B; --gold-muted: #D4A843; --gold-pale: #FAF5E8;
+      --white: #FFFFFF; --gray-100: #F7F7F7; --gray-200: #EEEEEE; --gray-300: #DDDDDD;
+      --gray-500: #7A7A7A; --gray-700: #444444; --red: #E05555; --green: #1A7A4A;
+      --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'DM Sans', sans-serif;
+      --max-w: 1080px; --section-gap: 96px;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text-main); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    .tag { display: inline-block; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; border-radius: 2px; }
-    .btn-primary { display: inline-block; background: var(--gold); color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 18px 48px; border-radius: 2px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; cursor: pointer; border: none; }
-    .btn-primary:hover { background: #9A7009; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.28); }
-    .btn-ghost { display: inline-block; background: transparent; color: var(--gold); font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; padding: 14px 36px; border: 1.5px solid var(--gold); border-radius: 2px; transition: background 0.2s, color 0.2s; }
-    .btn-ghost:hover { background: var(--gold); color: var(--white); }
+    .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; border-radius: 2px; }
+    .btn-primary { display: inline-block; background: var(--gold); color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 18px 44px; border-radius: 2px; border: none; cursor: pointer; transition: background .2s, transform .15s, box-shadow .2s; }
+    .btn-primary:hover { background: #9A7009; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,.28); }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-ghost { display: inline-block; background: transparent; color: var(--gold-muted); font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: .04em; text-decoration: none; padding: 16px 32px; border: 1.5px solid var(--gold-muted); border-radius: 2px; cursor: pointer; transition: background .2s, color .2s; }
+    .btn-ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+    .btn-back { background: none; border: none; font-family: var(--font-body); font-size: 14px; color: var(--gray-500); cursor: pointer; padding: 18px 8px; }
+    .btn-back:hover { color: var(--navy); }
 
     /* HEADER */
-    header { background: var(--navy-dark); border-bottom: 1px solid rgba(184,134,11,0.2); padding: 18px 0; position: sticky; top: 0; z-index: 100; }
+    header { background: var(--navy-dark); border-bottom: 1px solid rgba(184,134,11,.2); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
     header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .header-logo { font-family: var(--font-display); font-size: 17px; font-weight: 500; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
+    .header-logo { font-family: var(--font-display); font-size: 17px; font-weight: 500; color: var(--white); text-decoration: none; }
     .header-logo span { color: var(--gold-muted); }
-    .header-cta { font-size: 13px; padding: 12px 28px; }
+    .header-cta { font-size: 12px; padding: 12px 22px; }
 
     /* HERO */
-    .hero { background: var(--navy-dark); background-image: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,0.07) 0%, transparent 70%), linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%); padding: 100px 0 96px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px); pointer-events: none; }
-    .hero-inner { position: relative; display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: center; }
-    .hero-badge { margin-bottom: 24px; }
-    .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 62px); font-weight: 600; line-height: 1.1; color: var(--white); margin-bottom: 20px; }
+    .hero { background: linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%); padding: 100px 0 96px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px), radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: center; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(38px, 5vw, 60px); font-weight: 600; line-height: 1.1; color: var(--white); margin: 24px 0 20px; }
     .hero h1 em { font-style: italic; color: var(--gold-muted); }
-    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
-    .hero-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
-    .hero-meta-item svg { opacity: 0.7; flex-shrink: 0; }
-    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.25); border-radius: 4px; padding: 36px 32px; backdrop-filter: blur(8px); }
-    .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 20px; display: block; }
-    .hero-card-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .hero-card-items li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.4; }
-    .hero-card-items li::before { content: '–'; color: var(--gold-muted); flex-shrink: 0; margin-top: 1px; }
-    .hero-card-divider { border: none; border-top: 1px solid rgba(184,134,11,0.15); margin: 24px 0; }
-    .hero-card-cta { width: 100%; text-align: center; padding: 16px 24px; font-size: 14px; }
-    .hero-card-principle { text-align: center; margin-bottom: 20px; }
-    .hero-card-principle-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; margin-bottom: 8px; }
-    .hero-card-principle-value { font-family: var(--font-display); font-size: 18px; font-weight: 600; font-style: italic; color: var(--gold-muted); line-height: 1.35; }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,.68); line-height: 1.7; margin-bottom: 36px; max-width: 540px; }
+    .hero-sub strong { color: rgba(255,255,255,.92); font-weight: 500; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-card { background: rgba(255,255,255,.04); border: 1px solid rgba(184,134,11,.25); border-radius: 4px; padding: 32px 28px; }
+    .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 20px; display: block; }
+    .hero-steps { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .hero-steps li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.45; }
+    .hero-steps b { font-family: var(--font-display); font-size: 20px; color: var(--gold-muted); font-weight: 600; line-height: 1.1; }
+    .hero-steps strong { color: var(--white); font-weight: 500; display: block; }
 
-    /* CALCULATOR */
-    .calc-section { background: var(--white); padding: 80px 0; border-bottom: 1px solid var(--gray-200); }
-    .calc-anchor-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; text-align: center; }
-    .calc-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 44px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 12px; text-align: center; }
-    .calc-title em { font-style: italic; color: var(--gold); }
-    .calc-lead { font-size: 16px; color: var(--gray-500); text-align: center; max-width: 540px; margin: 0 auto 48px; line-height: 1.7; }
-    .calc-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-    .calc-inputs { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 4px; padding: 36px 32px; }
-    .calc-inputs-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 28px; display: block; }
+    /* DIAGNÓSTICO */
+    .diag-section { background: var(--gray-100); padding: 88px 0; border-bottom: 1px solid var(--gray-200); }
+    .center-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; text-align: center; }
+    .diag-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 46px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 14px; text-align: center; }
+    .diag-title em { font-style: italic; color: var(--gold); }
+    .diag-lead { font-size: 16px; color: var(--gray-700); text-align: center; max-width: 600px; margin: 0 auto 44px; line-height: 1.7; }
+    .diag-box { max-width: 760px; margin: 0 auto; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; box-shadow: 0 10px 40px rgba(17,29,51,.06); overflow: hidden; }
+    .diag-progress { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--gray-200); }
+    .diag-progress div { padding: 16px 12px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-500); text-align: center; border-bottom: 3px solid transparent; }
+    .diag-progress div.active { color: var(--navy); border-bottom-color: var(--gold); }
+    .diag-progress div.done { color: var(--green); }
+    .diag-step { display: none; padding: 40px 44px; }
+    .diag-step.active { display: block; animation: fadeUp .35s ease; }
+    .step-title { font-family: var(--font-display); font-size: 26px; font-weight: 600; margin-bottom: 6px; }
+    .step-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 32px; }
     .field-group { margin-bottom: 28px; }
-    .field-group:last-child { margin-bottom: 0; }
-    .field-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
-    .field-label span { font-size: 14px; font-weight: 500; color: var(--navy); }
-    .field-value { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--gold); line-height: 1; }
-    .field-hint { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
-    input[type="range"] { width: 100%; -webkit-appearance: none; height: 4px; border-radius: 2px; background: var(--gray-300); outline: none; cursor: pointer; }
-    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); cursor: pointer; box-shadow: 0 2px 8px rgba(184,134,11,0.3); transition: transform 0.15s; }
-    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
-    input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; }
-    .range-minmax { display: flex; justify-content: space-between; font-size: 10px; color: var(--gray-500); margin-top: 6px; letter-spacing: 0.04em; }
-    .calc-result { position: sticky; top: 96px; }
-    .result-card { background: var(--navy-dark); border: 1px solid rgba(184,134,11,0.2); border-radius: 4px; padding: 36px 32px; margin-bottom: 16px; }
-    .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 8px; display: block; }
-    .result-main-num { font-family: var(--font-display); font-size: 52px; font-weight: 600; color: #FF6B6B; line-height: 1; margin-bottom: 4px; }
-    .result-main-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
-    .result-breakdown { display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(184,134,11,0.12); margin-bottom: 24px; }
-    .result-row { display: flex; justify-content: space-between; align-items: center; }
-    .result-row-label { font-size: 13px; color: rgba(255,255,255,0.5); }
-    .result-row-value { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.85); }
-    .result-row-value.loss { color: #FF6B6B; }
-    .recovered-card { background: var(--gold-pale); border: 1px solid rgba(184,134,11,0.25); border-radius: 4px; padding: 28px 32px; margin-bottom: 16px; }
-    .recovered-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
-    .recovered-card-sub { font-size: 13px; color: var(--gray-500); margin-bottom: 20px; line-height: 1.5; }
-    .recovered-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-    .recovered-item-num { font-family: var(--font-display); font-size: 32px; font-weight: 600; color: var(--green); line-height: 1; margin-bottom: 4px; }
-    .recovered-item-label { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
-    .ausencia-block { background: var(--navy-dark); border: 1px solid rgba(184,134,11,0.2); border-radius: 4px; padding: 28px 32px; margin-bottom: 16px; }
-    .ausencia-block-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; display: block; }
-    .ausencia-block-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 10px; }
-    .ausencia-block-title em { color: var(--gold-muted); font-style: italic; }
-    .ausencia-block-body { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 18px; }
-    .ausencia-cta { display: block; width: 100%; text-align: center; padding: 14px 24px; font-size: 13px; background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; font-family: var(--font-body); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
-    .ausencia-cta:hover { background: rgba(184,134,11,0.15); border-color: var(--gold-muted); }
-    .calc-disclaimer { font-size: 11px; color: var(--gray-500); line-height: 1.6; margin-top: 16px; padding: 12px 16px; background: var(--gray-100); border-radius: 2px; }
+    .field-label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+    .field-label span { font-size: 15px; font-weight: 500; }
+    .field-value { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--gold); line-height: 1; white-space: nowrap; }
+    .field-hint { font-size: 12px; color: var(--gray-500); margin-top: 6px; line-height: 1.5; }
+    .num-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+    .num-field { min-width: 0; }
+    .num-wrap input { width: 100%; }
+    .num-field label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; line-height: 1.35; }
+    .num-wrap { display: flex; align-items: center; border: 1.5px solid var(--gray-300); border-radius: 2px; background: var(--white); transition: border-color .15s; }
+    .num-wrap:focus-within { border-color: var(--gold); }
+    .num-field.invalid .num-wrap { border-color: var(--red); }
+    .num-wrap input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; padding: 13px 14px; font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); }
+    .num-wrap input::placeholder { color: var(--gray-300); font-weight: 500; }
+    .num-wrap input::-webkit-outer-spin-button, .num-wrap input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .num-wrap input[type=number] { -moz-appearance: textfield; }
+    .unit { padding: 0 14px; font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: .04em; white-space: nowrap; }
+    .unit.pre { padding: 0 0 0 14px; }
+    .range-minmax { display: flex; justify-content: space-between; font-size: 11px; color: var(--gray-500); margin-top: 6px; }
+    .q-label { font-size: 15px; font-weight: 500; margin-bottom: 12px; display: block; }
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .options.single-col { grid-template-columns: 1fr; }
+    .opt { position: relative; }
+    .opt input { position: absolute; opacity: 0; pointer-events: none; }
+    .opt label { display: block; padding: 13px 16px; border: 1.5px solid var(--gray-300); border-radius: 2px; font-size: 14px; color: var(--gray-700); cursor: pointer; line-height: 1.4; transition: border-color .15s, background .15s; }
+    .opt label:hover { border-color: var(--gold-muted); }
+    .opt input:checked + label { border-color: var(--gold); background: var(--gold-pale); color: var(--navy); font-weight: 500; }
+    .opt input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .text-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .text-field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    .text-field input, .text-field select { width: 100%; padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--navy); border: 1.5px solid var(--gray-300); border-radius: 2px; background: var(--white); outline: none; transition: border-color .15s; }
+    .text-field input:focus, .text-field select:focus { border-color: var(--gold); }
+    .text-field.full { grid-column: 1 / -1; }
+    .text-field.invalid input, .text-field.invalid select { border-color: var(--red); }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 20px; font-size: 13px; color: var(--gray-700); line-height: 1.5; }
+    .consent input { margin-top: 3px; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+    .step-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 36px; gap: 12px; }
+    .step-error { font-size: 13px; color: var(--red); margin-top: 14px; min-height: 18px; }
+    .diag-footnote { font-size: 12px; color: var(--gray-500); text-align: center; margin-top: 18px; }
 
-    /* STATS */
-    .stats-strip { background: var(--gold-pale); border-top: 1px solid rgba(184,134,11,0.15); border-bottom: 1px solid rgba(184,134,11,0.15); padding: 48px 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .stat-item { text-align: center; padding: 8px 24px; border-right: 1px solid rgba(184,134,11,0.2); }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: var(--font-display); font-size: 48px; font-weight: 600; color: var(--navy); line-height: 1; display: block; margin-bottom: 8px; }
-    .stat-num em { color: var(--gold); font-style: normal; }
-    .stat-label { font-size: 13px; color: var(--gray-500); line-height: 1.4; }
+    /* BRIEFING */
+    .briefing { display: none; padding: 0; }
+    .briefing.active { display: block; animation: fadeUp .4s ease; }
+    .brief-head { background: var(--navy-dark); padding: 36px 44px; }
+    .brief-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-muted); display: block; margin-bottom: 10px; }
+    .brief-hosp { font-family: var(--font-display); font-size: 26px; color: var(--white); font-weight: 600; line-height: 1.2; margin-bottom: 24px; }
+    .brief-num-label { font-size: 13px; color: rgba(255,255,255,.55); }
+    .brief-num { font-family: var(--font-display); font-size: 54px; font-weight: 600; color: #FF7A7A; line-height: 1.05; }
+    .brief-num-sub { font-size: 13px; color: rgba(255,255,255,.45); margin-top: 4px; }
+    .brief-rows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(184,134,11,.15); }
+    .brief-rows div span { display: block; font-size: 12px; color: rgba(255,255,255,.45); margin-bottom: 4px; line-height: 1.35; }
+    .brief-rows div strong { font-family: var(--font-display); font-size: 22px; color: rgba(255,255,255,.9); font-weight: 600; }
+    .brief-body { padding: 36px 44px 40px; }
+    .brief-h { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .hyp { border-left: 3px solid var(--gold); background: var(--gold-pale); padding: 14px 18px; margin-bottom: 12px; border-radius: 0 2px 2px 0; }
+    .hyp strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .hyp p { font-size: 14px; color: var(--gray-700); line-height: 1.55; }
+    .next-box { margin-top: 28px; padding: 24px; border: 1px solid var(--gray-200); border-radius: 2px; }
+    .next-box p { font-size: 15px; color: var(--gray-700); line-height: 1.65; margin-bottom: 18px; }
+    .next-box strong { color: var(--navy); }
+    .send-status { font-size: 13px; margin-top: 14px; color: var(--gray-500); }
+    .send-status.ok { color: var(--green); }
+    .send-status.err { color: var(--red); }
+    .brief-note { font-size: 11px; color: var(--gray-500); line-height: 1.6; margin-top: 22px; }
 
     /* SECTIONS */
     .section { padding: var(--section-gap) 0; }
-    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
     .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
     .section-title em { font-style: italic; color: var(--gold); }
-    .section-lead { font-size: 17px; color: var(--gray-700); line-height: 1.75; max-width: 640px; }
+    .section-lead { font-size: 17px; color: var(--gray-700); line-height: 1.75; max-width: 660px; }
 
     /* PROBLEM */
     .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 56px; }
     .problem-narrative { background: var(--navy-dark); border-left: 3px solid var(--gold); padding: 40px 36px; border-radius: 2px; }
-    .problem-narrative p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 16px; }
-    .problem-narrative p:last-of-type { margin-bottom: 24px; }
-    .problem-quote { font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--gold-muted); line-height: 1.4; border-top: 1px solid rgba(184,134,11,0.2); padding-top: 20px; }
-    .problem-quote cite { display: block; font-size: 13px; font-style: normal; font-family: var(--font-body); color: rgba(255,255,255,0.35); margin-top: 10px; letter-spacing: 0.04em; }
-    .problem-checks { display: flex; flex-direction: column; gap: 0; }
-    .problem-checks-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 20px; }
-    .check-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
+    .problem-narrative p { font-size: 16px; color: rgba(255,255,255,.75); line-height: 1.8; margin-bottom: 16px; }
+    .problem-quote { font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--gold-muted); line-height: 1.4; border-top: 1px solid rgba(184,134,11,.2); padding-top: 20px; margin-top: 8px; }
+    .problem-quote cite { display: block; font-size: 13px; font-style: normal; font-family: var(--font-body); color: rgba(255,255,255,.35); margin-top: 10px; }
+    .checks-label { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 20px; }
+    .check-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--gray-200); font-size: 15px; color: var(--gray-700); line-height: 1.55; }
     .check-item:first-of-type { border-top: 1px solid var(--gray-200); }
-    .check-arrow { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; color: var(--gold); }
-    .check-text { font-size: 15px; color: var(--gray-700); line-height: 1.55; }
-    .check-bottom { margin-top: 28px; background: var(--gold-pale); border: 1px solid rgba(184,134,11,0.2); padding: 18px 20px; border-radius: 2px; font-size: 14px; color: var(--navy); line-height: 1.55; }
-    .check-bottom strong { color: var(--gold); }
+    .check-item svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--gold); }
 
-    /* TRANSFORMATION */
-    .transformation-section { background: var(--navy-deeper); padding: var(--section-gap) 0; }
-    .transformation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .transform-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; padding: 32px 28px; transition: border-color 0.2s; }
-    .transform-card:hover { border-color: rgba(184,134,11,0.35); }
-    .transform-before { font-size: 13px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
-    .transform-from { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .transform-after { font-size: 13px; color: var(--gold-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
-    .transform-to { font-family: var(--font-display); font-size: 18px; color: var(--white); font-weight: 600; line-height: 1.3; }
+    /* CONTRASTE */
+    .contrast-section { background: var(--navy-deeper); padding: var(--section-gap) 0; }
+    .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+    .contrast-col { border-radius: 4px; padding: 36px 32px; }
+    .contrast-col.off { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); }
+    .contrast-col.on { background: rgba(184,134,11,.06); border: 1px solid rgba(184,134,11,.35); }
+    .contrast-col h3 { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 22px; }
+    .contrast-col.off h3 { color: rgba(255,255,255,.4); }
+    .contrast-col.on h3 { color: var(--gold-muted); }
+    .contrast-col ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .contrast-col li { font-size: 15px; line-height: 1.55; padding-left: 20px; position: relative; }
+    .contrast-col.off li { color: rgba(255,255,255,.45); }
+    .contrast-col.off li::before { content: '×'; position: absolute; left: 0; color: rgba(255,255,255,.3); }
+    .contrast-col.on li { color: rgba(255,255,255,.88); }
+    .contrast-col.on li::before { content: '→'; position: absolute; left: 0; color: var(--gold-muted); font-size: 13px; top: 2px; }
 
-    /* MATERIALS */
-    .materials-section { background: var(--gray-100); }
-    .materials-intro { background: var(--navy-dark); border-left: 3px solid var(--gold); padding: 32px 36px; border-radius: 2px; margin-top: 56px; margin-bottom: 32px; }
-    .materials-intro p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; max-width: 680px; }
-    .materials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .material-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 32px 28px; transition: border-color 0.2s, box-shadow 0.2s; position: relative; }
-    .material-card:hover { border-color: rgba(184,134,11,0.35); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-    .material-num { font-family: var(--font-display); font-size: 13px; font-weight: 500; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
-    .material-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 12px; }
-    .material-desc { font-size: 14px; color: var(--gray-500); line-height: 1.65; margin-bottom: 20px; }
-    .material-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .material-bullets li { font-size: 13px; color: var(--gray-700); padding-left: 14px; position: relative; line-height: 1.45; }
-    .material-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 2px; }
-    .material-format { position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); padding: 3px 8px; border-radius: 2px; }
-    .material-card.highlight { border-color: rgba(184,134,11,0.3); background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); }
-    .material-card.highlight .material-num { color: var(--gold-muted); }
-    .material-card.highlight .material-title { color: var(--white); }
-    .material-card.highlight .material-desc { color: rgba(255,255,255,0.55); }
-    .material-card.highlight .material-bullets li { color: rgba(255,255,255,0.75); }
-    .material-card.highlight .material-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+    /* MÉTODO */
+    .method-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
+    .method-card { background: var(--white); border: 1px solid var(--gray-200); border-top: 3px solid var(--gold); border-radius: 2px; padding: 28px 24px; }
+    .method-num { font-family: var(--font-display); font-size: 36px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 14px; display: block; }
+    .method-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
+    .method-card p { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
 
-    /* GUARANTEE */
-    .guarantee-bar { background: var(--gold-pale); border-top: 1px solid rgba(184,134,11,0.2); border-bottom: 1px solid rgba(184,134,11,0.2); padding: 32px 0; }
-    .guarantee-inner { display: flex; align-items: center; gap: 20px; max-width: 640px; margin: 0 auto; text-align: center; flex-direction: column; }
-    .guarantee-icon { width: 52px; height: 52px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); }
-    .guarantee-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-    .guarantee-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
+    /* EQUIPE */
+    .team-section { background: var(--gray-100); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .team-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 22px 22px; }
+    .team-item strong { font-family: var(--font-display); font-size: 19px; font-weight: 600; display: block; margin-bottom: 6px; }
+    .team-item span { font-size: 14px; color: var(--gray-700); line-height: 1.55; }
 
-    /* FAQ */
-    .faq-section { background: var(--gray-100); }
-    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
-    .faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 28px 24px; }
-    .faq-q { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
-    .faq-a { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
-
-    /* CTA FINAL */
-    .cta-section { background: var(--navy-dark); background-image: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(184,134,11,0.08) 0%, transparent 70%); padding: 100px 0; text-align: center; }
-    .cta-section .section-title { color: var(--white); }
-    .cta-section .section-lead { color: rgba(255,255,255,0.55); margin: 0 auto 12px; }
-    .cta-meta { display: flex; align-items: center; justify-content: center; gap: 32px; margin: 36px 0 48px; flex-wrap: wrap; }
-    .cta-meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.5); }
-    .cta-meta-item svg { color: var(--gold-muted); }
-    .cta-price-block { margin-bottom: 32px; }
-    .cta-price-label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 8px; }
-    .cta-price-value { font-family: var(--font-display); font-size: 56px; font-weight: 600; color: var(--gold-muted); line-height: 1; margin-bottom: 6px; }
-    .cta-price-installment { font-size: 14px; color: rgba(255,255,255,0.35); }
-    .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .cta-sub { font-size: 13px; color: rgba(255,255,255,0.3); letter-spacing: 0.03em; }
-    .cta-contact { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .cta-contact p { font-size: 14px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
-    .cta-contact a { font-size: 14px; color: var(--gold-muted); text-decoration: none; }
-    .cta-contact a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer { background: var(--navy-deeper); padding: 36px 0; text-align: center; }
-    footer p { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.7; }
-    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
-    footer a:hover { color: rgba(255,255,255,0.6); }
+    /* ENTREGÁVEIS */
+    .deliv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .deliv { border: 1px solid var(--gray-200); padding: 26px 24px; border-radius: 2px; }
+    .deliv h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 8px; line-height: 1.25; }
+    .deliv p { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+    .deliv.hl { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); border-color: rgba(184,134,11,.3); }
+    .deliv.hl h3 { color: var(--white); }
+    .deliv.hl p { color: rgba(255,255,255,.65); }
 
     /* MID CTA */
     .mid-cta { background: var(--navy); padding: 64px 0; text-align: center; }
     .mid-cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--white); margin-bottom: 28px; line-height: 1.3; }
     .mid-cta-title em { color: var(--gold-muted); font-style: italic; }
 
-    /* ANIMATIONS */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
-    .anim-d1 { animation-delay: 0.1s; }
-    .anim-d2 { animation-delay: 0.2s; }
-    .anim-d3 { animation-delay: 0.35s; }
-    .anim-d4 { animation-delay: 0.5s; }
-    @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-    .result-main-num.updated { animation: pulse-red 0.4s ease; }
+    /* FAQ */
+    .faq-section { background: var(--gray-100); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 28px 24px; }
+    .faq-q { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
+    .faq-a { font-size: 14px; color: var(--gray-700); line-height: 1.7; }
 
-    /* RESPONSIVE */
-    @media (max-width: 860px) {
+    /* CTA FINAL */
+    .cta-section { background: var(--navy-dark); padding: 100px 0; text-align: center; }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(255,255,255,.6); margin: 0 auto 40px; }
+    .cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-sub { font-size: 13px; color: rgba(255,255,255,.35); margin-top: 20px; }
+
+    footer { background: var(--navy-deeper); padding: 36px 0; text-align: center; }
+    footer p { font-size: 12px; color: rgba(255,255,255,.25); line-height: 1.7; }
+    footer a { color: rgba(255,255,255,.4); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,.7); }
+
+    /* WHATSAPP FLOAT */
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .15s; }
+    .wa-float:hover { transform: scale(1.07); }
+
+
+    /* ===== TEMA AZUL-MARINHO INTEGRAL ===== */
+    :root { --tone-a: #0E1829; --tone-b: #16243D; --line: rgba(255,255,255,.1); --card: rgba(255,255,255,.035); --txt: rgba(255,255,255,.9); --txt-2: rgba(255,255,255,.68); --txt-3: rgba(255,255,255,.45); --ok: #6FCF97; --err: #FF8A8A; }
+    body { background: var(--tone-a); color: var(--txt); }
+    .band.tone-a { background: var(--tone-a); }
+    .band.tone-b { background: var(--tone-b); }
+    .band + .band, .band + footer.band { border-top: 1px solid var(--gold-muted); border-bottom: none; }
+    .hero.band { background-image: none; }
+
+    .section-label, .center-label { color: var(--gold-muted); }
+    .section-title, .diag-title { color: var(--white); }
+    .section-title em, .diag-title em { color: var(--gold-muted); }
+    .section-lead, .diag-lead { color: var(--txt-2); }
+
+    /* Diagnóstico */
+    .diag-box { background: var(--card); border: 1px solid rgba(212,168,67,.3); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+    .diag-progress { border-bottom-color: var(--line); }
+    .diag-progress div { color: var(--txt-3); }
+    .diag-progress div.active { color: var(--white); border-bottom-color: var(--gold-muted); }
+    .diag-progress div.done { color: var(--ok); }
+    .step-title { color: var(--white); }
+    .step-sub, .field-hint { color: var(--txt-3); }
+    .num-field label, .q-label, .text-field label { color: var(--txt); }
+    .num-wrap { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.16); }
+    .num-wrap:focus-within { border-color: var(--gold-muted); }
+    .num-wrap input { color: var(--white); }
+    .num-wrap input::placeholder { color: rgba(255,255,255,.22); }
+    .unit { color: var(--gold-muted); }
+    .opt label { border-color: rgba(255,255,255,.16); color: var(--txt-2); background: rgba(255,255,255,.02); }
+    .opt label:hover { border-color: var(--gold-muted); color: var(--white); }
+    .opt input:checked + label { border-color: var(--gold-muted); background: rgba(184,134,11,.16); color: var(--white); }
+    .opt input:focus-visible + label { outline-color: var(--gold-muted); }
+    .text-field input, .text-field select { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.16); color: var(--white); }
+    .text-field input::placeholder { color: rgba(255,255,255,.22); }
+    .text-field input:focus, .text-field select:focus { border-color: var(--gold-muted); }
+    .text-field select option { background: var(--tone-b); color: var(--white); }
+    .num-field.invalid .num-wrap, .text-field.invalid input, .text-field.invalid select { border-color: var(--err); }
+    .consent { color: var(--txt-2); }
+    .consent a { color: var(--gold-muted) !important; }
+    .step-error { color: var(--err); }
+    .btn-back { color: var(--txt-3); }
+    .btn-back:hover { color: var(--white); }
+    .diag-footnote { color: var(--txt-3); }
+
+    /* Briefing */
+    .brief-head { background: rgba(0,0,0,.22); border-bottom: 1px solid rgba(212,168,67,.25); }
+    .brief-h { color: var(--gold-muted); }
+    .hyp { background: rgba(184,134,11,.09); border-left-color: var(--gold-muted); }
+    .hyp strong { color: var(--white); }
+    .hyp p { color: var(--txt-2); }
+    .next-box { border-color: var(--line); background: rgba(255,255,255,.02); }
+    .next-box p { color: var(--txt-2); }
+    .next-box strong { color: var(--white); }
+    .send-status { color: var(--txt-3); }
+    .send-status.ok { color: var(--ok); }
+    .send-status.err { color: var(--err); }
+    .brief-note { color: var(--txt-3); }
+
+    /* Problema */
+    .problem-narrative { background: var(--card); }
+    .checks-label { color: var(--txt-3); }
+    .check-item { color: var(--txt-2); border-bottom-color: var(--line); }
+    .check-item:first-of-type { border-top-color: var(--line); }
+    .check-item svg { color: var(--gold-muted); }
+
+    /* Cartões */
+    .method-card, .team-item, .deliv, .faq-item { background: var(--card); border-color: var(--line); }
+    .method-card { border-top-color: var(--gold-muted); }
+    .method-num { color: var(--gold-muted); }
+    .method-card h3, .team-item strong, .deliv h3, .faq-q { color: var(--white); }
+    .method-card p, .team-item span, .deliv p, .faq-a { color: var(--txt-2); }
+    .deliv.hl { background: rgba(184,134,11,.09); border-color: rgba(212,168,67,.45); }
+
+    footer p { color: var(--txt-3); }
+    footer a { color: rgba(255,255,255,.55); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
       :root { --section-gap: 64px; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
-      .hero h1 { font-size: 38px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(184,134,11,0.15); padding-bottom: 20px; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .transformation-grid { grid-template-columns: 1fr; }
-      .materials-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .calc-wrapper { grid-template-columns: 1fr; }
-      .calc-result { position: static; }
+      .hero-inner, .problem-grid, .contrast-grid { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr 1fr; }
+      .team-grid, .deliv-grid, .faq-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 560px) {
+    @media (max-width: 600px) {
       .hero { padding: 64px 0 72px; }
-      .hero h1 { font-size: 32px; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-      .hero-actions .btn-primary { width: 100%; text-align: center; }
-      .btn-primary { padding: 16px 32px; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .recovered-grid { grid-template-columns: 1fr; }
+      .hero-actions a { width: 100%; text-align: center; }
+      .diag-step, .brief-head, .brief-body { padding: 28px 22px; }
+      .options, .text-grid, .num-grid { grid-template-columns: 1fr; }
+      .brief-rows { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr; }
+      .header-logo { font-size: 15px; }
+      .diag-progress div { font-size: 10px; padding: 14px 6px; }
+      .step-actions { flex-direction: column-reverse; align-items: stretch; }
+      .step-actions .btn-primary { width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container">
-      <a href="https://arquitetodeprocessos.com.br" class="header-logo" target="_blank" rel="noopener noreferrer">
-        Arquiteto de Processos <span>em Saúde™</span>
-      </a>
-      <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary header-cta">
-        Adquirir Protocolo
-      </a>
+      <a href="https://arquitetodeprocessos.com.br" class="header-logo">Arquiteto de Processos <span>em Saúde™</span></a>
+      <a href="#diagnostico" class="btn-primary header-cta">Diagnóstico rápido</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero band tone-a">
     <div class="container">
       <div class="hero-inner">
         <div>
-          <div class="hero-badge anim anim-d1">
-            <span class="tag">Biblioteca do Arquiteto · Governança Cirúrgica</span>
-          </div>
-          <h1 class="anim anim-d2">
-            O CC que funciona quando<br/><em>o líder não está presente.</em>
-          </h1>
-          <p class="hero-sub anim anim-d3">
-            O <strong style="color: rgba(255,255,255,0.9)">Protocolo de Governança Cirúrgica™</strong> estrutura o Centro Cirúrgico para operar com previsibilidade — independentemente de quem está de plantão. São os mesmos instrumentos aplicados pelo Arquiteto em projetos de Governança pela Ausência™.
+          <span class="tag">Arquitetura de Governança Cirúrgica™</span>
+          <h1>O Centro Cirúrgico que funciona quando<br/><em>o líder não está presente.</em></h1>
+          <p class="hero-sub">
+            Não existe protocolo pronto que sirva para o seu hospital. Eu construo a <strong>arquitetura de processos do seu Centro Cirúrgico</strong>: desenhada a partir dos seus dados, das suas restrições e das pessoas que operam o CC todos os dias, do agendamento à higienização.
           </p>
-          <div class="hero-meta anim anim-d3">
-            <div class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="1" width="13" height="13" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 7.5h7M7.5 4v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              6 instrumentos metodológicos
-            </div>
-            <div class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 4.5v3l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              Acesso imediato
-            </div>
-            <div class="hero-meta-item">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1L9.18 5.26L13.73 5.64L10.46 8.47L11.51 12.91L7.5 10.4L3.49 12.91L4.54 8.47L1.27 5.64L5.82 5.26L7.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-              Lean Six Sigma Black Belt
-            </div>
-          </div>
-          <div class="hero-actions anim anim-d4">
-            <a href="#calculadora" class="btn-primary">Calcular a perda do meu CC</a>
-            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-ghost">Adquirir o Protocolo</a>
+          <div class="hero-actions">
+            <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido do meu CC</a>
+            <a href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Quero%20conversar%20sobre%20a%20arquitetura%20de%20processos%20do%20Centro%20Cir%C3%BArgico%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" class="btn-ghost">Falar com o Arquiteto</a>
           </div>
         </div>
-
-        <div class="hero-card anim anim-d3">
-          <span class="hero-card-label">O que está incluso</span>
-          <ul class="hero-card-items">
-            <li>Protocolo de Governança da Pauta Cirúrgica</li>
-            <li>T.A.R.O.™ — Termo de Assunção de Risco Operacional</li>
-            <li>Checklist de Abertura de Sala</li>
-            <li>Protocolo de Giro de Sala</li>
-            <li>Planilha de Monitoramento do CC</li>
-            <li>Manual de KPIs do CC</li>
-          </ul>
-          <hr class="hero-card-divider" />
-          <div class="hero-card-principle">
-            <span class="hero-card-principle-label">Princípio metodológico</span>
-            <div class="hero-card-principle-value">"Governança pela Ausência™ — o sistema que funciona quando o líder não está."</div>
-          </div>
-          <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary hero-card-cta">
-            Adquirir agora
-          </a>
+        <div class="hero-card">
+          <span class="hero-card-label">Como começa</span>
+          <ol class="hero-steps">
+            <li><b>1</b><div><strong>Diagnóstico rápido</strong>Perguntas objetivas sobre a operação do seu CC. Cerca de 3 minutos.</div></li>
+            <li><b>2</b><div><strong>Briefing na tela</strong>Estimativa da perda operacional e as primeiras hipóteses de causa.</div></li>
+            <li><b>3</b><div><strong>Relatório executivo em até 24h</strong>Um one-page report analisado por mim, no seu e-mail e no seu WhatsApp.</div></li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CALCULADORA -->
-  <section class="calc-section" id="calculadora">
+  <!-- DIAGNÓSTICO -->
+  <section class="diag-section band tone-b" id="diagnostico">
     <div class="container">
-      <span class="calc-anchor-label">Diagnóstico financeiro do seu CC</span>
-      <h2 class="calc-title">Quanto o seu Centro Cirúrgico<br/><em>está perdendo por mês?</em></h2>
-      <p class="calc-lead">Insira os dados do seu CC. A calculadora estima a perda gerada por giro lento e cancelamentos — e o que a estruturação do processo pode devolver à operação.</p>
+      <span class="center-label">Diagnóstico rápido do Centro Cirúrgico</span>
+      <h2 class="diag-title">Quanto o seu CC está deixando<br/><em>de produzir por mês?</em></h2>
+      <p class="diag-lead">Responda perguntas rápidas sobre a sua operação. Você vê o briefing na hora e recebe um relatório executivo de uma página, analisado pessoalmente, em até 24 horas.</p>
 
-      <div class="calc-wrapper">
-        <div class="calc-inputs">
-          <span class="calc-inputs-label">Dados do seu Centro Cirúrgico</span>
-          <div class="field-group">
-            <div class="field-label">
-              <span>Número de salas cirúrgicas</span>
-              <span class="field-value" id="val-salas">4</span>
+      <div class="diag-box">
+        <div class="diag-progress" id="progress">
+          <div class="active">1 · Operação</div>
+          <div>2 · Contexto</div>
+          <div>3 · Contato</div>
+        </div>
+
+        <!-- ETAPA 1 -->
+        <div class="diag-step active" id="step-1">
+          <h3 class="step-title">A operação do seu CC</h3>
+          <p class="step-sub">Informe os números reais do seu CC, sem limite de porte. Se não tiver o valor exato, use a sua melhor estimativa: na etapa seguinte você indica o quanto os dados são medidos.</p>
+
+          <div class="num-grid">
+            <div class="num-field">
+              <label for="in-salas">Salas cirúrgicas ativas</label>
+              <div class="num-wrap"><input id="in-salas" type="text" inputmode="numeric" min="1" step="1" placeholder="Ex.: 6" /><span class="unit">salas</span></div>
             </div>
-            <input type="range" id="sl-salas" min="1" max="20" value="4" step="1" oninput="calcular()"/>
-            <div class="range-minmax"><span>1 sala</span><span>20 salas</span></div>
+            <div class="num-field">
+              <label for="in-cancel">Taxa de cancelamento no dia da cirurgia</label>
+              <div class="num-wrap"><input id="in-cancel" type="text" inputmode="decimal" min="0" max="100" step="0.1" placeholder="Ex.: 12" /><span class="unit">%</span></div>
+              <p class="field-hint">Cirurgias agendadas que não aconteceram, sobre o total agendado.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-giro">Tempo médio de giro de sala</label>
+              <div class="num-wrap"><input id="in-giro" type="text" inputmode="numeric" min="1" step="1" placeholder="Ex.: 35" /><span class="unit">min</span></div>
+              <p class="field-hint">Da saída do paciente até a entrada do próximo.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-ticket">Receita líquida média por procedimento</label>
+              <div class="num-wrap"><span class="unit pre">R$</span><input id="in-ticket" type="text" inputmode="numeric" placeholder="Ex.: 4.500" /></div>
+              <p class="field-hint">Sem OPME.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-horas">Horas de funcionamento por sala/dia</label>
+              <div class="num-wrap"><input id="in-horas" type="text" inputmode="decimal" min="1" max="24" step="0.5" value="8" /><span class="unit">h</span></div>
+              <p class="field-hint">Pode ajustar se o seu CC opera em turno estendido ou 24h.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-dias">Dias de operação eletiva por mês</label>
+              <div class="num-wrap"><input id="in-dias" type="text" inputmode="numeric" min="1" max="31" step="1" value="20" /><span class="unit">dias</span></div>
+            </div>
           </div>
-          <div class="field-group">
-            <div class="field-label">
-              <span>Taxa de cancelamento atual</span>
-              <span class="field-value" id="val-cancelamento">18%</span>
-            </div>
-            <input type="range" id="sl-cancelamento" min="1" max="40" value="18" step="1" oninput="calcular()"/>
-            <div class="range-minmax"><span>1%</span><span>40%</span></div>
-            <p class="field-hint">Média nacional sem processo: 18%. Meta com o Protocolo: abaixo de 8%.</p>
-          </div>
-          <div class="field-group">
-            <div class="field-label">
-              <span>Tempo médio de giro atual</span>
-              <span class="field-value" id="val-giro">42 min</span>
-            </div>
-            <input type="range" id="sl-giro" min="10" max="90" value="42" step="1" oninput="calcular()"/>
-            <div class="range-minmax"><span>10 min</span><span>90 min</span></div>
-            <p class="field-hint">Média observada sem protocolo: 42 min. Meta com o Protocolo: 20 min.</p>
-          </div>
-          <div class="field-group">
-            <div class="field-label">
-              <span>Receita média por procedimento</span>
-              <span class="field-value" id="val-ticket">R$ 3.000</span>
-            </div>
-            <input type="range" id="sl-ticket" min="500" max="30000" value="3000" step="500" oninput="calcular()"/>
-            <div class="range-minmax"><span>R$ 500</span><span>R$ 30.000</span></div>
-            <p class="field-hint">Receita líquida estimada por procedimento realizado (OPME excluído).</p>
+          <p class="step-error" id="err-1"></p>
+
+          <div class="step-actions">
+            <span></span>
+            <button class="btn-primary" type="button" onclick="goStep(2)">Continuar</button>
           </div>
         </div>
 
-        <div class="calc-result">
-          <div class="result-card">
-            <span class="result-label">Perda anual estimada</span>
-            <div class="result-main-num" id="res-anual">R$ 0</div>
-            <div class="result-main-sub">saindo do seu CC todo ano sem processo formal</div>
-            <div class="result-breakdown">
-              <div class="result-row">
-                <span class="result-row-label">Perda mensal por cancelamentos</span>
-                <span class="result-row-value loss" id="res-cancel-mensal">R$ 0</span>
-              </div>
-              <div class="result-row">
-                <span class="result-row-label">Perda mensal por giro lento</span>
-                <span class="result-row-value loss" id="res-giro-mensal">R$ 0</span>
-              </div>
-              <div class="result-row">
-                <span class="result-row-label">Procedimentos perdidos por mês</span>
-                <span class="result-row-value" id="res-procs-perdidos" style="color: rgba(255,255,255,0.7);">0</span>
-              </div>
-              <div class="result-row">
-                <span class="result-row-label">Perda mensal total</span>
-                <span class="result-row-value loss" id="res-mensal">R$ 0</span>
-              </div>
+        <!-- ETAPA 2 -->
+        <div class="diag-step" id="step-2">
+          <h3 class="step-title">O contexto</h3>
+          <p class="step-sub">Isso direciona a análise do seu relatório.</p>
+
+          <div class="field-group">
+            <span class="q-label">Qual é hoje a maior dor do seu CC?</span>
+            <div class="options single-col" id="q-dor">
+              <div class="opt"><input type="radio" name="dor" id="dor1" value="Cancelamentos de última hora" /><label for="dor1">Cancelamentos de última hora</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor2" value="Atraso do primeiro procedimento e giro lento" /><label for="dor2">Atraso do primeiro procedimento e giro lento</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor3" value="Pauta instável, montada em cima da hora" /><label for="dor3">Pauta instável, montada em cima da hora</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor4" value="Conflito entre equipes (cirurgia, anestesia, enfermagem)" /><label for="dor4">Conflito entre equipes (cirurgia, anestesia, enfermagem)</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor5" value="Falta de dados confiáveis para a diretoria" /><label for="dor5">Falta de dados confiáveis para a diretoria</label></div>
             </div>
           </div>
 
-          <div class="recovered-card">
-            <span class="recovered-card-label">Com o Protocolo integralizado na operação</span>
-            <p class="recovered-card-sub">Estimativa conservadora de recuperação de 30% das perdas identificadas no primeiro ano.</p>
-            <div class="recovered-grid">
-              <div>
-                <div class="recovered-item-num" id="res-recuperado-mensal">—</div>
-                <div class="recovered-item-label">recuperado<br/>por mês</div>
-              </div>
-              <div>
-                <div class="recovered-item-num" id="res-recuperado-anual">—</div>
-                <div class="recovered-item-label">recuperado<br/>no primeiro ano</div>
-              </div>
+          <div class="field-group">
+            <span class="q-label">Os números que você informou são…</span>
+            <div class="options" id="q-dados">
+              <div class="opt"><input type="radio" name="dados" id="dad1" value="Medidos sistematicamente" /><label for="dad1">Medidos sistematicamente</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad2" value="Medidos parcialmente" /><label for="dad2">Medidos parcialmente</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad3" value="Estimativa minha" /><label for="dad3">Estimativa minha</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad4" value="Ninguém mede hoje" /><label for="dad4">Ninguém mede hoje</label></div>
             </div>
-            <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%;text-align:center;padding:16px 24px;font-size:14px;display:block;">
-              Adquirir o Protocolo — Acesso Imediato
-            </a>
-            <p style="text-align:center;font-size:12px;color:var(--gray-500);margin-top:10px;">Pagamento seguro via Hotmart · Parcelamento disponível</p>
           </div>
 
-          <div class="ausencia-block">
-            <span class="ausencia-block-eyebrow">Para quem quer ir além do protocolo</span>
-            <div class="ausencia-block-title">Governança pela Ausência™ —<br/><em>o sistema arquitetado com o Arquiteto.</em></div>
-            <p class="ausencia-block-body">Alguns gestores querem o método funcionando na operação — não apenas o instrumento na gaveta. Para esses, o Arquiteto conduz a implantação do sistema do início ao funcionamento autônomo.</p>
-            <a href="https://wa.me/5547992080823?text=Olá%2C%20Matheus.%20Fiz%20o%20cálculo%20no%20site%20e%20quero%20entender%20como%20funciona%20a%20Governança%20pela%20Ausência%20aplicada%20ao%20meu%20CC." target="_blank" rel="noopener noreferrer" class="ausencia-cta">
-              Entrar para a lista de espera →
-            </a>
+          <div class="field-group">
+            <span class="q-label">Quando o CC funciona melhor?</span>
+            <div class="options single-col" id="q-dep">
+              <div class="opt"><input type="radio" name="dep" id="dep1" value="Igual, independentemente de quem está de plantão" /><label for="dep1">Igual, independentemente de quem está de plantão</label></div>
+              <div class="opt"><input type="radio" name="dep" id="dep2" value="Quando determinadas pessoas estão presentes" /><label for="dep2">Quando determinadas pessoas estão presentes</label></div>
+              <div class="opt"><input type="radio" name="dep" id="dep3" value="Depende quase só do coordenador" /><label for="dep3">Depende quase só do coordenador</label></div>
+            </div>
           </div>
 
-          <p class="calc-disclaimer">
-            <strong>Metodologia:</strong> Cálculo baseado em 8h de sala/dia, 20 dias úteis/mês e tempo médio de procedimento de 90 min. Perda por giro calculada pela diferença entre procedimentos possíveis com o giro atual e com a meta de 20 min. Perda por cancelamento calculada sobre o volume agendado com a taxa atual vs. a meta de 8%. O valor recuperado considera uma redução conservadora de 30% das perdas identificadas no primeiro ano de implementação. Os valores são estimativas para fins de diagnóstico.
-          </p>
+          <div class="field-group">
+            <span class="q-label">Qual o seu momento em relação a esse tema?</span>
+            <div class="options single-col" id="q-momento">
+              <div class="opt"><input type="radio" name="momento" id="mom1" value="Preciso resolver nos próximos 3 meses" /><label for="mom1">Preciso resolver nos próximos 3 meses</label></div>
+              <div class="opt"><input type="radio" name="momento" id="mom2" value="Estou estruturando o planejamento do próximo ano" /><label for="mom2">Estou estruturando o planejamento do próximo ano</label></div>
+              <div class="opt"><input type="radio" name="momento" id="mom3" value="Estou entendendo o tamanho do problema" /><label for="mom3">Estou entendendo o tamanho do problema</label></div>
+            </div>
+          </div>
+
+          <p class="step-error" id="err-2"></p>
+          <div class="step-actions">
+            <button class="btn-back" type="button" onclick="goStep(1)">← Voltar</button>
+            <button class="btn-primary" type="button" onclick="goStep(3)">Continuar</button>
+          </div>
+        </div>
+
+        <!-- ETAPA 3 -->
+        <div class="diag-step" id="step-3">
+          <h3 class="step-title">Para onde envio o seu relatório</h3>
+          <p class="step-sub">O briefing aparece assim que você concluir. O relatório executivo chega por e-mail e WhatsApp em até 24 horas.</p>
+
+          <div class="text-grid">
+            <div class="text-field"><label for="f-nome">Nome</label><input id="f-nome" type="text" autocomplete="name" /></div>
+            <div class="text-field">
+              <label for="f-cargo">Cargo</label>
+              <select id="f-cargo">
+                <option value="">Selecione</option>
+                <option>Diretor(a) geral / CEO</option>
+                <option>Diretor(a) técnico(a) / médico(a)</option>
+                <option>Diretor(a) administrativo(a) / operações</option>
+                <option>Gerente de enfermagem</option>
+                <option>Coordenador(a) do Centro Cirúrgico</option>
+                <option>Qualidade / processos</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="text-field"><label for="f-hosp">Hospital</label><input id="f-hosp" type="text" autocomplete="organization" /></div>
+            <div class="text-field"><label for="f-cidade">Cidade / UF</label><input id="f-cidade" type="text" placeholder="Ex.: Joinville / SC" /></div>
+            <div class="text-field">
+              <label for="f-leitos">Porte do hospital</label>
+              <select id="f-leitos">
+                <option value="">Selecione</option>
+                <option>Até 50 leitos</option>
+                <option>51 a 150 leitos</option>
+                <option>151 a 300 leitos</option>
+                <option>Mais de 300 leitos</option>
+              </select>
+            </div>
+            <div class="text-field">
+              <label for="f-natureza">Natureza</label>
+              <select id="f-natureza">
+                <option value="">Selecione</option>
+                <option>Privado</option>
+                <option>Filantrópico</option>
+                <option>Público / OSS</option>
+              </select>
+            </div>
+            <div class="text-field"><label for="f-email">E-mail profissional</label><input id="f-email" type="email" autocomplete="email" /></div>
+            <div class="text-field"><label for="f-whats">WhatsApp</label><input id="f-whats" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" /></div>
+          </div>
+
+          <label class="consent"><input type="checkbox" id="f-lgpd" /><span>Autorizo o uso destes dados para a elaboração do meu relatório e para contato do Arquiteto de Processos em Saúde™, conforme a <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">Política de Privacidade</a>. Os dados do hospital não são compartilhados com terceiros.</span></label>
+
+          <p class="step-error" id="err-3"></p>
+          <div class="step-actions">
+            <button class="btn-back" type="button" onclick="goStep(2)">← Voltar</button>
+            <button class="btn-primary" type="button" id="btn-submit" onclick="submitDiag()">Ver meu briefing</button>
+          </div>
+        </div>
+
+        <!-- BRIEFING -->
+        <div class="briefing" id="briefing">
+          <div class="brief-head">
+            <span class="brief-eyebrow">Briefing preliminar · Centro Cirúrgico</span>
+            <div class="brief-hosp" id="b-hosp">—</div>
+            <div class="brief-num-label">Receita que deixa de ser produzida por ano (estimativa)</div>
+            <div class="brief-num" id="b-anual">R$ 0</div>
+            <div class="brief-num-sub" id="b-mensal">—</div>
+            <div class="brief-rows">
+              <div><span>Perda mensal por cancelamentos</span><strong id="b-cancel">—</strong></div>
+              <div><span>Perda mensal por giro de sala</span><strong id="b-giro">—</strong></div>
+              <div><span>Procedimentos não realizados por mês</span><strong id="b-procs">—</strong></div>
+            </div>
+          </div>
+          <div class="brief-body">
+            <div class="brief-h">Primeiras hipóteses</div>
+            <div id="b-hyps"></div>
+
+            <div class="next-box">
+              <p>Este número é uma simulação. O que ele ainda não mostra é <strong>onde exatamente a perda nasce no seu processo e por onde começar</strong>. É isso que o seu relatório executivo traz: leitura das suas respostas, as prioridades de intervenção e o que precisaria ser medido para confirmar o diagnóstico.</p>
+              <p><strong>Você recebe o relatório em até 24 horas, por e-mail e WhatsApp.</strong> Se quiser adiantar a conversa, fale comigo agora.</p>
+              <a id="b-wa" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;">Conversar com o Arquiteto no WhatsApp</a>
+              <p class="send-status" id="send-status">Enviando suas respostas…</p>
+            </div>
+
+            <p class="brief-note"><strong>Premissas da simulação:</strong> horas de sala e dias de operação informados por você, duração média de procedimento de 90 min. Giro de referência de 20 min e taxa de cancelamento de referência de 8% como cenário de operação estruturada. Considera, de forma conservadora, que apenas metade da capacidade liberada pelo giro vira procedimento realizado. Valores estimados para fins de diagnóstico, não constituem promessa de resultado.</p>
+          </div>
         </div>
       </div>
+      <p class="diag-footnote">Sem custo. Sem compromisso. Os dados do seu hospital ficam restritos à análise.</p>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-strip">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-num">42<em>min</em></span>
-          <span class="stat-label">giro médio de sala<br/>sem processo formal</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">18<em>%</em></span>
-          <span class="stat-label">taxa de cancelamento<br/>comum sem protocolo</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">R$180<em>k</em></span>
-          <span class="stat-label">perda anual estimada<br/>em CC de médio porte</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">6<em>inst.</em></span>
-          <span class="stat-label">instrumentos que compõem<br/>o sistema de governança</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROBLEM -->
-  <section class="section">
+  <!-- PROBLEMA -->
+  <section class="section band tone-a">
     <div class="container">
       <span class="section-label">O problema que nenhum hospital quer admitir</span>
       <h2 class="section-title">Não é falta de esforço.<br/><em>É ausência de sistema.</em></h2>
-      <p class="section-lead">Quando a operação funciona porque alguém está presente, qualquer ausência é risco. Excelência que depende de heróis não é excelência — é sorte com prazo de validade.</p>
+      <p class="section-lead">Quando a operação funciona porque alguém está presente, qualquer ausência vira risco. Excelência que depende de heróis não é excelência. É sorte com prazo de validade.</p>
 
       <div class="problem-grid">
         <div class="problem-narrative">
           <p>Já estive do outro lado do bisturi. Paciente. Aguardando cirurgia. A sala estava pronta às 07h00. O cirurgião chegou às 08h40. Ninguém avisou. Ninguém explicou. Ninguém sabia ao certo o motivo.</p>
-          <p>Pauta fechada na manhã do procedimento. Cirurgião sem confirmação formal. Equipe aguardando informação que nunca foi disparada. Um sistema que funcionava quando o coordenador certo estava presente — e falhava quando não estava.</p>
-          <blockquote class="problem-quote">
-            "Não era descuido. Era ausência de sistema."
-            <cite>— Matheus Sacoman, Arquiteto de Processos em Saúde™</cite>
-          </blockquote>
-        </div>
-
-        <div class="problem-checks">
-          <p class="problem-checks-label">Este protocolo foi desenvolvido para você se...</p>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Seu CC opera bem quando você está — e vacila quando você não está</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Cancelamentos acontecem e ninguém consegue apontar a causa-raiz</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">O giro de sala é lento e a solução nunca passa do diagnóstico</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">A equipe absorve riscos que deveriam ser formalizados por quem decide</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Você não tem dados confiáveis para apresentar à diretoria</span>
-          </div>
-          <div class="check-item">
-            <svg class="check-arrow" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="check-text">Você sabe que a operação poderia render mais — mas não tem o sistema para provar</span>
-          </div>
-          <div class="check-bottom">
-            Se você se identificou com pelo menos dois desses pontos, <strong>o Protocolo de Governança Cirúrgica™ foi projetado para a sua realidade.</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRANSFORMAÇÃO -->
-  <section class="transformation-section">
-    <div class="container">
-      <span class="section-label" style="color: var(--gold-muted);">O que o sistema muda</span>
-      <h2 class="section-title" style="color: var(--white);">De dependência de pessoa<br/>a <em>governança de processo.</em></h2>
-      <p class="section-lead" style="color: rgba(255,255,255,0.55);">Cada instrumento existe para que uma decisão específica deixe de depender de quem está presente — e passe a depender de como o processo foi arquitetado.</p>
-
-      <div class="transformation-grid">
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Pauta fechada na manhã do procedimento. Cancelamento de última hora sem causa registrada.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">Pauta validada 48h antes. Cancelamento preventivo com registro. Taxa abaixo de 8%.</div>
-        </div>
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Giro de 42 min. Equipes esperando sem saber o que a outra está fazendo.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">SLA definido por equipe. Giro em 20 min. Uma cirurgia a mais por sala por semana.</div>
-        </div>
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Risco assumido verbalmente pela enfermagem. Desvio sem registro e sem responsável.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">T.A.R.O.™ formaliza cada desvio. Risco tem nome, cargo e assinatura de quem decide.</div>
-        </div>
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Reunião com dados imprecisos. Diretoria questiona. Coordenador improvisa resposta.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">6 KPIs com fórmula, meta e alerta. Resultado apresentado em dado — não em narrativa.</div>
-        </div>
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Abertura de sala feita de memória. Itens críticos esquecidos. Atraso no primeiro procedimento.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">Checklist de 12 pontos obrigatórios. Sala liberada com status formal antes da primeira incisão.</div>
-        </div>
-        <div class="transform-card">
-          <div class="transform-before">Antes</div>
-          <div class="transform-from">Ociosidade invisível. Ninguém sabe quanto cada sala parada custa por hora.</div>
-          <div class="transform-after">Com o Protocolo</div>
-          <div class="transform-to">Custo de ociosidade calculado e auditável. Um argumento que a diretoria entende sem precisar de contexto.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MID CTA -->
-  <div class="mid-cta">
-    <div class="container">
-      <p class="mid-cta-title">O processo não precisa de heróis.<br/><em>Precisa de arquitetura.</em></p>
-      <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Adquirir o Protocolo de Governança Cirúrgica™
-      </a>
-    </div>
-  </div>
-
-  <!-- MATERIALS -->
-  <section class="section materials-section">
-    <div class="container">
-      <span class="section-label">O que está incluso</span>
-      <h2 class="section-title">6 instrumentos metodológicos.<br/><em>O mesmo método. Aplicado por você.</em></h2>
-      <p class="section-lead">Estes são os instrumentos que o Arquiteto usa em projetos de Governança pela Ausência™. Estão disponíveis para que você os implemente com autonomia — ou avalie o método antes de uma arquitetura completa.</p>
-
-      <div class="materials-intro">
-        <p>Cada instrumento foi desenhado para ser implantado imediatamente — campos ajustáveis à sua realidade, guias para afixar no CC, fórmulas automáticas e protocolos com papéis e SLAs definidos. Não é teoria. É o mesmo processo que o Arquiteto entrega em campo.</p>
-      </div>
-
-      <div class="materials-grid">
-        <div class="material-card">
-          <span class="material-format">PDF · 9 páginas</span>
-          <span class="material-num">01</span>
-          <h3 class="material-title">Protocolo de Governança da Pauta Cirúrgica</h3>
-          <p class="material-desc">Como estruturar, validar e fechar a pauta com antecedência mínima de 48 horas. Inclui fluxo completo, papéis, responsabilidades e critérios de cancelamento preventivo.</p>
-          <ul class="material-bullets">
-            <li>Fluxo de 6 passos: de T−72h até o briefing de véspera</li>
-            <li>Tabela de papéis: quem confirma o quê e até quando</li>
-            <li>Critérios exatos de cancelamento preventivo</li>
-            <li>4 indicadores de controle com fórmula e meta</li>
-            <li>Guia rápido visual para afixar na coordenação</li>
-          </ul>
-        </div>
-
-        <div class="material-card highlight">
-          <span class="material-format">PDF preenchível · 1 página</span>
-          <span class="material-num">02</span>
-          <h3 class="material-title">T.A.R.O.™</h3>
-          <p class="material-desc">Termo de Assunção de Risco Operacional. Quando o desvio precisa ser assinado, o comportamento muda antes do papel ser preenchido.</p>
-          <ul class="material-bullets">
-            <li>5 blocos: Identificação, Desvio, Risco, Decisão e Assinaturas</li>
-            <li>6 categorias pré-definidas de classificação do desvio</li>
-            <li>3 níveis de risco com caixas visuais: Baixo, Médio e Alto</li>
-            <li>Decisão formal: Autorizado ou Suspenso — com justificativa</li>
-            <li>3 campos de assinatura: Solicitante, Coordenador e Cirurgião</li>
-          </ul>
-        </div>
-
-        <div class="material-card">
-          <span class="material-format">PDF · Formato para impressão diária</span>
-          <span class="material-num">03</span>
-          <h3 class="material-title">Checklist de Abertura de Sala</h3>
-          <p class="material-desc">12 pontos de verificação obrigatória antes do primeiro procedimento do dia. Para preencher presencialmente — não de memória.</p>
-          <ul class="material-bullets">
-            <li>4 blocos: Infraestrutura, Equipamentos, Materiais e Paciente</li>
-            <li>Cada item com campo de pendência e status: Conforme ou Pendência</li>
-            <li>3 estados de resultado: Liberada, Com Pendência ou Bloqueada</li>
-            <li>Campos de assinatura com horário de início e liberação</li>
-          </ul>
-        </div>
-
-        <div class="material-card">
-          <span class="material-format">PDF · 9 páginas</span>
-          <span class="material-num">04</span>
-          <h3 class="material-title">Protocolo de Giro de Sala</h3>
-          <p class="material-desc">SLA definido entre CC, Higienização e próximo Cirurgião. Tempos-padrão por tipo de procedimento, mensagens de acionamento e tabela de causas com contramedidas.</p>
-          <ul class="material-bullets">
-            <li>Tempo-padrão por tipo de procedimento — meta e máximo aceitável</li>
-            <li>SLA das 3 equipes em blocos visuais</li>
-            <li>8 causas de giro lento com contramedida definitiva para cada</li>
-            <li>5 indicadores com fórmula, meta, alerta e impacto</li>
-          </ul>
-        </div>
-
-        <div class="material-card">
-          <span class="material-format">Excel · Google Sheets</span>
-          <span class="material-num">05</span>
-          <h3 class="material-title">Planilha de Monitoramento do CC</h3>
-          <p class="material-desc">4 abas integradas com fórmulas automáticas para giro, atraso e taxa de cancelamento. Compatível com Google Sheets.</p>
-          <ul class="material-bullets">
-            <li>Aba 1 — Registro Diário: 19 colunas, 60 linhas, fórmulas prontas</li>
-            <li>Aba 2 — Painel Mensal: 6 KPIs + desempenho por sala</li>
-            <li>Aba 3 — Cancelamentos: Pareto com 8 causas e ação recomendada</li>
-            <li>Aba 4 — Guia de Uso: instruções campo a campo</li>
-          </ul>
-        </div>
-
-        <div class="material-card">
-          <span class="material-format">PDF · 30 páginas</span>
-          <span class="material-num">06</span>
-          <h3 class="material-title">Manual de KPIs do CC</h3>
-          <p class="material-desc">6 indicadores essenciais: como calcular, interpretar e agir. Para cada KPI: fórmula, meta, alerta e as armadilhas mais comuns.</p>
-          <ul class="material-bullets">
-            <li>Taxa de Ocupação · Taxa de Cancelamento · Giro de Sala</li>
-            <li>Índice de Pontualidade · Custo de Ociosidade</li>
-            <li>Taxa de Conformidade da Pauta 48h — o único KPI que prevê os outros 5</li>
-            <li>Tabela de diagnóstico cruzado: 6 cenários com diagnóstico provável</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GUARANTEE -->
-  <div class="guarantee-bar">
-    <div class="container">
-      <div class="guarantee-inner">
-        <div class="guarantee-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Pauta fechada na manhã do procedimento. Cirurgião sem confirmação formal. Equipe aguardando uma informação que nunca foi disparada. Um sistema que funcionava quando o coordenador certo estava presente e falhava quando não estava.</p>
+          <blockquote class="problem-quote">"Não era descuido. Era ausência de sistema."<cite>— Matheus Sacoman, Arquiteto de Processos em Saúde™</cite></blockquote>
         </div>
         <div>
-          <div class="guarantee-title">Garantia incondicional de 7 dias</div>
-          <p class="guarantee-text">Baixe, implante e avalie. Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias após a compra, devolvemos 100% do valor. Sem perguntas. Sem burocracia. Sem formulário.</p>
+          <p class="checks-label">Esta arquitetura foi pensada para você se…</p>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>O CC opera bem quando você está e vacila quando você não está</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cancelamentos acontecem e ninguém consegue apontar a causa-raiz</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Já tentou implantar protocolo e ele morreu na gaveta em poucas semanas</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A enfermagem absorve riscos que deveriam ser formalizados por quem decide</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Você não tem dados confiáveis para defender o CC diante da diretoria</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONTRASTE -->
+  <section class="contrast-section band tone-b">
+    <div class="container">
+      <span class="section-label" style="color:var(--gold-muted)">Por que não um protocolo pronto</span>
+      <h2 class="section-title" style="color:var(--white)">Protocolo copiado não sobrevive<br/><em>à primeira segunda-feira.</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,.6)">Cada Centro Cirúrgico tem seu corpo clínico, sua mistura de convênios, sua estrutura física e seus acordos informais. Um processo que ignora isso é rejeitado pela operação, por melhor que seja no papel.</p>
+      <div class="contrast-grid">
+        <div class="contrast-col off">
+          <h3>Protocolo genérico</h3>
+          <ul>
+            <li>Escrito para um hospital médio que não existe</li>
+            <li>Chega pronto e é imposto à equipe</li>
+            <li>Metas copiadas de outro contexto</li>
+            <li>Depende do coordenador cobrar para funcionar</li>
+            <li>Vai para a gaveta quando a rotina aperta</li>
+          </ul>
+        </div>
+        <div class="contrast-col on">
+          <h3>Arquitetura sob medida</h3>
+          <ul>
+            <li>Desenhada a partir dos dados e das restrições do seu CC</li>
+            <li>Construída com quem opera: cirurgia, anestesia, enfermagem, CME, higienização e agendamento</li>
+            <li>Metas calibradas pela sua linha de base real</li>
+            <li>Papéis, gatilhos e SLAs que funcionam sem depender de presença</li>
+            <li>Indicadores que a diretoria entende e a equipe acompanha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="section band tone-a">
+    <div class="container">
+      <span class="section-label">Como a arquitetura é construída</span>
+      <h2 class="section-title">Engenharia de processos aplicada<br/><em>ao seu Centro Cirúrgico.</em></h2>
+      <p class="section-lead">Rigor de Lean Six Sigma Black Belt e a filosofia da Governança pela Ausência™: o sistema precisa funcionar quando o líder não está.</p>
+      <div class="method-steps">
+        <div class="method-card"><span class="method-num">01</span><h3>Diagnóstico</h3><p>Leitura dos dados de pauta, cancelamento, giro e ocupação. Mapeamento do fluxo real, não do fluxo que está no papel.</p></div>
+        <div class="method-card"><span class="method-num">02</span><h3>Escuta das equipes</h3><p>Conversas estruturadas com cada categoria profissional do CC. É daqui que saem as causas-raiz que nenhum relatório mostra.</p></div>
+        <div class="method-card"><span class="method-num">03</span><h3>Desenho</h3><p>Fluxos, papéis, pontos de decisão, SLAs entre equipes e indicadores, construídos junto com quem vai executar.</p></div>
+        <div class="method-card"><span class="method-num">04</span><h3>Implantação e autonomia</h3><p>Acompanhamento até o processo rodar sem depender de mim ou de uma pessoa-chave. A saída é planejada desde o início.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="section team-section band tone-b">
+    <div class="container">
+      <span class="section-label">Quem participa</span>
+      <h2 class="section-title">O processo é do hospital.<br/><em>Por isso é construído por todos.</em></h2>
+      <p class="section-lead">O cancelamento de uma cirurgia raramente nasce no CC. Ele nasce no agendamento, na avaliação pré-anestésica, na autorização do convênio ou na CME. A arquitetura envolve cada elo.</p>
+      <div class="team-grid">
+        <div class="team-item"><strong>Corpo cirúrgico</strong><span>Confirmação de pauta, pontualidade e critérios de encaixe.</span></div>
+        <div class="team-item"><strong>Anestesiologia</strong><span>Avaliação pré-anestésica e liberação do paciente com antecedência.</span></div>
+        <div class="team-item"><strong>Enfermagem do CC</strong><span>Abertura de sala, giro e formalização de desvios.</span></div>
+        <div class="team-item"><strong>CME e suprimentos</strong><span>Disponibilidade de materiais, caixas e OPME no tempo certo.</span></div>
+        <div class="team-item"><strong>Higienização</strong><span>SLA de limpeza terminal e concorrente entre procedimentos.</span></div>
+        <div class="team-item"><strong>Agendamento e autorização</strong><span>Montagem da pauta e guias liberadas antes do dia da cirurgia.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREGÁVEIS -->
+  <section class="section band tone-a">
+    <div class="container">
+      <span class="section-label">O que fica no hospital</span>
+      <h2 class="section-title">Um sistema, <em>não uma pasta de documentos.</em></h2>
+      <p class="section-lead">O escopo é definido no diagnóstico. Estes são componentes típicos de uma arquitetura de governança cirúrgica, sempre construídos para a sua realidade.</p>
+      <div class="deliv-grid">
+        <div class="deliv"><h3>Governança da pauta</h3><p>Janela de fechamento, responsáveis por confirmação e critérios de cancelamento preventivo.</p></div>
+        <div class="deliv hl"><h3>T.A.R.O.™</h3><p>Termo de Assunção de Risco Operacional. Quando o desvio acontece, o risco passa a ter nome, cargo e assinatura de quem decide.</p></div>
+        <div class="deliv"><h3>Pactos entre equipes</h3><p>SLAs de giro e abertura de sala acordados entre CC, higienização, CME e cirurgia.</p></div>
+        <div class="deliv"><h3>Rotinas de abertura e giro</h3><p>Checklists e fluxos que tiram a operação da memória das pessoas.</p></div>
+        <div class="deliv"><h3>Painel de indicadores</h3><p>KPIs com fórmula, meta e gatilho de ação, alimentados pela própria rotina.</p></div>
+        <div class="deliv"><h3>Ritos de gestão</h3><p>Reuniões curtas com pauta fixa para tratar desvios com dado, não com narrativa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mid-cta band tone-b">
+    <div class="container">
+      <p class="mid-cta-title">O processo não precisa de heróis.<br/><em>Precisa de arquitetura.</em></p>
+      <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido</a>
     </div>
   </div>
 
   <!-- FAQ -->
-  <section class="section faq-section">
+  <section class="section faq-section band tone-a">
     <div class="container">
       <span class="section-label">Perguntas frequentes</span>
       <h2 class="section-title">Dúvidas <em>comuns</em></h2>
       <div class="faq-grid">
-        <div class="faq-item">
-          <div class="faq-q">Para quem é o Protocolo de Governança Cirúrgica™?</div>
-          <p class="faq-a">Para coordenadores, gerentes e diretores de centros cirúrgicos que querem estruturar a operação para funcionar com previsibilidade — independentemente de quem está presente. O protocolo é aplicável por qualquer gestor, sem necessidade de formação em Lean ou Six Sigma.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Qual a diferença entre o Protocolo e a Governança pela Ausência™?</div>
-          <p class="faq-a">O Protocolo entrega os instrumentos para você implementar com autonomia. A Governança pela Ausência™ é o processo conduzido pelo Arquiteto diretamente na sua operação — do diagnóstico ao sistema funcionando sem depender de ninguém. São o mesmo método, com níveis diferentes de acompanhamento.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Preciso de software especial?</div>
-          <p class="faq-a">Não. Os PDFs abrem em qualquer leitor. A planilha é compatível com Google Sheets (gratuito) e Microsoft Excel. Nenhum sistema adicional é necessário.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Os instrumentos precisam de adaptação?</div>
-          <p class="faq-a">Sim — e estão desenhados para isso. Tempos-padrão, nomes de equipes e canais de comunicação devem ser ajustados à sua realidade. A estrutura metodológica é imediatamente aplicável.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Como recebo os materiais?</div>
-          <p class="faq-a">O acesso é imediato após a confirmação do pagamento. Você recebe um e-mail com o link para download de todos os 6 instrumentos.</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Recebo atualizações futuras?</div>
-          <p class="faq-a">Sim. Quem adquire o Protocolo recebe todas as atualizações dos instrumentos sem custo adicional. Investimento único — acesso permanente.</p>
-        </div>
+        <div class="faq-item"><div class="faq-q">O diagnóstico rápido tem custo?</div><p class="faq-a">Não. Você responde as perguntas, vê o briefing na hora e recebe o relatório executivo em até 24 horas, sem compromisso.</p></div>
+        <div class="faq-item"><div class="faq-q">Quanto custa a arquitetura completa?</div><p class="faq-a">Depende do porte do CC, do número de salas, da maturidade dos dados e do escopo. Por isso ela nunca começa por uma proposta genérica: começa pelo diagnóstico.</p></div>
+        <div class="faq-item"><div class="faq-q">Preciso ter dados organizados?</div><p class="faq-a">Não. Muitos hospitais começam sem medir giro ou cancelamento de forma sistemática. Estruturar essa medição faz parte do trabalho.</p></div>
+        <div class="faq-item"><div class="faq-q">A equipe médica participa?</div><p class="faq-a">Sim, e isso é inegociável. Um processo desenhado sem cirurgiões e anestesistas é um processo que eles não vão seguir.</p></div>
+        <div class="faq-item"><div class="faq-q">O trabalho é presencial?</div><p class="faq-a">A condução combina momentos presenciais com acompanhamento remoto estruturado. O formato é definido conforme a necessidade e a localização do hospital.</p></div>
+        <div class="faq-item"><div class="faq-q">O que acontece com os dados que informo?</div><p class="faq-a">São usados exclusivamente para elaborar o seu relatório e para contato comercial do Arquiteto de Processos em Saúde™. Não são compartilhados com terceiros.</p></div>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cta-section">
+  <section class="cta-section band tone-b">
     <div class="container">
-      <span class="section-label" style="display:block;text-align:center;margin-bottom:20px;">Protocolo de Governança Cirúrgica™</span>
+      <span class="section-label" style="text-align:center">Arquitetura de Governança Cirúrgica™</span>
       <h2 class="section-title">O processo que funciona<br/><em>quando você não está.</em></h2>
-      <p class="section-lead">Cada dia sem sistema formalizado é um dia em que a operação depende da pessoa certa estar no lugar certo. A calculadora mostrou o custo disso. A decisão é sua.</p>
-
-      <div class="cta-meta">
-        <div class="cta-meta-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.545 5.455L13.727 5.818L10.636 8.636L11.545 12.727L8 10.455L4.455 12.727L5.364 8.636L2.273 5.818L6.455 5.455L8 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
-          6 instrumentos metodológicos
-        </div>
-        <div class="cta-meta-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          Acesso imediato
-        </div>
-        <div class="cta-meta-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L3 4.5v4c0 3.5 2.5 6.77 5 7.5 2.5-.73 5-4 5-7.5v-4L8 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M6 8l1.5 1.5 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Garantia de 7 dias
-        </div>
-        <div class="cta-meta-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 10l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Lean Six Sigma Black Belt
-        </div>
-      </div>
-
-      <div class="cta-price-block">
-        <div class="cta-price-label">Investimento único</div>
-        <div class="cta-price-value">R$ 3.997</div>
-        <div class="cta-price-installment">ou 12× de R$ 333 · Sem mensalidade</div>
-      </div>
-
+      <p class="section-lead">Cada dia sem sistema é um dia em que a operação depende da pessoa certa estar no lugar certo. Comece medindo o tamanho disso.</p>
       <div class="cta-actions">
-        <a href="https://pay.hotmart.com/S105464786G" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Adquirir o Protocolo — Acesso Imediato
-        </a>
-        <span class="cta-sub">Pagamento seguro via Hotmart · Parcelamento disponível</span>
+        <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido</a>
+        <a href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Quero%20conversar%20sobre%20a%20arquitetura%20de%20processos%20do%20Centro%20Cir%C3%BArgico%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" class="btn-ghost">Falar no WhatsApp</a>
       </div>
-
-      <div class="cta-contact">
-        <p>Quer entender como a Governança pela Ausência™ funciona na prática?</p>
-        <a href="https://wa.me/5547992080823?text=Olá%2C%20Matheus.%20Quero%20entender%20como%20funciona%20a%20Governança%20pela%20Ausência%20aplicada%20ao%20meu%20Centro%20Cirúrgico." target="_blank" rel="noopener noreferrer">Entrar para a lista de espera →</a>
-      </div>
+      <p class="cta-sub">Atendimento direto com o Arquiteto · Lean Six Sigma Black Belt</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <footer class="band tone-a">
     <div class="container">
-      <p>
-        © 2026 Matheus Sacoman · Arquiteto de Processos em Saúde™ · SynExHealth<br/>
-        <a href="https://arquitetodeprocessos.com.br" target="_blank" rel="noopener noreferrer">arquitetodeprocessos.com.br</a>
-        &nbsp;·&nbsp;
-        <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
-      </p>
+      <p>© 2026 Matheus Sacoman · Arquiteto de Processos em Saúde™ · SynexHealth<br/>
+      <a href="https://arquitetodeprocessos.com.br">arquitetodeprocessos.com.br</a> &nbsp;·&nbsp; <a href="https://arquitetodeprocessos.com.br/privacidade">Política de Privacidade</a></p>
     </div>
   </footer>
 
+  <a class="wa-float" href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20o%20Centro%20Cir%C3%BArgico%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.93-4.66-4.11-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.99.95-2.26.24-.27.53-.34.71-.34h.51c.16 0 .38-.06.6.46.23.54.77 1.87.84 2.01.07.13.11.29.02.47-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.52.31.07.11.07.65-.17 1.33z"/></svg>
+  </a>
+
   <script>
-    var DIAS_MES = 20;
-    var HORAS_DIA = 8;
-    var MIN_DIA = HORAS_DIA * 60;
-    var DUR_PROC = 90;
-    var META_GIRO = 20;
-    var META_CANCEL = 0.08;
+    /* ===== CONFIGURAÇÃO EMAILJS — substitua pelos seus IDs ===== */
+    var EMAILJS_PUBLIC_KEY  = 'SUA_PUBLIC_KEY';
+    var EMAILJS_SERVICE_ID  = 'SEU_SERVICE_ID';
+    var EMAILJS_TEMPLATE_ID = 'SEU_TEMPLATE_ID';
+    var WHATSAPP = '5547992080823';
 
-    function calcular() {
-      var salas = parseInt(document.getElementById('sl-salas').value, 10);
-      var cancelamentoPercentual = parseInt(document.getElementById('sl-cancelamento').value, 10);
-      var cancelamento = cancelamentoPercentual / 100;
-      var giro = parseInt(document.getElementById('sl-giro').value, 10);
-      var ticket = parseInt(document.getElementById('sl-ticket').value, 10);
+    /* ===== PREMISSAS DO MODELO ===== */
+    var DUR_PROC = 90, META_GIRO = 20, META_CANCEL = 0.08, CONV_GIRO = 0.5;
 
-      document.getElementById('val-salas').textContent = salas;
-      document.getElementById('val-cancelamento').textContent = cancelamentoPercentual + '%';
-      document.getElementById('val-giro').textContent = giro + ' min';
-      document.getElementById('val-ticket').textContent = 'R$ ' + formatNum(ticket);
-
-      var procsAtualPorSala = Math.floor(MIN_DIA / (DUR_PROC + giro));
-      var procsMetaPorSala = Math.floor(MIN_DIA / (DUR_PROC + META_GIRO));
-      var agendadoAtual = salas * procsAtualPorSala * DIAS_MES;
-      var agendadoMeta = salas * procsMetaPorSala * DIAS_MES;
-
-      var cancelAtual = agendadoMeta * cancelamento;
-      var cancelMeta = agendadoMeta * META_CANCEL;
-      var perdaCancelMensal = (cancelAtual - cancelMeta) * ticket;
-      if (perdaCancelMensal < 0) perdaCancelMensal = 0;
-
-      var receitaMetaGiro = agendadoMeta * (1 - cancelamento) * ticket;
-      var receitaAtualGiro = agendadoAtual * (1 - cancelamento) * ticket;
-      var perdaGiroMensal = receitaMetaGiro - receitaAtualGiro;
-      if (perdaGiroMensal < 0) perdaGiroMensal = 0;
-
-      var perdaMensal = perdaCancelMensal + perdaGiroMensal;
-      var perdaAnual = perdaMensal * 12;
-      var procsPerdidosMes = Math.max(0, Math.round(perdaMensal / ticket));
-
-      setEl('res-anual', 'R$ ' + formatNumK(perdaAnual));
-      setEl('res-cancel-mensal', 'R$ ' + formatNumK(perdaCancelMensal));
-      setEl('res-giro-mensal', 'R$ ' + formatNumK(perdaGiroMensal));
-      setEl('res-procs-perdidos', procsPerdidosMes + ' proc./mês');
-      setEl('res-mensal', 'R$ ' + formatNumK(perdaMensal));
-      setEl('res-recuperado-mensal', 'R$ ' + formatNumK(perdaMensal * 0.30));
-      setEl('res-recuperado-anual', 'R$ ' + formatNumK(perdaAnual * 0.30));
-
-      var el = document.getElementById('res-anual');
-      el.classList.remove('updated');
-      void el.offsetWidth;
-      el.classList.add('updated');
+    if (window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('SUA_') !== 0) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
     }
 
-    function setEl(id, val) {
-      var el = document.getElementById(id);
-      if (el) el.textContent = val;
+    function $(id) { return document.getElementById(id); }
+    function brl(n) { return Math.round(n).toLocaleString('pt-BR'); }
+    function brlK(n) {
+      var v = Math.round(n);
+      if (v >= 1000000) return (v / 1000000).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' mi';
+      if (v >= 1000) return Math.round(v / 1000).toLocaleString('pt-BR') + ' mil';
+      return v.toLocaleString('pt-BR');
     }
 
-    function formatNum(n) { return n.toLocaleString('pt-BR'); }
+    /* Entradas numéricas (sem limite superior de porte) */
+    function num(id) {
+      var raw = String($(id).value || '').trim();
+      if (id === 'in-ticket') raw = raw.replace(/\./g, '').replace(',', '.');
+      else raw = raw.replace(',', '.');
+      var v = parseFloat(raw);
+      return isFinite(v) ? v : NaN;
+    }
+    function readSliders() {
+      return { salas: num('in-salas'), cancelPct: num('in-cancel'), giro: num('in-giro'), ticket: num('in-ticket'), horas: num('in-horas'), dias: num('in-dias') };
+    }
+    $('in-ticket').addEventListener('blur', function () {
+      var v = num('in-ticket'); if (isFinite(v) && v > 0) this.value = brl(v);
+    });
+    function validarOperacao() {
+      var s = readSliders(), ok = true;
+      var regras = { 'in-salas': s.salas >= 1, 'in-cancel': s.cancelPct >= 0 && s.cancelPct <= 100, 'in-giro': s.giro > 0, 'in-ticket': s.ticket > 0, 'in-horas': s.horas > 0 && s.horas <= 24, 'in-dias': s.dias >= 1 && s.dias <= 31 };
+      Object.keys(regras).forEach(function (id) {
+        $(id).closest('.num-field').classList.toggle('invalid', !regras[id]);
+        if (!regras[id]) ok = false;
+      });
+      showError('err-1', ok ? '' : 'Preencha os campos destacados com valores válidos.');
+      return ok;
+    }
 
-    function formatNumK(n) {
-      var valor = Math.round(n);
-      if (valor >= 1000000) return (valor / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
-      if (valor >= 1000) {
-        var valorEmMilhares = Math.round(valor / 1000);
-        if (valorEmMilhares >= 1000) return (valor / 1000000).toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + 'M';
-        return valorEmMilhares.toLocaleString('pt-BR') + 'k';
+    /* Modelo de perda */
+    function calcular(s) {
+      var cancel = s.cancelPct / 100;
+      var minDia = s.horas * 60;
+      var giroMeta = Math.min(META_GIRO, s.giro);
+      var procsAtual = minDia / (DUR_PROC + s.giro);
+      var procsMeta = minDia / (DUR_PROC + giroMeta);
+      var agendAtual = s.salas * procsAtual * s.dias;
+      var agendMeta = s.salas * procsMeta * s.dias;
+      var perdaCancel = Math.max(0, agendAtual * (cancel - META_CANCEL) * s.ticket);
+      var perdaGiro = Math.max(0, (agendMeta - agendAtual) * (1 - META_CANCEL) * s.ticket * CONV_GIRO);
+      var mensal = perdaCancel + perdaGiro;
+      return { cancel: perdaCancel, giro: perdaGiro, mensal: mensal, anual: mensal * 12, procs: Math.round(mensal / s.ticket) };
+    }
+
+    function radio(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
+
+    /* Hipóteses preliminares */
+    function hipoteses(s) {
+      var h = [], dor = radio('dor'), dados = radio('dados'), dep = radio('dep');
+      if (s.cancelPct > 10 || dor.indexOf('Cancelamentos') === 0 || dor.indexOf('Pauta') === 0) {
+        h.push(['Pauta sem janela formal de fechamento', 'Cancelamento no dia costuma nascer antes do CC: confirmação tardia do cirurgião, avaliação pré-anestésica incompleta ou autorização pendente. O ponto de controle está na pauta, não na sala.']);
       }
-      return valor.toLocaleString('pt-BR');
+      if (s.giro > 30 || dor.indexOf('Atraso') === 0) {
+        h.push(['Giro sem SLA entre equipes', 'Com ' + s.giro + ' min de giro, as equipes provavelmente trabalham em sequência, não em paralelo. Sem um acordo explícito entre CC, higienização e CME, cada um espera o outro.']);
+      }
+      if (dep && dep.indexOf('Igual') !== 0) {
+        h.push(['Operação dependente de pessoas-chave', 'Se o desempenho muda conforme quem está de plantão, as decisões ainda vivem na cabeça das pessoas e não no processo. É o sinal mais claro de que falta arquitetura.']);
+      }
+      if (dor.indexOf('Conflito') === 0) {
+        h.push(['Fronteiras entre equipes indefinidas', 'Conflito recorrente geralmente é sintoma de responsabilidade sem dono. Quando o risco não é formalizado, alguém o absorve em silêncio, quase sempre a enfermagem.']);
+      }
+      if (dados === 'Estimativa minha' || dados === 'Ninguém mede hoje' || dor.indexOf('Falta de dados') === 0) {
+        h.push(['A perda real pode ser maior do que a estimada', 'Sem medição sistemática, a operação não enxerga a própria perda. Estruturar a linha de base é o primeiro passo para qualquer conversa com a diretoria.']);
+      }
+      if (!h.length) {
+        h.push(['Operação com boa base', 'Seus números sugerem um CC relativamente estruturado. O ganho provável está em sustentar o desempenho sem depender de presença e em ampliar a produtividade das salas.']);
+      }
+      return h.slice(0, 3);
     }
 
-    calcular();
-  </script>
+    /* Navegação */
+    function showError(id, msg) { $(id).textContent = msg || ''; }
+    function goStep(n) {
+      if (n === 2 && !validarOperacao()) return;
+      if (n === 3 && !(radio('dor') && radio('dados') && radio('dep') && radio('momento'))) {
+        showError('err-2', 'Responda as quatro perguntas para continuar.');
+        return;
+      }
+      showError('err-2', '');
+      for (var i = 1; i <= 3; i++) {
+        $('step-' + i).classList.toggle('active', i === n);
+        var p = $('progress').children[i - 1];
+        p.classList.toggle('active', i === n);
+        p.classList.toggle('done', i < n);
+      }
+      $('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
+    function validar() {
+      var ok = true;
+      ['f-nome', 'f-cargo', 'f-hosp', 'f-cidade', 'f-leitos', 'f-natureza', 'f-email', 'f-whats'].forEach(function (id) {
+        var el = $(id), val = el.value.trim(), valid = !!val;
+        if (id === 'f-email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+        if (id === 'f-whats') valid = val.replace(/\D/g, '').length >= 10;
+        el.parentElement.classList.toggle('invalid', !valid);
+        if (!valid) ok = false;
+      });
+      if (!ok) { showError('err-3', 'Confira os campos destacados.'); return false; }
+      if (!$('f-lgpd').checked) { showError('err-3', 'É preciso autorizar o uso dos dados para gerar o relatório.'); return false; }
+      showError('err-3', '');
+      return true;
+    }
+
+    function submitDiag() {
+      if (!validar()) return;
+      var s = readSliders(), r = calcular(s), hs = hipoteses(s);
+      var lead = {
+        nome: $('f-nome').value.trim(), cargo: $('f-cargo').value, hospital: $('f-hosp').value.trim(),
+        cidade: $('f-cidade').value.trim(), porte: $('f-leitos').value, natureza: $('f-natureza').value,
+        email: $('f-email').value.trim(), whatsapp: $('f-whats').value.trim()
+      };
+
+      /* Renderiza o briefing */
+      $('b-hosp').textContent = lead.hospital;
+      $('b-anual').textContent = 'R$ ' + brlK(r.anual);
+      $('b-mensal').textContent = 'R$ ' + brlK(r.mensal) + ' por mês · ' + s.salas + ' sala' + (s.salas > 1 ? 's' : '');
+      $('b-cancel').textContent = 'R$ ' + brlK(r.cancel);
+      $('b-giro').textContent = 'R$ ' + brlK(r.giro);
+      $('b-procs').textContent = r.procs;
+      $('b-hyps').innerHTML = '';
+      hs.forEach(function (h) {
+        var d = document.createElement('div'); d.className = 'hyp';
+        var t = document.createElement('strong'); t.textContent = h[0];
+        var p = document.createElement('p'); p.textContent = h[1];
+        d.appendChild(t); d.appendChild(p); $('b-hyps').appendChild(d);
+      });
+      var waMsg = 'Olá, Matheus. Sou ' + lead.nome + ' (' + lead.cargo + ') do ' + lead.hospital + '. Acabei de fazer o diagnóstico rápido do CC e quero conversar sobre o resultado.';
+      $('b-wa').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(waMsg);
+
+      $('step-3').classList.remove('active');
+      $('progress').style.display = 'none';
+      $('briefing').classList.add('active');
+      $('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      /* Envio para o Matheus via EmailJS */
+      var params = {
+        nome: lead.nome, cargo: lead.cargo, hospital: lead.hospital, cidade: lead.cidade,
+        porte: lead.porte, natureza: lead.natureza, email: lead.email, whatsapp: lead.whatsapp,
+        salas: s.salas, horas_sala: s.horas + ' h/dia', dias_mes: s.dias + ' dias/mês', cancelamento: s.cancelPct + '%', giro: s.giro + ' min', ticket: 'R$ ' + brl(s.ticket),
+        maior_dor: radio('dor'), qualidade_dados: radio('dados'), dependencia: radio('dep'), momento: radio('momento'),
+        perda_mensal: 'R$ ' + brl(r.mensal), perda_anual: 'R$ ' + brl(r.anual),
+        perda_cancelamento: 'R$ ' + brl(r.cancel), perda_giro: 'R$ ' + brl(r.giro), procs_perdidos: r.procs,
+        hipoteses: hs.map(function (h, i) { return (i + 1) + '. ' + h[0]; }).join('\n'),
+        data_envio: new Date().toLocaleString('pt-BR')
+      };
+      var status = $('send-status');
+      if (!window.emailjs || EMAILJS_PUBLIC_KEY.indexOf('SUA_') === 0) {
+        status.className = 'send-status err';
+        status.textContent = 'Não foi possível registrar automaticamente. Toque no botão acima para enviar pelo WhatsApp e garantir o seu relatório.';
+        return;
+      }
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params).then(function () {
+        status.className = 'send-status ok';
+        status.textContent = 'Respostas recebidas. Seu relatório chega por e-mail e WhatsApp em até 24 horas.';
+      }, function () {
+        status.className = 'send-status err';
+        status.textContent = 'Não foi possível registrar automaticamente. Toque no botão acima para enviar pelo WhatsApp e garantir o seu relatório.';
+      });
+    }
+  </script>
 </body>
 </html>
