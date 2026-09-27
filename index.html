@@ -135,7 +135,7 @@ p{font-size:1rem;color:var(--gray-700);line-height:1.85;}
 .hero-warning{display:flex;align-items:flex-start;gap:12px;max-width:640px;margin-bottom:42px;padding:16px 20px;border-left:2px solid var(--gold);background:linear-gradient(90deg,rgba(184,134,11,.08),transparent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;opacity:0;animation:fadeUp 1s var(--ease) .48s forwards;}
 .hero-warning p{font-size:.92rem;color:rgba(255,255,255,.8);font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.5;}
 .hero-warning svg{flex-shrink:0;margin-top:3px;stroke:var(--gold-bright);}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:60px;opacity:0;animation:fadeUp 1s var(--ease) .6s forwards;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:0;opacity:0;animation:fadeUp 1s var(--ease) .6s forwards;}
 .hero-stats{display:flex;gap:0;flex-wrap:wrap;opacity:0;animation:fadeUp 1s var(--ease) .72s forwards;}
 .hero-stat{padding-right:38px;margin-right:38px;border-right:1px solid rgba(255,255,255,.1);}
 .hero-stat:last-child{border-right:none;margin-right:0;padding-right:0;}
@@ -449,6 +449,32 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
   .kri-tab{font-size:.48rem;}
 }
 
+
+/* ============ PADRÃO AZUL (todas as seções) ============ */
+#problema{background:var(--navy-dark);}
+#diagnostico{background:var(--navy-deep);}
+#como-atuo{background:var(--navy-dark);}
+#laudo{background:var(--navy-deep);}
+#biblioteca{background:var(--navy-dark);}
+#metodologia{background:var(--navy-deep);}
+#sobre{background:var(--navy-dark);}
+#contato{background:var(--navy-deep);}
+#problema,#diagnostico,#como-atuo,#laudo,#kri,#biblioteca,#metodologia,#sobre,#contato{border-top:1px solid rgba(184,134,11,.12);}
+#problema .section-tag,#diagnostico .section-tag,#laudo .section-tag,#biblioteca .section-tag,#metodologia .section-tag,#contato .section-tag{color:var(--gold-bright);}
+.prob-head h2,.diag-header h2,#laudo h2,.biblioteca-intro h2,.meto-intro h2,.contato-info h2{color:var(--white)!important;}
+.prob-head p,.diag-header p,.biblioteca-intro p,.meto-intro p,.contato-info p{color:rgba(255,255,255,.68);}
+#laudo p{color:rgba(255,255,255,.68);}
+.problema-card,.meto-card,.kit-card{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);box-shadow:none;}
+.problema-card:hover,.meto-card:hover,.kit-card:hover{border-color:rgba(184,134,11,.4);box-shadow:0 18px 40px rgba(0,0,0,.35);}
+.problema-card h3,.meto-card h3,.kit-header h3{color:var(--white);}
+.problema-card p,.meto-card p,.kit-header p{color:rgba(255,255,255,.6);}
+.prob-icon{background:rgba(184,134,11,.12);}
+.meto-badge{background:rgba(184,134,11,.14);color:var(--gold-bright);}
+.kit-cc .kit-badge,.kit-fluxo .kit-badge,.kit-dados .kit-badge{background:rgba(184,134,11,.14);color:var(--gold-bright);}
+.kit-materials li{color:rgba(255,255,255,.72);border-bottom-color:rgba(255,255,255,.08);}
+.diag-wrapper,.contato-form{box-shadow:0 24px 60px rgba(0,0,0,.4);border-color:rgba(255,255,255,.1);}
+.contato-li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);}
+.contato-li:hover{background:rgba(255,255,255,.14);}
 </style>
 </head>
 <body>
@@ -557,12 +583,6 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="#kri" class="btn btn-outline">Monitorar meus indicadores de risco</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-n">100%</div><div class="hero-stat-l">Atuação remota</div></div>
-        <div class="hero-stat"><div class="hero-stat-n">KRI</div><div class="hero-stat-l">Indicadores de risco vigiados</div></div>
-        <div class="hero-stat"><div class="hero-stat-n">3 min</div><div class="hero-stat-l">Para mapear suas perdas</div></div>
-      </div>
-    </div>
   </div>
   <div class="hero-scroll">
     <span>Role</span>
@@ -607,7 +627,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
     <div class="diag-header reveal">
       <span class="section-tag" style="justify-content:center;">Ponto de partida de todo projeto</span>
       <h2>Mapeamento da Fábrica Oculta</h2>
-      <p>6 perguntas. 3 minutos. Uma estimativa financeira do custo real da variabilidade operacional na sua unidade — sem compromisso, conduzido pelo Arquiteto.</p>
+      <p>Escolha a área, responda 6 perguntas sobre a operação e receba, em 3 minutos, uma estimativa financeira do custo real da variabilidade operacional na sua unidade — sem compromisso, conduzido pelo Arquiteto.</p>
     </div>
     <div class="diag-wrapper reveal" data-d="1">
 
@@ -619,7 +639,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:24px;">
           <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#1A2B4A">3 min</div><div style="font-size:.78rem;color:#8892A4">para completar</div></div>
-          <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#1A2B4A">6</div><div style="font-size:.78rem;color:#8892A4">perguntas</div></div>
+          <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#1A2B4A">6</div><div style="font-size:.78rem;color:#8892A4">perguntas sobre a operação</div></div>
           <div class="d-card" style="text-align:center;margin:0"><div style="font-size:1.4rem;font-weight:600;color:#B8860B">Gratuito</div><div style="font-size:.78rem;color:#8892A4">sem compromisso</div></div>
         </div>
         <button class="d-btn-p" onclick="dGoTo(1)" style="width:100%">Revelar as perdas da minha operação →</button>
@@ -628,7 +648,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <!-- Step 1: Area -->
       <div class="d-step" id="ds1">
         <div class="d-prog" id="dpg1"></div>
-        <div class="d-tag">Passo 1 de 8</div>
+        <div class="d-tag">Etapa 1 · Área</div>
         <div class="d-q">Qual é a maior dor operacional da sua unidade hoje?</div>
         <div class="d-sub">Escolha a área onde você sente mais variabilidade e desperdício.</div>
         <div class="d-area-card" id="dac-cc" onclick="dSelectArea('cc')">
@@ -666,7 +686,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <!-- Step 8: Contact -->
       <div class="d-step" id="ds8">
         <div class="d-prog" id="dpg8"></div>
-        <div class="d-tag">Passo 8 de 8</div>
+        <div class="d-tag">Última etapa · Para onde enviar o resultado</div>
         <div class="d-q">Para onde o Arquiteto envia o mapeamento?</div>
         <div class="d-sub">Você receberá o relatório completo no seu e-mail. Dados protegidos pela LGPD. Não são compartilhados com terceiros.</div>
         <!-- Honeypot anti-spam — não exibir ao usuário -->
@@ -709,7 +729,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           <div style="font-size:.68rem;font-weight:500;color:#B8860B;letter-spacing:.1em;margin-bottom:6px">OBSERVAÇÃO DO ARQUITETO</div>
           <div style="font-size:.85rem;color:#4A5568;line-height:1.7" id="dr-obs"></div>
         </div>
-        <p style="font-size:.75rem;color:#8892A4;margin-bottom:16px;line-height:1.6">Estimativa conservadora baseada em benchmarks da literatura de gestão hospitalar. O mapeamento completo, específico para a sua realidade, é conduzido remotamente pelo Arquiteto — com <strong style="color:#1A2B4A">garantia total de devolução</strong> se não houver valor percebido.</p>
+        <p style="font-size:.75rem;color:#8892A4;margin-bottom:16px;line-height:1.6">Estimativa conservadora, baseada nas suas respostas e em referências de mercado da gestão hospitalar. O mapeamento completo, específico para a sua realidade, é conduzido remotamente pelo Arquiteto — com <strong style="color:#1A2B4A">garantia total de devolução</strong> se não houver valor percebido.</p>
         <!-- CTA principal -->
         <button onclick="dGoTo('confirm')" style="width:100%;background:var(--gold);color:white;border:none;border-radius:8px;padding:16px;font-size:.95rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;margin-bottom:10px;" onmouseover="this.style.background='#9a710a'" onmouseout="this.style.background='var(--gold)'">Quero estancar a sangria do faturamento do meu hospital →</button>
         <!-- Botão detalhar cálculo -->
@@ -717,7 +737,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div id="dr-detalhe">
           <h4>Metodologia de cálculo</h4>
           <div id="dr-formulas"></div>
-          <p style="font-size:.72rem;color:#8892A4;margin-top:12px;line-height:1.6;border-top:1px solid #ECEEF2;padding-top:10px;">Todos os fatores multiplicadores são estimativas conservadoras derivadas de benchmarks publicados na literatura de gestão cirúrgica e de leitos. Os cálculos tendem a subestimar o impacto real — dados incompletos foram modelados com a premissa de menor perda possível.</p>
+          <p style="font-size:.72rem;color:#8892A4;margin-top:12px;line-height:1.6;border-top:1px solid #ECEEF2;padding-top:10px;">Os fatores multiplicadores são premissas conservadoras do modelo, calibradas com referências de mercado e da literatura de gestão cirúrgica e de leitos. Os cálculos tendem a subestimar o impacto real — dados incompletos foram modelados com a premissa de menor perda possível.</p>
         </div>
         <!-- Reiniciar diagnóstico -->
         <button onclick="dReset()" style="width:100%;background:transparent;border:none;padding:10px;font-size:.78rem;cursor:pointer;color:#8892A4;font-family:'DM Sans',sans-serif;margin-top:4px;text-decoration:underline;text-underline-offset:3px;">↩ Mapear outra área</button>
@@ -746,13 +766,30 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
   </div>
 </section>
 
+<!-- COMO ATUO -->
+<section id="como-atuo" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">O que o Arquiteto entrega</span>
+      <h2>Governança pela Ausência™.<br>Sistemas que funcionam sem o líder presente.</h2>
+      <p class="pillars-intro">Cada projeto entrega um sistema operacional, não uma recomendação. A diferença é que sistemas continuam funcionando quando o Arquiteto não está.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal" data-d="1"><div class="pillar-num">01</div><h3>Sistemas antes de Pessoas</h3><p>Redução da dependência de indivíduos-chave. O processo funciona com excelência independentemente de quem está de plantão.</p></div>
+      <div class="pillar-card reveal" data-d="2"><div class="pillar-num">02</div><h3>Fluxo como Estratégia</h3><p>Previsibilidade em leitos e centros cirúrgicos. O fluxo do paciente é projetado como um sistema de engenharia — com tolerâncias, SLAs e indicadores auditáveis.</p></div>
+      <div class="pillar-card reveal" data-d="3"><div class="pillar-num">03</div><h3>Tecnologia com Propósito</h3><p>Inovação que acelera processos, nunca os corrige. Ferramentas que traduzem variabilidade operacional em valor financeiro compreensível pela diretoria.</p></div>
+      <div class="pillar-card reveal" data-d="4"><div class="pillar-num">04</div><h3>Sustentabilidade Operacional</h3><p>O teste real de um processo é a sua permanência. Projetamos sistemas que se autogerenciam. Se o resultado cai quando o líder sai, o que você tinha era comando, não gestão.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- LAUDO ESTRATÉGICO HOSPITALAR -->
-<section id="laudo" class="section" style="background:var(--gray-50);">
+<section id="laudo" class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center;">
       <div class="reveal">
         <span class="section-tag">Serviço B2B · Diagnóstico aprofundado</span>
-        <h2 style="color:var(--navy);margin-bottom:20px;">Laudo Estratégico Hospitalar</h2>
+        <h2 style="color:var(--white);margin-bottom:20px;">Laudo Estratégico Hospitalar</h2>
         <p style="margin-bottom:20px;font-size:1.05rem;line-height:1.85;">O Mapeamento da Fábrica Oculta dá a estimativa. O Laudo Estratégico dá o diagnóstico real — baseado nos dados que sua instituição já produz e que ainda não se transformaram em decisão.</p>
         <p style="margin-bottom:28px;">O hospital abre acesso ao BI. O Arquiteto analisa os dados operacionais reais, identifica as perdas com precisão e entrega um laudo com protocolos de correção específicos para a sua realidade — não benchmarks genéricos.</p>
         <div style="margin-bottom:32px;">
@@ -761,19 +798,19 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
               <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
               </div>
-              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Acesso remoto ao BI do hospital</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">O Arquiteto acessa a plataforma de dados já existente — sem instalação, sem presença física, sem interrupção da operação.</div></div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--white);margin-bottom:3px;">Acesso remoto ao BI do hospital</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.6;">O Arquiteto acessa a plataforma de dados já existente — sem instalação, sem presença física, sem interrupção da operação.</div></div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;">
               <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
               </div>
-              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Laudo com causa-raiz e financeiro</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">Relatório estratégico com perda identificada em reais, causa-raiz de cada desvio e protocolo de correção específico.</div></div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--white);margin-bottom:3px;">Laudo com causa-raiz e financeiro</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.6;">Relatório estratégico com perda identificada em reais, causa-raiz de cada desvio e protocolo de correção específico.</div></div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;">
               <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-light);border:1px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
               </div>
-              <div><div style="font-size:.92rem;font-weight:500;color:var(--navy);margin-bottom:3px;">Compatível com qualquer plataforma de BI</div><div style="font-size:.84rem;color:var(--gray-400);line-height:1.6;">WeKnow, Power BI, Tableau, planilhas avançadas ou sistemas próprios — o método se adapta ao que o hospital já usa.</div></div>
+              <div><div style="font-size:.92rem;font-weight:500;color:var(--white);margin-bottom:3px;">Compatível com qualquer plataforma de BI</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.6;">WeKnow (parceiro estratégico), Power BI, Tableau, planilhas avançadas ou sistemas próprios — o método se adapta ao que o hospital já usa.</div></div>
             </div>
           </div>
         </div>
@@ -785,8 +822,8 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <div class="reveal" data-d="2">
         <div style="background:linear-gradient(160deg,var(--navy),var(--navy-dark));border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;">
           <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);"></div>
-          <div style="font-size:.64rem;font-weight:600;letter-spacing:.18em;color:var(--gold-bright);text-transform:uppercase;margin-bottom:20px;">Laudo Estratégico Hospitalar</div>
-          <div style="font-size:1.05rem;font-weight:500;color:white;margin-bottom:8px;font-family:'Cormorant Garamond',serif;">Hospital — Centro Cirúrgico</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px;"><div style="font-size:.64rem;font-weight:600;letter-spacing:.18em;color:var(--gold-bright);text-transform:uppercase;">Laudo Estratégico Hospitalar</div><div style="font-size:.6rem;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.55);text-transform:uppercase;border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:3px 10px;">Exemplo ilustrativo</div></div>
+          <div style="font-size:1.05rem;font-weight:500;color:white;margin-bottom:8px;font-family:'Cormorant Garamond',serif;">Hospital fictício — Centro Cirúrgico</div>
           <div style="font-size:.76rem;color:rgba(255,255,255,.45);margin-bottom:24px;">Período analisado: Julho — Dezembro </div>
           <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
             <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:14px 16px;border-left:3px solid #F87171;">
@@ -805,23 +842,6 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMO ATUO -->
-<section id="como-atuo" class="section">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-tag">O que o Arquiteto entrega</span>
-      <h2>Governança pela Ausência™.<br>Sistemas que funcionam sem o líder presente.</h2>
-      <p class="pillars-intro">Cada projeto entrega um sistema operacional, não uma recomendação. A diferença é que sistemas continuam funcionando quando o Arquiteto não está.</p>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar-card reveal" data-d="1"><div class="pillar-num">01</div><h3>Sistemas antes de Pessoas</h3><p>Redução da dependência de indivíduos-chave. O processo funciona com excelência independentemente de quem está de plantão.</p></div>
-      <div class="pillar-card reveal" data-d="2"><div class="pillar-num">02</div><h3>Fluxo como Estratégia</h3><p>Previsibilidade em leitos e centros cirúrgicos. O fluxo do paciente é projetado como um sistema de engenharia — com tolerâncias, SLAs e indicadores auditáveis.</p></div>
-      <div class="pillar-card reveal" data-d="3"><div class="pillar-num">03</div><h3>Tecnologia com Propósito</h3><p>Inovação que acelera processos, nunca os corrige. Ferramentas que traduzem variabilidade operacional em valor financeiro compreensível pela diretoria.</p></div>
-      <div class="pillar-card reveal" data-d="4"><div class="pillar-num">04</div><h3>Sustentabilidade Operacional</h3><p>O teste real de um processo é a sua permanência. Projetamos sistemas que se autogerenciam. Se o resultado cai quando o líder sai, o que você tinha era comando, não gestão.</p></div>
     </div>
   </div>
 </section>
@@ -906,9 +926,10 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
 <section id="biblioteca" class="section">
   <div class="container">
     <div class="biblioteca-intro reveal">
-      <span class="section-tag">Biblioteca do Arquiteto de Processos</span>
-      <h2>Protocolos de Governança para implementação autônoma</h2>
-      <p>Três Protocolos de Governança temáticos — com instrumentos, planilhas e painéis desenvolvidos pelo Arquiteto — para que equipes hospitalares implementem melhoria contínua e sustentável, sem depender de presença permanente.</p>
+      <span class="section-tag">A base do método</span>
+      <h2>Protocolos de Governança construídos com a sua equipe</h2>
+      <p>Protocolo pronto não muda operação. Protocolo construído com quem executa, sim. Cada Protocolo de Governança é desenvolvido junto com a equipe do hospital, a partir dos dados e da rotina reais da sua operação. É a base do método: o processo passa a funcionar pela arquitetura, não pela presença de alguém.</p>
+      <p style="margin-top:14px;font-size:.92rem;">Abaixo, as três frentes e os instrumentos que construímos juntos em cada uma.</p>
     </div>
     <div class="kits-grid">
       <!-- PROTOCOLO CC -->
@@ -916,7 +937,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Centro Cirúrgico</div>
           <h3>Governança de Centro Cirúrgico</h3>
-          <p style="font-size:.84rem;">Para coordenadores e diretores que convivem com pauta incompleta, cancelamentos e ociosidade.</p>
+          <p style="font-size:.84rem;">Construído com coordenação, anestesia, enfermagem e higienização para eliminar pauta incompleta, cancelamentos e ociosidade.</p>
         </div>
         <div class="kit-materials">
           <ul>
@@ -929,7 +950,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
           </ul>
         </div>
         <div class="kit-foot">
-          <a href="https://arquitetodeprocessos.com.br/protocolo-governanca-cirurgica" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Conhecer este protocolo →</a>
+          <a href="protocolo-governanca-cirurgica.html" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Ver como construímos →</a>
         </div>
       </div>
       <!-- PROTOCOLO FLUXO -->
@@ -937,7 +958,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Leitos e Fluxo</div>
           <h3>Gestão de Leitos e Alta</h3>
-          <p style="font-size:.84rem;">Para gestores de NIR, leitos e internação que lutam contra giro lento e alta tardia.</p>
+          <p style="font-size:.84rem;">Construído com NIR, equipes assistenciais, higienização e corpo clínico para atacar giro lento e alta tardia.</p>
         </div>
         <div class="kit-materials">
           <ul>
@@ -946,11 +967,11 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
             <li><span class="kit-dot"></span><span>Painel de Giro de Leito — TMP, ocupação e alta tardia por setor</span></li>
             <li><span class="kit-dot"></span><span>Protocolo de NIR Ativo — regulação em tempo real</span></li>
             <li><span class="kit-dot"></span><span>Mapa de Gargalos do Fluxo — VSM simplificado da jornada</span></li>
-            <li><span class="kit-dot"></span><span>Guia de Implantação — 30 dias sem parar a operação</span></li>
+            <li><span class="kit-dot"></span><span>Plano de implantação com a equipe — sem parar a operação</span></li>
           </ul>
         </div>
         <div class="kit-foot">
-          <a href="https://wa.me/5547992080823?text=Olá%2C%20tenho%20interesse%20no%20Protocolo%20de%20Governança%20de%20Leitos%20e%20Fluxo.%20Pode%20me%20dar%20mais%20informações%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Conhecer este protocolo →</a>
+          <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20entender%20como%20seria%20construir%20o%20Protocolo%20de%20Governança%20de%20Leitos%20e%20Fluxo%20com%20a%20nossa%20equipe." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Construir com minha equipe →</a>
         </div>
       </div>
       <!-- PROTOCOLO DADOS -->
@@ -958,25 +979,25 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="kit-header">
           <div class="kit-badge">Protocolo · Indicadores e BI</div>
           <h3>Indicadores e BI Hospitalar</h3>
-          <p style="font-size:.84rem;">Para gestores que tomam decisões por intuição porque não têm indicadores de risco vigiados.</p>
+          <p style="font-size:.84rem;">Construído com gestores e TI a partir dos dados que o hospital já produz, para que decisão deixe de ser intuição.</p>
         </div>
         <div class="kit-materials">
           <ul>
-            <li><span class="kit-dot"></span><span>Glossário de KPIs e KRIs Hospitalares — 50 indicadores com fórmula e benchmark</span></li>
+            <li><span class="kit-dot"></span><span>Dicionário de KPIs e KRIs da instituição — fórmula, meta e limite de alerta</span></li>
             <li><span class="kit-dot"></span><span>Dashboard Executivo — 12 indicadores para apresentação à diretoria</span></li>
             <li><span class="kit-dot"></span><span>Painel Operacional Diário — ocupação, altas previstas, pendências</span></li>
             <li><span class="kit-dot"></span><span>Guia de Coleta de Dados — sem depender de TI</span></li>
             <li><span class="kit-dot"></span><span>Template de Apresentação para Diretoria — 10 slides estruturados</span></li>
-            <li><span class="kit-dot"></span><span>Guia de Implantação — cultura data-driven em 60 dias</span></li>
+            <li><span class="kit-dot"></span><span>Rito de gestão por indicadores — reunião, dono e cadência definidos</span></li>
           </ul>
         </div>
         <div class="kit-foot">
-          <a href="https://wa.me/5547992080823?text=Olá%2C%20tenho%20interesse%20no%20Protocolo%20de%20Governança%20de%20Indicadores%20e%20BI.%20Pode%20me%20dar%20mais%20informações%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Conhecer este protocolo →</a>
+          <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20entender%20como%20seria%20construir%20o%20Protocolo%20de%20Governança%20de%20Indicadores%20e%20BI%20com%20a%20nossa%20equipe." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.84rem;">Construir com minha equipe →</a>
         </div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px" class="reveal">
-      <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20conhecer%20a%20Biblioteca%20do%20Arquiteto%20de%20Processos%20e%20os%20Protocolos%20de%20Governança%20disponíveis." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Acessar a Biblioteca do Arquiteto →</a>
+      <a href="https://wa.me/5547992080823?text=Olá%2C%20quero%20conversar%20sobre%20construir%20Protocolos%20de%20Governança%20com%20a%20equipe%20do%20nosso%20hospital." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Conversar sobre o meu hospital →</a>
     </div>
   </div>
 </section>
@@ -1022,7 +1043,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
       <h2>Arquiteto de processos,<br>tradutor de operação em resultado.</h2>
       <p class="sobre-subtitle">Arquiteto de Processos em Saúde™</p>
       <div class="sobre-bio">
-        <p>Integro a precisão da eficiência industrial à complexidade da saúde para transformar operações reativas em sistemas previsíveis, seguros e escaláveis. Sou Black Belt Lean Six Sigma, formado em Gestão Hospitalar e com formações no Hospital Albert Einstein e no Instituto Sírio-Libanês.</p>
+        <p>Integro a precisão da eficiência industrial à complexidade da saúde para transformar operações reativas em sistemas previsíveis, seguros e escaláveis. Sou Black Belt Lean Six Sigma, formado em Gestão Hospitalar, com cursos no Hospital Israelita Albert Einstein e no Instituto Sírio-Libanês.</p>
         <p>Minha trajetória começa na engenharia de processos em ambiente corporativo de alta exigência — onde aprendi que excelência operacional não é evento, é arquitetura. Aplico essa mesma lógica ao ambiente hospitalar: cada gargalo tem causa-raiz, cada variabilidade tem custo, e cada custo tem solução sistêmica.</p>
         <p>Hospitais não precisam de mais esforço. Precisam de melhor arquitetura. Se a sua operação depende de heróis para funcionar, você não tem um sistema — você tem um risco. E dado sem decisão é só relatório.</p>
       </div>
@@ -1034,7 +1055,7 @@ footer{background:var(--navy-deep);padding:64px 0 36px;}
         <div class="deliverable"><div class="del-dot"></div><p><strong>Sustentabilidade Operacional</strong> — sistemas que se autogerenciam, independente de quem está presente</p></div>
       </div>
       <p class="sobre-assinatura">Matheus Sacoman</p>
-      <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:8px">📊 Insights diários às 06:00 para gestores que querem parar de apagar incêndios e começar a liderar sistemas.</p>
+      <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:8px">📊 Análises técnicas toda segunda, quarta e sexta para gestores que querem parar de apagar incêndios e começar a liderar sistemas.</p>
       <a href="https://www.linkedin.com/in/matheus-r-s-sacoman/" target="_blank" rel="noopener noreferrer" class="sobre-linkedin">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         Seguir no LinkedIn
@@ -1335,10 +1356,10 @@ function calcLeitos(a){
   const le=+(a.leitos||80),di=+(a.diaria||1500),oc=+(a.ocup||0.80);
   const al=+(a.alta||0.12),tm=+(a.tmp||5),ni=+(a.nir||1);
   const lo=Math.round(le*oc);
-  // tmpExRate: benchmark 3,5 dias; se TMP < benchmark, não há excesso mensurável
-  const tmpExRate=Math.max(0,(tm-3.5)/tm)*.18;
+  // tmpExRate: benchmark 3,8 dias; se TMP < benchmark, não há excesso mensurável
+  const tmpExRate=Math.max(0,(tm-3.8)/tm)*.18;
   const pAlta=Math.max(1,Math.round(lo*al*di*.18*22));
-  const pTMP=Math.round(lo*tmpExRate*di*20); // pode ser 0 se TMP < 3,5 dias
+  const pTMP=Math.round(lo*tmpExRate*di*20); // pode ser 0 se TMP < 3,8 dias
   const pNIR=ni>=1?Math.max(1,Math.round(le*.03*di*22*Math.min(ni,3)*.18)):0;
   // BUG CORRIGIDO: condicional era oc<0.80 mas fórmula usa benchmark 0.85
   const pOcup=oc<0.85?Math.max(1,Math.round(le*(0.85-oc)*di*22*.28)):0;
@@ -1357,7 +1378,7 @@ function calcLeitos(a){
        result:pAlta},
       pTMP>0?{title:'Excesso de tempo médio de permanência',
        eq:`${lo} leitos × ${(tmpExRate*100).toFixed(1)}% de excesso × R$ ${fmtN(di)} × 20 dias`,
-       note:`Benchmark TMP = 3,5 dias. TMP atual = ${tm} dias. Taxa de excesso = max(0, (${tm}-3,5)÷${tm}) × 0,18.`,
+       note:`Referência de TMP = 3,8 dias (média de hospitais privados de referência no Brasil). TMP atual = ${tm} dias. Taxa de excesso = max(0, (${tm}-3,8)÷${tm}) × 0,18.`,
        result:pTMP}:null,
       ni>=1?{title:'NIR sem atuação proativa',
        eq:`${le} leitos × 3% afetados × R$ ${fmtN(di)} × 22 dias × ${Math.min(ni,3)} (gravidade) × 0,18`,
@@ -1463,19 +1484,19 @@ function getObs(area,a){
       return'A combinação de alta taxa de cancelamento com ausência de protocolo formal de pauta indica que a variabilidade do CC é estrutural, não situacional. Isso significa que os números tendem a se degradar progressivamente sem uma intervenção de arquitetura de processo. A prioridade imediata é o fechamento de pauta com 48 horas de antecedência e a formalização do T.A.R.O.™ para cirurgias com material incompleto.';
     if((a.atraso||0)>=25)
       return'O padrão de início tardio é o custo mais invisível da operação — consome horas de sala, tempo de equipe e capacidade instalada sem aparecer como cancelamento no relatório. A intervenção prioritária é o Checklist de Abertura de Sala com auditoria do primeiro tempo cirúrgico do dia como indicador-sentinela.';
-    return'Os dados indicam variabilidade moderada com alto potencial de melhoria nas métricas de giro. A estruturação de SLA entre CC, higienização e equipe cirúrgica tem potencial de recuperar 40% a 60% das perdas identificadas em 60 dias.';
+    return'Os dados indicam variabilidade moderada com alto potencial de melhoria nas métricas de giro. A estruturação de SLA entre CC, higienização e equipe cirúrgica tem potencial de recuperar parte relevante das perdas identificadas já nos primeiros meses.';
   }
   if(area==='leitos'){
-    if((a.alta||0)>=.18)return'A ausência de Alta Programática é a causa-raiz primária das perdas identificadas. Cada leito ocupado após as 10h por uma alta que poderia ter sido antecipada representa uma diária perdida. O retorno do protocolo de Alta Programática com critérios clínicos e revisão noturna é mensurável em 30 dias.';
+    if((a.alta||0)>=.18)return'A ausência de Alta Programática é a causa-raiz primária das perdas identificadas. Cada leito ocupado após as 10h por uma alta que poderia ter sido antecipada representa uma diária perdida. O retorno do protocolo de Alta Programática com critérios clínicos e revisão noturna aparece nos indicadores já no primeiro ciclo de acompanhamento.';
     if((a.nir||0)>=2)return'O NIR com atuação apenas reativa é o gargalo central do fluxo. Sem rota diária estruturada, o leito permanece ocupado além do necessário por ausência de quem coordene ativamente a saída. A estruturação do NIR Ativo tem maior impacto sobre o giro do que a abertura de novos leitos.';
-    return'O perfil identificado aponta para um gargalo de regulação de saída, não de entrada. A prioridade é o protocolo de Alta Programática combinado com revisão do TMP por especialidade para identificar clusters com maior desvio do benchmark de 3,5 dias.';
+    return'O perfil identificado aponta para um gargalo de regulação de saída, não de entrada. A prioridade é o protocolo de Alta Programática combinado com revisão do TMP por especialidade para identificar clusters com maior desvio da referência de 3,8 dias.';
   }
   if((a.dashboard||0)>=2)return'A ausência de painel de indicadores não é um problema de tecnologia — é um problema de arquitetura de decisão. Sem dados organizados, cada decisão carrega um custo de incerteza que se acumula silenciosamente. A estruturação de 10 a 15 indicadores-chave com revisão semanal é o ponto de partida para reverter esse padrão.';
   if(area==='ps'){
     if((a.espera||0)>=0.25)
       return'O tempo de espera acima de 2 horas é o sintoma mais visível da Fábrica Oculta no PS — e raramente é um problema de volume. É um problema de fluxo. A variabilidade no tempo de triagem, a ausência de protocolos de prioridade e o boarding de pacientes aguardando leito criam um gargalo que se retroalimenta. A intervenção prioritária é a regulação de saída do PS com fluxo ativo de leitos — não a ampliação de macas.';
     if((a.classificacao||0)>=2)
-      return'A triagem informal é o ponto de maior vulnerabilidade clínica e financeira do PS. Sem protocolo de classificação auditado, casos graves são subdimensionados e casos leves consomem recursos de alta complexidade. A implementação do Protocolo de Manchester com auditor de triagem tem retorno mensurável em menos de 30 dias.';
+      return'A triagem informal é o ponto de maior vulnerabilidade clínica e financeira do PS. Sem protocolo de classificação auditado, casos graves são subdimensionados e casos leves consomem recursos de alta complexidade. A implementação do Protocolo de Manchester com auditor de triagem tem retorno que aparece nos indicadores já no primeiro ciclo de acompanhamento.';
     if((a.leitos_ps||0)>=2)
       return'A ausência de fluxo regulado entre PS e internação transforma o pronto-socorro em extensão de leito de enfermaria. O boarding é a principal causa de superlotação — e não se resolve com mais macas, mas com arquitetura de fluxo de saída. A estruturação do fluxo regulado com responsável de leitos e janela de transferência definida é o ponto de maior impacto imediato.';
     return'O perfil identificado aponta variabilidade moderada com acúmulo de perdas invisíveis na transição entre triagem, atendimento e internação. A prioridade é mapear o tempo de permanência por categoria de risco para identificar onde o fluxo colapsa antes de propor qualquer intervenção de capacidade.';
@@ -1531,7 +1552,7 @@ function dSelectArea(a){
 function dConfirmArea(){if(!DS.area)return;DS.qIdx=0;DS.ans={};dGoTo('q');}
 function dRenderQ(){
   const qs=QS[DS.area],q=qs[DS.qIdx],sn=DS.qIdx+2;
-  document.getElementById('dq-label').textContent='PASSO '+sn+' DE 8';
+  document.getElementById('dq-label').textContent='PERGUNTA '+(DS.qIdx+1)+' DE '+qs.length;
   document.getElementById('dq-txt').textContent=q.q;
   document.getElementById('dq-sub').textContent=q.sub||'';
   dProg('dpg-q',sn);
