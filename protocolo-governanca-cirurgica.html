@@ -705,9 +705,11 @@
 
   <script>
     /* ===== CONFIGURAÇÃO EMAILJS — substitua pelos seus IDs ===== */
-    var EMAILJS_PUBLIC_KEY  = 'SUA_PUBLIC_KEY';
-    var EMAILJS_SERVICE_ID  = 'SEU_SERVICE_ID';
-    var EMAILJS_TEMPLATE_ID = 'SEU_TEMPLATE_ID';
+    /* Mesma conta, serviço e template já usados no index.html do site */
+    var EMAILJS_PUBLIC_KEY  = 'cpqM6Tls6AIdaIqIR';
+    var EMAILJS_SERVICE_ID  = 'service_9ac9qyf';
+    var EMAILJS_TEMPLATE_ID = 'template_vj8k14q';
+    var SEU_EMAIL = 'matheussacoman@arquitetodeprocessos.com.br';
     var WHATSAPP = '5547992080823';
 
     /* ===== PREMISSAS DO MODELO ===== */
@@ -857,15 +859,24 @@
       $('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       /* Envio para o Matheus via EmailJS */
+      var hipTxt = hs.map(function (x, i) { return (i + 1) + '. ' + x[0]; }).join(' | ');
       var params = {
-        nome: lead.nome, cargo: lead.cargo, hospital: lead.hospital, cidade: lead.cidade,
-        porte: lead.porte, natureza: lead.natureza, email: lead.email, whatsapp: lead.whatsapp,
-        salas: s.salas, horas_sala: s.horas + ' h/dia', dias_mes: s.dias + ' dias/mês', cancelamento: s.cancelPct + '%', giro: s.giro + ' min', ticket: 'R$ ' + brl(s.ticket),
+        /* Campos do template existente (template_vj8k14q) */
+        nome: lead.nome, hospital: lead.hospital, cargo: lead.cargo, email: lead.email, whatsapp: lead.whatsapp,
+        area: 'Diagnóstico Rápido do CC — Arquitetura de Governança Cirúrgica',
+        total_mensal: 'R$ ' + brl(r.mensal), total_anual: 'R$ ' + brl(r.anual),
+        detalhes: 'Perda por cancelamento: R$ ' + brl(r.cancel) + '/mês | Perda por giro: R$ ' + brl(r.giro) + '/mês | Procedimentos não realizados: ' + r.procs + '/mês | Hipóteses: ' + hipTxt,
+        formulas: 'Premissas: ' + s.horas + ' h/sala/dia, ' + s.dias + ' dias/mês, procedimento médio de 90 min, giro de referência de 20 min, cancelamento de referência de 8%, conversão de 50% da capacidade liberada pelo giro',
+        respostas: 'OPERAÇÃO — Salas: ' + s.salas + ' | Cancelamento: ' + s.cancelPct + '% | Giro: ' + s.giro + ' min | Receita/procedimento: R$ ' + brl(s.ticket) +
+          ' || CONTEXTO — Maior dor: ' + radio('dor') + ' | Dados: ' + radio('dados') + ' | Dependência: ' + radio('dep') + ' | Momento: ' + radio('momento') +
+          ' || PERFIL — Cidade/UF: ' + lead.cidade + ' | Porte: ' + lead.porte + ' | Natureza: ' + lead.natureza,
+        observacao: 'Lead do diagnóstico rápido. Prometido: one-page report por e-mail e WhatsApp em até 24h (enviado em ' + new Date().toLocaleString('pt-BR') + ').',
+        to_email: SEU_EMAIL,
+        /* Campos extras, caso você crie um template dedicado depois */
+        cidade: lead.cidade, porte: lead.porte, natureza: lead.natureza,
+        salas: s.salas, cancelamento: s.cancelPct + '%', giro: s.giro + ' min', ticket: 'R$ ' + brl(s.ticket),
         maior_dor: radio('dor'), qualidade_dados: radio('dados'), dependencia: radio('dep'), momento: radio('momento'),
-        perda_mensal: 'R$ ' + brl(r.mensal), perda_anual: 'R$ ' + brl(r.anual),
-        perda_cancelamento: 'R$ ' + brl(r.cancel), perda_giro: 'R$ ' + brl(r.giro), procs_perdidos: r.procs,
-        hipoteses: hs.map(function (h, i) { return (i + 1) + '. ' + h[0]; }).join('\n'),
-        data_envio: new Date().toLocaleString('pt-BR')
+        hipoteses: hipTxt, data_envio: new Date().toLocaleString('pt-BR')
       };
       var status = $('send-status');
       if (!window.emailjs || EMAILJS_PUBLIC_KEY.indexOf('SUA_') === 0) {
