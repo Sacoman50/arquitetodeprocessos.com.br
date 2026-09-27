@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src https://api.emailjs.com;" />
+  <title>Governança de Leitos e Fluxo | Arquiteto de Processos em Saúde™</title>
+  <meta name="description" content="Arquitetura de gestão de leitos construída sob medida para o seu hospital, com toda a equipe envolvida: alta programática, NIR ativo e SLAs de liberação. Faça o diagnóstico rápido dos seus leitos e receba um relatório executivo em até 24 horas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    :root {
+      --navy: #1A2B4A; --navy-dark: #111D33; --navy-deeper: #0C1525;
+      --gold: #B8860B; --gold-muted: #D4A843; --gold-pale: #FAF5E8;
+      --white: #FFFFFF; --gray-100: #F7F7F7; --gray-200: #EEEEEE; --gray-300: #DDDDDD;
+      --gray-500: #7A7A7A; --gray-700: #444444; --red: #E05555; --green: #1A7A4A;
+      --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'DM Sans', sans-serif;
+      --max-w: 1080px; --section-gap: 96px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; border-radius: 2px; }
+    .btn-primary { display: inline-block; background: var(--gold); color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 18px 44px; border-radius: 2px; border: none; cursor: pointer; transition: background .2s, transform .15s, box-shadow .2s; }
+    .btn-primary:hover { background: #9A7009; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,.28); }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-ghost { display: inline-block; background: transparent; color: var(--gold-muted); font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: .04em; text-decoration: none; padding: 16px 32px; border: 1.5px solid var(--gold-muted); border-radius: 2px; cursor: pointer; transition: background .2s, color .2s; }
+    .btn-ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+    .btn-back { background: none; border: none; font-family: var(--font-body); font-size: 14px; color: var(--gray-500); cursor: pointer; padding: 18px 8px; }
+    .btn-back:hover { color: var(--navy); }
+
+    /* HEADER */
+    header { background: var(--navy-dark); border-bottom: 1px solid rgba(184,134,11,.2); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header-logo { font-family: var(--font-display); font-size: 17px; font-weight: 500; color: var(--white); text-decoration: none; }
+    .header-logo span { color: var(--gold-muted); }
+    .header-cta { font-size: 12px; padding: 12px 22px; }
+
+    /* HERO */
+    .hero { background: linear-gradient(180deg, var(--navy-deeper) 0%, var(--navy-dark) 100%); padding: 100px 0 96px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px), radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,134,11,.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: center; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(38px, 5vw, 60px); font-weight: 600; line-height: 1.1; color: var(--white); margin: 24px 0 20px; }
+    .hero h1 em { font-style: italic; color: var(--gold-muted); }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,.68); line-height: 1.7; margin-bottom: 36px; max-width: 540px; }
+    .hero-sub strong { color: rgba(255,255,255,.92); font-weight: 500; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-card { background: rgba(255,255,255,.04); border: 1px solid rgba(184,134,11,.25); border-radius: 4px; padding: 32px 28px; }
+    .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 20px; display: block; }
+    .hero-steps { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .hero-steps li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.45; }
+    .hero-steps b { font-family: var(--font-display); font-size: 20px; color: var(--gold-muted); font-weight: 600; line-height: 1.1; }
+    .hero-steps strong { color: var(--white); font-weight: 500; display: block; }
+
+    /* DIAGNÓSTICO */
+    .diag-section { background: var(--gray-100); padding: 88px 0; border-bottom: 1px solid var(--gray-200); }
+    .center-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; text-align: center; }
+    .diag-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 46px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 14px; text-align: center; }
+    .diag-title em { font-style: italic; color: var(--gold); }
+    .diag-lead { font-size: 16px; color: var(--gray-700); text-align: center; max-width: 600px; margin: 0 auto 44px; line-height: 1.7; }
+    .diag-box { max-width: 760px; margin: 0 auto; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; box-shadow: 0 10px 40px rgba(17,29,51,.06); overflow: hidden; }
+    .diag-progress { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--gray-200); }
+    .diag-progress div { padding: 16px 12px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-500); text-align: center; border-bottom: 3px solid transparent; }
+    .diag-progress div.active { color: var(--navy); border-bottom-color: var(--gold); }
+    .diag-progress div.done { color: var(--green); }
+    .diag-step { display: none; padding: 40px 44px; }
+    .diag-step.active { display: block; animation: fadeUp .35s ease; }
+    .step-title { font-family: var(--font-display); font-size: 26px; font-weight: 600; margin-bottom: 6px; }
+    .step-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 32px; }
+    .field-group { margin-bottom: 28px; }
+    .field-label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+    .field-label span { font-size: 15px; font-weight: 500; }
+    .field-value { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--gold); line-height: 1; white-space: nowrap; }
+    .field-hint { font-size: 12px; color: var(--gray-500); margin-top: 6px; line-height: 1.5; }
+    .num-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+    .num-field { min-width: 0; }
+    .num-wrap input { width: 100%; }
+    .num-field label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; line-height: 1.35; }
+    .num-wrap { display: flex; align-items: center; border: 1.5px solid var(--gray-300); border-radius: 2px; background: var(--white); transition: border-color .15s; }
+    .num-wrap:focus-within { border-color: var(--gold); }
+    .num-field.invalid .num-wrap { border-color: var(--red); }
+    .num-wrap input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; padding: 13px 14px; font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); }
+    .num-wrap input::placeholder { color: var(--gray-300); font-weight: 500; }
+    .num-wrap input::-webkit-outer-spin-button, .num-wrap input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .num-wrap input[type=number] { -moz-appearance: textfield; }
+    .unit { padding: 0 14px; font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: .04em; white-space: nowrap; }
+    .unit.pre { padding: 0 0 0 14px; }
+    .range-minmax { display: flex; justify-content: space-between; font-size: 11px; color: var(--gray-500); margin-top: 6px; }
+    .q-label { font-size: 15px; font-weight: 500; margin-bottom: 12px; display: block; }
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .options.single-col { grid-template-columns: 1fr; }
+    .opt { position: relative; }
+    .opt input { position: absolute; opacity: 0; pointer-events: none; }
+    .opt label { display: block; padding: 13px 16px; border: 1.5px solid var(--gray-300); border-radius: 2px; font-size: 14px; color: var(--gray-700); cursor: pointer; line-height: 1.4; transition: border-color .15s, background .15s; }
+    .opt label:hover { border-color: var(--gold-muted); }
+    .opt input:checked + label { border-color: var(--gold); background: var(--gold-pale); color: var(--navy); font-weight: 500; }
+    .opt input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .text-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .text-field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    .text-field input, .text-field select { width: 100%; padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--navy); border: 1.5px solid var(--gray-300); border-radius: 2px; background: var(--white); outline: none; transition: border-color .15s; }
+    .text-field input:focus, .text-field select:focus { border-color: var(--gold); }
+    .text-field.full { grid-column: 1 / -1; }
+    .text-field.invalid input, .text-field.invalid select { border-color: var(--red); }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 20px; font-size: 13px; color: var(--gray-700); line-height: 1.5; }
+    .consent input { margin-top: 3px; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+    .step-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 36px; gap: 12px; }
+    .step-error { font-size: 13px; color: var(--red); margin-top: 14px; min-height: 18px; }
+    .diag-footnote { font-size: 12px; color: var(--gray-500); text-align: center; margin-top: 18px; }
+
+    /* BRIEFING */
+    .briefing { display: none; padding: 0; }
+    .briefing.active { display: block; animation: fadeUp .4s ease; }
+    .brief-head { background: var(--navy-dark); padding: 36px 44px; }
+    .brief-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-muted); display: block; margin-bottom: 10px; }
+    .brief-hosp { font-family: var(--font-display); font-size: 26px; color: var(--white); font-weight: 600; line-height: 1.2; margin-bottom: 24px; }
+    .brief-num-label { font-size: 13px; color: rgba(255,255,255,.55); }
+    .brief-num { font-family: var(--font-display); font-size: 54px; font-weight: 600; color: #FF7A7A; line-height: 1.05; }
+    .brief-num-sub { font-size: 13px; color: rgba(255,255,255,.45); margin-top: 4px; }
+    .brief-rows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(184,134,11,.15); }
+    .brief-rows div span { display: block; font-size: 12px; color: rgba(255,255,255,.45); margin-bottom: 4px; line-height: 1.35; }
+    .brief-rows div strong { font-family: var(--font-display); font-size: 22px; color: rgba(255,255,255,.9); font-weight: 600; }
+    .brief-body { padding: 36px 44px 40px; }
+    .brief-h { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .hyp { border-left: 3px solid var(--gold); background: var(--gold-pale); padding: 14px 18px; margin-bottom: 12px; border-radius: 0 2px 2px 0; }
+    .hyp strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .hyp p { font-size: 14px; color: var(--gray-700); line-height: 1.55; }
+    .next-box { margin-top: 28px; padding: 24px; border: 1px solid var(--gray-200); border-radius: 2px; }
+    .next-box p { font-size: 15px; color: var(--gray-700); line-height: 1.65; margin-bottom: 18px; }
+    .next-box strong { color: var(--navy); }
+    .send-status { font-size: 13px; margin-top: 14px; color: var(--gray-500); }
+    .send-status.ok { color: var(--green); }
+    .send-status.err { color: var(--red); }
+    .brief-note { font-size: 11px; color: var(--gray-500); line-height: 1.6; margin-top: 22px; }
+
+    /* SECTIONS */
+    .section { padding: var(--section-gap) 0; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-lead { font-size: 17px; color: var(--gray-700); line-height: 1.75; max-width: 660px; }
+
+    /* PROBLEM */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 56px; }
+    .problem-narrative { background: var(--navy-dark); border-left: 3px solid var(--gold); padding: 40px 36px; border-radius: 2px; }
+    .problem-narrative p { font-size: 16px; color: rgba(255,255,255,.75); line-height: 1.8; margin-bottom: 16px; }
+    .problem-quote { font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--gold-muted); line-height: 1.4; border-top: 1px solid rgba(184,134,11,.2); padding-top: 20px; margin-top: 8px; }
+    .problem-quote cite { display: block; font-size: 13px; font-style: normal; font-family: var(--font-body); color: rgba(255,255,255,.35); margin-top: 10px; }
+    .checks-label { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 20px; }
+    .check-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--gray-200); font-size: 15px; color: var(--gray-700); line-height: 1.55; }
+    .check-item:first-of-type { border-top: 1px solid var(--gray-200); }
+    .check-item svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--gold); }
+
+    /* CONTRASTE */
+    .contrast-section { background: var(--navy-deeper); padding: var(--section-gap) 0; }
+    .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+    .contrast-col { border-radius: 4px; padding: 36px 32px; }
+    .contrast-col.off { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); }
+    .contrast-col.on { background: rgba(184,134,11,.06); border: 1px solid rgba(184,134,11,.35); }
+    .contrast-col h3 { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 22px; }
+    .contrast-col.off h3 { color: rgba(255,255,255,.4); }
+    .contrast-col.on h3 { color: var(--gold-muted); }
+    .contrast-col ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .contrast-col li { font-size: 15px; line-height: 1.55; padding-left: 20px; position: relative; }
+    .contrast-col.off li { color: rgba(255,255,255,.45); }
+    .contrast-col.off li::before { content: '×'; position: absolute; left: 0; color: rgba(255,255,255,.3); }
+    .contrast-col.on li { color: rgba(255,255,255,.88); }
+    .contrast-col.on li::before { content: '→'; position: absolute; left: 0; color: var(--gold-muted); font-size: 13px; top: 2px; }
+
+    /* MÉTODO */
+    .method-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
+    .method-card { background: var(--white); border: 1px solid var(--gray-200); border-top: 3px solid var(--gold); border-radius: 2px; padding: 28px 24px; }
+    .method-num { font-family: var(--font-display); font-size: 36px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 14px; display: block; }
+    .method-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
+    .method-card p { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
+
+    /* EQUIPE */
+    .team-section { background: var(--gray-100); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .team-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 22px 22px; }
+    .team-item strong { font-family: var(--font-display); font-size: 19px; font-weight: 600; display: block; margin-bottom: 6px; }
+    .team-item span { font-size: 14px; color: var(--gray-700); line-height: 1.55; }
+
+    /* ENTREGÁVEIS */
+    .deliv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .deliv { border: 1px solid var(--gray-200); padding: 26px 24px; border-radius: 2px; }
+    .deliv h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 8px; line-height: 1.25; }
+    .deliv p { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+    .deliv.hl { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); border-color: rgba(184,134,11,.3); }
+    .deliv.hl h3 { color: var(--white); }
+    .deliv.hl p { color: rgba(255,255,255,.65); }
+
+    /* MID CTA */
+    .mid-cta { background: var(--navy); padding: 64px 0; text-align: center; }
+    .mid-cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--white); margin-bottom: 28px; line-height: 1.3; }
+    .mid-cta-title em { color: var(--gold-muted); font-style: italic; }
+
+    /* FAQ */
+    .faq-section { background: var(--gray-100); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 28px 24px; }
+    .faq-q { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
+    .faq-a { font-size: 14px; color: var(--gray-700); line-height: 1.7; }
+
+    /* CTA FINAL */
+    .cta-section { background: var(--navy-dark); padding: 100px 0; text-align: center; }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(255,255,255,.6); margin: 0 auto 40px; }
+    .cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-sub { font-size: 13px; color: rgba(255,255,255,.35); margin-top: 20px; }
+
+    footer { background: var(--navy-deeper); padding: 36px 0; text-align: center; }
+    footer p { font-size: 12px; color: rgba(255,255,255,.25); line-height: 1.7; }
+    footer a { color: rgba(255,255,255,.4); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,.7); }
+
+    /* WHATSAPP FLOAT */
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .15s; }
+    .wa-float:hover { transform: scale(1.07); }
+
+
+    /* ===== TEMA AZUL-MARINHO INTEGRAL ===== */
+    :root { --tone-a: #0E1829; --tone-b: #16243D; --line: rgba(255,255,255,.1); --card: rgba(255,255,255,.035); --txt: rgba(255,255,255,.9); --txt-2: rgba(255,255,255,.68); --txt-3: rgba(255,255,255,.45); --ok: #6FCF97; --err: #FF8A8A; }
+    body { background: var(--tone-a); color: var(--txt); }
+    .band.tone-a { background: var(--tone-a); }
+    .band.tone-b { background: var(--tone-b); }
+    .band + .band, .band + footer.band { border-top: 1px solid var(--gold-muted); border-bottom: none; }
+    .hero.band { background-image: none; }
+
+    .section-label, .center-label { color: var(--gold-muted); }
+    .section-title, .diag-title { color: var(--white); }
+    .section-title em, .diag-title em { color: var(--gold-muted); }
+    .section-lead, .diag-lead { color: var(--txt-2); }
+
+    /* Diagnóstico */
+    .diag-box { background: var(--card); border: 1px solid rgba(212,168,67,.3); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+    .diag-progress { border-bottom-color: var(--line); }
+    .diag-progress div { color: var(--txt-3); }
+    .diag-progress div.active { color: var(--white); border-bottom-color: var(--gold-muted); }
+    .diag-progress div.done { color: var(--ok); }
+    .step-title { color: var(--white); }
+    .step-sub, .field-hint { color: var(--txt-3); }
+    .num-field label, .q-label, .text-field label { color: var(--txt); }
+    .num-wrap { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.16); }
+    .num-wrap:focus-within { border-color: var(--gold-muted); }
+    .num-wrap input { color: var(--white); }
+    .num-wrap input::placeholder { color: rgba(255,255,255,.22); }
+    .unit { color: var(--gold-muted); }
+    .opt label { border-color: rgba(255,255,255,.16); color: var(--txt-2); background: rgba(255,255,255,.02); }
+    .opt label:hover { border-color: var(--gold-muted); color: var(--white); }
+    .opt input:checked + label { border-color: var(--gold-muted); background: rgba(184,134,11,.16); color: var(--white); }
+    .opt input:focus-visible + label { outline-color: var(--gold-muted); }
+    .text-field input, .text-field select { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.16); color: var(--white); }
+    .text-field input::placeholder { color: rgba(255,255,255,.22); }
+    .text-field input:focus, .text-field select:focus { border-color: var(--gold-muted); }
+    .text-field select option { background: var(--tone-b); color: var(--white); }
+    .num-field.invalid .num-wrap, .text-field.invalid input, .text-field.invalid select { border-color: var(--err); }
+    .consent { color: var(--txt-2); }
+    .consent a { color: var(--gold-muted) !important; }
+    .step-error { color: var(--err); }
+    .btn-back { color: var(--txt-3); }
+    .btn-back:hover { color: var(--white); }
+    .diag-footnote { color: var(--txt-3); }
+
+    /* Briefing */
+    .brief-head { background: rgba(0,0,0,.22); border-bottom: 1px solid rgba(212,168,67,.25); }
+    .brief-h { color: var(--gold-muted); }
+    .hyp { background: rgba(184,134,11,.09); border-left-color: var(--gold-muted); }
+    .hyp strong { color: var(--white); }
+    .hyp p { color: var(--txt-2); }
+    .next-box { border-color: var(--line); background: rgba(255,255,255,.02); }
+    .next-box p { color: var(--txt-2); }
+    .next-box strong { color: var(--white); }
+    .send-status { color: var(--txt-3); }
+    .send-status.ok { color: var(--ok); }
+    .send-status.err { color: var(--err); }
+    .brief-note { color: var(--txt-3); }
+
+    /* Problema */
+    .problem-narrative { background: var(--card); }
+    .checks-label { color: var(--txt-3); }
+    .check-item { color: var(--txt-2); border-bottom-color: var(--line); }
+    .check-item:first-of-type { border-top-color: var(--line); }
+    .check-item svg { color: var(--gold-muted); }
+
+    /* Cartões */
+    .method-card, .team-item, .deliv, .faq-item { background: var(--card); border-color: var(--line); }
+    .method-card { border-top-color: var(--gold-muted); }
+    .method-num { color: var(--gold-muted); }
+    .method-card h3, .team-item strong, .deliv h3, .faq-q { color: var(--white); }
+    .method-card p, .team-item span, .deliv p, .faq-a { color: var(--txt-2); }
+    .deliv.hl { background: rgba(184,134,11,.09); border-color: rgba(212,168,67,.45); }
+
+    footer p { color: var(--txt-3); }
+    footer a { color: rgba(255,255,255,.55); }
+
+    .comp-row { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--txt-2); }
+    .comp-row span + span { color: var(--white); white-space: nowrap; text-align: right; }
+    @media (max-width: 600px) { .comp-row { flex-direction: column; gap: 2px; } .comp-row span + span { text-align: left; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      :root { --section-gap: 64px; }
+      .hero-inner, .problem-grid, .contrast-grid { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr 1fr; }
+      .team-grid, .deliv-grid, .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 64px 0 72px; }
+      .hero-actions a { width: 100%; text-align: center; }
+      .diag-step, .brief-head, .brief-body { padding: 28px 22px; }
+      .options, .text-grid, .num-grid { grid-template-columns: 1fr; }
+      .brief-rows { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr; }
+      .header-logo { font-size: 15px; }
+      .diag-progress div { font-size: 10px; padding: 14px 6px; }
+      .step-actions { flex-direction: column-reverse; align-items: stretch; }
+      .step-actions .btn-primary { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="https://arquitetodeprocessos.com.br" class="header-logo">Arquiteto de Processos <span>em Saúde™</span></a>
+      <a href="#diagnostico" class="btn-primary header-cta">Diagnóstico rápido</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero band tone-a">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="tag">Governança de Leitos e Fluxo</span>
+          <h1>O seu hospital não precisa de mais leitos.<br/><em>Precisa que os leitos girem.</em></h1>
+          <p class="hero-sub">
+            Não existe protocolo pronto de gestão de leitos que sirva para o seu hospital. Eu construo a <strong>arquitetura do fluxo do paciente</strong>, da admissão à saída do leito: desenhada a partir do seu censo, das suas restrições e das pessoas que decidem a alta, liberam o leito e regulam a entrada.
+          </p>
+          <div class="hero-actions">
+            <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido dos meus leitos</a>
+            <a href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Quero%20conversar%20sobre%20a%20arquitetura%20de%20gest%C3%A3o%20de%20leitos%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" class="btn-ghost">Falar com o Arquiteto</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="hero-card-label">Como começa</span>
+          <ol class="hero-steps">
+            <li><b>1</b><div><strong>Diagnóstico rápido</strong>Perguntas objetivas sobre o fluxo dos seus leitos. Cerca de 3 minutos.</div></li>
+            <li><b>2</b><div><strong>Briefing na tela</strong>Estimativa da receita perdida, leitos equivalentes bloqueados e as primeiras hipóteses de causa.</div></li>
+            <li><b>3</b><div><strong>Relatório executivo em até 24h</strong>Um one-page report analisado por mim, no seu e-mail e no seu WhatsApp.</div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section class="diag-section band tone-b" id="diagnostico">
+    <div class="container">
+      <span class="center-label">Diagnóstico rápido da gestão de leitos</span>
+      <h2 class="diag-title">Quantos leitos o seu hospital<br/><em>já tem e não consegue usar?</em></h2>
+      <p class="diag-lead">Responda perguntas rápidas sobre o fluxo da internação. Você vê o briefing na hora e recebe um relatório executivo de uma página, analisado pessoalmente, em até 24 horas.</p>
+
+      <div class="diag-box">
+        <div class="diag-progress" id="progress">
+          <div class="active">1 · Operação</div>
+          <div>2 · Contexto</div>
+          <div>3 · Contato</div>
+        </div>
+
+        <!-- ETAPA 1 -->
+        <div class="diag-step active" id="step-1">
+          <h3 class="step-title">O fluxo dos seus leitos</h3>
+          <p class="step-sub">Informe os números reais da internação, sem limite de porte. Se não tiver o valor exato, use a sua melhor estimativa: na etapa seguinte você indica o quanto os dados são medidos.</p>
+
+          <div class="num-grid">
+            <div class="num-field">
+              <label for="in-leitos">Leitos de internação ativos</label>
+              <div class="num-wrap"><input id="in-leitos" type="text" inputmode="numeric" placeholder="Ex.: 120" /><span class="unit">leitos</span></div>
+              <p class="field-hint">Enfermarias, apartamentos e UTI. Sem leitos de observação do PS.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-ocup">Taxa média de ocupação</label>
+              <div class="num-wrap"><input id="in-ocup" type="text" inputmode="decimal" placeholder="Ex.: 85" /><span class="unit">%</span></div>
+              <p class="field-hint">Pacientes-dia sobre leitos-dia disponíveis.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-tmp">Tempo médio de permanência</label>
+              <div class="num-wrap"><input id="in-tmp" type="text" inputmode="decimal" placeholder="Ex.: 5,2" /><span class="unit">dias</span></div>
+              <p class="field-hint">Média geral do hospital.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-alta10">Altas com saída do leito até as 10h</label>
+              <div class="num-wrap"><input id="in-alta10" type="text" inputmode="decimal" placeholder="Ex.: 20" /><span class="unit">%</span></div>
+              <p class="field-hint">Saída física do paciente, não a assinatura da alta.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-giro">Tempo de liberação do leito</label>
+              <div class="num-wrap"><input id="in-giro" type="text" inputmode="decimal" placeholder="Ex.: 3,5" /><span class="unit">horas</span></div>
+              <p class="field-hint">Da saída do paciente até o leito higienizado e disponível no sistema.</p>
+            </div>
+            <div class="num-field">
+              <label for="in-diaria">Receita média por diária</label>
+              <div class="num-wrap"><span class="unit pre">R$</span><input id="in-diaria" type="text" inputmode="numeric" placeholder="Ex.: 1.800" /></div>
+              <p class="field-hint">Sem honorários médicos e sem OPME.</p>
+            </div>
+          </div>
+          <p class="step-error" id="err-1"></p>
+
+          <div class="step-actions">
+            <span></span>
+            <button class="btn-primary" type="button" onclick="goStep(2)">Continuar</button>
+          </div>
+        </div>
+
+        <!-- ETAPA 2 -->
+        <div class="diag-step" id="step-2">
+          <h3 class="step-title">O contexto</h3>
+          <p class="step-sub">Isso direciona a análise do seu relatório.</p>
+
+          <div class="field-group">
+            <span class="q-label">Qual é hoje a maior dor da gestão de leitos?</span>
+            <div class="options single-col" id="q-dor">
+              <div class="opt"><input type="radio" name="dor" id="dor1" value="Alta assinada, mas o paciente sai do leito só à tarde" /><label for="dor1">Alta assinada, mas o paciente sai do leito só à tarde</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor2" value="PS lotado com pacientes aguardando leito" /><label for="dor2">PS lotado com pacientes aguardando leito</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor3" value="Cirurgias canceladas ou atrasadas por falta de leito" /><label for="dor3">Cirurgias canceladas ou atrasadas por falta de leito (enfermaria ou UTI)</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor4" value="Leito vago que demora a ser liberado" /><label for="dor4">Leito vago que demora a ser liberado (higienização, sistema, manutenção)</label></div>
+              <div class="opt"><input type="radio" name="dor" id="dor5" value="Falta de visibilidade dos leitos em tempo real" /><label for="dor5">Falta de visibilidade dos leitos em tempo real</label></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="q-label">Como o NIR atua hoje?</span>
+            <div class="options" id="q-nir">
+              <div class="opt"><input type="radio" name="nir" id="nir1" value="Proativo, com rotina diária nas unidades" /><label for="nir1">Proativo, com rotina diária nas unidades</label></div>
+              <div class="opt"><input type="radio" name="nir" id="nir2" value="Reativo, quando é acionado" /><label for="nir2">Reativo, quando é acionado</label></div>
+              <div class="opt"><input type="radio" name="nir" id="nir3" value="Existe no organograma, mas não funciona" /><label for="nir3">Existe no organograma, mas não funciona</label></div>
+              <div class="opt"><input type="radio" name="nir" id="nir4" value="Não há NIR estruturado" /><label for="nir4">Não há NIR estruturado</label></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="q-label">A data provável de alta é definida e registrada?</span>
+            <div class="options single-col" id="q-prev">
+              <div class="opt"><input type="radio" name="prev" id="prev1" value="Sim, nas primeiras 24h de internação, para a maioria dos pacientes" /><label for="prev1">Sim, nas primeiras 24h de internação, para a maioria dos pacientes</label></div>
+              <div class="opt"><input type="radio" name="prev" id="prev2" value="Às vezes, depende do médico ou da unidade" /><label for="prev2">Às vezes, depende do médico ou da unidade</label></div>
+              <div class="opt"><input type="radio" name="prev" id="prev3" value="Não, a alta é decidida no dia" /><label for="prev3">Não, a alta é decidida no dia</label></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="q-label">Os números que você informou são…</span>
+            <div class="options" id="q-dados">
+              <div class="opt"><input type="radio" name="dados" id="dad1" value="Medidos sistematicamente" /><label for="dad1">Medidos sistematicamente</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad2" value="Medidos parcialmente" /><label for="dad2">Medidos parcialmente</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad3" value="Estimativa minha" /><label for="dad3">Estimativa minha</label></div>
+              <div class="opt"><input type="radio" name="dados" id="dad4" value="Ninguém mede hoje" /><label for="dad4">Ninguém mede hoje</label></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="q-label">Quando o fluxo de leitos funciona melhor?</span>
+            <div class="options single-col" id="q-dep">
+              <div class="opt"><input type="radio" name="dep" id="dep1" value="Igual, independentemente de quem está de plantão" /><label for="dep1">Igual, independentemente de quem está de plantão</label></div>
+              <div class="opt"><input type="radio" name="dep" id="dep2" value="Quando determinadas pessoas estão presentes" /><label for="dep2">Quando determinadas pessoas estão presentes</label></div>
+              <div class="opt"><input type="radio" name="dep" id="dep3" value="Depende quase só de uma pessoa-chave" /><label for="dep3">Depende quase só de uma pessoa-chave</label></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="q-label">Qual o seu momento em relação a esse tema?</span>
+            <div class="options single-col" id="q-momento">
+              <div class="opt"><input type="radio" name="momento" id="mom1" value="Preciso resolver nos próximos 3 meses" /><label for="mom1">Preciso resolver nos próximos 3 meses</label></div>
+              <div class="opt"><input type="radio" name="momento" id="mom2" value="Estou estruturando o planejamento do próximo ano" /><label for="mom2">Estou estruturando o planejamento do próximo ano</label></div>
+              <div class="opt"><input type="radio" name="momento" id="mom3" value="Estou entendendo o tamanho do problema" /><label for="mom3">Estou entendendo o tamanho do problema</label></div>
+            </div>
+          </div>
+
+          <p class="step-error" id="err-2"></p>
+          <div class="step-actions">
+            <button class="btn-back" type="button" onclick="goStep(1)">← Voltar</button>
+            <button class="btn-primary" type="button" onclick="goStep(3)">Continuar</button>
+          </div>
+        </div>
+
+        <!-- ETAPA 3 -->
+        <div class="diag-step" id="step-3">
+          <h3 class="step-title">Para onde envio o seu relatório</h3>
+          <p class="step-sub">O briefing aparece assim que você concluir. O relatório executivo chega por e-mail e WhatsApp em até 24 horas.</p>
+
+          <div class="text-grid">
+            <div class="text-field"><label for="f-nome">Nome</label><input id="f-nome" type="text" autocomplete="name" /></div>
+            <div class="text-field">
+              <label for="f-cargo">Cargo</label>
+              <select id="f-cargo">
+                <option value="">Selecione</option>
+                <option>Diretor(a) geral / CEO</option>
+                <option>Diretor(a) técnico(a) / médico(a)</option>
+                <option>Diretor(a) administrativo(a) / operações</option>
+                <option>Gerente de enfermagem</option>
+                <option>Coordenador(a) do NIR / gestão de leitos</option>
+                <option>Qualidade / processos</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="text-field"><label for="f-hosp">Hospital</label><input id="f-hosp" type="text" autocomplete="organization" /></div>
+            <div class="text-field"><label for="f-cidade">Cidade / UF</label><input id="f-cidade" type="text" placeholder="Ex.: Joinville / SC" /></div>
+            <div class="text-field">
+              <label for="f-natureza">Natureza</label>
+              <select id="f-natureza">
+                <option value="">Selecione</option>
+                <option>Privado</option>
+                <option>Filantrópico</option>
+                <option>Público / OSS</option>
+              </select>
+            </div>
+            <div class="text-field">
+              <label for="f-uti">Possui UTI adulto?</label>
+              <select id="f-uti">
+                <option value="">Selecione</option>
+                <option>Sim</option>
+                <option>Não</option>
+              </select>
+            </div>
+            <div class="text-field"><label for="f-email">E-mail profissional</label><input id="f-email" type="email" autocomplete="email" /></div>
+            <div class="text-field"><label for="f-whats">WhatsApp</label><input id="f-whats" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" /></div>
+          </div>
+
+          <label class="consent"><input type="checkbox" id="f-lgpd" /><span>Autorizo o uso destes dados para a elaboração do meu relatório e para contato do Arquiteto de Processos em Saúde™, conforme a <a href="https://arquitetodeprocessos.com.br/privacidade" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">Política de Privacidade</a>. Os dados do hospital não são compartilhados com terceiros.</span></label>
+
+          <p class="step-error" id="err-3"></p>
+          <div class="step-actions">
+            <button class="btn-back" type="button" onclick="goStep(2)">← Voltar</button>
+            <button class="btn-primary" type="button" id="btn-submit" onclick="submitDiag()">Ver meu briefing</button>
+          </div>
+        </div>
+
+        <!-- BRIEFING -->
+        <div class="briefing" id="briefing">
+          <div class="brief-head">
+            <span class="brief-eyebrow">Briefing preliminar · Gestão de Leitos</span>
+            <div class="brief-hosp" id="b-hosp">—</div>
+            <div class="brief-num-label">Receita que deixa de ser produzida por ano (estimativa)</div>
+            <div class="brief-num" id="b-anual">R$ 0</div>
+            <div class="brief-num-sub" id="b-mensal">—</div>
+            <div class="brief-rows">
+              <div><span>Leitos-dia bloqueados por mês</span><strong id="b-ld">—</strong></div>
+              <div><span>Equivale a leitos parados, todos os dias</span><strong id="b-leq">—</strong></div>
+              <div><span>Internações a mais possíveis por mês</span><strong id="b-int">—</strong></div>
+            </div>
+          </div>
+          <div class="brief-body">
+            <div class="brief-h">Onde o leito fica preso</div>
+            <div id="b-comp" style="margin-bottom:28px"></div>
+
+            <div class="brief-h">Primeiras hipóteses</div>
+            <div id="b-hyps"></div>
+
+            <div class="next-box">
+              <p>Este número é uma simulação. O que ele ainda não mostra é <strong>em que ponto do fluxo o leito fica preso e por onde começar</strong>. É isso que o seu relatório executivo traz: leitura das suas respostas, as prioridades de intervenção e o que precisaria ser medido para confirmar o diagnóstico.</p>
+              <p><strong>Você recebe o relatório em até 24 horas, por e-mail e WhatsApp.</strong> Se quiser adiantar a conversa, fale comigo agora.</p>
+              <a id="b-wa" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;">Conversar com o Arquiteto no WhatsApp</a>
+              <p class="send-status" id="send-status">Enviando suas respostas…</p>
+            </div>
+
+            <p class="brief-note" id="b-note"></p>
+          </div>
+        </div>
+      </div>
+      <p class="diag-footnote">Sem custo. Sem compromisso. Os dados do seu hospital ficam restritos à análise.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="section band tone-a">
+    <div class="container">
+      <span class="section-label">O problema que nenhum hospital quer admitir</span>
+      <h2 class="section-title">Não é falta de leito.<br/><em>É ausência de sistema.</em></h2>
+      <p class="section-lead">Quando a saída do paciente depende de alguém cobrar, cada alta vira uma negociação. E cada hora de leito parado aparece lá na frente, como paciente em maca no PS ou cirurgia sem vaga.</p>
+
+      <div class="problem-grid">
+        <div class="problem-narrative">
+          <p>Um dia comum em muitos hospitais. A alta é assinada no fim da visita da manhã. A receita demora. O transporte da família só chega depois do almoço. O paciente sai às 15h. A higienização é avisada às 16h. O leito aparece como livre no sistema no começo da noite.</p>
+          <p>Enquanto isso, o PS segurou dois pacientes em maca e uma cirurgia eletiva foi remarcada por falta de vaga. Ninguém errou sozinho. Cada etapa esperou a anterior, e ninguém era dono do fluxo inteiro.</p>
+          <blockquote class="problem-quote">"O leito não estava ocupado por um paciente. Estava ocupado por um processo."</blockquote>
+        </div>
+        <div>
+          <p class="checks-label">Esta arquitetura foi pensada para você se…</p>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A maioria das altas sai do leito depois do almoço</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>O PS acumula pacientes internados esperando leito</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A diretoria discute abrir leitos antes de saber quantos já estão travados</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>O NIR passa o dia apagando incêndio em vez de antecipar a saída</span></div>
+          <div class="check-item"><svg viewBox="0 0 22 22" fill="none"><path d="M4 11h14M13 6l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>O mapa de leitos só é confiável quando uma pessoa específica está de plantão</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRASTE -->
+  <section class="contrast-section band tone-b">
+    <div class="container">
+      <span class="section-label" style="color:var(--gold-muted)">Por que não um protocolo pronto</span>
+      <h2 class="section-title" style="color:var(--white)">Protocolo de alta copiado não muda<br/><em>o horário em que o paciente sai.</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,.6)">Cada hospital tem seu corpo clínico, seu perfil de pacientes, sua regulação com convênios e SUS e seus acordos informais entre unidades. Um fluxo que ignora isso é contornado pela operação, por melhor que pareça no papel.</p>
+      <div class="contrast-grid">
+        <div class="contrast-col off">
+          <h3>Protocolo genérico</h3>
+          <ul>
+            <li>Meta de "alta até as 10h" sem mudar o que acontece antes das 10h</li>
+            <li>Chega pronto e é imposto ao corpo clínico</li>
+            <li>NIR vira central de pedidos de vaga</li>
+            <li>Higienização só descobre o leito vago quando alguém liga</li>
+            <li>Vai para a gaveta na primeira semana de lotação</li>
+          </ul>
+        </div>
+        <div class="contrast-col on">
+          <h3>Arquitetura sob medida</h3>
+          <ul>
+            <li>Desenhada a partir do seu censo, do seu perfil de pacientes e dos seus gargalos reais</li>
+            <li>Construída com quem decide e executa: médicos, enfermagem, NIR, higienização, PS e UTI</li>
+            <li>Alta planejada desde a admissão, com critérios e gatilhos combinados</li>
+            <li>SLAs entre equipes que funcionam sem depender de presença</li>
+            <li>Indicadores de giro que a diretoria entende e as unidades acompanham</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="section band tone-a">
+    <div class="container">
+      <span class="section-label">Como a arquitetura é construída</span>
+      <h2 class="section-title">Engenharia de fluxo aplicada<br/><em>aos leitos do seu hospital.</em></h2>
+      <p class="section-lead">Rigor de Lean Six Sigma Black Belt e a filosofia da Governança pela Ausência™: o fluxo precisa funcionar quando o líder não está.</p>
+      <div class="method-steps">
+        <div class="method-card"><span class="method-num">01</span><h3>Diagnóstico</h3><p>Leitura do censo, da permanência por unidade, do horário real de saída e do tempo de liberação. Mapeamento da jornada real, não da que está no papel.</p></div>
+        <div class="method-card"><span class="method-num">02</span><h3>Escuta das equipes</h3><p>Conversas estruturadas com cada elo do fluxo. É daqui que saem as causas que nenhum relatório de ocupação mostra.</p></div>
+        <div class="method-card"><span class="method-num">03</span><h3>Desenho</h3><p>Alta programática, papéis do NIR, SLAs de liberação, ritos diários e indicadores, construídos junto com quem vai executar.</p></div>
+        <div class="method-card"><span class="method-num">04</span><h3>Implantação e autonomia</h3><p>Acompanhamento até o fluxo rodar sem depender de mim ou de uma pessoa-chave. A saída é planejada desde o início.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="section team-section band tone-b">
+    <div class="container">
+      <span class="section-label">Quem participa</span>
+      <h2 class="section-title">O leito é do hospital.<br/><em>Por isso o fluxo é construído por todos.</em></h2>
+      <p class="section-lead">A alta tardia raramente é culpa de uma pessoa. Ela nasce na visita médica, na prescrição de alta, na farmácia, no transporte, na higienização e na falta de alguém que olhe o fluxo inteiro. A arquitetura envolve cada elo.</p>
+      <div class="team-grid">
+        <div class="team-item"><strong>Corpo clínico</strong><span>Previsão de alta na admissão, critérios de alta e horário da visita.</span></div>
+        <div class="team-item"><strong>Enfermagem das unidades</strong><span>Preparo da alta na véspera, orientação ao paciente e comunicação da saída.</span></div>
+        <div class="team-item"><strong>NIR</strong><span>Regulação em tempo real, rotina diária nas unidades e priorização da fila.</span></div>
+        <div class="team-item"><strong>Higienização e hotelaria</strong><span>SLA de limpeza terminal e liberação do leito no sistema.</span></div>
+        <div class="team-item"><strong>PS, UTI e Centro Cirúrgico</strong><span>Critérios de entrada, transferência entre unidades e reserva de leito para eletivas.</span></div>
+        <div class="team-item"><strong>Farmácia, serviço social e autorização</strong><span>Receita, transporte, desospitalização e guias que não podem travar a saída.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREGÁVEIS -->
+  <section class="section band tone-a">
+    <div class="container">
+      <span class="section-label">O que fica no hospital</span>
+      <h2 class="section-title">Um sistema, <em>não uma pasta de documentos.</em></h2>
+      <p class="section-lead">O escopo é definido no diagnóstico. Estes são componentes típicos de uma arquitetura de governança de leitos, sempre construídos para a sua realidade.</p>
+      <div class="deliv-grid">
+        <div class="deliv"><h3>Alta programática</h3><p>Data provável de alta definida na admissão, critérios clínicos e gatilhos para preparar a saída na véspera.</p></div>
+        <div class="deliv hl"><h3>NIR Ativo</h3><p>O núcleo deixa de ser central de pedidos e passa a gerir o fluxo: rotina diária, previsão de vagas e autoridade para destravar a saída.</p></div>
+        <div class="deliv"><h3>SLAs entre equipes</h3><p>Tempos acordados entre enfermagem, higienização, farmácia e NIR, do aviso de alta ao leito disponível.</p></div>
+        <div class="deliv"><h3>Mapa de gargalos do fluxo</h3><p>A jornada do paciente desenhada ponta a ponta, com os pontos de espera medidos.</p></div>
+        <div class="deliv"><h3>Painel de giro de leito</h3><p>Permanência, ocupação, horário de saída e tempo de liberação por unidade, com meta e gatilho de ação.</p></div>
+        <div class="deliv"><h3>Ritos de gestão</h3><p>Reunião curta diária de leitos, com pauta fixa, para tratar desvios com dado, não com narrativa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mid-cta band tone-b">
+    <div class="container">
+      <p class="mid-cta-title">Antes de abrir leitos,<br/><em>descubra quantos já estão travados.</em></p>
+      <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section faq-section band tone-a">
+    <div class="container">
+      <span class="section-label">Perguntas frequentes</span>
+      <h2 class="section-title">Dúvidas <em>comuns</em></h2>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q">O diagnóstico rápido tem custo?</div><p class="faq-a">Não. Você responde as perguntas, vê o briefing na hora e recebe o relatório executivo em até 24 horas, sem compromisso.</p></div>
+        <div class="faq-item"><div class="faq-q">Quanto custa a arquitetura completa?</div><p class="faq-a">Depende do número de leitos, das unidades envolvidas, da maturidade dos dados e do escopo. Por isso ela nunca começa por uma proposta genérica: começa pelo diagnóstico.</p></div>
+        <div class="faq-item"><div class="faq-q">Já temos um sistema de gestão de leitos. Ainda faz sentido?</div><p class="faq-a">Sim. O sistema mostra o leito. Quem faz o leito girar são as decisões e os acordos entre as equipes. A arquitetura define essas regras e usa o sistema que você já tem para acompanhá-las.</p></div>
+        <div class="faq-item"><div class="faq-q">O corpo clínico participa?</div><p class="faq-a">Sim, e isso é inegociável. A alta é uma decisão médica. Um fluxo desenhado sem os médicos é um fluxo que eles não vão seguir.</p></div>
+        <div class="faq-item"><div class="faq-q">Preciso ter dados organizados?</div><p class="faq-a">Não. Muitos hospitais não medem o horário real de saída nem o tempo de liberação do leito. Estruturar essa medição faz parte do trabalho.</p></div>
+        <div class="faq-item"><div class="faq-q">O que acontece com os dados que informo?</div><p class="faq-a">São usados exclusivamente para elaborar o seu relatório e para contato comercial do Arquiteto de Processos em Saúde™. Não são compartilhados com terceiros.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section band tone-b">
+    <div class="container">
+      <span class="section-label" style="text-align:center">Governança de Leitos e Fluxo</span>
+      <h2 class="section-title">O fluxo que funciona<br/><em>quando você não está.</em></h2>
+      <p class="section-lead">Cada leito parado à espera de uma saída é um paciente esperando em outro lugar do hospital. Comece medindo o tamanho disso.</p>
+      <div class="cta-actions">
+        <a href="#diagnostico" class="btn-primary">Fazer o diagnóstico rápido</a>
+        <a href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Quero%20conversar%20sobre%20a%20arquitetura%20de%20gest%C3%A3o%20de%20leitos%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" class="btn-ghost">Falar no WhatsApp</a>
+      </div>
+      <p class="cta-sub">Atendimento direto com o Arquiteto · Lean Six Sigma Black Belt</p>
+    </div>
+  </section>
+
+  <footer class="band tone-a">
+    <div class="container">
+      <p>© 2026 Matheus Sacoman · Arquiteto de Processos em Saúde™<br/>
+      <a href="https://arquitetodeprocessos.com.br">arquitetodeprocessos.com.br</a> &nbsp;·&nbsp; <a href="protocolo-governanca-cirurgica.html">Centro Cirúrgico</a> &nbsp;·&nbsp; <a href="https://arquitetodeprocessos.com.br/privacidade">Política de Privacidade</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5547992080823?text=Ol%C3%A1%2C%20Matheus.%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20a%20gest%C3%A3o%20de%20leitos%20do%20meu%20hospital." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.93-4.66-4.11-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.99.95-2.26.24-.27.53-.34.71-.34h.51c.16 0 .38-.06.6.46.23.54.77 1.87.84 2.01.07.13.11.29.02.47-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.52.31.07.11.07.65-.17 1.33z"/></svg>
+  </a>
+
+  <script>
+    /* ===== CONFIGURAÇÃO EMAILJS ===== */
+    /* Mesma conta, serviço e template já usados no index.html e na página do Centro Cirúrgico */
+    var EMAILJS_PUBLIC_KEY  = 'cpqM6Tls6AIdaIqIR';
+    var EMAILJS_SERVICE_ID  = 'service_9ac9qyf';
+    var EMAILJS_TEMPLATE_ID = 'template_vj8k14q';
+    var SEU_EMAIL = 'matheussacoman@arquitetodeprocessos.com.br';
+    var WHATSAPP = '5547992080823';
+
+    /* ===== PREMISSAS DO MODELO ===== */
+    var META_TMP = 3.8;        /* dias: referência de permanência média de hospitais privados de referência no Brasil */
+    var FRAC_TMP = 0.25;       /* só 1/4 do excesso de permanência é atribuído a processo (o resto: perfil de pacientes) */
+    var META_ALTA10 = 40;      /* % de altas com saída até 10h no cenário de operação estruturada */
+    var HORAS_ALTA_TARDIA = 4; /* horas de leito bloqueado por alta que poderia ter saído pela manhã */
+    var META_GIRO = 2;         /* horas: da saída do paciente ao leito disponível */
+    var DIAS_MES = 30;
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('SUA_') !== 0) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    function $(id) { return document.getElementById(id); }
+    function brl(n) { return Math.round(n).toLocaleString('pt-BR'); }
+    function dec(n) { return n.toLocaleString('pt-BR', { maximumFractionDigits: 1 }); }
+    function brlK(n) {
+      var v = Math.round(n);
+      if (v >= 1000000) return (v / 1000000).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' mi';
+      if (v >= 1000) return Math.round(v / 1000).toLocaleString('pt-BR') + ' mil';
+      return v.toLocaleString('pt-BR');
+    }
+
+    /* Entradas numéricas (sem limite superior de porte) */
+    function num(id) {
+      var raw = String($(id).value || '').trim();
+      if (id === 'in-diaria' || id === 'in-leitos') raw = raw.replace(/\./g, '').replace(',', '.');
+      else raw = raw.replace(',', '.');
+      var v = parseFloat(raw);
+      return isFinite(v) ? v : NaN;
+    }
+    function readInputs() {
+      return { leitos: num('in-leitos'), ocupPct: num('in-ocup'), tmp: num('in-tmp'), alta10: num('in-alta10'), giro: num('in-giro'), diaria: num('in-diaria') };
+    }
+    ['in-diaria', 'in-leitos'].forEach(function (id) {
+      $(id).addEventListener('blur', function () { var v = num(id); if (isFinite(v) && v > 0) this.value = brl(v); });
+    });
+    function validarOperacao() {
+      var s = readInputs(), ok = true;
+      var regras = {
+        'in-leitos': s.leitos >= 1, 'in-ocup': s.ocupPct > 0 && s.ocupPct <= 100, 'in-tmp': s.tmp > 0 && s.tmp <= 90,
+        'in-alta10': s.alta10 >= 0 && s.alta10 <= 100, 'in-giro': s.giro > 0 && s.giro <= 72, 'in-diaria': s.diaria > 0
+      };
+      Object.keys(regras).forEach(function (id) {
+        $(id).closest('.num-field').classList.toggle('invalid', !regras[id]);
+        if (!regras[id]) ok = false;
+      });
+      showError('err-1', ok ? '' : 'Preencha os campos destacados com valores válidos.');
+      return ok;
+    }
+
+    /* Fator de conversão: leito liberado só vira receita se houver demanda esperando */
+    function conversao(ocupPct) {
+      if (ocupPct >= 85) return 0.5;
+      if (ocupPct >= 75) return 0.3;
+      return 0.15;
+    }
+
+    /* Modelo de perda */
+    function calcular(s) {
+      var ocup = s.ocupPct / 100;
+      var saidas = s.leitos * ocup * DIAS_MES / s.tmp;
+      var ldTmp = saidas * Math.max(0, s.tmp - META_TMP) * FRAC_TMP;
+      var ldAlta = saidas * Math.max(0, META_ALTA10 - s.alta10) / 100 * HORAS_ALTA_TARDIA / 24;
+      var ldGiro = saidas * Math.max(0, s.giro - META_GIRO) / 24;
+      var conv = conversao(s.ocupPct);
+      var ld = ldTmp + ldAlta + ldGiro;
+      var mensal = ld * s.diaria * conv;
+      return {
+        saidas: saidas, conv: conv, ldTmp: ldTmp, ldAlta: ldAlta, ldGiro: ldGiro, ld: ld,
+        leq: ld / DIAS_MES, internacoes: Math.round(ld * conv / s.tmp),
+        pTmp: ldTmp * s.diaria * conv, pAlta: ldAlta * s.diaria * conv, pGiro: ldGiro * s.diaria * conv,
+        mensal: mensal, anual: mensal * 12
+      };
+    }
+
+    function radio(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
+
+    /* Hipóteses preliminares */
+    function hipoteses(s) {
+      var h = [], dor = radio('dor'), nir = radio('nir'), prev = radio('prev'), dados = radio('dados'), dep = radio('dep');
+      if (s.alta10 < META_ALTA10 || dor.indexOf('Alta assinada') === 0 || prev.indexOf('Sim') !== 0) {
+        h.push(['Alta decidida no dia, não planejada', (prev.indexOf('Sim') !== 0 ? 'Sem data provável de alta definida na admissão, ' : 'Com ') + 'a saída depende de tudo dar certo na mesma manhã: visita, prescrição, receita, orientação e transporte. Com ' + dec(s.alta10) + '% de saídas até as 10h, o leito da manhã vira leito da tarde.']);
+      }
+      if (s.giro > META_GIRO || dor.indexOf('Leito vago') === 0) {
+        h.push(['Liberação do leito sem SLA entre equipes', 'Com ' + dec(s.giro) + ' h entre a saída do paciente e o leito disponível, enfermagem, higienização e NIR provavelmente trabalham em sequência e por telefone. Cada um espera o aviso do outro.']);
+      }
+      if (nir && nir.indexOf('Proativo') !== 0) {
+        h.push(['NIR que gerencia a fila, não o fluxo', 'Um NIR que atua quando é acionado só enxerga o problema quando ele já virou paciente esperando. A alavanca está em antecipar as saídas do dia, unidade por unidade.']);
+      }
+      if (dor.indexOf('PS lotado') === 0 || dor.indexOf('Cirurgias') === 0) {
+        h.push(['O gargalo da entrada está na saída', 'Paciente em maca no PS ou cirurgia sem vaga raramente é falta de leito físico. É leito ocupado por uma alta que ainda não aconteceu. Abrir leitos sem mexer no fluxo tende a reproduzir o problema em escala maior.']);
+      }
+      if (s.ocupPct < 75) {
+        h.push(['Com ocupação de ' + dec(s.ocupPct) + '%, o ganho está em custo e previsibilidade', 'Com folga de leitos, girar mais rápido não gera receita nova sozinho. O ganho está em reduzir o custo por internação, liberar capacidade para linhas de cuidado estratégicas e dar previsibilidade às eletivas.']);
+      }
+      if (s.tmp > META_TMP + 1) {
+        h.push(['Permanência acima da referência', 'O tempo médio de ' + dec(s.tmp) + ' dias pode refletir o perfil de pacientes, mas costuma esconder dias de espera por exame, parecer ou desospitalização. Separar o que é clínico do que é processo é o primeiro passo.']);
+      }
+      if (dep && dep.indexOf('Igual') !== 0) {
+        h.push(['Fluxo dependente de pessoas-chave', 'Se o giro muda conforme quem está de plantão, as decisões ainda vivem na cabeça das pessoas e não no processo. É o sinal mais claro de que falta arquitetura.']);
+      }
+      if (dados === 'Estimativa minha' || dados === 'Ninguém mede hoje' || dor.indexOf('Falta de visibilidade') === 0) {
+        h.push(['A perda real pode ser maior do que a estimada', 'Sem medir o horário real de saída e o tempo de liberação, a operação não enxerga os leitos que perde todo dia. Estruturar a linha de base é o primeiro passo para qualquer conversa com a diretoria.']);
+      }
+      if (!h.length) {
+        h.push(['Fluxo com boa base', 'Seus números sugerem uma gestão de leitos relativamente estruturada. O ganho provável está em sustentar o desempenho sem depender de presença e em ganhar previsibilidade para PS e eletivas.']);
+      }
+      return h.slice(0, 3);
+    }
+
+    /* Navegação */
+    function showError(id, msg) { $(id).textContent = msg || ''; }
+    function goStep(n) {
+      if (n === 2 && !validarOperacao()) return;
+      if (n === 3 && !(radio('dor') && radio('nir') && radio('prev') && radio('dados') && radio('dep') && radio('momento'))) {
+        showError('err-2', 'Responda todas as perguntas para continuar.');
+        return;
+      }
+      showError('err-2', '');
+      for (var i = 1; i <= 3; i++) {
+        $('step-' + i).classList.toggle('active', i === n);
+        var p = $('progress').children[i - 1];
+        p.classList.toggle('active', i === n);
+        p.classList.toggle('done', i < n);
+      }
+      $('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function validar() {
+      var ok = true;
+      ['f-nome', 'f-cargo', 'f-hosp', 'f-cidade', 'f-natureza', 'f-uti', 'f-email', 'f-whats'].forEach(function (id) {
+        var el = $(id), val = el.value.trim(), valid = !!val;
+        if (id === 'f-email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+        if (id === 'f-whats') valid = val.replace(/\D/g, '').length >= 10;
+        el.parentElement.classList.toggle('invalid', !valid);
+        if (!valid) ok = false;
+      });
+      if (!ok) { showError('err-3', 'Confira os campos destacados.'); return false; }
+      if (!$('f-lgpd').checked) { showError('err-3', 'É preciso autorizar o uso dos dados para gerar o relatório.'); return false; }
+      showError('err-3', '');
+      return true;
+    }
+
+    function premissasTxt(s, r) {
+      return 'Mês de 30 dias; saídas estimadas pela ocupação e permanência informadas. Permanência de referência de 3,8 dias, com apenas 25% do excesso atribuído a processo. ' +
+        'Cenário estruturado com 40% das saídas até as 10h (4 h de leito bloqueado por alta tardia) e liberação do leito em até 2 h. ' +
+        'Leito liberado só vira receita se houver demanda: com ocupação de ' + dec(s.ocupPct) + '%, o modelo considera ' + Math.round(r.conv * 100) + '% de conversão.';
+    }
+
+    function submitDiag() {
+      if (!validar()) return;
+      var s = readInputs(), r = calcular(s), hs = hipoteses(s);
+      var lead = {
+        nome: $('f-nome').value.trim(), cargo: $('f-cargo').value, hospital: $('f-hosp').value.trim(),
+        cidade: $('f-cidade').value.trim(), natureza: $('f-natureza').value, uti: $('f-uti').value,
+        email: $('f-email').value.trim(), whatsapp: $('f-whats').value.trim()
+      };
+
+      /* Renderiza o briefing */
+      $('b-hosp').textContent = lead.hospital;
+      $('b-anual').textContent = 'R$ ' + brlK(r.anual);
+      $('b-mensal').textContent = 'R$ ' + brlK(r.mensal) + ' por mês · ' + brl(s.leitos) + ' leitos · ' + dec(s.ocupPct) + '% de ocupação';
+      $('b-ld').textContent = brl(r.ld);
+      $('b-leq').textContent = dec(r.leq) + (r.leq >= 1.95 ? ' leitos' : ' leito');
+      $('b-int').textContent = r.internacoes;
+
+      $('b-comp').innerHTML = '';
+      [['Permanência acima da referência', r.ldTmp, r.pTmp], ['Alta que sai do leito à tarde', r.ldAlta, r.pAlta], ['Leito vago ainda não liberado', r.ldGiro, r.pGiro]].forEach(function (c) {
+        var row = document.createElement('div');
+        row.className = 'comp-row';
+        var a = document.createElement('span'); a.textContent = c[0];
+        var b = document.createElement('span'); 
+        b.textContent = brl(c[1]) + ' leitos-dia · R$ ' + brlK(c[2]) + '/mês';
+        row.appendChild(a); row.appendChild(b); $('b-comp').appendChild(row);
+      });
+
+      $('b-hyps').innerHTML = '';
+      hs.forEach(function (h) {
+        var d = document.createElement('div'); d.className = 'hyp';
+        var t = document.createElement('strong'); t.textContent = h[0];
+        var p = document.createElement('p'); p.textContent = h[1];
+        d.appendChild(t); d.appendChild(p); $('b-hyps').appendChild(d);
+      });
+      $('b-note').innerHTML = '<strong>Premissas da simulação:</strong> ';
+      $('b-note').appendChild(document.createTextNode(premissasTxt(s, r) + ' Valores estimados para fins de diagnóstico, não constituem promessa de resultado.'));
+
+      var waMsg = 'Olá, Matheus. Sou ' + lead.nome + ' (' + lead.cargo + ') do ' + lead.hospital + '. Acabei de fazer o diagnóstico rápido de gestão de leitos e quero conversar sobre o resultado.';
+      $('b-wa').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(waMsg);
+
+      $('step-3').classList.remove('active');
+      $('progress').style.display = 'none';
+      $('briefing').classList.add('active');
+      $('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      /* Envio para o Matheus via EmailJS */
+      var hipTxt = hs.map(function (x, i) { return (i + 1) + '. ' + x[0]; }).join(' | ');
+      var params = {
+        /* Campos do template existente (template_vj8k14q) */
+        nome: lead.nome, hospital: lead.hospital, cargo: lead.cargo, email: lead.email, whatsapp: lead.whatsapp,
+        area: 'Diagnóstico Rápido de Leitos — Governança de Leitos e Fluxo',
+        total_mensal: 'R$ ' + brl(r.mensal), total_anual: 'R$ ' + brl(r.anual),
+        detalhes: 'Leitos-dia bloqueados: ' + brl(r.ld) + '/mês (' + dec(r.leq) + ' leitos equivalentes) | Permanência: ' + brl(r.ldTmp) + ' leitos-dia, R$ ' + brl(r.pTmp) + '/mês | Alta tardia: ' + brl(r.ldAlta) + ' leitos-dia, R$ ' + brl(r.pAlta) + '/mês | Liberação: ' + brl(r.ldGiro) + ' leitos-dia, R$ ' + brl(r.pGiro) + '/mês | Internações adicionais possíveis: ' + r.internacoes + '/mês | Hipóteses: ' + hipTxt,
+        formulas: 'Premissas: ' + premissasTxt(s, r),
+        respostas: 'OPERAÇÃO — Leitos: ' + brl(s.leitos) + ' | Ocupação: ' + dec(s.ocupPct) + '% | TMP: ' + dec(s.tmp) + ' dias | Saídas até 10h: ' + dec(s.alta10) + '% | Liberação do leito: ' + dec(s.giro) + ' h | Diária: R$ ' + brl(s.diaria) +
+          ' || CONTEXTO — Maior dor: ' + radio('dor') + ' | NIR: ' + radio('nir') + ' | Previsão de alta: ' + radio('prev') + ' | Dados: ' + radio('dados') + ' | Dependência: ' + radio('dep') + ' | Momento: ' + radio('momento') +
+          ' || PERFIL — Cidade/UF: ' + lead.cidade + ' | Natureza: ' + lead.natureza + ' | UTI adulto: ' + lead.uti,
+        observacao: 'Lead do diagnóstico rápido de leitos. Prometido: one-page report por e-mail e WhatsApp em até 24h (enviado em ' + new Date().toLocaleString('pt-BR') + ').',
+        to_email: SEU_EMAIL,
+        /* Campos extras, caso você crie um template dedicado depois */
+        cidade: lead.cidade, natureza: lead.natureza, uti: lead.uti, porte: brl(s.leitos) + ' leitos',
+        leitos: brl(s.leitos), ocupacao: dec(s.ocupPct) + '%', tmp: dec(s.tmp) + ' dias', altas_ate_10h: dec(s.alta10) + '%',
+        liberacao_leito: dec(s.giro) + ' h', diaria: 'R$ ' + brl(s.diaria),
+        leitos_dia_bloqueados: brl(r.ld), leitos_equivalentes: dec(r.leq),
+        maior_dor: radio('dor'), nir: radio('nir'), previsao_alta: radio('prev'), qualidade_dados: radio('dados'), dependencia: radio('dep'), momento: radio('momento'),
+        hipoteses: hipTxt, data_envio: new Date().toLocaleString('pt-BR')
+      };
+      var status = $('send-status');
+      if (!window.emailjs || EMAILJS_PUBLIC_KEY.indexOf('SUA_') === 0) {
+        status.className = 'send-status err';
+        status.textContent = 'Não foi possível registrar automaticamente. Toque no botão acima para enviar pelo WhatsApp e garantir o seu relatório.';
+        return;
+      }
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params).then(function () {
+        status.className = 'send-status ok';
+        status.textContent = 'Respostas recebidas. Seu relatório chega por e-mail e WhatsApp em até 24 horas.';
+      }, function () {
+        status.className = 'send-status err';
+        status.textContent = 'Não foi possível registrar automaticamente. Toque no botão acima para enviar pelo WhatsApp e garantir o seu relatório.';
+      });
+    }
+  </script>
+</body>
+</html>
