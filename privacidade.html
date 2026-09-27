@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | Arquiteto de Processos em Saúde™</title>
+<meta name="description" content="Política de Privacidade do Arquiteto de Processos em Saúde™ — como os dados pessoais são coletados, usados, protegidos e eliminados, conforme a LGPD (Lei nº 13.709/2018).">
+<meta name="author" content="Matheus Sacoman — Arquiteto de Processos em Saúde™">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://arquitetodeprocessos.com.br/privacidade">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Política de Privacidade | Arquiteto de Processos em Saúde™">
+<meta property="og:description" content="Como tratamos dados pessoais, conforme a LGPD.">
+<meta property="og:url" content="https://arquitetodeprocessos.com.br/privacidade">
+<!-- Sem fontes externas, sem scripts de terceiros: a página de privacidade não transfere nenhum dado a ninguém. -->
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy-2:#132c50;
+    --gold:#c9a24a;
+    --gold-soft:#e8d6a6;
+    --ink:#1b2433;
+    --muted:#5b6678;
+    --line:#d9dee7;
+    --paper:#f7f5f0;
+    --card:#ffffff;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--navy-2);text-decoration-color:var(--gold);text-underline-offset:3px}
+  a:hover{color:var(--gold)}
+
+  /* Header */
+  .top{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:2px solid var(--gold)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+  .brand{color:#fff;text-decoration:none;line-height:1.2}
+  .brand strong{display:block;font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.2px}
+  .brand span{font-size:12px;color:var(--gold-soft);letter-spacing:.6px;text-transform:uppercase}
+  .top a.back{color:var(--gold-soft);font-size:14px;text-decoration:none;white-space:nowrap}
+  .top a.back:hover{color:#fff}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+  /* Hero */
+  .hero{background:
+      linear-gradient(rgba(201,162,74,.08) 1px,transparent 1px) 0 0/32px 32px,
+      linear-gradient(90deg,rgba(201,162,74,.08) 1px,transparent 1px) 0 0/32px 32px,
+      var(--navy);color:#fff;padding:56px 0 48px}
+  .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,5vw,46px);line-height:1.15;margin:10px 0 14px}
+  .hero p{max-width:720px;color:#d4dbe7;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:22px;font-size:14px;color:var(--gold-soft)}
+
+  /* Summary */
+  .summary{margin:-28px auto 0;position:relative}
+  .summary .box{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;box-shadow:0 10px 30px rgba(11,31,58,.08)}
+  .summary h2{grid-column:1/-1;margin:0;font-family:var(--serif);font-weight:500;font-size:20px;color:var(--navy)}
+  .summary div b{display:block;color:var(--navy);font-size:15px;margin-bottom:2px}
+  .summary div p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* Layout */
+  .layout{display:grid;grid-template-columns:260px 1fr;gap:48px;padding:48px 16px 72px;max-width:1120px;margin:0 auto}
+  nav.toc{position:sticky;top:96px;align-self:start;font-size:14px}
+  nav.toc p{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  nav.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+  nav.toc a{display:block;padding:5px 0 5px 14px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;margin-left:-1px}
+  nav.toc a:hover{color:var(--navy);border-left-color:var(--gold)}
+
+  article{min-width:0}
+  section{padding-bottom:36px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  h2.sec{font-family:var(--serif);font-weight:500;color:var(--navy);font-size:26px;line-height:1.25;margin:0 0 14px;display:flex;gap:14px;align-items:baseline}
+  h2.sec .n{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;min-width:26px}
+  h3{font-size:16px;color:var(--navy);margin:22px 0 6px}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{margin-bottom:6px}
+
+  .callout{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:4px;padding:16px 18px;margin:16px 0}
+  .callout.alert{border-left-color:var(--navy)}
+  .callout p:last-child{margin-bottom:0}
+
+  .table{width:100%;overflow-x:auto;margin:12px 0 16px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;min-width:560px}
+  th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
+  th{background:#eef1f6;color:var(--navy);font-weight:600;font-size:13px}
+  tr:last-child td{border-bottom:0}
+
+  .rights{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0;padding:0;list-style:none}
+  .rights li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:0;font-size:14px}
+  .rights b{display:block;color:var(--navy)}
+
+  .contact{background:var(--navy);color:#e5eaf2;border-radius:6px;padding:22px 24px}
+  .contact h3{color:#fff;margin-top:0;font-family:var(--serif);font-weight:500;font-size:20px}
+  .contact a{color:var(--gold-soft)}
+  .contact dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0;font-size:15px}
+  .contact dt{color:var(--gold)}
+  .contact dd{margin:0}
+
+  footer{background:var(--navy);color:#9fb0c8;font-size:13px;padding:28px 0;border-top:2px solid var(--gold)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{color:var(--gold-soft)}
+
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;gap:24px;padding-top:32px}
+    nav.toc{position:static;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px}
+    nav.toc ol{columns:2;column-gap:16px;border-left:0}
+    nav.toc a{padding-left:0;border-left:0}
+  }
+  @media (max-width:520px){
+    nav.toc ol{columns:1}
+    .top a.back .full{display:none}
+    .contact dl{grid-template-columns:1fr}
+    .contact dt{margin-top:6px}
+  }
+  @media print{
+    .top,nav.toc,footer{display:none}
+    .layout{display:block;padding:0}
+    .hero{background:none;color:#000;padding:0 0 16px}
+    .hero p,.meta{color:#333}
+    .summary .box{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <strong>Matheus Sacoman</strong>
+      <span>Arquiteto de Processos em Saúde™</span>
+    </a>
+    <a class="back" href="/">← <span class="full">Voltar ao </span>site</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Documento legal · LGPD</div>
+    <h1>Política de Privacidade</h1>
+    <p>Quem trabalha com dados hospitalares precisa começar pelos próprios. Este documento explica, sem juridiquês desnecessário, quais dados pessoais são tratados neste site e nos contatos comerciais, para quê, com quem são compartilhados, por quanto tempo ficam guardados e como você exerce seus direitos.</p>
+    <div class="meta">
+      <span>Vigente desde: 27 de setembro de 2026</span>
+      <span>Versão 2.0</span>
+      <span>Lei nº 13.709/2018 (LGPD)</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap summary">
+  <div class="box">
+    <h2>Em resumo</h2>
+    <div><b>Coletamos pouco</b><p>Nome, cargo, instituição, e-mail e WhatsApp — somente o que você preenche nos formulários ou envia por mensagem.</p></div>
+    <div><b>Sem rastreamento</b><p>Não usamos Google Analytics, pixels de anúncio nem cookies de publicidade.</p></div>
+    <div><b>Nunca vendemos dados</b><p>Compartilhamos apenas com os fornecedores estritamente necessários para entregar o que você pediu.</p></div>
+    <div><b>Dados de pacientes ficam fora</b><p>O site não coleta nenhum dado de paciente. Nos projetos, o hospital permanece controlador, sob contrato.</p></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sumário">
+    <p>Sumário</p>
+    <ol>
+      <li><a href="#controlador">1. Quem é o controlador</a></li>
+      <li><a href="#escopo">2. Escopo</a></li>
+      <li><a href="#dados">3. Dados coletados</a></li>
+      <li><a href="#finalidades">4. Finalidades e bases legais</a></li>
+      <li><a href="#hospital">5. Dados de hospitais e pacientes</a></li>
+      <li><a href="#compartilhamento">6. Compartilhamento</a></li>
+      <li><a href="#internacional">7. Transferência internacional</a></li>
+      <li><a href="#retencao">8. Retenção e eliminação</a></li>
+      <li><a href="#cookies">9. Cookies e armazenamento</a></li>
+      <li><a href="#seguranca">10. Segurança</a></li>
+      <li><a href="#direitos">11. Seus direitos</a></li>
+      <li><a href="#contato">12. Canal de privacidade</a></li>
+      <li><a href="#alteracoes">13. Alterações</a></li>
+    </ol>
+  </nav>
+
+  <article>
+
+    <section id="controlador">
+      <h2 class="sec"><span class="n">01</span>Quem é o controlador dos dados</h2>
+      <p>O controlador é quem decide como e por que os dados pessoais são tratados. Neste site, o controlador é:</p>
+      <div class="callout">
+        <p><b>Matheus Sacoman</b> — atuando sob a marca Arquiteto de Processos em Saúde™<br>
+        CNPJ 69.284.471/0001-75<br>
+        Jaraguá do Sul — Santa Catarina — Brasil<br>
+        Site: arquitetodeprocessos.com.br</p>
+      </div>
+      <p>Os canais de contato para assuntos de privacidade estão na <a href="#contato">seção 12</a>.</p>
+    </section>
+
+    <section id="escopo">
+      <h2 class="sec"><span class="n">02</span>A que esta política se aplica</h2>
+      <p>Esta política cobre o tratamento de dados pessoais realizado:</p>
+      <ul>
+        <li>no site <b>arquitetodeprocessos.com.br</b> e em suas páginas;</li>
+        <li>no <b>Mapeamento da Fábrica Oculta</b> e no formulário de contato;</li>
+        <li>nas conversas iniciadas por <b>WhatsApp</b>, e-mail ou LinkedIn a partir do site;</li>
+        <li>na comunicação comercial relacionada aos serviços do Arquiteto de Processos em Saúde™.</li>
+      </ul>
+      <p>Os dados tratados durante a execução de projetos contratados (Laudo Estratégico Hospitalar, KRI Hospitalar e Protocolos de Governança) seguem regras próprias, descritas na <a href="#hospital">seção 5</a> e detalhadas no contrato firmado com cada instituição.</p>
+    </section>
+
+    <section id="dados">
+      <h2 class="sec"><span class="n">03</span>Quais dados coletamos</h2>
+      <p>Coletamos apenas dados fornecidos por você, de forma voluntária, e os registros técnicos mínimos gerados por qualquer acesso a um site.</p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Origem</th><th>Dados pessoais</th><th>Outras informações</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Mapeamento da Fábrica Oculta</b></td>
+              <td>Nome completo, cargo, hospital ou instituição, e-mail e WhatsApp.</td>
+              <td>Área escolhida e respostas sobre a operação da unidade (volumes, tempos, taxas). São dados operacionais da instituição, não dados pessoais.</td>
+            </tr>
+            <tr>
+              <td><b>Formulário de contato</b></td>
+              <td>Nome completo, cargo, hospital ou instituição e e-mail.</td>
+              <td>Conteúdo da mensagem que você escrever.</td>
+            </tr>
+            <tr>
+              <td><b>WhatsApp, e-mail e LinkedIn</b></td>
+              <td>Nome, número de telefone ou endereço de e-mail, perfil público e o que você escolher compartilhar na conversa.</td>
+              <td>Histórico da conversa.</td>
+            </tr>
+            <tr>
+              <td><b>Acesso ao site</b></td>
+              <td>Endereço IP, data e hora do acesso, navegador e página visitada.</td>
+              <td>Registrados automaticamente pelo provedor de hospedagem, por segurança.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout alert">
+        <p><b>Não coletamos dados sensíveis.</b> Não pedimos, nem queremos receber, dados de saúde, informações de pacientes, documentos de identificação ou dados financeiros pessoais pelos formulários ou pelo WhatsApp. Se precisar compartilhar informação desse tipo, ela será tratada exclusivamente no âmbito de um contrato, conforme a seção 5.</p>
+      </div>
+      <p>Os serviços são destinados a profissionais e instituições. Não coletamos intencionalmente dados de menores de 18 anos.</p>
+    </section>
+
+    <section id="finalidades">
+      <h2 class="sec"><span class="n">04</span>Para que usamos os dados e com qual base legal</h2>
+      <p>Cada uso tem uma finalidade definida e uma base legal prevista no art. 7º da LGPD. Não usamos seus dados para finalidades diferentes das listadas abaixo.</p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Gerar e enviar o relatório do Mapeamento da Fábrica Oculta por e-mail e WhatsApp.</td>
+              <td>Consentimento (art. 7º, I), registrado ao marcar o campo de aceite, e procedimentos preliminares a contrato solicitados por você (art. 7º, V).</td>
+            </tr>
+            <tr>
+              <td>Responder a mensagens, agendar conversas e apresentar propostas comerciais solicitadas.</td>
+              <td>Procedimentos preliminares a contrato (art. 7º, V).</td>
+            </tr>
+            <tr>
+              <td>Enviar comunicações comerciais sobre os serviços do Arquiteto de Processos em Saúde™.</td>
+              <td>Consentimento (art. 7º, I), que pode ser revogado a qualquer momento.</td>
+            </tr>
+            <tr>
+              <td>Manter a segurança do site e prevenir abusos e fraudes.</td>
+              <td>Legítimo interesse (art. 7º, IX).</td>
+            </tr>
+            <tr>
+              <td>Cumprir obrigações legais, fiscais e regulatórias, e exercer direitos em processos.</td>
+              <td>Cumprimento de obrigação legal (art. 7º, II) e exercício regular de direitos (art. 7º, VI).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Não realizamos decisões automatizadas sobre você. A estimativa exibida ao final do Mapeamento é um cálculo sobre dados operacionais da instituição; o relatório enviado é revisado pessoalmente pelo Arquiteto.</p>
+    </section>
+
+    <section id="hospital">
+      <h2 class="sec"><span class="n">05</span>Dados de hospitais e de pacientes nos projetos</h2>
+      <p>Em serviços como o Laudo Estratégico Hospitalar e o KRI Hospitalar, o trabalho é feito sobre dados que a instituição já produz — o que pode incluir, direta ou indiretamente, dados de pacientes e profissionais. Por isso, as regras são outras e mais rígidas:</p>
+      <ul>
+        <li><b>O hospital é o controlador.</b> O Arquiteto de Processos em Saúde™ atua como <b>operador</b> (art. 5º, VII, LGPD), tratando os dados somente conforme as instruções da instituição e para a finalidade contratada.</li>
+        <li><b>Contrato antes de acesso.</b> Nenhum dado é acessado antes da assinatura de contrato com cláusulas de proteção de dados e confidencialidade.</li>
+        <li><b>Mínimo necessário.</b> Sempre que possível, a análise é feita com dados agregados, pseudonimizados ou anonimizados. Não é necessário, para o método, identificar pacientes.</li>
+        <li><b>Acesso remoto controlado.</b> O acesso ao BI ou às bases do hospital é feito por credenciais concedidas e revogáveis pela própria instituição.</li>
+        <li><b>Devolução e eliminação.</b> Ao fim do projeto, os dados recebidos são devolvidos ou eliminados, conforme definido em contrato, e o laudo entregue não contém dados que identifiquem pacientes.</li>
+        <li><b>Incidentes.</b> Qualquer incidente de segurança envolvendo dados da instituição é comunicado a ela sem demora injustificada, para que o hospital cumpra suas obrigações perante a ANPD e os titulares.</li>
+      </ul>
+    </section>
+
+    <section id="compartilhamento">
+      <h2 class="sec"><span class="n">06</span>Com quem compartilhamos</h2>
+      <p><b>Seus dados não são vendidos, alugados nem cedidos para marketing de terceiros.</b> São compartilhados apenas com fornecedores necessários para o funcionamento do site e da comunicação, que atuam como operadores ou controladores independentes, sujeitos às suas próprias políticas:</p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Fornecedor</th><th>Para quê</th><th>Dados envolvidos</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>EmailJS</b></td>
+              <td>Entrega das respostas dos formulários ao e-mail do Arquiteto.</td>
+              <td>Dados preenchidos nos formulários.</td>
+            </tr>
+            <tr>
+              <td><b>WhatsApp (Meta)</b></td>
+              <td>Conversas que você inicia e envio do relatório do Mapeamento.</td>
+              <td>Número de telefone, nome de perfil e conteúdo das mensagens.</td>
+            </tr>
+            <tr>
+              <td><b>Google</b></td>
+              <td>Recebimento e envio de e-mails.</td>
+              <td>E-mail, nome e conteúdo das mensagens.</td>
+            </tr>
+            <tr>
+              <td><b>Registro.br</b></td>
+              <td>Hospedagem do site e registros de acesso.</td>
+              <td>IP e dados técnicos de navegação.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Os dados também podem ser compartilhados com autoridades públicas quando houver obrigação legal ou ordem judicial, e com assessores contábeis e jurídicos, sob dever de sigilo, quando necessário.</p>
+    </section>
+
+    <section id="internacional">
+      <h2 class="sec"><span class="n">07</span>Transferência internacional</h2>
+      <p>Alguns dos fornecedores acima (como EmailJS, Google e Meta) armazenam ou processam dados em servidores localizados fora do Brasil, principalmente nos Estados Unidos. Essas transferências ocorrem apenas na medida necessária para prestar o serviço que você solicitou e se amparam nas hipóteses do art. 33 da LGPD e na Resolução CD/ANPD nº 19/2024, incluindo cláusulas contratuais e garantias oferecidas por esses fornecedores.</p>
+    </section>
+
+    <section id="retencao">
+      <h2 class="sec"><span class="n">08</span>Por quanto tempo guardamos</h2>
+      <div class="table">
+        <table>
+          <thead><tr><th>Dados</th><th>Prazo</th></tr></thead>
+          <tbody>
+            <tr><td>Formulários e conversas comerciais sem contratação</td><td>Até 2 anos após o último contato, ou até você pedir a eliminação.</td></tr>
+            <tr><td>Dados de contato de clientes com contrato</td><td>Durante o contrato e pelo prazo exigido pela legislação fiscal e civil após o seu término.</td></tr>
+            <tr><td>Registros de acesso ao site</td><td>6 meses, conforme o art. 15 do Marco Civil da Internet (Lei nº 12.965/2014).</td></tr>
+            <tr><td>Dados de hospitais e pacientes em projetos</td><td>Conforme o contrato; devolvidos ou eliminados ao fim do projeto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Encerrado o prazo, os dados são eliminados ou anonimizados, salvo quando a lei exigir sua conservação.</p>
+    </section>
+
+    <section id="cookies">
+      <h2 class="sec"><span class="n">09</span>Cookies e armazenamento no navegador</h2>
+      <p>O site não usa cookies de rastreamento, de análise de audiência ou de publicidade.</p>
+      <p>Usamos apenas um registro técnico no armazenamento local do seu navegador (<i>localStorage</i>) para lembrar sua escolha no aviso de privacidade, evitando que ele apareça a cada visita. Esse registro não identifica você, não é enviado a nenhum servidor e pode ser apagado a qualquer momento nas configurações do navegador.</p>
+    </section>
+
+    <section id="seguranca">
+      <h2 class="sec"><span class="n">10</span>Como protegemos os dados</h2>
+      <ul>
+        <li>Conexão criptografada (HTTPS) em todo o site.</li>
+        <li>Acesso aos dados restrito ao Arquiteto e protegido por autenticação em dois fatores nas contas utilizadas.</li>
+        <li>Coleta limitada ao mínimo necessário para cada finalidade.</li>
+        <li>Fornecedores escolhidos por adotarem padrões reconhecidos de segurança.</li>
+      </ul>
+      <p>Nenhum sistema é totalmente imune a incidentes. Se ocorrer um incidente que possa gerar risco ou dano relevante a você, comunicaremos a você e à Autoridade Nacional de Proteção de Dados (ANPD), nos termos do art. 48 da LGPD.</p>
+    </section>
+
+    <section id="direitos">
+      <h2 class="sec"><span class="n">11</span>Seus direitos como titular</h2>
+      <p>Pelo art. 18 da LGPD, você pode solicitar a qualquer momento, gratuitamente:</p>
+      <ul class="rights">
+        <li><b>Confirmação e acesso</b>Saber se tratamos seus dados e receber uma cópia.</li>
+        <li><b>Correção</b>Atualizar dados incompletos, inexatos ou desatualizados.</li>
+        <li><b>Anonimização, bloqueio ou eliminação</b>De dados desnecessários, excessivos ou tratados em desconformidade.</li>
+        <li><b>Portabilidade</b>Receber seus dados em formato estruturado.</li>
+        <li><b>Eliminação</b>Dos dados tratados com base no seu consentimento.</li>
+        <li><b>Informação sobre compartilhamento</b>Saber com quem seus dados foram compartilhados.</li>
+        <li><b>Revogação do consentimento</b>Parar de receber comunicações comerciais a qualquer momento.</li>
+        <li><b>Oposição</b>Contestar tratamentos feitos com base em legítimo interesse.</li>
+      </ul>
+      <p>Para parar de receber comunicações comerciais, basta responder “sair” no WhatsApp ou no e-mail recebido. Demais pedidos devem ser enviados para <a href="mailto:dpo@arquitetodeprocessos.com.br">dpo@arquitetodeprocessos.com.br</a>; respondemos em até 15 dias. Podemos pedir uma confirmação de identidade antes de atender, para proteger seus próprios dados.</p>
+      <p>Se entender que seu pedido não foi atendido adequadamente, você pode apresentar reclamação à Autoridade Nacional de Proteção de Dados em <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>.</p>
+    </section>
+
+    <section id="contato">
+      <h2 class="sec"><span class="n">12</span>Canal de privacidade</h2>
+      <div class="contact">
+        <h3>Fale com o Encarregado pelo Tratamento de Dados (DPO)</h3>
+        <dl>
+          <dt>Encarregado</dt><dd>Matheus Sacoman</dd>
+          <dt>E-mail</dt><dd><a href="mailto:dpo@arquitetodeprocessos.com.br">dpo@arquitetodeprocessos.com.br</a></dd>
+          <dt>Prazo</dt><dd>Até 15 dias</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="alteracoes">
+      <h2 class="sec"><span class="n">13</span>Alterações desta política</h2>
+      <p>Esta política pode ser atualizada para refletir mudanças nos serviços, nos fornecedores ou na legislação. A data de vigência no topo da página sempre indica a versão atual. Mudanças relevantes na forma de tratar seus dados serão comunicadas pelos canais de contato informados por você.</p>
+      <p style="color:var(--muted);font-size:14px">Versão 1.0 — abril de 2025. Versão 2.0 — setembro de 2026: detalhamento de finalidades e bases legais, inclusão de WhatsApp, transferência internacional, prazos de retenção e regras para dados hospitalares em projetos.</p>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Matheus Sacoman · CNPJ 69.284.471/0001-75</span>
+    <span><a href="/">Início</a> · <a href="/#contato">Contato</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
